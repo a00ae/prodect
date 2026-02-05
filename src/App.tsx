@@ -31,9 +31,13 @@ const prodct: Prodact[] = [
   },
 ];
 
+const initialCartItems = localStorage.getItem("count")
+  ? JSON.parse(localStorage.getItem("count")!)
+  : [];
 function App() {
   const [loding, setLoding] = useState<boolean>(false);
   const [data, setData] = useState<Prodact[]>([]);
+  const [count, setCount] = useState<[]>(initialCartItems);
 
   useEffect(() => {
     const getData = async () => {
@@ -47,6 +51,10 @@ function App() {
     getData();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("count", JSON.stringify(count));
+  }, [count])
+
   console.log(data);
 
   return (
@@ -56,13 +64,13 @@ function App() {
         height: "100vh",
         flexDirection: "column",
       }}>
-      <Shoppingcart />
+      <Shoppingcart data={data} />
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          textAlign: "center"
+          textAlign: "center",
         }}>
         {loding && <span>Loding...</span>}
         {!loding && data && <ListData data={data} />}

@@ -5,7 +5,9 @@ export interface Prodact{
     discount: number;
     price: number;
 }
-
+export interface ListDataProps{
+    data: Prodact[];
+}
 
 export  interface Btn{
     onAddProdect(): void

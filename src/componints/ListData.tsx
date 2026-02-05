@@ -1,15 +1,11 @@
 
-import type { Prodact } from '../type/type'
+import type { ListDataProps, Prodact } from '../type/type'
 import {  RiStarFill } from "@remixicon/react";
 import Btn from "./Btn";
 import { useState } from 'react';
 
-interface ListDataProps{
-    data: Prodact[];
-}
-
 function ListData({data}: ListDataProps) {
-    const[sala, setSala] = useState<boolean>(false)
+    const[sala, setSala] = useState<number>(0)
   return (
           <ul
         style={{
@@ -58,7 +54,7 @@ function ListData({data}: ListDataProps) {
                 <strong>{price} $</strong>{" "}
               </p>
             </li>
-            <Btn onAddProdect={() => setSala(true)}/>
+            <Btn onAddProdect={() => setSala(sala + 1)}/>
           </div>
         ))}
         
