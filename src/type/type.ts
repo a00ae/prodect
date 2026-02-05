@@ -7,8 +7,5 @@ export interface Prodact{
 }
 export interface ListDataProps{
     data: Prodact[];
-}
-
-export  interface Btn{
-    onAddProdect(): void
+    setCount: React.Dispatch<React.SetStateAction<[]>>
 }

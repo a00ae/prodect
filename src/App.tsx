@@ -64,7 +64,7 @@ function App() {
         height: "100vh",
         flexDirection: "column",
       }}>
-      <Shoppingcart data={data} />
+      <Shoppingcart count={count} />
       <div
         style={{
           display: "flex",
@@ -73,7 +73,7 @@ function App() {
           textAlign: "center",
         }}>
         {loding && <span>Loding...</span>}
-        {!loding && data && <ListData data={data} />}
+        {!loding && data && <ListData data={data}  setCount={setCount} />}
       </div>
     </div>
   );
