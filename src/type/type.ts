@@ -1,3 +1,5 @@
+import type { Dispatch, ReactNode, SetStateAction } from "react";
+
 export interface Prodact{
     id: string;
     urlImage: string;
@@ -7,5 +9,17 @@ export interface Prodact{
 }
 export interface ListDataProps{
     data: Prodact[];
-    setCount: React.Dispatch<React.SetStateAction<[]>>
+   
+}
+
+
+export interface Props {
+  children: ReactNode;
+}
+
+export interface ShoppingCartContextType {
+  count: Prodact[];
+  setCount: Dispatch<SetStateAction<Prodact[]>>;
+  loading: boolean;
+  data: Prodact[];
 }

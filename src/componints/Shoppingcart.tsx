@@ -1,11 +1,9 @@
 import { RiShoppingBagFill } from "@remixicon/react";
-import { useState } from "react";
-import type { Prodact } from "../type/type";
-interface ListDataProps {
-  count: Prodact[];
-}
+import { useShoppingcart } from "./context/useShoppingcart";
 
-function Shoppingcart({ count }: ListDataProps) {
+
+function Shoppingcart() {
+  const {count} = useShoppingcart()
   return (
     <div
       style={{

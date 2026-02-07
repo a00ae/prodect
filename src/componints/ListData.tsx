@@ -1,12 +1,20 @@
 import type { ListDataProps, Prodact } from "../type/type";
 import { RiStarFill } from "@remixicon/react";
-
+import { useShoppingcart } from "./context/useShoppingcart";
+import Alert from "@mui/material/Alert";
+import { useEffect, useState } from "react";
 // import { useState } from 'react';
 
-function ListData({ data, setCount }: ListDataProps) {
+function ListData({ data }: ListDataProps) {
+  const { setCount } = useShoppingcart();
+  const [alert, setAlert] = useState(false);
   const handleAddCard = (item: Prodact) => {
-    setCount(prev=>  [...prev, item]
-    );
+    setAlert(true);
+    const timer = setTimeout(() => setAlert(false), 2000);   
+    setCount((prev) => [...prev, item]);
+    return () => {
+      clearTimeout(timer);
+    };
   };
   return (
     <ul
@@ -57,13 +65,29 @@ function ListData({ data, setCount }: ListDataProps) {
             </p>
           </li>
           <button
-            onClick={() => handleAddCard({ id, urlImage, discount, price, rute })}
+            onClick={() =>
+              handleAddCard({ id, urlImage, discount, price, rute })
+            }
             style={{ width: "100%", backgroundColor: "#1565c0" }}
             type="button">
             Add Card
           </button>
         </div>
       ))}
+
+      <Alert
+        sx={{
+          position: "absolute",
+          top: "calc(70% + 10px)",
+          left: 20,
+          opacity: alert ? 1 : 0,
+          visibility: alert ? "visible" : "hidden",
+          transition: ".3s ease-in-out",
+          transform: alert ? "calc(70% - 10px)" : "",
+        }}
+        severity="success">
+        This is a success Alert.
+      </Alert>
     </ul>
   );
 }
