@@ -1,16 +1,21 @@
+import { useReducer } from "react";
 import "./App.css";
 import ListData from "./componints/ListData";
 import Shoppingcart from "./componints/Shoppingcart";
 import { useShoppingcart } from "./componints/context/useShoppingcart";
- import Alert from '@mui/material/Alert';
 
-
+const reducer = (state, action) => {
+  switch(state){
+    case "inc":
+      return action + 1
+  }
+}
 
 function App() {
-  const {loading, data} = useShoppingcart()
+  const {loading, data} = useShoppingcart();
+  const [count, dispatch] = useReducer(reducer, 0);
 
   return (
-    
     
       <div
         style={{
@@ -31,6 +36,8 @@ function App() {
           {!loading && data && <ListData data={data} />}
         </div>
 
+
+          <button type="button">click{count}</button>
        
       </div>
     
