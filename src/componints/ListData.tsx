@@ -2,7 +2,7 @@ import type { ListDataProps, Prodact } from "../type/type";
 import { RiStarFill } from "@remixicon/react";
 import { useShoppingcart } from "./context/useShoppingcart";
 import Alert from "@mui/material/Alert";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // import { useState } from 'react';
 
 function ListData({ data }: ListDataProps) {
@@ -84,8 +84,12 @@ function ListData({ data }: ListDataProps) {
           visibility: alert ? "visible" : "hidden",
           transition: ".3s ease-in-out",
           transform: alert ? "calc(70% - 10px)" : "",
+          bgcolor: "#1b5e1f81",
+          color: "#fffd",
+          fontWeight: 600,
+          
         }}
-        severity="success">
+        >
         This is a success Alert.
       </Alert>
     </ul>
