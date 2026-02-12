@@ -41,20 +41,20 @@ const initialCartItems = localStorage.getItem("count")
 // export =>
 const ShoppingCartProvider = ({ children }: Props) => {
   const [count, setCount] = useState<Prodact[]>(initialCartItems);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<Prodact[]>([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      setLoading(true);
-      await new Promise((resolve) =>
-        setTimeout(resolve, Math.random() * 6000 + 500),
-      );
-      setData(prodct);
-      setLoading(false);
-    };
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     setLoading(true);
+  //     await new Promise((resolve) =>
+  //       setTimeout(resolve, Math.random() * 10000 + 500),
+  //     );
+  //     setData(prodct);
+  //     setLoading(false);
+  //   };
+  //   getData();
+  // }, []);
 
   useEffect(() => {
     localStorage.setItem("count", JSON.stringify(count));
