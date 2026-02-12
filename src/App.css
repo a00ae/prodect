@@ -40,15 +40,20 @@
 .read-the-docs {
   color: #888;
 } */
+.perant-LI{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 
 .perant_load {
   margin: 40px 0;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   padding: 10px;
-  text-align: left !important;
-  border:  2px solid #1a227e72;
   box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -56,13 +61,15 @@
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-  animation: load 3.4s ease-in-out infinite;
-  
+  animation: colorMix 3.4s ease-in-out infinite;
+  border: 1px solid #75757559;
 }
-@keyframes load{
-  to{
-    opacity: 0.4;
-  }
+.imag_load{
+  width: 100%;
+  height: 120px;
+  border: 1px solid #757575;
+  border-radius: 8px;
+  background-color: #75757559;
 }
 
 .perant_load_message {
@@ -76,67 +83,27 @@
   width: 100%;
   height: 30px;
   border-radius: 10px;
-  background: linear-gradient(90deg, #757575 25%, #1a237e 70%, #757575 75%);
+  background:#757575;
   transition: all 0.3s ease-in-out;
-  background-size: 200% 100%;
+  animation: colorMix 3.4s ease-in-out infinite;
+}
+.loading_ai_message:nth-child(2){
+  width: 90%
+}
+.loading_ai_message:nth-child(3){
+  width: 70%
 }
 
-.loading_ai_message:first-child {
-  width: 100%;
-  animation: colorMix 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-.loading_ai_message:nth-child(2) {
-  width: 90%;
-  animation: colorMix 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-.loading_ai_message:nth-child(3) {
-  width: 70%;
-  animation: colorMix 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-@keyframes colorMix {
+
+@keyframes  colorMix{
   0% {
-    background-position: 200% 0;
+    opacity: 0.7;
+  }
+  50% {
     opacity: 0.5;
   }
   100% {
-    background-position: -200% 0;
     opacity: 0.2;
   }
 }
-.svg {
-  margin: 20px 0;
-  width: 3.50em;
-  transform-origin: center;
-  animation: rotate4 2s linear infinite;
-}
-circle {
-  fill: none;
-  stroke: #1a237e;
-  stroke-width: 2;
-  stroke-dasharray: 1, 200;
-  stroke-dashoffset: 0;
-  stroke-linecap: round;
-  animation: dash4 1.5s ease-in-out infinite;
-}
 
-@keyframes rotate4 {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes dash4 {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-  }
-
-  50% {
-    stroke-dasharray: 90, 200;
-    stroke-dashoffset: -35px;
-  }
-
-  100% {
-    stroke-dashoffset: -125px;
-  }
-}

@@ -48,7 +48,7 @@ const ShoppingCartProvider = ({ children }: Props) => {
     const getData = async () => {
       setLoading(true);
       await new Promise((resolve) =>
-        setTimeout(resolve, Math.random() * 6000 + 500),
+        setTimeout(resolve, Math.random() * 30000 + 500),
       );
       setData(prodct);
       setLoading(false);
