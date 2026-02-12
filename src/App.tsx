@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+// import { useReducer } from "react";
 import "./App.css";
 import ListData from "./componints/ListData";
 import Shoppingcart from "./componints/Shoppingcart";
