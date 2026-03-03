@@ -5,10 +5,11 @@ import {
   RiShoppingCart2Fill,
   RiStore3Line,
 } from "@remixicon/react";
-import type { Wedght } from "./typescript/type";
+import { Product } from "../opp/opp";
 
-const wedght: Wedght[] = [
-  {
+
+const arr: Product[] = [
+    {
     name: "arow",
     icon: <RiArrowDropRightLine />,
   },
@@ -29,10 +30,12 @@ const wedght: Wedght[] = [
     icon: <RiAccountCircleLine />,
   },
 ];
-
 function Wedght() {
+
+
   return (
     <div>
+      
     </div>
   );
 }

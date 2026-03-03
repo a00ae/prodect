@@ -1,5 +1,8 @@
 // import { useReducer } from "react";
 import "./App.css";
+import Wedght from "./componints/Wedght";
+import { Product } from "./opp/opp";
+
 
 
 // const x = 0;
@@ -20,7 +23,9 @@ import "./App.css";
 function App() {
 
   return (
-    <div></div>
+    <div>
+      <Wedght />
+    </div>
   );
 }
 

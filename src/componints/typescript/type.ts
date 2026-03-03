@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 
-export interface Wedght{
-    name: string;
-    icon: ReactNode;
-}
+export type Product = { name: string; icon: ReactNode | null };
+
+
