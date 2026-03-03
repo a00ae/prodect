@@ -23,7 +23,7 @@ import { Product } from "./opp/opp";
 function App() {
 
   return (
-    <div>
+    <div className="app">
       <Wedght />
     </div>
   );
