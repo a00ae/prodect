@@ -6,6 +6,7 @@ import {
   RiStore3Line,
 } from "@remixicon/react";
 import { Product } from "../opp/opp";
+import "./css/wedght.css"
 
 
 const arr: Product[] = [
@@ -34,7 +35,12 @@ function Wedght() {
 
 
   return (
-    <div>
+    <div className="wedght">
+      <ul className="container">
+        {arr.map(({name, icon}) => (
+          <li key={name}>{icon}</li>
+        ))}
+      </ul>
       
     </div>
   );

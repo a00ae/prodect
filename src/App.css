@@ -1,7 +1,9 @@
+
 .app{
-  background-color: green;
   width: 100%;
   height: 100%;
+  background-color: #757575;
+  min-height: 100vh;
 }
 .perant-LI{
   display: flex;
