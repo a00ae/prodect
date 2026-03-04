@@ -1,7 +1,7 @@
 
 :root{
   --main-bg-color: ;
-  --main-text-color: ;
+  --main-text-color: #121212d1;
   --main-transition: 0.3s;
   --main-border:1px solid  ;
   --man-hover: ;
@@ -12,6 +12,8 @@
   --main-font-size: 14px; 
   --main-font-whight: 600;
   --main-font-whight-bold: 900;
+  --main-margin-top: 20px;
+  --main-margin-bottom: 20px;
 }
 
 *{
@@ -32,3 +34,4 @@ html{
   list-style: none;
   margin: 0;
  }
+

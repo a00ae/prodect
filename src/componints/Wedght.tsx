@@ -37,13 +37,18 @@ function Wedght() {
         <div className="image">
         <img src="../../public/Avater.svg" alt="" />
         </div>
-        <div className="navbar">
-          <div className="nav-links">
+        <div className="nav">
+          <ul className="nav-element">
             {arr.map(({name, icon}) => (
-                <li><a className="top-text">{name}</a></li>
-            ))}
 
-          </div>
+                <li><a className="top-text">{name}</a><a className="bottom-text">{name}</a> </li>
+
+            ))}
+            {/* <li>Studio</li>
+            <li>Projects</li>
+            <li>Blog</li>
+            <li>Contact</li> */}
+          </ul>
           <div className="menu-nav">
             <div className="nav-1 first"></div>
             <div className="nav-1 last"></div>
