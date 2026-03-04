@@ -7,28 +7,25 @@ import {
 } from "@remixicon/react";
 import { Product } from "../opp/opp";
 import "./css/wedght.css"
+import "../../public/Avater.svg"
 
 
 const arr: Product[] = [
     {
-    name: "arow",
+    name: "Studio",
     icon: <RiArrowDropRightLine />,
   },
   {
-    name: "chat",
+    name: "Projects",
     icon: <RiChatAiLine />,
   },
   {
-    name: "Store",
+    name: "Blog",
     icon: <RiStore3Line />,
   },
   {
-    name: "ShoppingCart",
+    name: "Contact",
     icon: <RiShoppingCart2Fill />,
-  },
-  {
-    name: "Account",
-    icon: <RiAccountCircleLine />,
   },
 ];
 function Wedght() {
@@ -36,12 +33,23 @@ function Wedght() {
 
   return (
     <div className="wedght">
-      <ul className="container">
-        {arr.map(({name, icon}) => (
-          <li key={name}>{icon}</li>
-        ))}
-      </ul>
-      
+      <div className="container">
+        <div className="image">
+        <img src="../../public/Avater.svg" alt="" />
+        </div>
+        <div className="navbar">
+          <div className="nav-links">
+            {arr.map(({name, icon}) => (
+                <li><a className="top-text">{name}</a></li>
+            ))}
+
+          </div>
+          <div className="menu-nav">
+            <div className="nav-1 first"></div>
+            <div className="nav-1 last"></div>
+          </div>
+        </div>
+      </div>    
     </div>
   );
 }

@@ -1,3 +1,4 @@
+
 :root{
   --main-bg-color: ;
   --main-text-color: ;
@@ -6,12 +7,17 @@
   --man-hover: ;
   --main-padding-top: 20px;
   --main-padding-bottom: 20px;
+  --main-font-famliy: "Geist", "Geist Placeholder", sans-serif;
+  --main-font-famliy-bold: "Geist", sans-serif ;
+  --main-font-size: 14px; 
+  --main-font-whight: 600;
+  --main-font-whight-bold: 900;
 }
 
 *{
   margin: 0;
   padding: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-family: var(--main-font-famliy); 
 }
 
 html{
