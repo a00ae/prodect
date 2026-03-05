@@ -28,7 +28,7 @@
   text-indent: 120px;
 }
 .studio .container .text-box p span{
-    color: #757575;
+    color: var(--text-color-grey);
 }
 .studio .container .video {
 width: 100%;
@@ -64,14 +64,24 @@ width: 100%;
   visibility: hidden;
 }
 
-.studio .box{
+.studio .container .box{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     gap: 40px;
 }
 
 
-
+.studio .container .box .template-1 span{
+    color: var(--text-color-grey);
+    font-weight: var(--main-font-whight);
+    font-size: 18px;
+    letter-spacing: -1px;
+}
+.studio .container .box .template-1 p{
+  font-size: var(--main-font-size-m);
+  font-weight: var(--main-font-whight);
+  color: var(--main-text-color);
+}
 
 /* Hover */
 
