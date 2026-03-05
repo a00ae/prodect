@@ -1,7 +1,8 @@
 
 :root{
-  --main-bg-color: ;
-  --main-text-color: #121212d1;
+  --main-bg-color: #efefef;
+  --main-bg-color-before: #dedede;
+  --main-text-color: #131313;
   --main-transition: 0.3s;
   --main-border:1px solid  ;
   --man-hover: ;
@@ -12,8 +13,9 @@
   --main-font-size: 14px; 
   --main-font-whight: 600;
   --main-font-whight-bold: 900;
-  --main-margin-top: 20px;
-  --main-margin-bottom: 20px;
+  --main-margin-top: 80px;
+  --main-margin-bottom: 80px;
+  --btn-color: #fc4040;
 }
 
 *{

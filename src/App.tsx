@@ -1,5 +1,6 @@
 // import { useReducer } from "react";
 import "./App.css";
+import Studio from "./componints/Studio";
 import Wedght from "./componints/Wedght";
 import { Product } from "./opp/opp";
 
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="app">
       <Wedght />
+      <Studio/>
     </div>
   );
 }
