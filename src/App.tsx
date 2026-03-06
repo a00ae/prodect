@@ -1,5 +1,6 @@
 // import { useReducer } from "react";
 import "./App.css";
+import AboutUs from "./componints/AboutUs";
 import Studio from "./componints/Studio";
 import Wedght from "./componints/Wedght";
 import { Product } from "./opp/opp";
@@ -27,6 +28,7 @@ function App() {
     <div className="app">
       <Wedght />
       <Studio/>
+      <AboutUs/>
     </div>
   );
 }
