@@ -214,8 +214,8 @@
   border-radius: 10px;
 }
 .studio .container .box .template-4 a .end svg {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   transition: var(--main-transition);
 }
 
@@ -240,4 +240,63 @@
 
 .studio .container .box .template-4 a:hover .end svg {
   transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .studio{
+    margin-left: var(--main-margin-left);
+    margin-right: var(--main-margin-right);
+  }
+  .studio .container .text-box h1 {
+    font-size: 60px;
+  }
+  .studio .container .text-box p {
+            width: 100%;
+        text-indent: 40px;
+        font-size: var(--main-font-size-m);
+        text-shadow: 0 1px #ffff;
+  }
+  .studio .container .box {
+    grid-template-columns: 1fr;
+  }
+  .studio .container .video{
+    height: 300px;
+  }
+
+  .studio .container .video svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .studio .container .box .template-2 div p{
+    font-size: var(--main-font-size);
+  }
+  .studio .container .box .template-3 .rate p{
+    font-size: var(--main-font-size);
+  }
+  .studio .container .box .template-3 .total div > p{
+    font-size: var(--main-font-size);
+  }
+  .studio .container .box .template-3 .total > span{
+    font-size: 14px;
+    color: #888888;
+  }
+  .studio .container .box .template-4 a .start{
+    width: 150px;
+  }
+  .studio .container .box .template-4 a .end{
+    width: 50px;
+  }
+  .studio .container .box .template-4 a .end svg{
+    width: 20px;
+    height: 20px;
+  }
+  .studio .container .box .template-4 a{
+    height: 50px;
+  }
+  .studio .container .box .template-4 a .start p{
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
 }

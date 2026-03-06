@@ -112,9 +112,20 @@
 /* Start made */
 
 @media (max-width: 772px) {
+    .wedght{
+        margin: 0;
+        padding: 5px;
+        width: calc(100% - 12px);
+        border-radius: 0;
+    }
+    .wedght .container .image img{
+        width: 80px;
+    }
     .wedght .container .nav .nav-element{
         display: none;
     }
+
+    
 }
 
 /* End Wedght */

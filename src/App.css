@@ -104,3 +104,8 @@
   }
 }
 
+@media (max-width: 768px) {
+  .app {
+    padding: 0px;
+  }
+}
