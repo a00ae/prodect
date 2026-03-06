@@ -17,13 +17,18 @@ function AboutUs() {
         <h2>Averra is a digital agency that help brands stand out and scale with bold design and smart marketing.</h2>
         <p>We blend bold creativity with strategic insight to help brands lead in the digital age.</p>
         <div className="btn">
+            <div>
             <a href="#"><p>More about us</p> <RiArrowRightUpLine /></a>
             <div className="btn-border"></div>
+
+            </div>
         </div>
         </div>
 
         <div className="container">
-
+            {Array.from(new Array(20)).map((_,index) => (
+                <div key={index}></div>
+            ))}
         </div>
     </div>
   );

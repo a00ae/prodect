@@ -3,7 +3,7 @@
   padding-top: var(--main-padding-bottom);
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 100px;
 }
 .about-us .box {
   width: 70%;
@@ -64,6 +64,9 @@
   justify-content: center;
   overflow: hidden;
 }
+.about-us .box .btn div{
+    cursor: pointer;
+}
 .about-us .box .btn .btn-border {
   margin: 0 5px;
   width: 204px;
@@ -82,6 +85,7 @@
   border-radius: 2px;
   transition: var(--main-transition);
 }
+
 .about-us .box .btn a {
   width: fit-content;
   padding: 4px;
@@ -89,6 +93,7 @@
   align-items: center;
   gap: 5px;
   transition: var(--main-transition);
+  
 }
 .about-us .box .btn a p {
   font-size: 26px;
@@ -102,12 +107,39 @@
   color: var(--main-text-color);
 }
 
-.about-us .box .btn a:hover {
+.about-us .box .btn div:hover  a{
   transform: translateY(-4px);
 }
-.about-us .box .btn a:hover ~ .btn-border::before {
+.about-us .box .btn div:hover  .btn-border::before {
   width: 100%;
 }
-.about-us .box .btn a:hover svg {
+.about-us .box .btn div:hover a svg {
   transform: rotate(45deg);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .about-us {
+    margin-left: var(--main-margin-left);
+    margin-right: var(--main-margin-right);
+  }
+  .about-us .box {
+    width: 100%;
+  }
+  .about-us .box h2 {
+    font-size: 30px;
+  }
+  .about-us .box > p {
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .about-us .box .title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
