@@ -27,16 +27,15 @@
   color: var(--main-text-color);
   text-indent: 120px;
 }
-.studio .container .text-box p span{
-    color: var(--text-color-grey);
+.studio .container .text-box p span {
+  color: var(--text-color-grey);
 }
 .studio .container .video {
-width: 100%;
+  width: 100%;
   position: relative;
   z-index: 0;
   border-radius: 40px;
   overflow: hidden;
-
 }
 .studio .container .video::before {
   content: "";
@@ -50,49 +49,174 @@ width: 100%;
   transition: filter 0.3s ease-in-out;
   z-index: -1;
 }
-.studio .container .video svg{
-    transform: translate(-560px, -350px);
-    width: 80px;
-    height: 80px;
-    color: var(--btn-color);
-    opacity: 0;
-    transition: var(--main-transition);
-
+.studio .container .video svg {
+  transform: translate(-560px, -350px);
+  width: 80px;
+  height: 80px;
+  color: var(--btn-color);
+  opacity: 0;
+  transition: var(--main-transition);
 }
 .studio .container .video video {
   opacity: 0;
   visibility: hidden;
 }
 
-.studio .container .box{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-    gap: 40px;
+.studio .container .box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  gap: 40px;
 }
 
-
-.studio .container .box .template-1 span{
-    color: var(--text-color-grey);
-    font-weight: var(--main-font-whight);
-    font-size: 18px;
-    letter-spacing: -1px;
+.studio .container .box .template-1 span {
+  color: var(--text-color-grey);
+  font-weight: var(--main-font-whight);
+  font-size: 18px;
+  letter-spacing: -1px;
 }
-.studio .container .box .template-1 p{
+.studio .container .box .template-1 p {
   font-size: var(--main-font-size-m);
   font-weight: var(--main-font-whight);
   color: var(--text-color-grey-800);
 }
 
-.studio .container .box .template-2{
+.studio .container .box .template-2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.studio .container .box .template-2 div{
+.studio .container .box .template-2 div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.studio .container .box .template-2 div p,
+.studio .container .box .template-2 div span {
+  font-size: var(--main-font-size-m);
+  /* font-weight: var(--main-font-whight); */
+}
+
+.studio .container .box .template-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.studio .container .box .template-3 .rate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.studio .container .box .template-3 .rate div {
+  display: flex;
+  align-items: center;
+}
+.studio .container .box .template-3 .rate svg {
+  width: 18px;
+  height: 18px;
+}
+.studio .container .box .template-3 .rate div span {
+  padding-left: 5px;
+  font-size: var(--main-font-size-m);
+  font-weight: bold;
+}
+.studio .container .box .template-3 .rate p {
+  font-size: var(--main-font-size-L);
+  color: var(--text-color-grey);
+  width: 50%;
+}
+.studio .container .box .template-3 .rate p span {
+  color: var(--main-text-color);
+}
+.studio .container .box .template-3 .dashad {
+  height: 3px;
+  border-top: 1px dashed var(--text-color-grey);
+  margin: 20px 0;
+}
+.studio .container .box .template-3 .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.studio .container .box .template-3 .total div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.studio .container .box .template-3 .total .active {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #12b33f;
+}
+.studio .container .box .template-3 .total div > p {
+  font-size: var(--main-font-size-m);
+  font-weight: var(--main-font-whight);
+  color: var(--text-color-grey-800);
+}
+.studio .container .box .template-3 .total > span {
+  font-size: var(--main-font-size-m);
+  font-weight: var(--main-font-whight);
+  color: var(--text-color-grey-800);
+}
+
+.studio .container .box .template-4 {
+  /* background-color: red; */
+  display: flex;
+  align-items: flex-end;
+}
+.studio .container .box .template-4 a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+  padding: 5px 5px;
+  background-color: var(--btn-color);
+  font-size: var(--main-font-size-L);
+  font-weight: var(--main-font-whight);
+  color: white;
+  border-radius: 20px;
+  border: 1px dashed transparent;
+  transition: var(--main-transition);
+
+}
+.studio .container .box .template-4 a .start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+}
+.studio .container .box .template-4 a .start p {
+  text-shadow: 2px 2px 4px #888888;
+  position: relative;
+  transition: var(--main-transition);
+}
+.studio .container .box .template-4 a .start p::before {
+  content: "Start a Project";
+  position: absolute;
+  color: var(--main-text-color);
+  text-shadow: 0 0 black;
+  transform: translateY(40px);
+}
+
+.studio .container .box .template-4 a .end {
+  background-color: white;
+  color: var(--btn-color);
+  width: 65px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.studio .container .box .template-4 a .end svg {
+  width: 25px;
+  height: 25px;
+  transition: var(--main-transition);
 }
 
 /* Hover */
@@ -100,7 +224,20 @@ width: 100%;
 .studio .container .video:hover::before {
   filter: blur(5px);
 }
-.studio .container .video:hover svg{
-    opacity: 1;
-    cursor: pointer;
+.studio .container .video:hover svg {
+  opacity: 1;
+  cursor: pointer;
+}
+.studio .container .box .template-4 a:hover{
+  background-color: white;
+  border-color: var(--btn-color);
+}
+
+
+.studio .container .box .template-4 a:hover .start p {
+  transform: translateY(-40px);
+}
+
+.studio .container .box .template-4 a:hover .end svg {
+  transform: rotate(45deg);
 }

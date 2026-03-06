@@ -37,28 +37,33 @@ function Studio() {
           </div>
           <div className="template-3">
             <div>
-                <div   className="rate">
+                <div className="rate">
+                    <div>
+
               {Array.from(new Array(5)).map((_, index) => (
-                    <RiStarFill key={index} color="#fc4040"/>
+
+
+                        <RiStarFill key={index} color="#fc4040"/>
+
                 ))}
                 <span>4.9/5</span>
-                </div>
-              <div className="text">
+                    </div>
                 <p>We’ve helped <span>95+ brands</span> elevate their businesses</p>
-
-              </div>
+                </div>
               <div className="dashad"></div>
             </div>
             <div className="total">
+                <div>
                 <div className="active"></div>
                 <p>Available for Sep.</p>
+                </div>
                 <span>3 spots</span>
             </div>
           </div>
           <div className="template-4">
             <a href="#">
-                <div><p>Start a Project</p></div>
-                <div><RiArrowRightUpLine /></div>
+                <div className="start"><p>Start a Project</p></div>
+                <div className="end"><RiArrowRightUpLine /></div>
             </a>
           </div>
         </div>

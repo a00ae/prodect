@@ -12,7 +12,7 @@
   --main-font-famliy-bold: "Geist", sans-serif ;
   --main-font-size: 14px; 
   --main-font-size-m: 18px; 
-  --main-font-size-L: 28px; 
+  --main-font-size-L: 24px; 
   --main-font-whight: 600;
   --main-font-whight-bold: 900;
   --main-margin-top: 80px;
@@ -39,5 +39,8 @@ html{
  ul{
   list-style: none;
   margin: 0;
+ }
+ a{
+  text-decoration: none;
  }
 
