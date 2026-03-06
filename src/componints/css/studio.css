@@ -277,13 +277,16 @@
     height: 600px;
   }
   .studio .container .box{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(600px,1fr));
-    gap: 40px;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+    flex: 1;
+    gap: 40px; 
   }
   .studio .container .box .template-1{
     display: block;
   }
+  
 
 }
 
