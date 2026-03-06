@@ -25,11 +25,12 @@ function AboutUs() {
         </div>
         </div>
 
-        <div className="container">
-            {Array.from(new Array(20)).map((_,index) => (
-                <div key={index}></div>
-            ))}
-        </div>
+        <div className="card">
+  <div className="content">
+    <div className="number">12<span>+</span></div>
+    <div className="label">Years of experience</div>
+  </div>
+</div>
     </div>
   );
 }

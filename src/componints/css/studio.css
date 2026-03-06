@@ -3,15 +3,29 @@
   padding-bottom: var(--main-padding-bottom);
 }
 .studio .container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+  gap: 50px;  
+
 }
+
 .studio .container .text-box {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  /* display: flex;
+  flex-direction: row;
+  gap: 40px; */
 }
+
+.studio .container .image{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
 
 .studio .container .text-box h1 {
   font-size: 110px;
@@ -19,23 +33,24 @@
   font-weight: 400;
 }
 .studio .container .text-box p {
-  font-size: 28px;
-  width: 50%;
+  font-size: var(--main-font-size-L);
+  width: 445px;
   height: 100%;
   line-height: 1.7;
   font-weight: 700;
   color: var(--main-text-color);
-  text-indent: 120px;
+  text-indent: 40px;
 }
 .studio .container .text-box p span {
   color: var(--text-color-grey);
 }
 .studio .container .video {
-  width: 100%;
   position: relative;
   z-index: 0;
-  border-radius: 40px;
+  border-radius: 10px;
   overflow: hidden;
+  width: 80%;
+  height: 500px;
 }
 .studio .container .video::before {
   content: "";
@@ -63,9 +78,14 @@
 }
 
 .studio .container .box {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-  gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    gap: 60px;
+ 
+}
+.studio .container .box .template-1 {
+  display: none;
 }
 
 .studio .container .box .template-1 span {
@@ -241,6 +261,37 @@
 .studio .container .box .template-4 a:hover .end svg {
   transform: rotate(45deg);
 }
+/* 991 */
+
+@media (max-width: 1440px) {
+  .studio .container .text-box{
+    flex-direction: column;
+    align-items: start;
+  }
+  .studio .container .image{
+    flex-direction: column;
+    align-items: start;
+  }
+  .studio .container .image .video{
+    width: 100%;
+    height: 600px;
+  }
+  .studio .container .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px,1fr));
+    gap: 40px;
+  }
+  .studio .container .box .template-1{
+    display: block;
+  }
+
+}
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   .studio{

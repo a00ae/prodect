@@ -5,6 +5,7 @@ function Studio() {
   return (
     <div id="studio" className="studio">
       <div className="container">
+
         <div className="text-box">
           <h1>Averra — Studio®</h1>
           <p>
@@ -12,9 +13,14 @@ function Studio() {
             <span>make brands impossible to ignore.</span>
           </p>
         </div>
+
+        <div className="image">
+
         <div className="video">
           <video src="../../public/avtar-video.mp4"></video>
           <RiPlayCircleFill />
+
+
         </div>
         <div className="box">
           <div className="template-1">
@@ -66,6 +72,7 @@ function Studio() {
                 <div className="end"><RiArrowRightUpLine /></div>
             </a>
           </div>
+        </div>
         </div>
       </div>
     </div>
