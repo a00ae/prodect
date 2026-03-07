@@ -5,8 +5,14 @@
   flex-direction: column;
   gap: 100px;
 }
+
+.about-us .container{
+  display: flex;
+  gap: 40px;
+  align-items: start;
+}
 .about-us .box {
-  width: 70%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -141,19 +147,34 @@
     height: 100px;
 } */
 
-.about-us .card {
-    background-color: #ffffff;
-    width: 280px;
-    height: 180px;
+
+.about-us .container .tamblate-card{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+  overflow-x: scroll;
+  /* background: #000; */
+  gap: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.about-us .grid-card {
+    background-color: #ffffff ;
+    width: 150px;
+    height: 100px;
     padding: 24px;
     /* السر في التصميم العصري هو الزوايا الكبيرة والحدود الباهتة */
     border-radius: 28px; 
     border: 1px solid rgba(0, 0, 0, 0.05); 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    
+    overflow: hidden;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: flex-grow 0.1s ease-out;
   }
 
   .number {
@@ -174,6 +195,50 @@
     margin-top: auto; /* يدفع النص للأسفل */
   }
 
+
+
+
+/* gfjkdngikjusnhiusderfghnysd */
+
+
+.sticky-wrapper {
+  position: sticky;
+  top: 10%;
+  display: flex;
+  gap: 5px;
+  padding: 20px;
+  height: 140px;
+  align-items: stretch;
+}
+
+.grid-card {
+  /* background: white; */
+  /* border-radius: 24px; */
+  /* flex: 1; القيمة الافتراضية للتمدد */
+  /* transition: flex-grow 0.1s ease-out; سلاسة الحركة */
+  /* overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  width: 200px;
+  height: 100px; */
+}
+
+/* بطاقة معينة نريدها أن تتمدد أكثر */
+.about-us .container .grid-card.card-1 {
+  background: #ffffff;
+  width: 50px !important;
+  
+}
+
+
+
+
+
+  .about-us .container .tamblate-card .card:last-child{
+
+  }
 @media (max-width: 768px) {
   .about-us {
     margin-left: var(--main-margin-left);

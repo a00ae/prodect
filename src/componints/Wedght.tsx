@@ -36,7 +36,7 @@ function Wedght() {
         <div className="nav">
           <ul className="nav-element">
             {arr.map(({name}) => (
-              <li>
+              <li key={name}>
                 <a className="top-text">{name}</a>
                 <a className="bottom-text">{name}</a>
               </li>
