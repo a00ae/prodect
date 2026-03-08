@@ -3,8 +3,10 @@ import "./css/About-us.css";
 import { useFlexScroll } from "./Hooks/useFlexScroll";
 
 const animations = [
-  { selector: ".card-2", growIntensity: 2.5 },
-  { selector: ".card-4", growIntensity: 1.5 },
+  // تحريك الشريط الأول من اليسار لليمين (أو العكس حسب القيم)
+  { selector: ".sticky-wrapper", startX: -278, endX: 100, growIntensity: 1 },
+  // تحريك الشريط الثاني باتجاه معاكس أو سرعة مختلفة
+  { selector: ".sticky-wrapper.tow", startX: -100, endX: -400, growIntensity: 1 },
 ];
 
 function AboutUs() {
@@ -39,21 +41,71 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <div ref={containerRef} className="tamblate-card">
+        <div className="tamblate-card" ref={containerRef}>
           <div className="sticky-wrapper">
-            <div className="grid-card card-1">
-
-                    
-        </div>
+            <div className="grid-card card-1"></div>
             <div className="grid-card card-2">
-            <div className="content">
-          <div className="number">
-            12<span>+</span>
-          </div>
-          <div className="label">Years of experience</div>
+              <div className="content">
+                <div className="number">
+                  12<span>+</span>
+                </div>
+                <div className="label">Years of experience</div>
+              </div>
             </div>
+            <div className="grid-card card-2">
+              <div className="content">
+                <div className="number">
+                  12<span>+</span>
+                </div>
+                <div className="label">Years of experience</div>
+              </div>
             </div>
             <div className="grid-card card-3"></div>
+            <div className="grid-card card-4">
+              <div className="content">
+                95+ <span>Brands</span>
+              </div>
+            </div>
+            <div className="grid-card card-4">
+              <div className="content">
+                95+ <span>Brands</span>
+              </div>
+            </div>
+            <div className="grid-card card-4">
+              <div className="content">
+                95+ <span>Brands</span>
+              </div>
+            </div>
+          </div>
+          <div className="sticky-wrapper tow">
+            <div className="grid-card card-1"></div>
+            <div className="grid-card card-2">
+              <div className="content">
+                <div className="number">
+                  12<span>+</span>
+                </div>
+                <div className="label">Years of experience</div>
+              </div>
+            </div>
+            <div className="grid-card card-2">
+              <div className="content">
+                <div className="number">
+                  12<span>+</span>
+                </div>
+                <div className="label">Years of experience</div>
+              </div>
+            </div>
+            <div className="grid-card card-3"></div>
+            <div className="grid-card card-4">
+              <div className="content">
+                95+ <span>Brands</span>
+              </div>
+            </div>
+            <div className="grid-card card-4">
+              <div className="content">
+                95+ <span>Brands</span>
+              </div>
+            </div>
             <div className="grid-card card-4">
               <div className="content">
                 95+ <span>Brands</span>

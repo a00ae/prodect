@@ -6,7 +6,7 @@
   gap: 100px;
 }
 
-.about-us .container{
+.about-us .container {
   display: flex;
   gap: 40px;
   align-items: start;
@@ -70,8 +70,8 @@
   justify-content: center;
   overflow: hidden;
 }
-.about-us .box .btn div{
-    cursor: pointer;
+.about-us .box .btn div {
+  cursor: pointer;
 }
 .about-us .box .btn .btn-border {
   margin: 0 5px;
@@ -99,7 +99,6 @@
   align-items: center;
   gap: 5px;
   transition: var(--main-transition);
-  
 }
 .about-us .box .btn a p {
   font-size: 26px;
@@ -113,15 +112,16 @@
   color: var(--main-text-color);
 }
 
-.about-us .box .btn div:hover  a{
+.about-us .box .btn div:hover a {
   transform: translateY(-4px);
 }
-.about-us .box .btn div:hover  .btn-border::before {
+.about-us .box .btn div:hover .btn-border::before {
   width: 100%;
 }
 .about-us .box .btn div:hover a svg {
   transform: rotate(45deg);
 }
+
 /* 
 .about-us .container{
     display: grid;
@@ -147,98 +147,65 @@
     height: 100px;
 } */
 
-
-.about-us .container .tamblate-card{
+.about-us .container .tamblate-card {
   width: 50%;
+  background-color: rebeccapurple;
+  overflow: hidden;
+  height: min-content;
+  display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.about-us .tamblate-card .sticky-wrapper {
+  width: 500%;
+  background-color: #212121;
   display: flex;
   align-items: center;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
-  overflow-x: scroll;
-  /* background: #000; */
+  height: 100px;
   gap: 5px;
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+  
+    transform: translateX(-278px);
+  transition: var(--main-transition);
 }
-.about-us .grid-card {
-    background-color: #ffffff ;
-    width: 150px;
-    height: 100px;
-    padding: 24px;
-    /* السر في التصميم العصري هو الزوايا الكبيرة والحدود الباهتة */
-    border-radius: 28px; 
-    border: 1px solid rgba(0, 0, 0, 0.05); 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    overflow: hidden;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: flex-grow 0.1s ease-out;
-  }
+.about-us .tamblate-card .sticky-wrapper.tow{
+  transform: translateX(-100px);
+}
 
-  .number {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1a1a1a;
-  }
+/* .about-us .tamblate-card .sticky-wrapper:hover{
+  transform: translate(0);
+} */
 
-  .number span {
-    color: #e63946; /* لون علامة الـ + الأحمر */
-    margin-left: 4px;
-  }
+.about-us .tamblate-card .grid-card {
+  background: forestgreen;
+  display: flex;
+  width: 180px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
 
-  .label {
-    color: #888888;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: auto; /* يدفع النص للأسفل */
-  }
+.number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
 
+.number span {
+  color: #e63946; /* لون علامة الـ + الأحمر */
+  margin-left: 4px;
+}
 
-
+.label {
+  color: #888888;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: auto; /* يدفع النص للأسفل */
+}
 
 /* gfjkdngikjusnhiusderfghnysd */
 
-
-.sticky-wrapper {
-  position: sticky;
-  top: 10%;
-  display: flex;
-  gap: 5px;
-  padding: 20px;
-  height: 140px;
-  align-items: stretch;
-}
-
-.grid-card {
-  /* background: white; */
-  /* border-radius: 24px; */
-  /* flex: 1; القيمة الافتراضية للتمدد */
-  /* transition: flex-grow 0.1s ease-out; سلاسة الحركة */
-  /* overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  width: 200px;
-  height: 100px; */
-}
-
 /* بطاقة معينة نريدها أن تتمدد أكثر */
-.about-us .container .grid-card.card-1 {
-  background: #ffffff;
-  width: 50px !important;
-  
-}
 
-
-
-
-
-  .about-us .container .tamblate-card .card:last-child{
-
-  }
 @media (max-width: 768px) {
   .about-us {
     margin-left: var(--main-margin-left);
