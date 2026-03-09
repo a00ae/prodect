@@ -141,7 +141,7 @@
 }
 
 .about-us .tamblate-card .grid-card {
-  width: 200px;
+  width: 400px;
   height: 250px;
   border-radius: 16px;
   background-color: #f2f2f2;
@@ -158,23 +158,31 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--main-text-color);
+}
+.about-us .tamblate-card .grid-card .content > span {
+  color: var(--text-color-grey);
+  font-size: var(--main-font-size-L);
+  font-weight: var(--main-font-whight);
 }
 
 .number {
   font-size: 48px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--main-text-color);
 }
 
 .number span {
-  color: #e63946;
+  color: var(--btn-color);
   margin-left: 4px;
 }
 
 .label {
-  color: #888888;
-  font-size: 18px;
-  font-weight: 500;
+  color: var(--text-color-grey);
+  font-size: var(--main-font-size-L);
+  font-weight: var(--main-font-whight);
 }
 
 .about-us .tamblate-card .card-1 {
@@ -188,6 +196,19 @@
 }
 .about-us .tamblate-card .card-7 {
   background-color: #a8a8a8;
+}
+
+@media (max-width: 1440px) {
+  .about-us .container {
+    flex-direction: column;
+    gap: 80px;
+  }
+  .about-us .box {
+    width: 100%;
+  }
+  .about-us .container .tamblate-card {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {

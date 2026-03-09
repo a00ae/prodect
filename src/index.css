@@ -1,4 +1,5 @@
 /* "Geist", "Geist Placeholder", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 :root{
   --main-bg-color: #efefef;
   --main-bg-color-before: #dedede;
@@ -8,7 +9,7 @@
   --man-hover: ;
   --main-padding-top: 140px;
   --main-padding-bottom: 100px;
-  --main-font-famliy: "Geist", "Geist Placeholder", sans-serif;
+  --main-font-famliy: "Geist", sans-serif;
   --main-font-famliy-bold: "Geist", sans-serif ;
   --main-font-size: 14px; 
   --main-font-size-m: 20px; 
