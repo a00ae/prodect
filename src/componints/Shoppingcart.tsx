@@ -16,6 +16,26 @@ function Shoppingcart() {
           heading="Shaping timeless visual identities."
           more="All projects"
         />
+        <div className="image-card">
+          <a href="">
+            <div className="card">
+              <div className="title">
+                <h3>Nova Skincare.</h3>
+                <p>
+                  Crafted a refined digital identity and eCommerce experience
+                  for a luxury skincare brand, resulting in a 180% increase in
+                  online conversions.
+                </p>
+              </div>
+              <div className="description">
+                <p>Year</p>
+                <div className="dadashed"></div>
+                <span>2025</span>
+              </div>
+            </div>
+            <div className="image"></div>
+          </a>
+        </div>
       </div>
     </div>
   );
