@@ -1,17 +1,21 @@
 import "./css/Shoppingcart.css";
-import "./css/box.css"
 import type { Shopping } from "./typescript/type";
 import Box from "./Nodos/Box";
 const readTitle: Shopping = {
-    data: "02",
-    title: "Featured work",
-    projects: "50+ projects",
-}
+  data: "02",
+  title: "Featured work",
+  projects: "50+ projects",
+};
 function Shoppingcart() {
   return (
     <div className="shopping-cart">
       <div className="container">
-        <Box title={readTitle}  heading="Shaping timeless visual identities." more="All projects"/>
+        <Box
+          className="shopping-cart__box"
+          title={readTitle}
+          heading="Shaping timeless visual identities."
+          more="All projects"
+        />
       </div>
     </div>
   );

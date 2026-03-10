@@ -10,7 +10,7 @@ export type Shopping = {
     // className?: string;
 }
 
-export interface Box{
+export interface BoxType{
     heading: string;
     text?: string;
     more: string;

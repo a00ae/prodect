@@ -1,11 +1,17 @@
 import { RiArrowRightUpLine } from "@remixicon/react";
 import ScTitle from "./ScTitle";
 import "../css/box.css";
-import type { Box } from "../typescript/type";
+import type { BoxType } from "../typescript/type";
 
-function Box({ heading, text, more, title }: Box) {
+function Box({
+  heading,
+  text,
+  more,
+  title,
+  className,
+}: BoxType & { className?: string }) {
   return (
-    <div className="box">
+    <div className={["box", className].filter(Boolean).join(" ")}>
       {title && (
         <ScTitle
           data={title.data}
