@@ -1,3 +1,19 @@
+import Box from "./Nodos/Box";
+import "./css/Shoppingcart.css";
+import "./css/box.css"
+
+function Shoppingcart() {
+  return (
+    <div className="shopping-cart">
+      <div className="container">
+        <Box  heading="Shaping timeless visual identities." more="All projects"/>
+      </div>
+    </div>
+  );
+}
+
+export default Shoppingcart;
+
 // import { RiShoppingBagFill } from "@remixicon/react";
 // import { useShoppingcart } from "./context/useShoppingcart";
 // import "./css/Shoppingcart.css";

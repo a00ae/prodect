@@ -1,0 +1,117 @@
+.about-us .box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-us .box h2 {
+  width: fit-content;
+  font-size: 50px;
+  margin: 0;
+  color: var(--main-text-color);
+}
+
+.about-us .box > p {
+  font-size: 28px;
+  width: 60%;
+  line-height: 1.5;
+  font-weight: var(--main-font-whight);
+  color: var(--main-title-color);
+  margin-bottom: 80px;
+}
+
+.about-us .box .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-us .box .title div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.about-us .title div p {
+  font-size: var(--main-font-size-m);
+  font-weight: var(--main-font-whight);
+}
+.about-us .title div p:first-child {
+  color: var(--main-title-color);
+}
+.about-us .title div p:nth-child(2) {
+  color: var(--btn-color);
+}
+.about-us .title div p:nth-child(3) {
+  color: var(--main-text-color);
+}
+.about-us .title > p {
+  font-size: var(--main-font-size-m);
+  color: var(--main-title-color);
+  font-weight: var(--main-font-whight);
+}
+
+.about-us .box .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  overflow: hidden;
+}
+.about-us .box .btn div {
+  cursor: pointer;
+}
+.about-us .box .btn .btn-border {
+  margin: 0 5px;
+  width: 204px;
+  height: 1px;
+  background-color: var(--main-text-color);
+  position: relative;
+}
+.about-us .box .btn .btn-border::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 1px;
+  width: 0px;
+  background: var(--btn-color);
+  z-index: 1;
+  border-radius: 2px;
+  transition: var(--main-transition);
+}
+
+.about-us .box .btn a {
+  width: fit-content;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--main-transition);
+}
+.about-us .box .btn a p {
+  font-size: 26px;
+  font-weight: 550;
+  color: var(--main-text-color);
+}
+.about-us .box .btn a svg {
+  width: 25px;
+  height: 25px;
+  transition: var(--main-transition);
+  color: var(--main-text-color);
+}
+
+.about-us .box .btn div:hover a {
+  transform: translateY(-4px);
+}
+.about-us .box .btn div:hover .btn-border::before {
+  width: 100%;
+}
+.about-us .box .btn div:hover a svg {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 1440px){
+    .about-us .box {
+        width: 100%;
+      }
+
+}
