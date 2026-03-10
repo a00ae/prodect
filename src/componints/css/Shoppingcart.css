@@ -1,52 +1,25 @@
-.shopping-cart{
-    width: 100%;
-    background-color: #CCC;
-    padding-top: var(--main-padding-top);
-    padding-bottom: var(--main-padding-bottom);
+.shopping-cart {
+  width: 100%;
+  background-color: var(--grey-color-500);
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
 }
 
-.shopping-cart .container{
+.shopping-cart .container {
   display: flex;
   flex-direction: column;
   gap: var(--main--gap);
 }
 
-.shopping-cart .container .box{
+.shopping-cart .container .box {
   display: flex;
   justify-content: space-between;
 }
-.shopping-cart .container .box .title > div{
+.shopping-cart .container .box .title > div {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--gap-xs);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* .Shoppingcart_box {
   width: 100%;

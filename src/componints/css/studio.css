@@ -5,8 +5,7 @@
 .studio .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
-  gap: 50px;  
-
+  gap: 50px;
 }
 
 .studio .container .text-box {
@@ -19,25 +18,24 @@
   gap: 40px; */
 }
 
-.studio .container .image{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+.studio .container .image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--main--gap);
 }
 
-
 .studio .container .text-box h1 {
-  font-size: 110px;
+  font-size: var(--font-size-xxl);
   margin: 0;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
 }
 .studio .container .text-box p {
   font-size: var(--main-font-size-L);
   width: 445px;
   height: 100%;
   line-height: 1.7;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--main-text-color);
   text-indent: 40px;
 }
@@ -47,7 +45,7 @@
 .studio .container .video {
   position: relative;
   z-index: 0;
-  border-radius: 10px;
+  border-radius: var(--border-radius-sm);
   overflow: hidden;
   max-width: 100%;
   min-width: auto;
@@ -79,11 +77,10 @@
 }
 
 .studio .container .box {
-    display: flex;
-    flex-direction: column;
-    align-self: start;
-    gap: 60px;
- 
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  gap: var(--gap-lg);
 }
 .studio .container .box .template-1 {
   display: none;
@@ -92,7 +89,7 @@
 .studio .container .box .template-1 span {
   color: var(--text-color-grey);
   font-weight: var(--main-font-whight);
-  font-size: 18px;
+  font-size: var(--font-size-md-alt);
   letter-spacing: -1px;
 }
 .studio .container .box .template-1 p {
@@ -104,7 +101,7 @@
 .studio .container .box .template-2 {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gap-sm);
 }
 
 .studio .container .box .template-2 div {
@@ -121,13 +118,13 @@
 .studio .container .box .template-3 {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gap-sm);
 }
 
 .studio .container .box .template-3 .rate {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gap-sm);
 }
 .studio .container .box .template-3 .rate div {
   display: flex;
@@ -163,7 +160,7 @@
 .studio .container .box .template-3 .total div {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--gap-sm);
 }
 .studio .container .box .template-3 .total .active {
   width: 10px;
@@ -197,11 +194,10 @@
   background-color: var(--btn-color);
   font-size: var(--main-font-size-L);
   font-weight: var(--main-font-whight);
-  color: white;
-  border-radius: 20px;
+  color: var(--white-color);
+  border-radius: var(--border-radius-lg);
   border: 1px dashed transparent;
   transition: var(--main-transition);
-
 }
 .studio .container .box .template-4 a .start {
   display: flex;
@@ -225,14 +221,14 @@
 }
 
 .studio .container .box .template-4 a .end {
-  background-color: white;
+  background-color: var(--white-color);
   color: var(--btn-color);
   width: 65px;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: var(--border-radius-sm);
 }
 .studio .container .box .template-4 a .end svg {
   width: 30px;
@@ -249,11 +245,10 @@
   opacity: 1;
   cursor: pointer;
 }
-.studio .container .box .template-4 a:hover{
-  background-color: white;
+.studio .container .box .template-4 a:hover {
+  background-color: var(--white-color);
   border-color: var(--btn-color);
 }
-
 
 .studio .container .box .template-4 a:hover .start p {
   transform: translateY(-40px);
@@ -265,58 +260,63 @@
 /* 991 */
 
 @media (max-width: 1440px) {
-  .studio .container .text-box{
+  .studio .container .text-box {
     flex-direction: column;
     align-items: start;
   }
-  .studio .container .image{
+  .studio .container .image {
     flex-direction: column;
     align-items: start;
   }
-  .studio .container .image .video{
+  .studio .container .image .video {
     width: 100%;
     height: 600px;
   }
-  .studio .container .box{
+  .studio .container .box {
     width: 100%;
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     flex: 1;
-    gap: 40px; 
+    gap: 40px;
   }
-  .studio .container .box .template-1{
+  .studio .container .box .template-1 {
     display: block;
   }
-  
-
 }
 
-
-
-
-
-
-
 @media (max-width: 768px) {
-  
-  .studio{
+  .studio {
     margin-left: var(--main-margin-left);
     margin-right: var(--main-margin-right);
+    padding-top: var(--padding-top-sm);
+    padding-bottom: var(--padding-bottom-sm) ;
+  }
+  .studio .container {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--gap-sm);
   }
   .studio .container .text-box h1 {
-    font-size: 60px;
+    font-size: var(--font-size-xl);
+    display: inline-block;
   }
   .studio .container .text-box p {
-            width: 100%;
-        text-indent: 40px;
-        font-size: var(--main-font-size-m);
-        text-shadow: 0 1px #ffff;
+    width: 300px;
+    text-indent: 40px;
+    text-shadow: 0 1px #ffff;
+    font-size: var(--main-font-size);
+  }
+  .studio .container .image{
+
+  }
+    .studio .container .image .video{
+        width: 410px;
+        height: 300px;
+      }
+  .studio .container .video::before{
+            height: 100%;
   }
   .studio .container .box {
     grid-template-columns: 1fr;
-  }
-  .studio .container .video{
-    height: 300px;
   }
 
   .studio .container .video svg {
@@ -325,33 +325,33 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .studio .container .box .template-2 div p{
+  .studio .container .box .template-2 div p {
     font-size: var(--main-font-size);
   }
-  .studio .container .box .template-3 .rate p{
+  .studio .container .box .template-3 .rate p {
     font-size: var(--main-font-size);
   }
-  .studio .container .box .template-3 .total div > p{
+  .studio .container .box .template-3 .total div > p {
     font-size: var(--main-font-size);
   }
-  .studio .container .box .template-3 .total > span{
+  .studio .container .box .template-3 .total > span {
     font-size: 14px;
     color: #888888;
   }
-  .studio .container .box .template-4 a .start{
+  .studio .container .box .template-4 a .start {
     width: 150px;
   }
-  .studio .container .box .template-4 a .end{
+  .studio .container .box .template-4 a .end {
     width: 50px;
   }
-  .studio .container .box .template-4 a .end svg{
+  .studio .container .box .template-4 a .end svg {
     width: 20px;
     height: 20px;
   }
-  .studio .container .box .template-4 a{
+  .studio .container .box .template-4 a {
     height: 50px;
   }
-  .studio .container .box .template-4 a .start p{
+  .studio .container .box .template-4 a .start p {
     font-size: 18px;
     letter-spacing: 1px;
   }

@@ -8,7 +8,7 @@
 
 .about-us .container {
   display: flex;
-  gap: 40px;
+  gap: var(--main--gap);
   align-items: start;
 }
 
@@ -16,7 +16,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--gap-md);
   height: 800px;
   position: relative;
   overflow: hidden;
@@ -24,7 +24,7 @@
 
 .about-us .tamblate-card .sticky-wrapper {
   display: flex;
-  gap: 20px;
+  gap: var(--gap-md);
   width: -moz-max-content;
   width: max-content;
   will-change: transform;
@@ -33,14 +33,14 @@
 .about-us .tamblate-card .grid-card {
   width: 400px;
   height: 250px;
-  border-radius: 16px;
-  background-color: #f2f2f2;
+  border-radius: var(--border-radius-md);
+  background-color: var(--grey-color-100);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
   box-sizing: border-box;
-  border: 3px solid white;
+  border: 3px solid var(--white-color);
 }
 
 .about-us .tamblate-card .grid-card .content {
@@ -48,9 +48,9 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--main-text-color);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color-dark);
 }
 .about-us .tamblate-card .grid-card .content > span {
   color: var(--text-color-grey);
@@ -59,33 +59,33 @@
 }
 
 .number {
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--main-text-color);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color-dark);
 }
 
 .number span {
   color: var(--btn-color);
-  margin-left: 4px;
+  margin-left: var(--gap-xs);
 }
 
 .label {
-  color: var(--text-color-grey);
-  font-size: var(--main-font-size-L);
-  font-weight: var(--main-font-whight);
+  color: var(--main-title-color);
+  font-size: var(--font-size-md-alt);
+  font-weight: var(--font-weight-medium);
 }
 
 .about-us .tamblate-card .card-1 {
-  background-color: #d8d8d8;
+  background-color: var(--grey-color-300);
 }
 .about-us .tamblate-card .card-3 {
-  background-color: #b8b8b8;
+  background-color: var(--grey-color-600);
 }
 .about-us .tamblate-card .card-5 {
-  background-color: #c8c8c8;
+  background-color: var(--grey-color-500);
 }
 .about-us .tamblate-card .card-7 {
-  background-color: #a8a8a8;
+  background-color: var(--grey-color-700);
 }
 
 @media (max-width: 1440px) {
@@ -106,7 +106,7 @@
     margin-left: var(--main-margin-left);
     margin-right: var(--main-margin-right);
   }
-  
+
   .about-us .container .tamblate-card {
     width: 100%;
   }

@@ -2,23 +2,23 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: var(--main--gap);
 }
 
 .about-us .box h2 {
   width: fit-content;
-  font-size: 50px;
+  font-size: var(--font-size-xxl-alt);
   margin: 0;
   color: var(--main-text-color);
 }
 
 .about-us .box > p {
-  font-size: 28px;
+  font-size: var(--font-size-xl-alt);
   width: 60%;
   line-height: 1.5;
   font-weight: var(--main-font-whight);
   color: var(--main-title-color);
-  margin-bottom: 80px;
+  margin-bottom: var(--margin-lg);
 }
 
 .about-us .box .title {
@@ -29,7 +29,7 @@
 .about-us .box .title div {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--gap-xs);
 }
 .about-us .title div p {
   font-size: var(--main-font-size-m);
@@ -84,12 +84,12 @@
   padding: 4px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--gap-xs);
   transition: var(--main-transition);
 }
 .about-us .box .btn a p {
-  font-size: 26px;
-  font-weight: 550;
+  font-size: var(--font-size-lg-alt);
+  font-weight: var(--font-weight-semibold);
   color: var(--main-text-color);
 }
 .about-us .box .btn a svg {

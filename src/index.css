@@ -1,30 +1,65 @@
 /* "Geist", "Geist Placeholder", sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 :root{
-  --main-bg-color: #efefef;
-  --main-bg-color-before: #dedede;
-  --main-text-color: #212121;
-  --main-transition: 0.3s;
-  --main-border:1px solid  ;
-  --man-hover: ;
+  /* Colors */
+  --main-bg-color: #efefef; /* grey-200 */
+  --main-bg-color-before: #dedede; /* grey-400 */
+  --main-text-color: #212121; /* close to dark */
+  --text-color-dark: #1a1a1a;
+  --btn-color: #fc4040;
+  --white-color: #fff;
+
+  /* Grey Scale */
+  --text-color-grey:#757575; /* grey-900 */
+  --text-color-grey-800: #424242;
+  --main-title-color: #888888; /* grey-800 */
+  --grey-color-100: #f2f2f2;
+  --grey-color-300: #d8d8d8;
+  --grey-color-500: #ccc;
+  --grey-color-600: #b8b8b8;
+  --grey-color-700: #a8a8a8;
+
+  /* Layout & Spacing */
   --main-padding-top: 140px;
   --main-padding-bottom: 100px;
-  --main-font-famliy: "Geist", sans-serif;
-  --main-font-famliy-bold: "Geist", sans-serif ;
-  --main-font-size: 14px; 
-  --main-font-size-m: 20px; 
-  --main-font-size-L: 24px; 
-  --main-font-whight: 600;
-  --main-font-whight-bold: 900;
+  --padding-top-sm: 60px; 
+  --padding-bottom-sm: 30px; 
   --main-margin-top: 200px;
   --main-margin-bottom: 200px;
+  --margin-lg: 80px;
   --main-margin-left: 2px;
   --main-margin-right: 2px;
-  --btn-color: #fc4040;
-  --text-color-grey:#757575;
-  --text-color-grey-800: #424242;
-  --main-title-color: #888888;
   --main--gap: 40px;
+  --gap-lg: 60px;
+  --gap-md: 20px;
+  --gap-sm: 10px;
+  --gap-xs: 5px;
+
+  /* Typography */
+  --main-font-famliy: "Geist", sans-serif;
+  --main-font-famliy-bold: "Geist", sans-serif ;
+  --font-size-xxl: 110px;
+  --font-size-xxl-alt: 50px;
+  --font-size-xl: 48px;
+  --font-size-xl-alt: 28px;
+  --font-size-lg-alt: 26px;
+  --main-font-size-L: 24px; 
+  --main-font-size-m: 20px; 
+  --font-size-md-alt: 18px;
+  --main-font-size: 14px; 
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --main-font-whight: 600;
+  --font-weight-bold: 700;
+  --main-font-whight-bold: 900;
+
+  /* Misc */
+  --main-transition: 0.3s;
+  --main-border:1px solid  ;
+  --border-radius-lg: 20px;
+  --border-radius-md: 16px;
+  --border-radius-sm: 10px;
 }
 
 *{
@@ -49,4 +84,3 @@ html{
  a{
   text-decoration: none;
  }
-
