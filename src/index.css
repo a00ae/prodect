@@ -1,6 +1,6 @@
 /* "Geist", "Geist Placeholder", sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
-:root{
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+:root {
   /* Colors */
   --main-bg-color: #efefef; /* grey-200 */
   --main-bg-color-before: #dedede; /* grey-400 */
@@ -10,7 +10,7 @@
   --white-color: #fff;
 
   /* Grey Scale */
-  --text-color-grey:#757575; /* grey-900 */
+  --text-color-grey: #757575; /* grey-900 */
   --text-color-grey-800: #424242;
   --main-title-color: #888888; /* grey-800 */
   --grey-color-100: #f2f2f2;
@@ -22,8 +22,8 @@
   /* Layout & Spacing */
   --main-padding-top: 140px;
   --main-padding-bottom: 100px;
-  --padding-top-sm: 60px; 
-  --padding-bottom-sm: 30px; 
+  --padding-top-sm: 60px;
+  --padding-bottom-sm: 30px;
   --main-margin-top: 200px;
   --main-margin-bottom: 200px;
   --margin-lg: 80px;
@@ -37,16 +37,16 @@
 
   /* Typography */
   --main-font-famliy: "Geist", sans-serif;
-  --main-font-famliy-bold: "Geist", sans-serif ;
+  --main-font-famliy-bold: "Geist", sans-serif;
   --font-size-xxl: 110px;
   --font-size-xxl-alt: 50px;
   --font-size-xl: 48px;
   --font-size-xl-alt: 28px;
   --font-size-lg-alt: 26px;
-  --main-font-size-L: 24px; 
-  --main-font-size-m: 20px; 
+  --main-font-size-L: 24px;
+  --main-font-size-m: 20px;
   --font-size-md-alt: 18px;
-  --main-font-size: 14px; 
+  --main-font-size: 14px;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 550;
@@ -56,31 +56,31 @@
 
   /* Misc */
   --main-transition: 0.3s;
-  --main-border:1px solid  ;
+  --main-border: 1px solid;
   --border-radius-lg: 20px;
   --border-radius-md: 16px;
   --border-radius-sm: 10px;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
-  font-family: var(--main-font-famliy); 
+  font-family: var(--main-font-famliy);
   box-sizing: border-box;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
- body{
-  background: #000;
+body {
+  background: var(--main-bg-color);
   width: 100%;
   min-height: 100vh;
- }
- ul{
+}
+ul {
   list-style: none;
   margin: 0;
- }
- a{
+}
+a {
   text-decoration: none;
- }
+}
