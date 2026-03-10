@@ -1,8 +1,8 @@
 import "../css/studio.css"
-import type { Shaping } from "../typescript/type"
-function ScTitle({data, title, projects, className}: Shaping) {
+import type { Shopping } from "../typescript/type"
+function ScTitle({data, title, projects,}: Shopping) {
   return (
-    <div className={className}>
+    <div className="title">
             <div>
               <p>{data}</p>
               <p>|</p>

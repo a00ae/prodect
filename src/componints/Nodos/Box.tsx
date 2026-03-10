@@ -3,14 +3,20 @@ import ScTitle from "./ScTitle";
 import "../css/box.css";
 import type { Box } from "../typescript/type";
 
-function Box({ heading, text, more, title, data,  projects}: Box) {
+function Box({ heading, text, more, title }: Box) {
   return (
     <div className="box">
-      <ScTitle className="title" data="01" title="About us" projects="© 2025" />
+      {title && (
+        <ScTitle
+          data={title.data}
+          title={title.title}
+          projects={title.projects}
+        />
+      )}
       <h2>{heading}</h2>
 
       {!text ? null : <p>{text}</p>}
-      
+
       <div className="btn">
         <div>
           <a href="#">
