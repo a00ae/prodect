@@ -43,8 +43,8 @@ function Wedght() {
             ))}
           </ul>
           <div className="menu-nav">
-            <div className="nav-1 first"></div>
-            <div className="nav-1 last"></div>
+            <div className="first"></div>
+            <div className="last"></div>
           </div>
         </div>
       </div>

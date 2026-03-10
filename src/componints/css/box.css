@@ -1,18 +1,18 @@
-.about-us .box {
+.box {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: var(--main--gap);
 }
 
-.about-us .box h2 {
+.box h2 {
   width: fit-content;
   font-size: var(--font-size-xxl-alt);
   margin: 0;
   color: var(--main-text-color);
 }
 
-.about-us .box > p {
+.box > p {
   font-size: var(--font-size-xl-alt);
   width: 60%;
   line-height: 1.5;
@@ -21,53 +21,53 @@
   margin-bottom: var(--margin-lg);
 }
 
-.about-us .box .title {
+.box .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.about-us .box .title div {
+.box .title div {
   display: flex;
   align-items: center;
   gap: var(--gap-xs);
 }
-.about-us .title div p {
+.title div p {
   font-size: var(--main-font-size-m);
   font-weight: var(--main-font-whight);
 }
-.about-us .title div p:first-child {
+.title div p:first-child {
   color: var(--main-title-color);
 }
-.about-us .title div p:nth-child(2) {
+.title div p:nth-child(2) {
   color: var(--btn-color);
 }
-.about-us .title div p:nth-child(3) {
+.title div p:nth-child(3) {
   color: var(--main-text-color);
 }
-.about-us .title > p {
+.title > p {
   font-size: var(--main-font-size-m);
   color: var(--main-title-color);
   font-weight: var(--main-font-whight);
 }
 
-.about-us .box .btn {
+.box .btn {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
   overflow: hidden;
 }
-.about-us .box .btn div {
+.box .btn div {
   cursor: pointer;
 }
-.about-us .box .btn .btn-border {
+.box .btn .btn-border {
   margin: 0 5px;
   width: 204px;
   height: 1px;
   background-color: var(--main-text-color);
   position: relative;
 }
-.about-us .box .btn .btn-border::before {
+.box .btn .btn-border::before {
   content: "";
   position: absolute;
   left: 0;
@@ -79,7 +79,7 @@
   transition: var(--main-transition);
 }
 
-.about-us .box .btn a {
+.box .btn a {
   width: fit-content;
   padding: 4px;
   display: flex;
@@ -87,25 +87,25 @@
   gap: var(--gap-xs);
   transition: var(--main-transition);
 }
-.about-us .box .btn a p {
+.box .btn a p {
   font-size: var(--font-size-lg-alt);
   font-weight: var(--font-weight-semibold);
   color: var(--main-text-color);
 }
-.about-us .box .btn a svg {
+.box .btn a svg {
   width: 25px;
   height: 25px;
   transition: var(--main-transition);
   color: var(--main-text-color);
 }
 
-.about-us .box .btn div:hover a {
+.box .btn div:hover a {
   transform: translateY(-4px);
 }
-.about-us .box .btn div:hover .btn-border::before {
+.box .btn div:hover .btn-border::before {
   width: 100%;
 }
-.about-us .box .btn div:hover a svg {
+.box .btn div:hover a svg {
   transform: rotate(45deg);
 }
 

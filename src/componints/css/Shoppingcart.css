@@ -8,17 +8,31 @@
 .shopping-cart .container {
   display: flex;
   flex-direction: column;
+  justify-content: start;
   gap: var(--main--gap);
 }
 
 .shopping-cart .container .box {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
 }
 .shopping-cart .container .box .title > div {
+  width: 150px;
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: var(--gap-xs);
+}
+.shopping-cart .container .box  h2{
+  font-size: 40px;
+  text-align: center;
+}
+
+.shopping-cart .container .box .title {
+
+  flex-direction: column;
+  gap: var(--gap-xs);
+  justify-content: start;
 }
 
 /* .Shoppingcart_box {

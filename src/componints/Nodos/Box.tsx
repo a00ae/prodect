@@ -3,7 +3,7 @@ import ScTitle from "./ScTitle";
 import "../css/box.css";
 import type { Box } from "../typescript/type";
 
-function Box({ heading, text, more }: Box) {
+function Box({ heading, text, more, title, data,  projects}: Box) {
   return (
     <div className="box">
       <ScTitle className="title" data="01" title="About us" projects="© 2025" />

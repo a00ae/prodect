@@ -14,6 +14,7 @@ export interface Box{
     heading: string;
     text?: string;
     more: string;
+    title: Shaping;
 }
 
 
