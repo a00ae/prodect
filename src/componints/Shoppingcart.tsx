@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import "./css/Shoppingcart.css";
 import type { Shopping } from "./typescript/type";
 import Box from "./Nodos/Box";
@@ -13,10 +14,10 @@ const cardItem: Product[] = [
                   for a luxury skincare brand, resulting in a 180% increase in
                   online conversions.`,
     description: {
-      Year:  "2025",
-      Client:  "Nova Skincare",
+      Year: "2025",
+      Client: "Nova Skincare",
       Type: "Brand Identity",
-      Timeline:  "3 Months",
+      Timeline: "3 Months",
     },
     image: "../../public/image-shopping/shopping-01.avif",
   },
@@ -69,6 +70,26 @@ const readTitle: Shopping = {
   ),
 };
 function Shoppingcart() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.1 }, // يبدأ التأثير عند ظهور 10% من العنصر
+    );
+
+    const cards = containerRef.current?.querySelectorAll(".image-card");
+    cards?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="shopping-cart">
       <div className="container">
@@ -77,33 +98,42 @@ function Shoppingcart() {
           title={readTitle}
           more="All projects"
         />
-        {cardItem.map(({ image, name, text, description }) => (
-          <div className="image-card">
-            <a href="">
-              <div className="card">
-                <div className="title">
-                  <h3>{name}.</h3>
-                  <p>{text}.</p>
+        <div className="shopping-cart__cards" ref={containerRef}>
+          {cardItem.map(({ image, name, text, description }, index) => (
+            <div key={name} className="image-card">
+              <a
+                href=""
+                style={{
+                  flexDirection: index % 2 === 0 ? "row" : "row-reverse",
+                }}>
+                <div className="card">
+                  <div className="title">
+                    <h3>{name}.</h3>
+                    <p>{text}.</p>
+                  </div>
+
+                  <div className="description">
+                    {Object.entries(description).map(([key, value]) => (
+                      <div key={key}>
+                        <div>
+                          <p>{key}</p>
+                        </div>
+
+                        <div className="dadashed"></div>
+                        <div>
+                          <span>{value}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                
-                <div className="description">
-                  {Object.entries(description).map(([key, value]) => (
-                    <div key={key}>
-                        <div><p>{key}</p></div>
-                      
-                      <div className="dadashed"></div>
-                      <div><span>{value}</span></div>
-                      
-                    </div>
-                  ))}
+                <div className="image">
+                  <img src={image} alt={name} />
                 </div>
-              </div>
-              <div className="image">
-                <img src={image} alt="" />
-              </div>
-            </a>
-          </div>
-        ))}
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
