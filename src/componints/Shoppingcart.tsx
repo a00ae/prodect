@@ -1,10 +1,15 @@
 import "./css/Shoppingcart.css";
 import type { Shopping } from "./typescript/type";
 import Box from "./Nodos/Box";
+import "../../public/image-shopping/shopping-01.avif"
+import "../../public/image-shopping/shopping-02.avif"
+import "../../public/image-shopping/shopping-03.avif"
+import "../../public/image-shopping/shopping-04.avif"
 const readTitle: Shopping = {
   data: "02",
   title: "Featured work",
   projects: "50+ projects",
+  heading: <><span>Shaping</span><span>timeless </span><span>visual</span><span>identities.</span></>
 };
 function Shoppingcart() {
   return (
@@ -13,7 +18,7 @@ function Shoppingcart() {
         <Box
           className="shopping-cart__box"
           title={readTitle}
-          heading="Shaping timeless visual identities."
+          heading={readTitle.heading}
           more="All projects"
         />
         <div className="image-card">
@@ -33,7 +38,9 @@ function Shoppingcart() {
                 <span>2025</span>
               </div>
             </div>
-            <div className="image"></div>
+            <div className="image">
+                <img src="../../public/image-shopping/shopping-01.avif" alt="" />
+            </div>
           </a>
         </div>
       </div>

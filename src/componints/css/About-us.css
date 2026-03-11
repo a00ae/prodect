@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
-  height: 800px;
+  /* height: 800px; */
   position: relative;
   overflow: hidden;
 }

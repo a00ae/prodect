@@ -2,7 +2,7 @@ import { RiArrowRightUpLine } from "@remixicon/react";
 import "./css/About-us.css";
 import { useFlexScroll } from "./Hooks/useFlexScroll";
 import ScTitle from "./Nodos/ScTitle";
-import type { Box as BoxType } from "./typescript/type";
+import type { BoxType } from "./typescript/type";
 import Box from "./Nodos/Box";
 
 const animations = [
@@ -24,7 +24,7 @@ function AboutUs() {
   return (
     <div id="about-us" className="about-us">
       <div className="container">
-        <Box heading={boxTilte.heading} text={boxTilte.text} more={boxTilte.more}/>
+        <Box title={} heading={boxTilte.heading} text={boxTilte.text} more={boxTilte.more}/>
         <div className="tamblate-card" ref={containerRef}>
           <div className="sticky-wrapper one">
             <div className="grid-card card-1"></div>
