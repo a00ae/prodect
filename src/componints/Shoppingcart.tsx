@@ -24,10 +24,10 @@ const cardItem: Product[] = [
     name: "Volt Mobility",
     text: `Developed a high-performance website and multi-channel launch campaign for an electric mobility startup, driving a 3x growth in leads.`,
     description: {
-        Year: ["Year", "2024"],
-        Client: ["Client", "Volt Mobility"],
-        Type: ["Type", "Marketing Campaign"],
-        Timeline: ["Timeline", "4 Months"],
+        Year: "2024",
+        Client:  "Volt Mobility",
+        Type:  "Marketing Campaign",
+        Timeline:  "4 Months",
     },
     image: "../../public/image-shopping/shopping-02.avif",
   },
@@ -35,23 +35,23 @@ const cardItem: Product[] = [
     name: "Maison",
     text: `Produced a high-end brand campaign with visuals, storytelling, and paid media strategy that expanded audience reach by 200%.`,
     description: {
-        Year: ["Year", "2022"],
-        Client: ["Client", "Maison & Co"],
-        Type: ["Type", "Content Production"],
-        Timeline: ["Timeline", "4 Months"],
+        Year: "2022",
+        Client:  "Maison & Co",
+        Type: "Content Production",
+        Timeline:  "4 Months",
     },
-    image: "../../public/image-shopping/shopping-02.avif",
+    image: "../../public/image-shopping/shopping-03.avif",
   },
   {
     name: "Axis Tech",
     text: `Redesigned the digital experience for a SaaS platform, improving usability and increasing user retention by 45%.`,
     description: {
-        Year: ["Year", "2023"],
-        Client: ["Client", "Axis Tech"],
-        Type: ["Type", "UX/UI Design"],
-        Timeline: ["Timeline", "2.5 Months"],
+        Year:  "2023",
+        Client: "Axis Tech",
+        Type:  "UX/UI Design",
+        Timeline:  "2.5 Months",
     },
-    image: "../../public/image-shopping/shopping-02.avif",
+    image: "../../public/image-shopping/shopping-04.avif",
   },
 ];
 
@@ -77,19 +77,15 @@ function Shoppingcart() {
           title={readTitle}
           more="All projects"
         />
-
-
-
-        
+        {
+            cardItem.map(({image, name, text,}) => (
         <div className="image-card">
           <a href="">
             <div className="card">
               <div className="title">
-                <h3>Nova Skincare.</h3>
+                <h3>{name}.</h3>
                 <p>
-                  Crafted a refined digital identity and eCommerce experience
-                  for a luxury skincare brand, resulting in a 180% increase in
-                  online conversions.
+                  {text}.
                 </p>
               </div>
               <div className="description">
@@ -99,10 +95,17 @@ function Shoppingcart() {
               </div>
             </div>
             <div className="image">
-              <img src="../../public/image-shopping/shopping-01.avif" alt="" />
+              <img src={image} alt="" />
             </div>
           </a>
         </div>
+
+            ))
+        }
+
+
+
+
       </div>
     </div>
   );

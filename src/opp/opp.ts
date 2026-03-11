@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
 interface Description {
-  Year: string[];
-  Client: string[];
-  Type: string[];
-  Timeline: string[];
+  Year: string;
+  Client: string;
+  Type: string;
+  Timeline: string;
 }
 
 type ProductType = { 
