@@ -13,10 +13,10 @@ const cardItem: Product[] = [
                   for a luxury skincare brand, resulting in a 180% increase in
                   online conversions.`,
     description: {
-      Year: ["Year", "2025"],
-      Client: ["Client", "Nova Skincare"],
-      Type: ["Type", "Brand Identity"],
-      Timeline: ["Timeline", "3 Months"],
+      Year:  "2025",
+      Client:  "Nova Skincare",
+      Type: "Brand Identity",
+      Timeline:  "3 Months",
     },
     image: "../../public/image-shopping/shopping-01.avif",
   },
@@ -85,13 +85,15 @@ function Shoppingcart() {
                   <h3>{name}.</h3>
                   <p>{text}.</p>
                 </div>
-                {}
+                
                 <div className="description">
                   {Object.entries(description).map(([key, value]) => (
                     <div key={key}>
-                      <p>{key}</p>
+                        <div><p>{key}</p></div>
+                      
                       <div className="dadashed"></div>
-                      <span>{value}</span>
+                      <div><span>{value}</span></div>
+                      
                     </div>
                   ))}
                 </div>
