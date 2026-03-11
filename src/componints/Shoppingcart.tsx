@@ -102,6 +102,7 @@ function Shoppingcart() {
           {cardItem.map(({ image, name, text, description }, index) => (
             <div key={name} className="image-card">
               <a
+              className="card-item visible-row"
                 href=""
                 style={{
                   flexDirection: index % 2 === 0 ? "row" : "row-reverse",

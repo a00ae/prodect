@@ -57,27 +57,54 @@
   width: 170px;
 }
 
-.shopping-cart .shopping-cart__cards{
+.shopping-cart .shopping-cart__cards {
   display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    gap: 2rem;
-    
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  gap: 2rem;
 }
 @media (max-width: 1440px) {
-  .shopping-cart .shopping-cart__cards .image-card .card{
+  .shopping-cart .shopping-cart__cards .image-card .card {
     /* display: none; */
-    position: absolute;
-  }
-  .shopping-cart .shopping-cart__cards .image-card .card::after {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 120%; 
+    z-index: -1;
+    border: none;
+    height: auto;
+    box-shadow: none;
   }
+  .shopping-cart .shopping-cart__cards .image-card .card .description {
+    display: none;
+  }
+
+  .shopping-cart .shopping-cart__cards .image-card .card-item {
+    padding: 20px;
+    flex-direction: column !important;
+    border: 1px dashed transparent;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 19%);
+    border-radius: 20px;
+  }
+  .shopping-cart .shopping-cart__cards .image-card .card .title {
+    flex-direction: row;
+  }
+  .shopping-cart .shopping-cart__cards .image-card .card .title h3::after {
+    content: "2025";
+    position: absolute;
+    right: 10px;
+    font-size: var(--border-radius-md);
+    color: var(--text-color-grey);
+    font-weight: var(--font-weight-medium);
+  }
+
   .shopping-cart .shopping-cart__cards .image-card .card .title > p {
     display: none;
   }
-  .shopping-cart .shopping-cart__cards .image-card .image{
+  .shopping-cart .shopping-cart__cards .image-card .image {
     width: 100%;
+  }
+
+  /* hover */
+  .shopping-cart .image-card > a:hover .card {
+    border: none !important;
   }
 }
 
@@ -120,13 +147,14 @@
   flex-direction: column;
   justify-content: space-between;
   border: 1px dashed transparent;
-  
+
   transition: var(--main-transition);
   & .title {
     & h3 {
       font-size: var(--font-size-xl-alt);
       color: var(--text-color-dark);
       margin: 0;
+      /* position: relative; */
     }
     & p {
       margin-top: 20px;
@@ -210,12 +238,18 @@
   overflow: hidden;
 
   & img {
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     transition: var(--main-transition);
     transform: scale(1.1);
   }
 }
+
+/* @media (max-width: 1440px){
+  .shopping-cart .shopping-cart__cards .image-card .image{
+    width: 100%;
+  }
+} */
 
 /* hover */
 
