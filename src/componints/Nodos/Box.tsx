@@ -4,7 +4,6 @@ import "../css/box.css";
 import type { BoxType } from "../typescript/type";
 
 function Box({
-  heading,
   text,
   more,
   title,
@@ -19,10 +18,8 @@ function Box({
           projects={title.projects}
         />
       )}
-      <h2>{heading}</h2>
-
+      <h2>{title?.heading}</h2>
       {!text ? null : <p>{text}</p>}
-
       <div className="btn">
         <div>
           <a href="#">

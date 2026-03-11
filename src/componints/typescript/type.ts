@@ -12,7 +12,7 @@ export type Shopping = {
 }
 
 export interface BoxType{
-    heading?: string | ReactNode;
+    // heading?: string | ReactNode;
     text?: string;
     more: string;
     title: Shopping;

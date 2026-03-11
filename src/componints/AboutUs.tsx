@@ -13,9 +13,14 @@ const animations = [
 ];
 
 const boxTilte: BoxType = {
-  heading: "Averra is a digital agency that help brands stand out and scale with bold design and smart marketing.",
   text: "We blend bold creativity with strategic insight to help brands lead in the digital age.",
-  more: "More about us"
+  more: "More about us",
+  title: {
+    data: "01",
+    title: "About us",
+    heading: "Averra is a digital agency that help brands stand out and scale with bold design and smart marketing.",
+    projects: "© 2025"
+  }
 }
 
 function AboutUs() {
@@ -24,7 +29,7 @@ function AboutUs() {
   return (
     <div id="about-us" className="about-us">
       <div className="container">
-        <Box title={} heading={boxTilte.heading} text={boxTilte.text} more={boxTilte.more}/>
+        <Box title={boxTilte.title}  text={boxTilte.text} more={boxTilte.more}/>
         <div className="tamblate-card" ref={containerRef}>
           <div className="sticky-wrapper one">
             <div className="grid-card card-1"></div>
