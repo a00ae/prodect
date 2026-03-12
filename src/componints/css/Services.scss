@@ -19,7 +19,7 @@
 .services .container {
   display: flex;
   flex-direction: column;
-  gap: var(--main-gap);
+  gap: var(--main--gap);
 }
 
 .services .container .box {
@@ -30,11 +30,37 @@
   margin-bottom: var(--main-padding-bottom);
 }
 
-.services .container .box > p{
-  margin-bottom: 0;
+.services .container .box .title {
+  flex-direction: column;
+}
+.services .container .title > p {
+  transform: translateX(12px);
 }
 
 
-.services .container .box .btn {
+.services .container .title div p:nth-child(3) {
+  color: var(--white-color);
+}
 
+.services .container .box > p {
+  margin-bottom: 0;
+}
+
+.services .container .box .btn {
+  transform: translateY(30px);
+  
+}
+.services .container .box .btn a p {
+  color: var(--white-color);
+}
+.services .container .box .btn a svg {
+  color: var(--white-color);
+  transform: rotate(90deg);
+}
+.services .container .box .btn .btn-border {
+ width: 190px;
+}
+
+.services .container .box .btn div:hover a svg {
+  transform: rotate(135deg);
 }

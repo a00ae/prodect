@@ -1,4 +1,4 @@
-  @use "../../styles/variables" as v;
+@use "../../styles/variables" as v;
 
 .box {
   width: 50%;
@@ -15,7 +15,7 @@
 }
 
 .box > p {
-  font-size: var(--font-size-xl-alt);
+  font-size: var(--main-font-size-L);
   width: 60%;
   line-height: 1.5;
   font-weight: var(--main-font-whight);
@@ -34,7 +34,7 @@
   gap: var(--gap-xs);
 }
 .title div p {
-  font-size: var(--main-font-size-m);
+  font-size: var(--font-size-md-alt);
   font-weight: var(--main-font-whight);
 }
 .title div p:first-child {
@@ -90,14 +90,14 @@
   transition: var(--main-transition);
 }
 .box .btn a p {
-  font-size: var(--font-size-lg-alt);
+  font-size: var(--main-font-size-L);
   font-weight: var(--font-weight-semibold);
   color: var(--main-text-color);
 }
 .box .btn a svg {
   width: 25px;
   height: 25px;
-  transition: var(--main-transition);
+  transition: transform var(--main-transition);
   color: var(--main-text-color);
 }
 
