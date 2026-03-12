@@ -1,5 +1,10 @@
-import { type ReactNode as ReactNodeElement, createContext, useContext } from "react";
-import type { Product } from "../typescript/type";
+import {
+  type ReactNode,
+  createContext,
+  useContext,
+  useMemo,
+} from "react";
+import type { Product } from "../opp/opp";
 
 const cardItem: Product[] = [
   {
@@ -56,9 +61,10 @@ type ProductContextType = {
 
 const ProductContext = createContext<ProductContextType | null>(null);
 
-export const ProductProvider = ({ children }: { children: ReactNodeElement }) => {
+export const ProductProvider = ({ children }: { children: ReactNode }) => {
+  const value = useMemo(() => ({ products: cardItem }), []);
   return (
-    <ProductContext.Provider value={{ products: cardItem }}>
+    <ProductContext.Provider value={value}>
       {children}
     </ProductContext.Provider>
   );
@@ -71,4 +77,3 @@ export const useProducts = () => {
   }
   return context;
 };
-

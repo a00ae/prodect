@@ -1,9 +1,11 @@
 import Box from "./Nodos/Box"
+import { memo } from "react"
 
 
 
 
 function Services() {
+  console.log("Services")
   return (
     <div className="services" id="services">
       <Box  />
@@ -12,4 +14,4 @@ function Services() {
   )
 }
 
-export default Services
+export default memo(Services);

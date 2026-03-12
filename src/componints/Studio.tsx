@@ -1,7 +1,9 @@
 import "./css/studio.css";
 import "../../public/avtar-video.mp4";
-import { RiArrowRightUpLine, RiPlayCircleFill, RiStarFill } from "@remixicon/react";
+import { RiArrowRightUpLine, RiPlayCircleFill, RiStarFill,  } from "@remixicon/react";
+import  { memo } from "react";
 function Studio() {
+  console.log("Studio")
   return (
     <div id="studio" className="studio">
       <div className="container">
@@ -79,4 +81,4 @@ function Studio() {
   );
 }
 
-export default Studio;
+export default memo(Studio) ;

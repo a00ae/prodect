@@ -1,24 +1,13 @@
-import {type ReactNode, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 import "./css/Shoppingcart.css";
-import type { Shopping } from "./typescript/type";
 import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
+import { useBoxData } from "./context/BoxProvider";
 
-const readTitle: Shopping = {
-  data: "02",
-  title: "Featured work",
-  projects: "50+ projects",
-  heading: (
-    <>
-      <span>Shaping</span>
-      <span>timeless </span>
-      <span>visual</span>
-      <span>identities.</span>
-    </>
-  ),
-};
 function Shoppingcart() {
+  console.log("Shoppingcart")
   const { products } = useProducts();
+  const { shoppingCart } = useBoxData();
   const containerRef = useRef<HTMLDivElement>(null);
   const [, setWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(window.innerWidth > 1440);
@@ -63,8 +52,8 @@ function Shoppingcart() {
       <div className="container">
         <Box
           className="shopping-cart__box"
-          title={readTitle}
-          more="All projects"
+          title={shoppingCart.title}
+          more={shoppingCart.more}
         />
         <div className="shopping-cart__cards" ref={containerRef}>
           {products.map(({ image, name, text, description }, index) => (
@@ -83,14 +72,14 @@ function Shoppingcart() {
 
                   <div className="description">
                     {Object.entries(description).map(([key, value]) => (
-                      <div key={key as string}>
+                      <div key={key}>
                         <div>
                           <p>{key}</p>
                         </div>
 
                         <div className="dadashed"></div>
                         <div>
-                          <span>{value as ReactNode}</span>
+                          <span>{value}</span>
                         </div>
                       </div>
                     ))}
@@ -108,7 +97,7 @@ function Shoppingcart() {
   );
 }
 
-export default Shoppingcart;
+export default memo(Shoppingcart) ;
 
 // import { RiShoppingBagFill } from "@remixicon/react";
 // import { useShoppingcart } from "./context/useShoppingcart";

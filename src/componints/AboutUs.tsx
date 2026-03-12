@@ -1,9 +1,8 @@
-import { RiArrowRightUpLine } from "@remixicon/react";
 import "./css/About-us.css";
 import { useFlexScroll } from "./Hooks/useFlexScroll";
-import ScTitle from "./Nodos/ScTitle";
-import type { BoxType } from "./typescript/type";
 import Box from "./Nodos/Box";
+import { useBoxData } from "./context/BoxProvider";
+import { memo } from "react";
 
 const animations = [
   // الشريط الأول: يتحرك بشكل لا نهائي لليسار
@@ -12,24 +11,15 @@ const animations = [
   { selector: ".sticky-wrapper.two", speed: 0.1 },
 ];
 
-const boxTilte: BoxType = {
-  text: "We blend bold creativity with strategic insight to help brands lead in the digital age.",
-  more: "More about us",
-  title: {
-    data: "01",
-    title: "About us",
-    heading: "Averra is a digital agency that help brands stand out and scale with bold design and smart marketing.",
-    projects: "© 2025"
-  }
-}
-
 function AboutUs() {
+  console.log("AboutUs")
+  const { aboutUs } = useBoxData();
   const containerRef = useFlexScroll(animations);
 
   return (
     <div id="about-us" className="about-us">
       <div className="container">
-        <Box title={boxTilte.title}  text={boxTilte.text} more={boxTilte.more}/>
+        <Box title={aboutUs.title} text={aboutUs.text} more={aboutUs.more} />
         <div className="tamblate-card" ref={containerRef}>
           <div className="sticky-wrapper one">
             <div className="grid-card card-1"></div>
@@ -104,4 +94,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default memo(AboutUs);

@@ -1,8 +1,10 @@
 import "./css/wedght.css";
 import "../../public/Avater.svg";
+import {memo} from "react"
 
 const arr = ["Studio", "Projects", "Blog", "Contact"];
 function Wedght() {
+  console.log("Wedght");
   return (
     <div className="wedght">
       <div className="container">
@@ -28,4 +30,4 @@ function Wedght() {
   );
 }
 
-export default Wedght;
+export default memo(Wedght);

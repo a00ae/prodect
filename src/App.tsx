@@ -4,6 +4,7 @@ import AboutUs from "./componints/AboutUs";
 import Shoppingcart from "./componints/Shoppingcart";
 import Studio from "./componints/Studio";
 import Wedght from "./componints/Wedght";
+import { BoxProvider } from "./componints/context/BoxProvider";
 import { ProductProvider } from "./componints/context/ProductProvider";
 
 // const x = 0;
@@ -26,9 +27,11 @@ function App() {
     <ProductProvider>
       <div className="app">
         <Wedght />
-        <Studio />
-        <AboutUs />
-        <Shoppingcart />
+          <Studio />
+        <BoxProvider>
+        <AboutUs/>
+          <Shoppingcart />
+        </BoxProvider>
       </div>
     </ProductProvider>
   );
