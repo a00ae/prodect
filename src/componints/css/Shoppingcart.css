@@ -249,7 +249,11 @@
 
 
 
-@media (max-width: 7) {
+@media (max-width: 768px) {
+  .shopping-cart  .shopping-cart__box  h2{
+  flex-wrap: wrap;
+  font-size: var(--font-size-xl-alt);
+  }
 
 }
 
