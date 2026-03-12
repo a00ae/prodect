@@ -1,6 +1,10 @@
+@use "../../styles/variables" as v;
+
 .about-us {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
+  padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
   display: flex;
   flex-direction: column;
   gap: 100px;
@@ -88,7 +92,7 @@
   background-color: var(--grey-color-700);
 }
 
-@media (max-width: 1440px) {
+@media (max-width: v.$width-xl) {
   .about-us .container {
     flex-direction: column;
     gap: 80px;
@@ -101,10 +105,12 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: v.$width-sm) {
   .about-us {
     margin-left: var(--main-margin-left);
     margin-right: var(--main-margin-right);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .about-us .container .tamblate-card {

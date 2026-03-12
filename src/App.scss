@@ -1,44 +1,18 @@
-
-.app{
+@use "./styles/variables" as v;
+.app {
   /* width: 100%; */
   height: 100%;
   background-color: #efefef;
   min-height: 100vh;
-  padding: 40px;
-
+  padding: 40px 0 0;
 }
-.app::before{
-    content: "";
-    background-color: #dedede;
+.app::before {
+  content: "";
+  background-color: #dedede;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ======================== */
-.perant-LI{
+.perant-LI {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +35,7 @@
   animation: colorMix 3.4s ease-in-out infinite;
   border: 1px solid #75757559;
 }
-.imag_load{
+.imag_load {
   width: 100%;
   height: 120px;
   border: 1px solid #757575;
@@ -80,19 +54,18 @@
   width: 100%;
   height: 30px;
   border-radius: 10px;
-  background:#757575;
+  background: #757575;
   transition: all 0.3s ease-in-out;
   animation: colorMix 3.4s ease-in-out infinite;
 }
-.loading_ai_message:nth-child(2){
-  width: 90%
+.loading_ai_message:nth-child(2) {
+  width: 90%;
 }
-.loading_ai_message:nth-child(3){
-  width: 70%
+.loading_ai_message:nth-child(3) {
+  width: 70%;
 }
 
-
-@keyframes  colorMix{
+@keyframes colorMix {
   0% {
     opacity: 0.7;
   }
@@ -104,7 +77,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: v.$width-sm) {
   .app {
     padding: 0px;
   }

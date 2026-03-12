@@ -1,3 +1,5 @@
+  @use "../../styles/variables" as v;
+
 .box {
   width: 50%;
   display: flex;
@@ -109,9 +111,8 @@
   transform: rotate(45deg);
 }
 
-@media (max-width: 1440px){
-    .about-us .box {
-        width: 100%;
-      }
-
+@media (max-width: v.$width-xl) {
+  .about-us .box {
+    width: 100%;
+  }
 }

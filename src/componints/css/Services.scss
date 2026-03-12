@@ -1,11 +1,40 @@
+@use "../../styles/variables" as v;
+
 .services {
   width: 100%;
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
+  background-color: var(--selction-background-color);
+  padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
 }
-
+@media (max-width: v.$width-sm) {
+  .services {
+    margin-left: var(--main-margin-left);
+    margin-right: var(--main-margin-right);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .services .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
 }
 
-.services .container .services_box {
+.services .container .box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: var(--main-padding-bottom);
+}
+
+.services .container .box > p{
+  margin-bottom: 0;
+}
+
+
+.services .container .box .btn {
+
 }

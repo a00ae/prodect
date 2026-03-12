@@ -1,3 +1,5 @@
+@use "../../styles/variables" as v;
+
 /* Start Wedght */
 .wedght {
   background-color: white;
@@ -105,7 +107,7 @@
 /* End Hover */
 /* Start made */
 
-@media (max-width: 768px) {
+@media (max-width: v.$width-sm) {
   .wedght {
     margin: 0;
     padding: 5px;

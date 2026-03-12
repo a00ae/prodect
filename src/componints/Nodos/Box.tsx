@@ -1,7 +1,7 @@
 import { RiArrowRightUpLine } from "@remixicon/react";
 import ScTitle from "./ScTitle";
 import "../css/box.scss";
-import type { BoxType } from "../typescript/type";
+import type { BoxType } from "../opp/opp";
 
 function Box({
   text,

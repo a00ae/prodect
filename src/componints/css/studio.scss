@@ -1,6 +1,17 @@
+@use "../../styles/variables" as v;
 .studio {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
+  padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
+}
+@media (max-width: v.$width-sm) {
+  .studio {
+    margin-left: var(--main-margin-left);
+    margin-right: var(--main-margin-right);
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .studio .container {
   display: grid;
@@ -289,7 +300,7 @@
     margin-left: var(--main-margin-left);
     margin-right: var(--main-margin-right);
     padding-top: var(--padding-top-sm);
-    padding-bottom: var(--padding-bottom-sm) ;
+    padding-bottom: var(--padding-bottom-sm);
   }
   .studio .container {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -306,12 +317,12 @@
     font-size: var(--main-font-size);
   }
 
-    .studio .container .image .video{
-        width: 410px;
-        height: 300px;
-      }
-  .studio .container .video::before{
-            height: 100%;
+  .studio .container .image .video {
+    width: 410px;
+    height: 300px;
+  }
+  .studio .container .video::before {
+    height: 100%;
   }
   .studio .container .box {
     grid-template-columns: 1fr;

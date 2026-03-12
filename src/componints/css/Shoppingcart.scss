@@ -1,7 +1,20 @@
+@use "../../styles/variables" as v;
+
 .shopping-cart {
   width: 100%;
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
+  padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
+}
+
+@media (max-width: v.$width-sm) {
+  .shopping-cart {
+    margin-left: var(--main-margin-left);
+    margin-right: var(--main-margin-right);
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .shopping-cart .container {
@@ -19,7 +32,7 @@
   margin-bottom: var(--main-padding-bottom);
 }
 
-@media (max-width: 1440px) {
+@media (max-width: v.$width-xl) {
   .shopping-cart__box {
     flex-direction: column;
   }
@@ -62,7 +75,7 @@
   grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   gap: 2rem;
 }
-@media (max-width: 1440px) {
+@media (max-width: v.$width-xl) {
   .shopping-cart .shopping-cart__cards .image-card .card {
     /* display: none; */
     position: relative;
@@ -101,6 +114,13 @@
   /* hover */
   .shopping-cart .image-card > a:hover .card {
     border: none !important;
+  }
+}
+
+@media (max-width: v.$width-sm) {
+  .shopping-cart .shopping-cart__cards .image-card .card-item {
+    padding: 5px;
+    
   }
 }
 
@@ -247,28 +267,12 @@
   }
 } */
 
-
-
-@media (max-width: 768px) {
-  .shopping-cart  .shopping-cart__box  h2{
-  flex-wrap: wrap;
-  font-size: var(--font-size-xl-alt);
+@media (max-width: v.$width-sm) {
+  .shopping-cart .shopping-cart__box h2 {
+    flex-wrap: wrap;
+    font-size: var(--font-size-xl-alt);
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* hover */
 

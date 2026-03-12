@@ -10,7 +10,6 @@ function Services() {
     <div className="services" id="services">
       <div className="container">
         <Box
-          className="services_box"
           title={services.title}
           more={services.more}
           text={services.text}
