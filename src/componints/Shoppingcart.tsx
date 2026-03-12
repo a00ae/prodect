@@ -1,60 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import {ReactNode, useEffect, useRef, useState } from "react";
 import "./css/Shoppingcart.css";
 import type { Shopping } from "./typescript/type";
 import Box from "./Nodos/Box";
-import "../../public/image-shopping/shopping-01.avif";
-import "../../public/image-shopping/shopping-02.avif";
-import "../../public/image-shopping/shopping-03.avif";
-import "../../public/image-shopping/shopping-04.avif";
-import type { Product } from "../opp/opp";
-const cardItem: Product[] = [
-  {
-    name: "Nova Skincare",
-    text: `Crafted a refined digital identity and eCommerce experience
-                  for a luxury skincare brand, resulting in a 180% increase in
-                  online conversions.`,
-    description: {
-      Year: "2025",
-      Client: "Nova Skincare",
-      Type: "Brand Identity",
-      Timeline: "3 Months",
-    },
-    image: "../../public/image-shopping/shopping-01.avif",
-  },
-  {
-    name: "Volt Mobility",
-    text: `Developed a high-performance website and multi-channel launch campaign for an electric mobility startup, driving a 3x growth in leads.`,
-    description: {
-      Year: "2024",
-      Client: "Volt Mobility",
-      Type: "Marketing Campaign",
-      Timeline: "4 Months",
-    },
-    image: "../../public/image-shopping/shopping-02.avif",
-  },
-  {
-    name: "Maison",
-    text: `Produced a high-end brand campaign with visuals, storytelling, and paid media strategy that expanded audience reach by 200%.`,
-    description: {
-      Year: "2022",
-      Client: "Maison & Co",
-      Type: "Content Production",
-      Timeline: "4 Months",
-    },
-    image: "../../public/image-shopping/shopping-03.avif",
-  },
-  {
-    name: "Axis Tech",
-    text: `Redesigned the digital experience for a SaaS platform, improving usability and increasing user retention by 45%.`,
-    description: {
-      Year: "2023",
-      Client: "Axis Tech",
-      Type: "UX/UI Design",
-      Timeline: "2.5 Months",
-    },
-    image: "../../public/image-shopping/shopping-04.avif",
-  },
-];
+import { useProducts } from "./context/ProductProvider";
 
 const readTitle: Shopping = {
   data: "02",
@@ -70,6 +18,7 @@ const readTitle: Shopping = {
   ),
 };
 function Shoppingcart() {
+  const { products } = useProducts();
   const containerRef = useRef<HTMLDivElement>(null);
   const [, setWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(window.innerWidth > 1440);
@@ -78,7 +27,7 @@ function Shoppingcart() {
     const handleResize = () => {
       const currentWidth = window.innerWidth;
       setWidth(currentWidth);
-      
+
       // إغلاق القائمة تلقائياً في الشاشات الصغيرة
       if (currentWidth <= 1440) {
         setIsOpen(false);
@@ -87,8 +36,8 @@ function Shoppingcart() {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -118,10 +67,10 @@ function Shoppingcart() {
           more="All projects"
         />
         <div className="shopping-cart__cards" ref={containerRef}>
-          {cardItem.map(({ image, name, text, description }, index) => (
+          {products.map(({ image, name, text, description }, index) => (
             <div key={name} className="image-card">
               <a
-              className="card-item visible-row"
+                className="card-item visible-row"
                 href=""
                 style={{
                   flexDirection: index % 2 === 0 ? "row" : "row-reverse",
@@ -130,19 +79,18 @@ function Shoppingcart() {
                   <div className="title">
                     <h3>{name}.</h3>
                     {isOpen ? <p>{text}.</p> : <p>{description.Year}</p>}
-                    
                   </div>
 
                   <div className="description">
                     {Object.entries(description).map(([key, value]) => (
-                      <div key={key}>
+                      <div key={key as string}>
                         <div>
                           <p>{key}</p>
                         </div>
 
                         <div className="dadashed"></div>
                         <div>
-                          <span>{value}</span>
+                          <span>{value as ReactNode}</span>
                         </div>
                       </div>
                     ))}

@@ -4,7 +4,7 @@ import {
   RiShoppingCart2Fill,
   RiStore3Line,
 } from "@remixicon/react";
-import { Product } from "../opp/opp";
+import type { Product } from "../opp/opp";
 import "./css/wedght.css";
 import "../../public/Avater.svg";
 

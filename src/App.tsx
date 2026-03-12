@@ -4,9 +4,7 @@ import AboutUs from "./componints/AboutUs";
 import Shoppingcart from "./componints/Shoppingcart";
 import Studio from "./componints/Studio";
 import Wedght from "./componints/Wedght";
-import { Product } from "./opp/opp";
-
-
+import { ProductProvider } from "./componints/context/ProductProvider";
 
 // const x = 0;
 
@@ -24,14 +22,15 @@ import { Product } from "./opp/opp";
 // };
 
 function App() {
-
   return (
-    <div className="app">
-      <Wedght />
-      <Studio/>
-      <AboutUs/>
-      <Shoppingcart/>
-    </div>
+    <ProductProvider>
+      <div className="app">
+        <Wedght />
+        <Studio />
+        <AboutUs />
+        <Shoppingcart />
+      </div>
+    </ProductProvider>
   );
 }
 
