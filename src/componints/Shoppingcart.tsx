@@ -1,4 +1,4 @@
-import {ReactNode, useEffect, useRef, useState } from "react";
+import {type ReactNode, useEffect, useRef, useState } from "react";
 import "./css/Shoppingcart.css";
 import type { Shopping } from "./typescript/type";
 import Box from "./Nodos/Box";

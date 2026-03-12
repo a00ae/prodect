@@ -1,5 +1,5 @@
-import { ReactNode, createContext, useContext } from "react";
-import type { Product } from "../opp/opp";
+import { type ReactNode as ReactNodeElement, createContext, useContext } from "react";
+import type { Product } from "../typescript/type";
 
 const cardItem: Product[] = [
   {
@@ -56,7 +56,7 @@ type ProductContextType = {
 
 const ProductContext = createContext<ProductContextType | null>(null);
 
-export const ProductProvider = ({ children }: { children: ReactNode }) => {
+export const ProductProvider = ({ children }: { children: ReactNodeElement }) => {
   return (
     <ProductContext.Provider value={{ products: cardItem }}>
       {children}
