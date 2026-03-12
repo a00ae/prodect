@@ -1,6 +1,7 @@
 // import { useReducer } from "react";
-import "./App.css";
+import "./App.scss";
 import AboutUs from "./componints/AboutUs";
+import Services from "./componints/Services";
 import Shoppingcart from "./componints/Shoppingcart";
 import Studio from "./componints/Studio";
 import Wedght from "./componints/Wedght";
@@ -29,8 +30,9 @@ function App() {
         <Wedght />
           <Studio />
         <BoxProvider>
-        <AboutUs/>
+          <AboutUs/>
           <Shoppingcart />
+          <Services/>
         </BoxProvider>
       </div>
     </ProductProvider>

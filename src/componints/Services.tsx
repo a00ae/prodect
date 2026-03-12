@@ -1,17 +1,23 @@
-import Box from "./Nodos/Box"
-import { memo } from "react"
-
-
-
+import Box from "./Nodos/Box";
+import { memo } from "react";
+import { useBoxData } from "./context/BoxProvider";
+import "./css/Services.scss"
 
 function Services() {
-  console.log("Services")
+  console.log("Services");
+  const { services } = useBoxData();
   return (
     <div className="services" id="services">
-      <Box  />
-      
+      <div className="container">
+        <Box
+          className="services_box"
+          title={services.title}
+          more={services.more}
+          text={services.text}
+        />
+      </div>
     </div>
-  )
+  );
 }
 
 export default memo(Services);

@@ -4,6 +4,7 @@ import type { BoxType } from "../opp/opp";
 interface BoxContextType {
   aboutUs: BoxType;
   shoppingCart: BoxType;
+  services: BoxType;
 }
 
 const boxData: BoxContextType = {
@@ -34,6 +35,16 @@ const boxData: BoxContextType = {
       ),
     },
   },
+  services: {
+    more: "See pricing",
+    text: "We combine creativity and strategy to deliver digital experiences that elevate brands.",
+    title: {
+      data: "03",
+      title: "Services",
+      projects: "Averra®"
+
+    }
+  }
 };
 
 const BoxContext = createContext<BoxContextType | null>(null);

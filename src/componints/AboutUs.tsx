@@ -1,4 +1,4 @@
-import "./css/About-us.css";
+import "./css/About-us.scss";
 import { useFlexScroll } from "./Hooks/useFlexScroll";
 import Box from "./Nodos/Box";
 import { useBoxData } from "./context/BoxProvider";

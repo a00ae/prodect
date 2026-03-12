@@ -1,4 +1,4 @@
-import "../css/studio.css"
+import "../css/studio.scss"
 import type { Shopping } from "../typescript/type"
 function ScTitle({data, title, projects,}: Shopping) {
   return (

@@ -1,4 +1,4 @@
-import "./css/studio.css";
+import "./css/studio.scss";
 import "../../public/avtar-video.mp4";
 import { RiArrowRightUpLine, RiPlayCircleFill, RiStarFill,  } from "@remixicon/react";
 import  { memo } from "react";

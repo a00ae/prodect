@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, memo } from "react";
-import "./css/Shoppingcart.css";
+import "./css/Shoppingcart.scss";
 import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
 import { useBoxData } from "./context/BoxProvider";
