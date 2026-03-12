@@ -8,7 +8,8 @@ function Box({
   more,
   title,
   className,
-}: BoxType & { className?: string }) {
+  isAnimated = false,
+}: BoxType & { className?: string; isAnimated?: boolean }) {
   return (
     <div className={["box", className].filter(Boolean).join(" ")}>
       {title && (
@@ -18,8 +19,24 @@ function Box({
           projects={title.projects}
         />
       )}
-      <h2>{title?.heading}</h2>
-      {!text ? null : <p>{text}</p>}
+      {!title.heading ? null : (
+        <h2>
+          {isAnimated
+            ? title.heading
+                .toString()
+                .split(" ")
+                .map((ele, index) => <span key={index}>{ele}</span>)
+            : title.heading}
+        </h2>
+      )}
+      {!text ? null : (
+        <p>
+          {isAnimated ? text.split("").map((ele, index) => {
+            if (ele === " ") return " ";
+            return <span key={index}>{ele}</span>;
+          }) : text}
+        </p>
+      )}
       <div className="btn">
         <div>
           <a href="#">

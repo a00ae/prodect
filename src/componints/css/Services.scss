@@ -32,6 +32,7 @@
 
 .services .container .box .title {
   flex-direction: column;
+  justify-content: center;
 }
 .services .container .title > p {
   transform: translateX(12px);
@@ -58,7 +59,8 @@
   transform: rotate(90deg);
 }
 .services .container .box .btn .btn-border {
- width: 190px;
+ width: 160px;
+ background-color: var(--white-color);
 }
 
 .services .container .box .btn div:hover a svg {

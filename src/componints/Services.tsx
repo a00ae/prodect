@@ -13,6 +13,7 @@ function Services() {
           title={services.title}
           more={services.more}
           text={services.text}
+          isAnimated={true}
         />
       </div>
     </div>

@@ -53,21 +53,21 @@
 
 .shopping-cart__box .title {
   flex-direction: column;
-  gap: var(--gap-xs);
   align-items: start;
   & > p {
-    font-size: var(--main-font-size-m);
+    font-size: var(--font-size-md-alt);
     color: var(--main-title-color);
     font-weight: var(--main-font-whight);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 205px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* width: 205px; */
+    transform: translateX(34px);
   }
 }
 
 .shopping-cart__box .btn .btn-border {
-  width: 170px;
+  width: 155px;
 }
 
 .shopping-cart .shopping-cart__cards {

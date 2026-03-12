@@ -25,14 +25,7 @@ const boxData: BoxContextType = {
       data: "02",
       title: "Featured work",
       projects: "50+ projects",
-      heading: (
-        <>
-          <span>Shaping</span>
-          <span>timeless </span>
-          <span>visual</span>
-          <span>identities.</span>
-        </>
-      ),
+      heading: "Shaping timeless visual identities."
     },
   },
   services: {

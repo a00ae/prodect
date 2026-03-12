@@ -12,14 +12,18 @@ const animations = [
 ];
 
 function AboutUs() {
-  console.log("AboutUs")
+  console.log("AboutUs");
   const { aboutUs } = useBoxData();
   const containerRef = useFlexScroll(animations);
 
   return (
     <div id="about-us" className="about-us">
       <div className="container">
-        <Box title={aboutUs.title} text={aboutUs.text} more={aboutUs.more} />
+        <Box
+          title={aboutUs.title}
+          text={aboutUs.text}
+          more={aboutUs.more}
+        />
         <div className="tamblate-card" ref={containerRef}>
           <div className="sticky-wrapper one">
             <div className="grid-card card-1"></div>

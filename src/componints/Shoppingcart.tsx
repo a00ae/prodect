@@ -54,6 +54,7 @@ function Shoppingcart() {
           className="shopping-cart__box"
           title={shoppingCart.title}
           more={shoppingCart.more}
+          isAnimated={true}
         />
         <div className="shopping-cart__cards" ref={containerRef}>
           {products.map(({ image, name, text, description }, index) => (
