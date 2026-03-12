@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./css/Shoppingcart.css";
 import type { Shopping } from "./typescript/type";
 import Box from "./Nodos/Box";
@@ -71,6 +71,25 @@ const readTitle: Shopping = {
 };
 function Shoppingcart() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 1440);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const currentWidth = window.innerWidth;
+      setWidth(currentWidth);
+      
+      // إغلاق القائمة تلقائياً في الشاشات الصغيرة
+      if (currentWidth <= 1440) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -110,7 +129,8 @@ function Shoppingcart() {
                 <div className="card">
                   <div className="title">
                     <h3>{name}.</h3>
-                    <p>{text}.</p>
+                    {isOpen ? <p>{text}.</p> : <p>{description.Year}</p>}
+                    
                   </div>
 
                   <div className="description">

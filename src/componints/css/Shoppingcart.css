@@ -84,20 +84,16 @@
     border-radius: 20px;
   }
   .shopping-cart .shopping-cart__cards .image-card .card .title {
+    display: flex;
+    align-items: center;
     flex-direction: row;
+    justify-content: space-between;
   }
-  .shopping-cart .shopping-cart__cards .image-card .card .title h3::after {
-    content: "2025";
-    position: absolute;
-    right: 10px;
-    font-size: var(--border-radius-md);
-    color: var(--text-color-grey);
-    font-weight: var(--font-weight-medium);
+  .shopping-cart .shopping-cart__cards .image-card .card .title > p {
+    margin-top: 0;
+    font-size: var(--font-size-lg-alt);
   }
 
-  .shopping-cart .shopping-cart__cards .image-card .card .title > p {
-    display: none;
-  }
   .shopping-cart .shopping-cart__cards .image-card .image {
     width: 100%;
   }
@@ -250,6 +246,25 @@
     width: 100%;
   }
 } */
+
+
+
+@media (max-width: 7) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* hover */
 
