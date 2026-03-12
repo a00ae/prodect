@@ -71,7 +71,7 @@ const readTitle: Shopping = {
 };
 function Shoppingcart() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(window.innerWidth);
+  const [, setWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(window.innerWidth > 1440);
 
   useEffect(() => {
