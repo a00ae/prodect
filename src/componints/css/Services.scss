@@ -30,26 +30,111 @@
   margin-bottom: var(--main-padding-bottom);
 }
 
+@media (max-width: v.$width-xl) {
+  .services .container .box {
+    flex-direction: column;
+  }
+}
+
 .services .container .box .title {
   flex-direction: column;
   justify-content: center;
-}
-.services .container .title > p {
-  transform: translateX(12px);
+  align-items: start;
 }
 
+@media (max-width: v.$width-xl) {
+  .services .container .box .title {
+  }
+}
+
+.services .container .title > p {
+  transform: translateX(35px);
+}
+
+@media (max-width: v.$width-sm) {
+  .services .container .title > p {
+    transform: none; /* إلغاء الإزاحة في الموبايل لمنع الـ Overflow */
+  }
+}
 
 .services .container .title div p:nth-child(3) {
   color: var(--white-color);
 }
 
-.services .container .box > p {
+.services .container .box .description {
+  flex-flow: row;
+  flex: 1 0 0;
+  place-content: center flex-start;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: min-content;
+  padding: 0;
+  display: flex;
+  position: relative;
+  overflow: visible;
+}
+
+.services .container .box .text-desc {
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-wrap: break-word;
+  flex: 1 0 0;
+  width: auto;
+  max-width: 580px;
+  height: auto;
+  position: relative;
+  margin: auto;
+}
+@media (max-width: v.$width-xl) {
+  .services .container .box .description .text-desc {
+    margin: 0;
+  }
+}
+
+.services .container .box .text-desc p {
+  width: 100%;
   margin-bottom: 0;
+}
+
+@media (max-width: v.$width-sm) {
+  .services .container .box .text-desc {
+    max-width: 100%;
+  }
+  .services .container .box .text-desc p {
+    font-size: var(--font-size-md-alt);
+  }
+}
+
+@keyframes fadeInUpChar {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.box .text-desc > p > span {
+  white-space: nowrap;
+  margin-right: 5px;
+}
+.box .text-desc > p > span > .char-text {
+  display: inline-block;
+  opacity: 0; /* يبدأ مخفياً */
+  will-change: transform;
+}
+
+.box.is-visible .text-desc > p > span > .char-text {
+  animation: fadeInUpChar 0.6s ease-out forwards;
 }
 
 .services .container .box .btn {
   transform: translateY(30px);
-  
 }
 .services .container .box .btn a p {
   color: var(--white-color);
@@ -59,10 +144,164 @@
   transform: rotate(90deg);
 }
 .services .container .box .btn .btn-border {
- width: 160px;
- background-color: var(--white-color);
+  width: 160px;
+  background-color: var(--white-color);
 }
 
 .services .container .box .btn div:hover a svg {
   transform: rotate(135deg);
+}
+
+// accordion
+
+// تنظيف التداخل العميق واستخدام تنسيق مباشر
+.services .accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--gap-sm);
+}
+
+.services .accordion__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  position: relative;
+  cursor: pointer;
+  border: 1px dashed var(--border-dashad-color);
+  border-radius: var(--border-radius-lg);
+  transition: var(--main-transition);
+  isolation: isolate;
+}
+.services .accordion__container::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: var(--transition-xl);
+}
+
+.services .accordion__container.is-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: var(--main-bg-color);
+  border-radius: var(--border-radius-lg);
+  z-index: -1;
+}
+
+@media (max-width: v.$width-sm) {
+  .services .accordion__container {
+    padding: 20px; /* تقليل الحواف في الشاشات الصغيرة */
+  }
+}
+
+// عنوان العنصر
+.services .accordion__container .title {
+  flex: 1;
+}
+
+.services .accordion__container .title h3 {
+  font-size: 2rem; /* حجم كبير كما في Averra */
+  font-weight: var(--main-font-whight);
+  color: var(--main-title-color, #ffffff);
+  margin: 0;
+  transition: opacity 0.3s;
+}
+
+.services .accordion__container.is-active .title h3 {
+  color: var(--main-text-color); /* تغيير لون العنوان للداكن عند التفعيل */
+}
+
+@media (max-width: v.$width-sm) {
+  .services .accordion__container .title h3 {
+    font-size: 1.25rem; /* تكبير الخط قليلاً ليكون مقروءاً كعنوان */
+  }
+}
+
+// أيقونة القائمة
+.services .accordion__container .icon-drop-down svg {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--main-title-color, #ffffff);
+  transition: transform var(--transition-xl) ease-in-out;
+}
+
+// تدوير الأيقونة عند الفتح
+.services .accordion__container.is-active .icon-drop-down svg {
+  transform: rotate(-180deg);
+  color: var(--btn-color);
+}
+
+// الخط الفاصل المتقطع
+.services .accordion__container .details-wrapper .dashad {
+  width: calc(100% - 10px);
+  height: 1px;
+  /* transform: translateX(15px); */
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  margin-top: 40px;
+}
+.services .accordion__container.is-active .dashad {
+  border-bottom-color: var(--main-title-color);
+}
+
+// تأثير الانزلاق للمحتوى
+.services .accordion__container .details-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out, transform var(--transition-xll);
+  transform: translateY(40px);
+}
+
+.services .accordion__container.is-active .details-wrapper {
+  grid-template-rows: 1fr;
+  transform: translateY(0);
+}
+
+.services .accordion__container .details-inner {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.services .accordion__container.is-active .details-inner {
+  opacity: 1;
+}
+
+.services .accordion__container.is-active .details-inner p {
+  color: var(--text-color-grey-800);
+  transform: translateY(0);
+}
+
+.services .accordion__container .details-inner p {
+  padding-top: 16px;
+  margin: var(--margin-md) 0; 
+  color: #9e9e9e;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  max-width: 90%;
+  transform: translateY(40px);
+  transition: transform var(--transition-xll);
+}
+
+@media (max-width: v.$width-sm) {
+  .services .accordion__container .details-inner p {
+    font-size: 1rem; /* حجم خط قياسي للموبايل */
+  }
 }

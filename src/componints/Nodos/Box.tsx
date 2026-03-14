@@ -2,6 +2,7 @@ import { RiArrowRightUpLine } from "@remixicon/react";
 import ScTitle from "./ScTitle";
 import "../css/box.scss";
 import type { BoxType } from "../opp/opp";
+import { useEffect, useRef, useState } from "react";
 
 function Box({
   text,
@@ -10,8 +11,34 @@ function Box({
   className,
   isAnimated = false,
 }: BoxType & { className?: string; isAnimated?: boolean }) {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // تشغيل الأنميشن مرة واحدة فقط
+        }
+      },
+      { threshold: 0.2 } // يعمل عندما يظهر 20% من العنصر
+    );
+
+    if (boxRef.current) {
+      observer.observe(boxRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className={["box", className].filter(Boolean).join(" ")}>
+    <div
+      ref={boxRef}
+      className={["box", className, isVisible ? "is-visible" : ""]
+        .filter(Boolean)
+        .join(" ")}
+    >
       {title && (
         <ScTitle
           data={title.data}
@@ -30,12 +57,63 @@ function Box({
         </h2>
       )}
       {!text ? null : (
-        <p>
-          {isAnimated ? text.split("").map((ele, index) => {
-            if (ele === " ") return " ";
-            return <span key={index}>{ele}</span>;
-          }) : text}
-        </p>
+        <div className="description">
+          <div className="text-desc">
+            <p>
+              {isAnimated
+                ? text.split(" ").map((ele, index) => {
+                    if (ele === " ") return <span></span>;
+
+                    const targetWords = [
+                      "We",
+                      "combine",
+                      "creativity",
+                      "and",
+                      "strategy",
+                      "to",
+                      "deliver",
+                    ];
+
+                    if (targetWords.includes(ele)) {
+                      return (
+                        <span key={index} className="highlight-text">
+                          {ele.split("").map((char, i) => {
+                            // حساب التأخير الزمني بناءً على ترتيب الكلمة والحرف
+                            const delay = index * 0.1 + i * 0.03;
+                            return (
+                              <span
+                                key={i}
+                                className="char-text"
+                                style={{ animationDelay: `${delay}s` }}>
+                                {char}
+                              </span>
+                            );
+                          })}
+                        </span>
+                      );
+                    }
+
+                    return (
+                      <span key={index}>
+                        {ele.split("").map((char, i) => {
+                          // نفس التأخير للكلمات العادية
+                          const delay = index * 0.1 + i * 0.03;
+                          return (
+                            <span
+                              key={i}
+                              className="char-text"
+                              style={{ animationDelay: `${delay}s` }}>
+                              {char}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    );
+                  })
+                : text}
+            </p>
+          </div>
+        </div>
       )}
       <div className="btn">
         <div>

@@ -16,7 +16,8 @@
   gap: 5px;
 }
 
-.box > p {
+
+.box .text-desc > p {
   font-size: var(--main-font-size-L);
   width: 60%;
   line-height: 1.5;
@@ -25,6 +26,9 @@
   margin-bottom: var(--margin-lg);
 }
 
+.box .text-desc > p .highlight-text {
+  color: var(--white-color);
+}
 .box .title {
   display: flex;
   justify-content: space-between;

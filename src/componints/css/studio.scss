@@ -14,8 +14,9 @@
   }
 }
 .studio .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+  display: flex;
+  flex-direction: column;
+  // justify-content: s;
   gap: 50px;
 }
 
@@ -24,9 +25,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* display: flex;
-  flex-direction: row;
-  gap: 40px; */
 }
 
 .studio .container .image {
@@ -41,10 +39,15 @@
   margin: 0;
   font-weight: var(--font-weight-normal);
 }
+.studio .container .text-box div {
+  display: flex;
+  justify-content: flex-start;
+  width: 35%;
+  height: 100%;
+}
 .studio .container .text-box p {
   font-size: var(--main-font-size-L);
-  width: 445px;
-  height: 100%;
+
   line-height: 1.7;
   font-weight: var(--font-weight-bold);
   color: var(--main-text-color);
@@ -270,7 +273,13 @@
 }
 /* 991 */
 
-@media (max-width: 1440px) {
+@media (max-width: v.$width-xl) {
+  .studio {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    padding-left: var(--main-padding-left);
+    padding-right: var(--main-padding-right);
+  }
   .studio .container .text-box {
     flex-direction: column;
     align-items: start;
@@ -288,14 +297,14 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     flex: 1;
-    gap: 40px;
+    gap: var(--gap-md);
   }
   .studio .container .box .template-1 {
     display: block;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: v.$width-sm) {
   .studio {
     margin-left: var(--main-margin-left);
     margin-right: var(--main-margin-right);
