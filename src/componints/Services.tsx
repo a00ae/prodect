@@ -2,7 +2,7 @@ import Box from "./Nodos/Box";
 import { memo, useState } from "react";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Services.scss";
-import { RiArrowDownSLine, RiArrowDownWideLine } from "@remixicon/react";
+import { RiArrowDownSLine } from "@remixicon/react";
 
 function Services() {
   console.log("Services");
@@ -12,19 +12,47 @@ function Services() {
   const items = [
     {
       title: "Branding",
-      details: "We build distinctive brands that resonate with your audience and stand the test of time.",
+      details:
+        "We build distinctive brands that resonate with your audience and stand the test of time.",
+      ui: [
+        "Brand Identity Design",
+        "Logo & Visual Systems",
+        "Brand Guidelines & Collateral",
+        "Digital Asset Creation",
+      ],
     },
     {
       title: "Product Design",
-      details: "User-centric design solutions that solve real problems and delight your customers.",
+      details:
+        "User-centric design solutions that solve real problems and delight your customers.",
+      ui: [
+        "Brand Identity Design",
+        "Logo & Visual Systems",
+        "Brand Guidelines & Collateral",
+        "Digital Asset Creation",
+      ],
     },
     {
       title: "Development",
-      details: "Robust, scalable, and high-performance development to power your digital growth.",
+      details:
+        "Robust, scalable, and high-performance development to power your digital growth.",
+      ui: [
+        "Brand Identity Design",
+        "Logo & Visual Systems",
+        "Brand Guidelines & Collateral",
+        "Digital Asset Creation",
+      ],
     },
     {
       title: "Content Strategy",
-      details: "Strategic content creation that drives engagement and tells your brand's unique story.",
+      details:
+        "Strategic content creation that drives engagement and tells your brand's unique story.",
+      ui: [
+        "Brand Identity Design",
+        "Logo & Visual Systems",
+        "Brand Guidelines & Collateral",
+        "Digital Asset Creation",
+      ],
     },
   ];
 
@@ -51,12 +79,24 @@ function Services() {
                 <h3>{item.title}</h3>
               </div>
               <div className="icon-drop-down">
-                < RiArrowDownSLine  />
+                <RiArrowDownSLine />
               </div>
+                  <div className="dashad"></div>
               <div className="details-wrapper">
                 <div className="details-inner">
-              <div className="dashad"></div>
                   <p>{item.details}</p>
+                  <div className="btn-ui">
+                    {item.ui.map((prevs, i) => (
+                      <div className="grid-item-ui" key={i}>
+                        <div className="prevs-button-ui">
+
+
+                          <span>{prevs}</span>
+
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
