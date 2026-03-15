@@ -5,14 +5,7 @@
   padding-left: var(--main-padding-left);
   padding-right: var(--main-padding-right);
 }
-@media (max-width: v.$width-sm) {
-  .studio {
-    margin-left: var(--main-margin-left);
-    margin-right: var(--main-margin-right);
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+
 .studio .container {
   display: flex;
   flex-direction: column;
@@ -107,7 +100,7 @@
   letter-spacing: -1px;
 }
 .studio .container .box .template-1 p {
-  font-size: var(--main-font-size-m);
+  font-size: var(--font-size-md-alt);
   font-weight: var(--main-font-whight);
   color: var(--text-color-grey-800);
 }
@@ -123,10 +116,17 @@
   justify-content: space-between;
   align-items: center;
 }
-.studio .container .box .template-2 div p,
-.studio .container .box .template-2 div span {
-  font-size: var(--main-font-size-m);
-  /* font-weight: var(--main-font-whight); */
+.studio .container .box .template-2 div p {
+  font-size: var(--font-size-sm);
+  font-weight: var(--main-font-whight);
+  color: var(--main-text-color);
+}
+
+.studio .container .box .template-2 div .dash {
+  width: 15px;
+  height: 2px;
+  background-color: var(--main-title-color);
+  border-radius: 2px;
 }
 
 .studio .container .box .template-3 {
@@ -150,16 +150,18 @@
 }
 .studio .container .box .template-3 .rate div span {
   padding-left: 5px;
-  font-size: var(--main-font-size-m);
-  font-weight: bold;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
 }
 .studio .container .box .template-3 .rate p {
-  font-size: var(--main-font-size-L);
+  font-size: var(--font-size-md-alt);
   color: var(--text-color-grey);
+  font-weight: var(--font-weight-medium);
   width: 50%;
 }
 .studio .container .box .template-3 .rate p span {
   color: var(--main-text-color);
+  font-weight: var(--font-weight-semibold);
 }
 .studio .container .box .template-3 .dashad {
   height: 3px;
@@ -174,7 +176,7 @@
 .studio .container .box .template-3 .total div {
   display: flex;
   align-items: center;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
 }
 .studio .container .box .template-3 .total .active {
   width: 10px;
@@ -183,12 +185,12 @@
   background-color: #12b33f;
 }
 .studio .container .box .template-3 .total div > p {
-  font-size: var(--main-font-size-m);
+  font-size: var(--font-size-md-alt);
   font-weight: var(--main-font-whight);
-  color: var(--text-color-grey-800);
+  color: var(--main-text-color);
 }
 .studio .container .box .template-3 .total > span {
-  font-size: var(--main-font-size-m);
+  font-size: var(--font-size-md-alt);
   font-weight: var(--main-font-whight);
   color: var(--main-title-color);
 }
@@ -295,9 +297,9 @@
   .studio .container .box {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     flex: 1;
-    gap: var(--gap-md);
+    gap: var(--main--gap);
   }
   .studio .container .box .template-1 {
     display: block;
@@ -306,9 +308,9 @@
 
 @media (max-width: v.$width-sm) {
   .studio {
-    margin-left: var(--main-margin-left);
-    margin-right: var(--main-margin-right);
     padding-top: var(--padding-top-sm);
+    padding-left:var(--pading-right-sm);
+    padding-right: var(--pading-left-sm);
     padding-bottom: var(--padding-bottom-sm);
   }
   .studio .container {
@@ -319,9 +321,11 @@
     font-size: var(--font-size-xl);
     display: inline-block;
   }
+  .studio .container .text-box div {
+    width: 100%;
+  }
   .studio .container .text-box p {
-    width: 300px;
-    text-indent: 40px;
+    text-indent: 10px;
     text-shadow: 0 1px #ffff;
     font-size: var(--main-font-size);
   }
@@ -344,7 +348,10 @@
     transform: translate(-50%, -50%);
   }
   .studio .container .box .template-2 div p {
-    font-size: var(--main-font-size);
+    padding-left: 5px;
+    font-size: var(--font-size-sm);
+    color: var(--main-text-color);
+    font-weight: var(--font-weight-bold);
   }
   .studio .container .box .template-3 .rate p {
     font-size: var(--main-font-size);

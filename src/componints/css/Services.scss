@@ -10,10 +10,8 @@
 }
 @media (max-width: v.$width-sm) {
   .services {
-    margin-left: var(--main-margin-left);
-    margin-right: var(--main-margin-right);
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 }
 
@@ -31,7 +29,7 @@
   margin-bottom: var(--main-padding-bottom);
 }
 
-@media (max-width: v.$width-xl) {
+@media (max-width: v.$width-md) {
   .services .container .box {
     flex-direction: column;
   }
@@ -42,6 +40,7 @@
   justify-content: center;
   display: flex;
   align-items: start;
+  flex: 1;
 }
 
 .services .container .title > p {
@@ -60,7 +59,7 @@
 
 .services .container .box .description {
   flex-flow: row;
-  flex: 1 0 0;
+  flex: 2 0 0;
   place-content: center flex-start;
   align-items: center;
   gap: 8px;
@@ -90,7 +89,7 @@
 }
 
 .services .container .box .text-desc p {
-  width: 100%;
+  // width: 100%;
   margin-bottom: 0;
 }
 
@@ -168,7 +167,6 @@
   color: var(--white-color);
   font-size: var(--font-size-xl-alt);
   font-weight: var(--font-weight-semibold);
-  
 }
 .services .text-branding .image {
   width: 425px;
@@ -224,9 +222,10 @@
   cursor: pointer;
   border: 1px dashed var(--border-dashad-color);
   border-radius: var(--border-radius-lg);
-  transition: var(--main-transition), border-color var(--transition-xl);
+  transition:
+    var(--main-transition),
+    border-color var(--transition-xl);
   isolation: isolate;
-  
 }
 .services .accordion__container::before {
   content: "";
@@ -290,7 +289,9 @@
   justify-content: center;
   position: relative;
   color: var(--main-title-color, #ffffff);
-  transition: transform var(--transition-xl) ease-in-out, color var(--transition-xl);
+  transition:
+    transform var(--transition-xl) ease-in-out,
+    color var(--transition-xl);
 }
 
 .services .accordion__container.is-active {
@@ -425,8 +426,7 @@
   transform: translateY(0);
 }
 
-
-// hover 
+// hover
 .services .accordion__container:hover {
   border-color: var(--main-bg-color);
 }

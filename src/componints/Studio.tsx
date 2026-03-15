@@ -33,16 +33,20 @@ function Studio() {
             </div>
             <div className="template-2">
               <div>
-                <p>Branding</p> <span>-</span>
+                <p>Branding</p>
+                <div className="dash"></div>
               </div>
               <div>
-                <p>Digital design</p> <span>-</span>
+                <p>Digital design</p> 
+                <div className="dash"></div>
               </div>
               <div>
-                <p>Marketing strategy</p> <span>-</span>
+                <p>Marketing strategy</p> 
+                <div className="dash"></div>
               </div>
               <div>
-                <p>Creative production</p> <span>-</span>
+                <p>Creative production</p> 
+                <div className="dash"></div>
               </div>
             </div>
             <div className="template-3">
