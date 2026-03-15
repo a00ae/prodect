@@ -15,7 +15,7 @@ function Studio() {
           <h1>Averra — Studio®</h1>
           <div>
             <p>
-              We create timeless design and strategic marketing that{" "}
+              We create timeless design and strategic marketing that
               <span>make brands impossible to ignore.</span>
             </p>
           </div>

@@ -3,6 +3,7 @@ import { memo, useState } from "react";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Services.scss";
 import { RiArrowDownSLine } from "@remixicon/react";
+import "../../public/image-shopping/branding-01.avif"
 
 function Services() {
   console.log("Services");
@@ -69,6 +70,19 @@ function Services() {
           text={services.text}
           isAnimated={true}
         />
+        <div className="box-card-accordion">
+          <div className="text-branding">
+            <h2>(01)</h2>
+
+            <div className="image">
+              <p>Branding</p>
+              <img src="../../public/image-shopping/branding-01.avif" alt="" />
+            
+            </div>
+          </div>
+
+
+
         <div className="accordion">
           {items.map((item, index) => (
             <div
@@ -81,7 +95,7 @@ function Services() {
               <div className="icon-drop-down">
                 <RiArrowDownSLine />
               </div>
-                  <div className="dashad"></div>
+              <div className="dashad"></div>
               <div className="details-wrapper">
                 <div className="details-inner">
                   <p>{item.details}</p>
@@ -89,10 +103,7 @@ function Services() {
                     {item.ui.map((prevs, i) => (
                       <div className="grid-item-ui" key={i}>
                         <div className="prevs-button-ui">
-
-
                           <span>{prevs}</span>
-
                         </div>
                       </div>
                     ))}
@@ -102,6 +113,8 @@ function Services() {
             </div>
           ))}
         </div>
+        </div>
+
       </div>
     </div>
   );

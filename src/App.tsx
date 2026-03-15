@@ -1,6 +1,7 @@
 // import { useReducer } from "react";
 import "./App.scss";
 import AboutUs from "./componints/AboutUs";
+import Process from "./componints/Process";
 import Services from "./componints/Services";
 import Shoppingcart from "./componints/Shoppingcart";
 import Studio from "./componints/Studio";
@@ -28,11 +29,12 @@ function App() {
     <ProductProvider>
       <div className="app">
         <Wedght />
-          <Studio />
+        <Studio />
         <BoxProvider>
-          <AboutUs/>
+          <AboutUs />
           <Shoppingcart />
-          <Services/>
+          <Services />
+          <Process />
         </BoxProvider>
       </div>
     </ProductProvider>

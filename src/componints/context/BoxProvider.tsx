@@ -5,6 +5,7 @@ interface BoxContextType {
   aboutUs: BoxType;
   shoppingCart: BoxType;
   services: BoxType;
+  process: BoxType;
 }
 
 const boxData: BoxContextType = {
@@ -37,6 +38,16 @@ const boxData: BoxContextType = {
       projects: "Averra®"
 
     }
+  },
+  process: {
+    more: "Lats' talk",
+    text: "Every brand has a story, our process is designed to uncover it, shape it, and share it with the world",
+    title: {
+      data: "04",
+      title: "Process",
+      heading: "Every step is collaborative and tailored to your brand’s goals.",
+    },
+
   }
 };
 

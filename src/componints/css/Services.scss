@@ -16,6 +16,7 @@
     padding-right: 0;
   }
 }
+
 .services .container {
   display: flex;
   flex-direction: column;
@@ -39,6 +40,7 @@
 .services .container .box .title {
   flex-direction: column;
   justify-content: center;
+  display: flex;
   align-items: start;
 }
 
@@ -147,14 +149,65 @@
   transform: rotate(135deg);
 }
 
+.services .box-card-accordion {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 10px 0;
+  // gap: var(--main--gap);
+}
+
+.services .text-branding {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.services .text-branding h2 {
+  margin: 0;
+  color: var(--white-color);
+  font-size: var(--font-size-xl-alt);
+  font-weight: var(--font-weight-semibold);
+  
+}
+.services .text-branding .image {
+  width: 425px;
+  border-radius: var(--border-radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.services .text-branding .image p {
+  color: var(--main-title-color);
+  font-size: var(--font-size-md-alt);
+  font-weight: var(--font-weight-bold);
+}
+.services .text-branding .image img {
+  width: 100%;
+  border-radius: inherit;
+}
+
 // accordion
 
 // تنظيف التداخل العميق واستخدام تنسيق مباشر
 .services .accordion {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 70%;
   gap: var(--gap-sm);
+}
+
+@media (max-width: v.$width-xl) {
+  .services .box-card-accordion {
+    flex-direction: column;
+  }
+  .services .accordion {
+    width: 100%;
+  }
+  .services .text-branding {
+    display: none;
+  }
 }
 
 .services .accordion__container {
@@ -171,8 +224,9 @@
   cursor: pointer;
   border: 1px dashed var(--border-dashad-color);
   border-radius: var(--border-radius-lg);
-  transition: var(--main-transition);
+  transition: var(--main-transition), border-color var(--transition-xl);
   isolation: isolate;
+  
 }
 .services .accordion__container::before {
   content: "";
@@ -180,8 +234,9 @@
   height: 50%;
   top: 0;
   left: 0;
+  position: absolute;
   opacity: 0;
-  transition: background-color var(--transition-xl) ;
+  transition: background-color var(--transition-xl);
 }
 
 .services .accordion__container.is-active::before {
@@ -208,11 +263,12 @@
 }
 
 .services .accordion__container .title h3 {
-  font-size: 2rem; /* حجم كبير كما في Averra */
+  font-size: 3.5rem;
   font-weight: var(--main-font-whight);
   color: var(--main-title-color, #ffffff);
   margin: 0;
   transition: opacity 0.3s;
+  transition: color var(--transition-xl);
 }
 
 .services .accordion__container.is-active .title h3 {
@@ -234,7 +290,15 @@
   justify-content: center;
   position: relative;
   color: var(--main-title-color, #ffffff);
-  transition: transform var(--transition-xl) ease-in-out;
+  transition: transform var(--transition-xl) ease-in-out, color var(--transition-xl);
+}
+
+.services .accordion__container.is-active {
+  transition: border-color var(--transition-xl);
+}
+
+.services .accordion__container.is-active:hover {
+  border-color: transparent;
 }
 
 // تدوير الأيقونة عند الفتح
@@ -307,12 +371,11 @@
 
 @media (max-width: v.$width-sm) {
   .services .accordion__container .details-inner p {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 }
 
 .services .accordion__container .details-inner .btn-ui {
-
   flex-flow: wrap;
   flex: 1 0 0;
   place-content: center flex-start;
@@ -340,7 +403,6 @@
   display: flex;
   position: relative;
   overflow: visible;
-  
 }
 .services .accordion__container .details-inner .btn-ui .prevs-button-ui {
   white-space: pre;
@@ -359,6 +421,18 @@
   border-radius: 20px;
 }
 
-.services .accordion__container.is-active .details-inner .btn-ui  {
+.services .accordion__container.is-active .details-inner .btn-ui {
   transform: translateY(0);
+}
+
+
+// hover 
+.services .accordion__container:hover {
+  border-color: var(--main-bg-color);
+}
+.services .accordion__container:hover svg {
+  color: var(--main-bg-color);
+}
+.services .accordion__container:hover h3 {
+  color: var(--main-bg-color);
 }
