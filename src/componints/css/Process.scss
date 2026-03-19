@@ -6,33 +6,79 @@
   padding-bottom: var(--main-padding-bottom);
   padding-left: var(--main-padding-left);
   padding-right: var(--main-padding-right);
+  position: relative;
 }
 
 .process .container {
   display: flex;
   // flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: var(--main--gap);
 }
 .process .container .box {
+  width: 40%;
   margin-bottom: var(--main-padding-bottom);
-  width: 50%;
+  position: sticky;
+  top: 100px;
 }
 
 .process .card {
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
-  flex: 1;
-
-  // height: 400px;
+  gap: var(--gap-sm);
 }
 .process .card-item {
-  --padding-box: 10px;
+  --padding-box: 14px 10px;
+  --margin-box: 140px;
+  gap: var(--gap-sm);
+  border-radius: 20px;
+  width: 100%;
+  // min-height: 400px; /* ارتفاع أدنى للبطاقة */
   display: flex;
-  gap: var(--gap-md);
+  position: relative;
+  // flex-direction: column;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: transform, opacity;
 }
+
+.process .card-item.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.process .card-item .dash {
+  width: 14px;
+  height: 3px;
+  background-color: rgb(242, 175, 175);
+  border-radius: 50px; /* جعل القيمة كبيرة لضمان استدارة الحواف بالكامل مهما كان الحجم */
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.4s ease 0s;
+}
+
+.process .card-item.visible .dash {
+  transform: scaleX(1);
+}
+
+// .process .card-item.active {
+//   opacity: 1;
+//   transform: translateY(0);
+//   pointer-events: auto;
+// }
+
+// .process .card-item.inactive {
+//   opacity: 0;
+//   transform: translateY(30px);
+// }
+
 .process .card-item .nubber-box {
   display: flex;
   flex-direction: column;
@@ -41,6 +87,7 @@
   border-radius: 45px;
   border: 3px solid var(--white-color);
   justify-content: space-between;
+  align-items: center;
 }
 .process .card-item .nubber-box p {
   color: var(--main-title-color);
@@ -50,54 +97,24 @@
 
 .process .card-item .atter {
   display: flex;
-  gap: var(--gap-xs);
+  gap: var(--gap-xxs);
   align-items: center;
   flex-direction: column;
 }
 
 .process .card-item .dash {
-  width: 20px;
+  width: 14px;
   height: 3px;
   background-color: rgb(242, 175, 175);
+  border-radius: 50px; /* جعل القيمة كبيرة لضمان استدارة الحواف بالكامل مهما كان الحجم */
 }
 
-.process .card-item .dash.renk11 {
-  background-color: red;
-}
-
-
-.process .card-item .dash.renk21 {
-  background-color: red;
-}
-.process .card-item .dash.renk22 {
-  background-color: red;
-}
-
-
-.process .card-item .dash.renk31 {
-  background-color: red;
-}
-.process .card-item .dash.renk32 {
-  background-color: red;
-}
-.process .card-item .dash.renk33 {
-  background-color: red;
-}
-
-
-
-
-.process .card-item .dash.renk41 {
-  background-color: red;
-}
-.process .card-item .dash.renk42 {
-  background-color: red;
-}
-.process .card-item .dash.renk43 {
-  background-color: red;
-}
-.process .card-item .dash.renk44 {
-  background-color: red;
+@for $i from 1 through 4 {
+  @for $j from 1 through $i {
+    .process .card-item .dash.renk#{$i}#{$j} {
+      background-color: var(--btn-color);
+    }
+  }
 }
 
 .process .card-item .text-box {
@@ -106,7 +123,7 @@
   align-items: flex-start;
   flex: 1 0 0;
   overflow: hidden;
-  height: 200px;
+  // height: 200px;
   background-color: var(--white-color);
   padding: 20px;
   border-radius: var(--border-radius-lg);
@@ -126,7 +143,7 @@
   padding: 0;
   display: flex;
   position: relative;
-  overflow: hidden;
+  margin-bottom: var(--margin-box);
 }
 .process .card-item .text-box .heading p {
   margin: 0;
@@ -143,18 +160,25 @@
   gap: var(--gap-md);
   width: 100%;
 }
+
 .process .card-item .text-box .descrption .text p {
   margin: 0;
   color: var(--main-title-color);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
-  max-width: 600px;
+  max-width: 400px;
 }
 
 .process .card-item .text-box .descrption .item p {
   font-size: var(--font-size-xxl-card);
   font-weight: var(--font-weight-bold);
-  color: var(--grey-color-300);
+  color: var(--grey-color-100);
+}
+
+@for $i from 1 through 10 {
+  .process .card-item:nth-child(#{$i}) {
+    transition-delay: #{$i * 0.1}s;
+  }
 }
 
 @media (max-width: v.$width-xl) {
@@ -164,6 +188,7 @@
   }
   .process .container .box {
     width: 100%;
+    position: static;
   }
   .process .container .card {
     width: 100%;
