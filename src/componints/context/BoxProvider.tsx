@@ -6,6 +6,7 @@ interface BoxContextType {
   shoppingCart: BoxType;
   services: BoxType;
   process: BoxType;
+  whyUs: BoxType;
 }
 
 const boxData: BoxContextType = {
@@ -26,7 +27,7 @@ const boxData: BoxContextType = {
       data: "02",
       title: "Featured work",
       projects: "50+ projects",
-      heading: "Shaping timeless visual identities."
+      heading: "Shaping timeless visual identities.",
     },
   },
   services: {
@@ -35,9 +36,17 @@ const boxData: BoxContextType = {
     title: {
       data: "03",
       title: "Services",
-      projects: "Averra®"
-
-    }
+      projects: "Averra®",
+    },
+    highlightWords: [
+      "We",
+      "combine",
+      "creativity",
+      "and",
+      "strategy",
+      "to",
+      "deliver",
+    ],
   },
   process: {
     more: "Lats' talk",
@@ -45,18 +54,35 @@ const boxData: BoxContextType = {
     title: {
       data: "04",
       title: "Process",
-      heading: "Every step is collaborative and tailored to your brand’s goals.",
+      heading:
+        "Every step is collaborative and tailored to your brand’s goals.",
     },
-
-  }
+  },
+  whyUs: {
+    text: "At Averra, we approach every project project a blend of bold creativity, sharp strategy, and uncompromising attention to detail",
+    title: {
+      data: "05",
+      title: "Why us",
+      projects: "Averra®",
+    },
+    highlightWords: [
+      "At",
+      "Averra,",
+      "we",
+      "approach",
+      "every",
+      "project",
+      "a",
+      "blend",
+      "of",
+    ],
+  },
 };
 
 const BoxContext = createContext<BoxContextType | null>(null);
 
 export const BoxProvider = ({ children }: { children: ReactNode }) => {
-  return (
-    <BoxContext.Provider value={boxData}>{children}</BoxContext.Provider>
-  );
+  return <BoxContext.Provider value={boxData}>{children}</BoxContext.Provider>;
 };
 
 export const useBoxData = () => {

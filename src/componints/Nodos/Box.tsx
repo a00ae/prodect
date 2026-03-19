@@ -10,7 +10,12 @@ function Box({
   title,
   className,
   isAnimated = false,
-}: BoxType & { className?: string; isAnimated?: boolean }) {
+  highlightWords = [],
+}: BoxType & {
+  className?: string;
+  isAnimated?: boolean;
+  highlightWords?: string[];
+}) {
   const boxRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -22,7 +27,7 @@ function Box({
           observer.disconnect(); // تشغيل الأنميشن مرة واحدة فقط
         }
       },
-      { threshold: 0.2 } // يعمل عندما يظهر 20% من العنصر
+      { threshold: 0.2 }, // يعمل عندما يظهر 20% من العنصر
     );
 
     if (boxRef.current) {
@@ -37,8 +42,7 @@ function Box({
       ref={boxRef}
       className={["box", className, isVisible ? "is-visible" : ""]
         .filter(Boolean)
-        .join(" ")}
-    >
+        .join(" ")}>
       {title && (
         <ScTitle
           data={title.data}
@@ -64,17 +68,7 @@ function Box({
                 ? text.split(" ").map((ele, index) => {
                     if (ele === " ") return <span></span>;
 
-                    const targetWords = [
-                      "We",
-                      "combine",
-                      "creativity",
-                      "and",
-                      "strategy",
-                      "to",
-                      "deliver",
-                    ];
-
-                    if (targetWords.includes(ele)) {
+                    if (highlightWords.includes(ele)) {
                       return (
                         <span key={index} className="highlight-text">
                           {ele.split("").map((char, i) => {
@@ -115,14 +109,16 @@ function Box({
           </div>
         </div>
       )}
-      <div className="btn">
-        <div>
-          <a href="#">
-            <p>{more}</p> <RiArrowRightUpLine />
-          </a>
-          <div className="btn-border"></div>
+      {!more ? null : (
+        <div className="btn">
+          <div>
+            <a href="#">
+              <p>{more}</p> <RiArrowRightUpLine />
+            </a>
+            <div className="btn-border"></div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

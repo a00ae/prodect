@@ -23,6 +23,7 @@ export type Shopping = {
 
 export interface BoxType {
   text?: string;
-  more: string;
+  more?: string;
   title: Shopping;
+  highlightWords?: string[];
 }
