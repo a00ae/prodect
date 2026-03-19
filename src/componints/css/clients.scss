@@ -1,0 +1,72 @@
+.clients {
+  width: 100%;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
+  position: relative;
+}
+
+.clients .container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap--main);
+}
+.clients .box {
+    width: 20%;
+}
+
+
+
+.clients .box-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 70%;
+}
+
+.clients .box-card .card-item {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    min-width: 250px;
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    border: 1px dashed transparent;
+}
+.clients .box-card .card-item.active {
+    border-color: var(--grey-color-600);
+}
+
+.clients .box-card .imges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+}
+
+.clients .box-card .text {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    flex-direction: column;
+    width: inherit;
+    height: inherit;
+
+}
+
+.clients .box-card .text .text-price {
+
+}
+.clients .box-card .text .text-price .title-cards{
+    display: flex;
+    justify-content: start;
+    font-size: var(--font-size-xl-alt);
+    font-weight: var(--font-weight-semibold);
+    color: var(--main-text-color);
+
+
+}

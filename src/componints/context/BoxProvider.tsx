@@ -7,6 +7,7 @@ interface BoxContextType {
   services: BoxType;
   process: BoxType;
   whyUs: BoxType;
+  clients: BoxType;
 }
 
 const boxData: BoxContextType = {
@@ -77,6 +78,13 @@ const boxData: BoxContextType = {
       "of",
     ],
   },
+  clients: {
+    title: {
+      data: "06",
+      title: "Clients",
+      projects: "© 2017 - 25"
+    }
+  }
 };
 
 const BoxContext = createContext<BoxContextType | null>(null);

@@ -1,10 +1,18 @@
-import {
-  type ReactNode,
-  createContext,
-  useContext,
-  useMemo,
-} from "react";
+import { type ReactNode, createContext, useContext, useMemo } from "react";
 import type { Product } from "../opp/opp";
+
+// توليد مسارات الصور تلقائياً بناءً على العدد (4 صور) والنمط المتسلسل للاسم
+const clientImages = Array.from(
+  { length: 6 },
+  (_, i) => `/clients/clents-0${i + 1}.svg`,
+);
+
+export interface BoxCard {
+  imges?: string;
+  price?: string;
+  title?: string;
+  desc?: string;
+}
 
 const cardItem: Product[] = [
   {
@@ -55,18 +63,54 @@ const cardItem: Product[] = [
   },
 ];
 
+const box: BoxCard[] = [
+  {
+    imges: clientImages[0],
+  },
+  {
+    imges: clientImages[1],
+  },
+  {
+    price: "200",
+    title: "Average Growth",
+    desc: "In client engagement and reach",
+  },
+  {
+    imges: clientImages[2],
+  },
+  {
+    price: "150",
+    title: "Average Growth",
+    desc: "In client engagement and reach",
+  },
+  {
+    imges: clientImages[3],
+  },
+  {
+    price: "95",
+    title: "Client Retention Rate",
+    desc: "Built on trust and results",
+  },
+  {
+    imges: clientImages[4],
+  },
+  {
+    imges: clientImages[5],
+  },
+];
+
+
 type ProductContextType = {
   products: Product[];
+  box: BoxCard[];
 };
 
 const ProductContext = createContext<ProductContextType | null>(null);
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
-  const value = useMemo(() => ({ products: cardItem }), []);
+  const value = useMemo(() => ({ products: cardItem, box }), []);
   return (
-    <ProductContext.Provider value={value}>
-      {children}
-    </ProductContext.Provider>
+    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
 };
 
