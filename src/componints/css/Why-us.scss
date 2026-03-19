@@ -5,12 +5,17 @@
   padding-left: var(--main-padding-left);
   padding-right: var(--main-padding-right);
   position: relative;
+  background-color: white;
 }
 
 .why-us .container {
     display: flex;
     flex-direction: column;
     gap: var(--gap-md);
+}
+
+.why-us .box {
+    width: 100%;
 }
 
 .why-us  .box .title {
@@ -20,5 +25,17 @@
 
 .why-us .box .text-desc > p {
     width: 100%;
-    font-size: 50px;
+    font-size: var(--font-size-xxl-card);
+    letter-spacing: -1px;
+}
+
+.why-us .box .text-desc > p .highlight-text  {
+    color: var(--main-text-color);
+}
+.why-us .box .text-desc > p > span {
+   margin-right: 10px;
+}
+
+.why-us .tamblate-card {
+    width: 100%;
 }

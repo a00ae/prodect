@@ -2,6 +2,7 @@ import { memo } from "react";
 import Box from "./Nodos/Box";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Why-us.scss";
+import Cards from "./Nodos/Cards";
 
 function WhyUs() {
   const { whyUs } = useBoxData();
@@ -14,7 +15,9 @@ function WhyUs() {
           isAnimated={true}
           highlightWords={whyUs.highlightWords}
         />
+        <Cards/>
       </div>
+      
     </div>
   );
 }

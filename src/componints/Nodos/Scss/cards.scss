@@ -1,0 +1,86 @@
+ @use "../../../styles/variables" as v;
+ 
+ .tamblate-card {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  /* height: 800px; */
+  position: relative;
+  overflow: hidden;
+}
+
+.tamblate-card .sticky-wrapper {
+  display: flex;
+  gap: var(--gap-md);
+  width: -moz-max-content;
+  width: max-content;
+  will-change: transform;
+}
+
+.tamblate-card .grid-card {
+  width: 400px;
+  height: 250px;
+  border-radius: var(--border-radius-md);
+  background-color: var(--grey-color-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 3px solid var(--white-color);
+}
+
+ .tamblate-card .grid-card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color-dark);
+}
+ .tamblate-card .grid-card .content > span {
+  color: var(--text-color-grey);
+  font-size: var(--main-font-size-L);
+  font-weight: var(--main-font-whight);
+}
+
+.number {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color-dark);
+}
+
+.number span {
+  color: var(--btn-color);
+  margin-left: var(--gap-xs);
+}
+
+.label {
+  color: var(--main-title-color);
+  font-size: var(--font-size-md-alt);
+  font-weight: var(--font-weight-medium);
+}
+
+.tamblate-card .card-1 {
+  background-color: var(--grey-color-300);
+}
+.tamblate-card .card-3 {
+  background-color: var(--grey-color-600);
+}
+.tamblate-card .card-5 {
+  background-color: var(--grey-color-500);
+}
+.tamblate-card .card-7 {
+  background-color: var(--grey-color-700);
+}
+
+@media (max-width: v.$width-xl) {
+
+
+  .tamblate-card {
+    width: 100%;
+  }
+}
+
