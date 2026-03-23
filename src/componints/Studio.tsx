@@ -6,6 +6,7 @@ import {
   RiStarFill,
 } from "@remixicon/react";
 import { memo } from "react";
+import Rate from "./Nodos/Rate";
 function Studio() {
   console.log("Studio");
   return (
@@ -37,32 +38,29 @@ function Studio() {
                 <div className="dash"></div>
               </div>
               <div>
-                <p>Digital design</p> 
+                <p>Digital design</p>
                 <div className="dash"></div>
               </div>
               <div>
-                <p>Marketing strategy</p> 
+                <p>Marketing strategy</p>
                 <div className="dash"></div>
               </div>
               <div>
-                <p>Creative production</p> 
+                <p>Creative production</p>
                 <div className="dash"></div>
               </div>
             </div>
             <div className="template-3">
               <div>
-                <div className="rate">
-                  <div>
-                    {Array.from(new Array(5)).map((_, index) => (
-                      <RiStarFill key={index} color="#fc4040" />
-                    ))}
-                    <span>4.9/5</span>
-                  </div>
-                  <p>
-                    We’ve helped <span>95+ brands</span> elevate their
-                    businesses
-                  </p>
-                </div>
+                <Rate
+                  rate={
+                    <>
+                      We’ve helped <span>95+ brands</span> elevate their
+                      businesses
+                    </>
+                  }
+                />
+
                 <div className="dashad"></div>
               </div>
               <div className="total">

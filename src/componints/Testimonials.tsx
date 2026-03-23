@@ -1,4 +1,5 @@
 import Box from "./Nodos/Box";
+import Rate from "./Nodos/Rate";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Testimonials.scss";
 
@@ -6,6 +7,8 @@ const cardImges = Array.from(
   { length: 4 },
   (_, i) => `/Testimonials/testimonials-0${i + 1}.avif`,
 );
+
+
 
 
 function Testimonials() {
@@ -37,9 +40,7 @@ function Testimonials() {
               </div>
               </div>
 
-              <div className="testimoniles_text-rate">
-                
-              </div>
+              <Rate rate="Trusted by our partners"/>
             </div>
             </div>
           </div>

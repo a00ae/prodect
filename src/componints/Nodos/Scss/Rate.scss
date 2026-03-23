@@ -1,0 +1,36 @@
+@use "../../../styles/variables" as v;
+
+.rate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+.rate div {
+  display: flex;
+  align-items: center;
+}
+.rate svg {
+  width: 18px;
+  height: 18px;
+}
+.rate div span {
+  padding-left: 5px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+.rate p {
+  font-size: var(--font-size-md-alt);
+  color: var(--text-color-grey);
+  font-weight: var(--font-weight-medium);
+  width: 50%;
+}
+.rate p span {
+  color: var(--main-text-color);
+  font-weight: var(--font-weight-semibold);
+}
+
+@media (max-width: v.$width-sm) {
+  .rate p {
+    font-size: var(--main-font-size);
+  }
+}

@@ -135,34 +135,7 @@
   gap: var(--gap-sm);
 }
 
-.studio .container .box .template-3 .rate {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-sm);
-}
-.studio .container .box .template-3 .rate div {
-  display: flex;
-  align-items: center;
-}
-.studio .container .box .template-3 .rate svg {
-  width: 18px;
-  height: 18px;
-}
-.studio .container .box .template-3 .rate div span {
-  padding-left: 5px;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
-}
-.studio .container .box .template-3 .rate p {
-  font-size: var(--font-size-md-alt);
-  color: var(--text-color-grey);
-  font-weight: var(--font-weight-medium);
-  width: 50%;
-}
-.studio .container .box .template-3 .rate p span {
-  color: var(--main-text-color);
-  font-weight: var(--font-weight-semibold);
-}
+
 .studio .container .box .template-3 .dashad {
   height: 3px;
   border-top: 1px dashed var(--text-color-grey);
@@ -353,9 +326,7 @@
     color: var(--main-text-color);
     font-weight: var(--font-weight-bold);
   }
-  .studio .container .box .template-3 .rate p {
-    font-size: var(--main-font-size);
-  }
+  
   .studio .container .box .template-3 .total div > p {
     font-size: var(--main-font-size);
   }
