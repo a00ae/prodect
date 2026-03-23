@@ -10,7 +10,7 @@
 .testimonials .container {
   display: flex;
   flex-direction: column;
-  gap: var(--main--gap);
+  gap: var(--gap-xl);
 }
 
 .testimonials .box {
@@ -25,4 +25,82 @@
 
 .testimonials .box .btn div {
   min-width: 200px;
+}
+
+.testimonials .testimonials_card {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.testimonials .testimonials_card_item_1 {
+  flex-direction: column;
+  display: inherit;
+  gap: 300px;
+  width: 400px;
+  padding: 25px;
+  border: 1px dashed #666;
+  border-radius: 16px;
+}
+.testimonials .testimonials_card_item_1 > p {
+  font-size: var(--font-size-sm);
+  color: var(--main-title-color);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.1;
+}
+
+.testimonials .testimonials_card_item_1 .testimonials_descrption {
+}
+.testimonials .testimonials_card_item_1 .image_container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+.testimonials .testimonials_card_item_1 .image_container  > div {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+
+.testimonials .testimonials_card_item_1 .testimoniles_image {
+  position: relative;
+  bottom: 5px;
+  border: 1px solid var(--white-color);
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.testimonials .testimonials_card_item_1 .testimoniles_image img {
+  width: 100%;
+  height: 100%;
+}
+
+.testimonials .testimonials_card_item_1 .testimoniles_image:nth-child(2) {
+  position: relative;
+  right: 20px;
+}
+.testimonials .testimonials_card_item_1 .testimoniles_image:nth-child(3) {
+  position: relative;
+  right: 40px;
+}
+.testimonials .testimonials_card_item_1 .testimoniles_image:nth-child(4) {
+  position: relative;
+  right: 60px;
+}
+.testimonials .testimonials_card_item_1 .testimoniles_image:nth-child(5) {
+  position: relative;
+  right: 80px;
+  background-color: var(--main-bg-color);
+  border-width: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonials .testimonials_card_item_1 .testimoniles_image:nth-child(5) > p {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--main-text-color);
 }
