@@ -1,0 +1,148 @@
+@use "../../../styles/variables" as v;
+
+.card {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.card-item {
+  --padding-box: 14px 10px;
+  --margin-box: 140px;
+  gap: var(--gap-sm);
+  border-radius: 20px;
+  width: 100%;
+  // min-height: 400px; /* ارتفاع أدنى للبطاقة */
+  display: flex;
+  position: relative;
+  // flex-direction: column;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: transform, opacity;
+}
+
+.card-item.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.card-item .dash {
+  width: 14px;
+  height: 3px;
+  background-color: rgb(242, 175, 175);
+  border-radius: 50px; /* جعل القيمة كبيرة لضمان استدارة الحواف بالكامل مهما كان الحجم */
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.4s ease 0s;
+}
+
+.card-item.visible .dash {
+  transform: scaleX(1);
+}
+
+.card-item .nubber-box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+  padding: var(--padding-box);
+  border-radius: 45px;
+  border: 3px solid var(--white-color);
+  justify-content: space-between;
+  align-items: center;
+}
+.card-item .nubber-box p {
+  color: var(--main-title-color);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.card-item .atter {
+  display: flex;
+  gap: var(--gap-xxs);
+  align-items: center;
+  flex-direction: column;
+}
+
+@for $i from 1 through 4 {
+  @for $j from 1 through $i {
+    .card-item .dash.renk#{$i}#{$j} {
+      background-color: var(--btn-color);
+    }
+  }
+}
+
+.card-item .text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  overflow: hidden;
+  // height: 200px;
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: var(--border-radius-lg);
+}
+.card-item .text-box::after {
+  content: "";
+}
+.card-item .text-box .heading {
+  z-index: 1;
+  flex-flow: row;
+  flex: none;
+  place-content: center flex-start;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  display: flex;
+  position: relative;
+  margin-bottom: var(--margin-box);
+}
+.card-item .text-box .heading p {
+  margin: 0;
+  color: var(--main-text-color);
+  font-size: var(--font-size-xxl-alt);
+  font-weight: var(--main-font-whight);
+}
+
+.card-item .text-box .descrption {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-md);
+  width: 100%;
+}
+
+.card-item .text-box .descrption .text p {
+  margin: 0;
+  color: var(--main-title-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  max-width: 400px;
+}
+
+.card-item .text-box .descrption .item p {
+  font-size: var(--font-size-xxl-card);
+  font-weight: var(--font-weight-bold);
+  color: var(--grey-color-100);
+}
+
+@for $i from 1 through 10 {
+  .card-item:nth-child(#{$i}) {
+    transition-delay: #{$i * 0.1}s;
+  }
+}
+
+@media (max-width: v.$width-xl) {
+  .card {
+    width: 100%;
+  }
+}

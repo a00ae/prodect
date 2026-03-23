@@ -1,17 +1,21 @@
-import { memo } from "react";
+import { memo, useRef } from "react";
 import { useBoxData } from "./context/BoxProvider";
 import Box from "./Nodos/Box";
 import "./css/clients.scss";
 import { useProducts } from "./context/ProductProvider";
+import { useScrollVisibility } from "./Hooks/useViewHooks";
 function Clients() {
   const { clients } = useBoxData();
   const { box } = useProducts();
+  const refCurrant = useRef<HTMLDivElement>(null);
+  useScrollVisibility(refCurrant, ".box-card");
+
   return (
     <div className="clients" id="clients">
-      <div className="container">
+      <div className="container" ref={refCurrant}>
         <Box title={clients.title} />
 
-        <div className="box-card">
+          <div className="box-card">
           {box.map(({ imges, title, price, desc }, index) => (
             <div key={index} className={`card-item ${!imges ? "active" : ""}`}>
               {!imges ? (
@@ -22,7 +26,7 @@ function Clients() {
                       <p>{index == 4 ? "+" : "%"}</p>
                     </div>
 
-                    {/* <p>{title}</p> */}
+                    <p>{title}</p>
                   </div>
                   <p>{desc}</p>
                 </div>

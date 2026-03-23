@@ -1,51 +1,22 @@
-import { useEffect, useRef, useState, memo } from "react";
+import { useRef, memo } from "react";
 import "./css/Shoppingcart.scss";
 import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
 import { useBoxData } from "./context/BoxProvider";
+import {
+  useResponsiveToggle,
+  useScrollVisibility,
+} from "./Hooks/useViewHooks";
 
 function Shoppingcart() {
-  console.log("Shoppingcart")
+  console.log("Shoppingcart");
   const { products } = useProducts();
   const { shoppingCart } = useBoxData();
   const containerRef = useRef<HTMLDivElement>(null);
-  const [, setWidth] = useState(window.innerWidth);
-  const [isOpen, setIsOpen] = useState(window.innerWidth > 1440);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const currentWidth = window.innerWidth;
-      setWidth(currentWidth);
-
-      // إغلاق القائمة تلقائياً في الشاشات الصغيرة
-      if (currentWidth <= 1440) {
-        setIsOpen(false);
-      } else {
-        setIsOpen(true);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
-        });
-      },
-      { threshold: 0.1 }, // يبدأ التأثير عند ظهور 10% من العنصر
-    );
-
-    const cards = containerRef.current?.querySelectorAll(".image-card");
-    cards?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  // استخدام الهوكات المخصصة
+  const isOpen = useResponsiveToggle(1440);
+  useScrollVisibility(containerRef, ".image-card");
 
   return (
     <div className="shopping-cart">
@@ -98,7 +69,7 @@ function Shoppingcart() {
   );
 }
 
-export default memo(Shoppingcart) ;
+export default memo(Shoppingcart);
 
 // import { RiShoppingBagFill } from "@remixicon/react";
 // import { useShoppingcart } from "./context/useShoppingcart";

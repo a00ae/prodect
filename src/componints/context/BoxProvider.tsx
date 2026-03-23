@@ -8,6 +8,7 @@ interface BoxContextType {
   process: BoxType;
   whyUs: BoxType;
   clients: BoxType;
+  testimonials: BoxType;
 }
 
 const boxData: BoxContextType = {
@@ -83,6 +84,15 @@ const boxData: BoxContextType = {
       data: "06",
       title: "Clients",
       projects: "© 2017 - 25"
+    }
+  },
+  testimonials: {
+    more: "Leave a review",
+    title: {
+      data: "07",
+      title: "Testimonials",
+      heading: "Client Experiences",
+      projects: "© 2025"
     }
   }
 };

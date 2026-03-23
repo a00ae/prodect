@@ -6,6 +6,7 @@ import Process from "./componints/Process";
 import Services from "./componints/Services";
 import Shoppingcart from "./componints/Shoppingcart";
 import Studio from "./componints/Studio";
+import Testimonials from "./componints/Testimonials";
 import Wedght from "./componints/Wedght";
 import WhyUs from "./componints/WhyUs";
 import { BoxProvider } from "./componints/context/BoxProvider";
@@ -39,6 +40,7 @@ function App() {
           <Process />
           <WhyUs/>
           <Clients/>
+          <Testimonials/>
         </BoxProvider>
       </div>
     </ProductProvider>
