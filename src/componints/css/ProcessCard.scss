@@ -1,0 +1,136 @@
+@use "../../styles/variables" as v;
+
+.card-item {
+  --padding-box: 14px 10px;
+  --margin-box: 140px;
+  gap: var(--gap-sm);
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+  // حالة البداية للأنميشن
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: transform, opacity;
+
+  // حالة الظهور
+  &.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .nubber-box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg-color);
+    padding: var(--padding-box);
+    border-radius: 45px;
+    border: 3px solid var(--white-color);
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      color: var(--main-title-color);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-sm);
+    }
+
+    .atter {
+      display: flex;
+      gap: var(--gap-xxs);
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  .dash {
+    width: 14px;
+    height: 3px;
+    background-color: rgb(242, 175, 175);
+    border-radius: 50px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.4s ease 0s;
+  }
+
+  &.visible .dash {
+    transform: scaleX(1);
+  }
+
+  // حلقات لتلوين الشرطات (Dashes)
+  @for $i from 1 through 4 {
+    @for $j from 1 through $i {
+      .dash.renk#{$i}#{$j} {
+        background-color: var(--btn-color);
+      }
+    }
+  }
+
+  .text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    overflow: hidden;
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: var(--border-radius-lg);
+
+    .heading {
+      z-index: 1;
+      flex-flow: row;
+      flex: none;
+      place-content: center flex-start;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      height: min-content;
+      padding: 0;
+      display: flex;
+      position: relative;
+      margin-bottom: var(--margin-box);
+
+      p {
+        margin: 0;
+        color: var(--main-text-color);
+        font-size: var(--font-size-xxl-alt);
+        font-weight: var(--main-font-whight);
+      }
+    }
+
+    .descrption {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--gap-md);
+      width: 100%;
+
+      .text p {
+        margin: 0;
+        color: var(--main-title-color);
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-bold);
+        max-width: 400px;
+      }
+
+      .item p {
+        font-size: var(--font-size-xxl-card);
+        font-weight: var(--font-weight-bold);
+        color: var(--grey-color-100);
+      }
+    }
+  }
+
+  // تأخير زمني لكل بطاقة
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{$i * 0.1}s;
+    }
+  }
+}

@@ -1,4 +1,7 @@
+import { useStaticData } from "./Hooks/useStaticData";
 import Box from "./Nodos/Box";
+import ProcessCard from "./Nodos/ProcessCard";
+import ProcessList from "./Nodos/ProcessList";
 import Rate from "./Nodos/Rate";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Testimonials.scss";
@@ -13,6 +16,7 @@ const cardImges = Array.from(
 
 function Testimonials() {
   const { testimonials } = useBoxData();
+  const {testimonialsData} = useStaticData();
   return (
     <div className="testimonials" id="testimonials">
       <div className="container">
@@ -44,7 +48,18 @@ function Testimonials() {
             </div>
             </div>
           </div>
+          {testimonialsData.map((data) => (
+            <ProcessCard 
+              key={data.id} 
+              // id={data.id} 
+              title={data.title} 
+              desc={data.desc["text-desc"]} 
+              total={testimonialsData.length} 
+            />
+          ))}
         </div>
+
+        
       </div>
     </div>
   );
