@@ -16,7 +16,7 @@ function Testimonials() {
   const { testimonials } = useBoxData();
   const { testimonialsData } = useStaticData();
   const ref = useRef<HTMLDivElement>(null);
-  useScrollAnimation(ref);
+  useScrollAnimation(ref, { selector: ".process-card" });
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

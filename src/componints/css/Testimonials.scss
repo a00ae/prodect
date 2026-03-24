@@ -126,7 +126,7 @@
           }
         }
       }
-      .card-item {
+      .process-card {
         width: 70%;
 
         @media (max-width: v.$width-xl) {
@@ -135,8 +135,8 @@
         .text-box {
           /* إزالة المسافة الثابتة للسماح بالمحاذاة الصحيحة للأسفل */
           @media (max-width: v.$width-xl) {
-            gap: 200px;
-            height: 510px;
+            gap: 100px;
+            height: 550px;
             
           }
           .heading {
@@ -148,8 +148,8 @@
             align-items: center;
             .img {
               border: 1px solid var(--white-color);
-              width: 52px;
-              height: 52px;
+              width: 65px;
+              height: 65px;
               overflow: hidden;
               border-radius: 15px;
               img {
@@ -166,6 +166,11 @@
               & p:first-child {
                 font-size: var(--main-font-size-L);
                 color: var(--main-text-color);
+              }
+              & p:last-child {
+                font-size: var(--font-size-sm);
+                color: var(--main-title-color);
+                font-weight: var(--font-weight-medium);
               }
             }
           }
