@@ -28,6 +28,7 @@
 
     .testimonials_card {
       display: flex;
+      align-items: center;
       gap: var(--gap-sm);
 
       .testimonials_card_item_1 {
@@ -108,6 +109,13 @@
             }
           }
         }
+      }
+      .card-item {
+        width: 70%;
+      }
+
+      .card-item .text-box {
+        gap: 200px;
       }
     }
   }

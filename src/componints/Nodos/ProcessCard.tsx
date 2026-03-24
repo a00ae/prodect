@@ -7,9 +7,10 @@ interface ProcessCardProps {
   title: string;
   desc: string;
   total: number;
+  isActive?: boolean;
 }
 
-function ProcessCard({ id, title, desc, total }: ProcessCardProps) {
+function ProcessCard({ id, title, desc, total, isActive = false }: ProcessCardProps) {
   return (
     <div className="card-item">
       <div className="nubber-box">
@@ -30,7 +31,7 @@ function ProcessCard({ id, title, desc, total }: ProcessCardProps) {
             <p>{desc}</p>
           </div>
           <div className="item">
-            {id ? (
+            {!isActive ? (
               <p>0{id}</p>
             ) : (
               <p>
