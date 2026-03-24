@@ -1,9 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useScrollAnimation } from "./Hooks/useScrollAnimation";
 import { useStaticData } from "./Hooks/useStaticData";
 import Box from "./Nodos/Box";
 import ProcessCard from "./Nodos/ProcessCard";
-import ProcessList from "./Nodos/ProcessList";
 import Rate from "./Nodos/Rate";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Testimonials.scss";
@@ -18,6 +17,20 @@ function Testimonials() {
   const { testimonialsData } = useStaticData();
   const ref = useRef<HTMLDivElement>(null);
   useScrollAnimation(ref);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonialsData.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length,
+    );
+  };
+
+  const currentData = testimonialsData[currentIndex];
 
   return (
     <div className="testimonials" id="testimonials">
@@ -47,16 +60,15 @@ function Testimonials() {
               </div>
             </div>
           </div>
-          {testimonialsData.map((data) => (
-            <ProcessCard
-              key={data.id}
-              id={data.id}
-              title={data.title}
-              desc={data.desc["text-desc"]}
-              total={testimonialsData.length}
-              isActive={true}
-            />
-          ))}
+          <ProcessCard
+            id={currentData.id}
+            title={currentData.title}
+            desc={currentData.desc}
+            total={testimonialsData.length}
+            isActive={true}
+            onNext={handleNext}
+            onPrev={handlePrev}
+          />
         </div>
       </div>
     </div>

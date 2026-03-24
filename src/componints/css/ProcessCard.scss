@@ -45,6 +45,25 @@
       gap: var(--gap-xxs);
       align-items: center;
       flex-direction: column;
+      .num-arrow {
+        display: flex;
+        flex-direction: inherit;
+        gap: var(--gap-sm);
+        .arrow {
+          width: 35px;
+          height: 35px;
+          background-color: aquamarine;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          cursor: pointer;
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
     }
   }
 
@@ -122,6 +141,11 @@
       .item p {
         font-size: var(--font-size-xxl-card);
         font-weight: var(--font-weight-bold);
+        color: var(--grey-color-100);
+      }
+      .item svg {
+        width: var(--font-size-xxl-card);
+        height: var(--font-size-xxl-card);
         color: var(--grey-color-100);
       }
     }

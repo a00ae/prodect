@@ -1,3 +1,5 @@
+@use "../../styles/variables" as v;
+
 .testimonials {
   width: 100%;
   padding-top: var(--main-padding-top);
@@ -28,23 +30,33 @@
 
     .testimonials_card {
       display: flex;
-      align-items: center;
+      align-items: stretch;
       gap: var(--gap-sm);
 
       .testimonials_card_item_1 {
         flex-direction: column;
         display: inherit;
-        gap: 340px;
+        gap: var(--gap-md);
         width: 500px;
         padding: 25px;
         border: 1px dashed #666;
         border-radius: 16px;
+
+        min-height: 480px; /* تحديد ارتفاع أدنى للبطاقة لتكون مرجعاً */
+
+        @media (max-width: v.$width-xl) {
+          display: none;
+        }
 
         > p {
           font-size: var(--font-size-md-alt);
           color: var(--main-title-color);
           font-weight: var(--font-weight-semibold);
           line-height: 1.1;
+        }
+
+        .testimonials_descrption {
+          margin-top: auto;
         }
 
         .image_container {
@@ -56,6 +68,7 @@
           > div {
             display: flex;
             position: relative;
+            min-width: 140px;
           }
 
           .rate {
@@ -64,6 +77,9 @@
             right: 70px;
             bottom: 5px;
             gap: var(--gap-xs);
+            & p {
+              width: 100%;
+            }
           }
         }
 
@@ -112,10 +128,48 @@
       }
       .card-item {
         width: 70%;
-      }
 
-      .card-item .text-box {
-        gap: 200px;
+        @media (max-width: v.$width-xl) {
+          width: 100%;
+        }
+        .text-box {
+          /* إزالة المسافة الثابتة للسماح بالمحاذاة الصحيحة للأسفل */
+          @media (max-width: v.$width-xl) {
+            gap: 200px;
+            height: 510px;
+            
+          }
+          .heading {
+            margin-bottom: 0;
+          }
+          & .images-descrption {
+            display: flex;
+            gap: var(--gap-xs);
+            align-items: center;
+            .img {
+              border: 1px solid var(--white-color);
+              width: 52px;
+              height: 52px;
+              overflow: hidden;
+              border-radius: 15px;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+            .txt {
+              display: inherit;
+              justify-content: space-between;
+              flex-direction: column;
+              padding: 10px;
+              & p:first-child {
+                font-size: var(--main-font-size-L);
+                color: var(--main-text-color);
+              }
+            }
+          }
+        }
       }
     }
   }
