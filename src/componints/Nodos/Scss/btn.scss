@@ -1,0 +1,84 @@
+@use "../../../styles/variables" as v;
+
+.btn-web {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+  padding: 5px 5px;
+  background-color: var(--btn-color);
+  font-size: var(--main-font-size-L);
+  font-weight: var(--main-font-whight);
+  color: var(--white-color);
+  border-radius: var(--border-radius-lg);
+  border: 1px dashed transparent;
+  transition: var(--main-transition);
+
+  .start {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+    p {
+      text-shadow: 2px 2px 4px #888888;
+      position: relative;
+      transition: var(--main-transition);
+      &::before {
+        content: "Start a Project";
+        position: absolute;
+        color: var(--main-text-color);
+        text-shadow: 0 0 black;
+        transform: translateY(40px);
+      }
+    }
+  }
+  .end {
+    background-color: var(--white-color);
+    color: var(--btn-color);
+    width: 65px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-sm);
+    svg {
+      width: 30px;
+      height: 30px;
+      transition: var(--main-transition);
+    }
+  }
+
+  &:hover {
+    background-color: var(--white-color);
+    border-color: var(--btn-color);
+    .start p {
+      transform: translateY(-40px);
+    }
+    .end svg {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+@media (max-width: v.$width-sm) {
+  a {
+    height: 50px;
+    .start {
+      width: 150px;
+      p {
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+    }
+    .end {
+      width: 50px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

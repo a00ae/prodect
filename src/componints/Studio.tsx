@@ -7,6 +7,7 @@ import {
 } from "@remixicon/react";
 import { memo } from "react";
 import Rate from "./Nodos/Rate";
+import Btn from "./Nodos/Btn";
 function Studio() {
   console.log("Studio");
   return (
@@ -72,14 +73,7 @@ function Studio() {
               </div>
             </div>
             <div className="template-4">
-              <a href="#">
-                <div className="start">
-                  <p>Start a Project</p>
-                </div>
-                <div className="end">
-                  <RiArrowRightUpLine />
-                </div>
-              </a>
+              <Btn/>
             </div>
           </div>
         </div>
