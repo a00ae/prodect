@@ -9,6 +9,7 @@ interface BoxContextType {
   whyUs: BoxType;
   clients: BoxType;
   testimonials: BoxType;
+  ourTheam: BoxType;
 }
 
 const boxData: BoxContextType = {
@@ -83,8 +84,8 @@ const boxData: BoxContextType = {
     title: {
       data: "06",
       title: "Clients",
-      projects: "© 2017 - 25"
-    }
+      projects: "© 2017 - 25",
+    },
   },
   testimonials: {
     more: "Leave a review",
@@ -92,9 +93,29 @@ const boxData: BoxContextType = {
       data: "07",
       title: "Testimonials",
       heading: "Client Experiences",
-      projects: "© 2025"
-    }
-  }
+      projects: "© 2025",
+    },
+  },
+  ourTheam: {
+    text: "We're a team of innovators who blend creativity with strategy to make brands unforgettable",
+    title: {
+      data: "08",
+      title: "Our Theam",
+    },
+    highlightWords: [
+      "We're",
+      "a",
+      "team",
+      "of",
+      "innovators",
+      "who",
+      "blend",
+      "creativity",
+      "with",
+      "strategy",
+      "to",
+    ],
+  },
 };
 
 const BoxContext = createContext<BoxContextType | null>(null);

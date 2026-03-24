@@ -2,6 +2,7 @@
 import "./App.scss";
 import AboutUs from "./componints/AboutUs";
 import Clients from "./componints/Clients";
+import OurTheam from "./componints/OurTheam";
 import Process from "./componints/Process";
 import Services from "./componints/Services";
 import Shoppingcart from "./componints/Shoppingcart";
@@ -41,6 +42,7 @@ function App() {
           <WhyUs/>
           <Clients/>
           <Testimonials/>
+          <OurTheam/>
         </BoxProvider>
       </div>
     </ProductProvider>
