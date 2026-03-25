@@ -27,22 +27,22 @@ function ProcessCard({
 }: ProcessCardProps) {
   return (
     <div className={`${styles["process-card"]} process-card`}>
-      <div className={styles["nubber-box"]}>
+      <div className={`${styles["nubber-box"]} nubber-box`}>
         <p>0{id}</p>
 
-        <div className={styles.atter}>
+        <div className={`${styles.atter} atter`}>
           {!isActive ? (
             Array.from({ length: total }).map((_, index) => (
               <div
                 key={index}
-                className={`${styles.dash} ${styles[`renk${id}${index + 1}`]}`}></div>
+                className={`${styles.dash} ${styles[`renk${id}${index + 1}`]} dash`}></div>
             ))
           ) : (
-            <div className={styles["num-arrow"]}>
-              <div className={styles.arrow} onClick={onNext}>
+            <div className={`${styles["num-arrow"]} num-arrow`}>
+              <div className={`${styles.arrow} arrow`} onClick={onNext}>
                 <RiArrowRightLongLine />
               </div>
-              <div className={styles.arrow} onClick={onPrev}>
+              <div className={`${styles.arrow} arrow`} onClick={onPrev}>
                 <RiArrowLeftLongLine />
               </div>
             </div>
@@ -50,11 +50,11 @@ function ProcessCard({
         </div>
       </div>
       <div className={`${styles["text-box"]} text-box`}>
-        <div className={styles.heading}>
+        <div className={`${styles.heading} heading`}>
           {isActive ? <p>"{title}"</p> : <p>{title}</p>}
         </div>
-        <div className={styles.descrption}>
-          <div className={styles.text}>
+        <div className={`${styles.descrption} descrption`}>
+          <div className={`${styles.text} text`}>
             {typeof desc === "object" && desc !== null ? (
               <div className="images-descrption">
                 <div className="img">
@@ -69,7 +69,7 @@ function ProcessCard({
               <p>{desc}</p>
             )}
           </div>
-          <div className={styles.item}>
+          <div className={`${styles.item} item`}>
             {!isActive ? <p>0{id}</p> : <RiDoubleQuotesR />}
           </div>
         </div>

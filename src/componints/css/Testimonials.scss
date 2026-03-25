@@ -139,8 +139,18 @@
             height: 550px;
             
           }
-          .heading {
+          @media (max-width: v.$width-sm) {
+            gap: 50px;
+            height: 400px;
+            
+          }
+          :global(.heading) {
             margin-bottom: 0;
+            & p {
+              @media (max-width: v.$width-sm) {
+                font-size: 15px;
+              }
+            }
           }
           & .images-descrption {
             display: flex;

@@ -47,11 +47,7 @@
   transform: translateX(35px);
 }
 
-@media (max-width: v.$width-sm) {
-  .services .container .title > p {
-    transform: none; /* إلغاء الإزاحة في الموبايل لمنع الـ Overflow */
-  }
-}
+
 
 .services .container .title div p:nth-child(3) {
   color: var(--white-color);

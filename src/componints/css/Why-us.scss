@@ -1,3 +1,5 @@
+@use "../../styles/variables" as v;
+
 .why-us {
   width: 100%;
   padding-top: var(--main-padding-top);
@@ -27,6 +29,12 @@
     width: 100%;
     font-size: var(--font-size-xxl-card);
     letter-spacing: -1px;
+    @media (max-width: v.$width-xl) {
+        font-size: var(--font-size-xxl-alt);
+    }
+    @media (max-width: v.$width-sm) {
+        font-size: var(--font-size-lg-alt);
+    }
 }
 
 .why-us .box .text-desc > p .highlight-text  {

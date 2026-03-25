@@ -104,6 +104,11 @@
 }
 
 @media (max-width: v.$width-sm) {
+  .box {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
   .box h2 {
     font-size: var(--main-font-size-L);
   }
