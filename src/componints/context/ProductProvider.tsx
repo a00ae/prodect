@@ -14,6 +14,14 @@ export interface BoxCard {
   desc?: string;
 }
 
+interface CaseStudyItem {
+  id: number;
+  title: string;
+  desc: string | string[];
+  img?: string;
+  isActive?: "img1" | "img2" ;
+}
+
 const cardItem: Product[] = [
   {
     name: "Nova Skincare",
@@ -99,7 +107,7 @@ const box: BoxCard[] = [
   },
 ];
 
-const cardCaseStudy: {id:number; title: string; img?: string; desc?: string | string[] }[] = [
+const cardCaseStudy: CaseStudyItem[] = [
   {
     id: 1,
     title: "Overview",
@@ -109,13 +117,15 @@ const cardCaseStudy: {id:number; title: string; img?: string; desc?: string | st
     id: 2,
     title: "Nova Skincare",
     desc: "2025",
-    img: "/CaseStudy/case-study-01.avif"
+    img: "/CaseStudy/case-study-01.avif",
+    isActive: "img1",
   },
   {
     id: 3,
     title: "They elevated our entire identity and helped us connect with our audience in a way we never imagined.",
     desc: ["Sophia Reynolds", "CEO of Nova Skincare" ],
-    img: "/CaseStudy/case-study-02.avif"
+    img: "/CaseStudy/case-study-02.avif",
+    isActive: "img2",
   },
   {
     id: 4,
@@ -143,6 +153,7 @@ const cardCaseStudy: {id:number; title: string; img?: string; desc?: string | st
 type ProductContextType = {
   products: Product[];
   box: BoxCard[];
+  cardCaseStudy:CaseStudyItem[];
 };
 
 const ProductContext = createContext<ProductContextType | null>(null);
