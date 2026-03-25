@@ -99,12 +99,45 @@ const box: BoxCard[] = [
   },
 ];
 
-const cardCaseStudy: { title: string; img?: string; desc?: string }[] = [
+const cardCaseStudy: {id:number; title: string; img?: string; desc?: string | string[] }[] = [
   {
+    id: 1,
     title: "Overview",
     desc: "Crafted a refined digital identity and eCommerce experience for a luxury skincare brand, resulting in a 180% increase in online conversions",
-    img: "/"
   },
+  {
+    id: 2,
+    title: "Nova Skincare",
+    desc: "2025",
+    img: "/CaseStudy/case-study-01.avif"
+  },
+  {
+    id: 3,
+    title: "They elevated our entire identity and helped us connect with our audience in a way we never imagined.",
+    desc: ["Sophia Reynolds", "CEO of Nova Skincare" ],
+    img: "/CaseStudy/case-study-02.avif"
+  },
+  {
+    id: 4,
+    title: "+180",
+    desc: "increase in sales",
+  },
+  {
+    id: 5,
+    title: "+50",
+    desc: "New Customer Acquisition",
+  },
+  {
+    id: 6,
+    title: "3",
+    desc: "higher engagement",
+  },
+  {
+    id: 7,
+    title: "95",
+    desc: "Customer Satisfaction Rate",
+  },
+
 ];
 
 type ProductContextType = {
@@ -115,7 +148,7 @@ type ProductContextType = {
 const ProductContext = createContext<ProductContextType | null>(null);
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
-  const value = useMemo(() => ({ products: cardItem, box }), []);
+  const value = useMemo(() => ({ products: cardItem, box, cardCaseStudy }), []);
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
