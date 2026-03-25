@@ -115,6 +115,7 @@ const boxData: BoxContextType = {
       "strategy",
       "to",
     ],
+    btn: "About us",
   },
 };
 

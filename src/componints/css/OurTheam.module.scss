@@ -13,14 +13,47 @@
     display: flex;
     flex-direction: column;
     gap: var(--gap-xl);
-    :global(.box) :global(.text-desc) > p {
-      margin: 0;
-      font-size: var(--font-size-xxl-card);
+
+    :global(.box) {
       width: 100%;
-      line-height: 1.1;
-    }
-    :global(.box) :global(.title) div p:nth-child(3) {
+      :global(.title) div p:nth-child(3) {
         color: var(--white-color);
+      }
+      :global(.text-desc) > p {
+        margin: 0;
+        font-size: var(--font-size-xxl-heading);
+        width: 100%;
+        line-height: 1.1;
+      }
+      @media (max-width: v.$width-xl) {
+        :global(.text-desc) > p{
+            font-size: var(--font-size-xxl-card);
+        }
+      }
+      @media (max-width: v.$width-sm) {
+        :global(.text-desc) > p{
+            font-size: var(--font-size-lg-alt);
+        }
+      }
+    }
+
+    :global(.tamblate-card) {
+      width: 100%;
+    }
+    .text-descrption {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      & > p:first-child {
+        width: 600px;
+        font-size: var(--font-size-lg-alt, 26px);
+        color: var(--white-color);
+        font-weight: var(--font-weight-semibold);
+        @media (max-width: v.$width-sm) {
+            width: 100%;
+
+        }
+      }
     }
   }
 }

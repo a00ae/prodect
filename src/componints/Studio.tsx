@@ -1,9 +1,7 @@
 import "./css/studio.scss";
 import "../../public/avtar-video.mp4";
 import {
-  RiArrowRightUpLine,
   RiPlayCircleFill,
-  RiStarFill,
 } from "@remixicon/react";
 import { memo } from "react";
 import Rate from "./Nodos/Rate";
@@ -73,7 +71,7 @@ function Studio() {
               </div>
             </div>
             <div className="template-4">
-              <Btn/>
+              <Btn title="Satrt a Project"/>
             </div>
           </div>
         </div>

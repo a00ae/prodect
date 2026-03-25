@@ -22,7 +22,7 @@ function OurTheam() {
             We're a team of innovators who blend creativity with strategy to
             make brands unforgettable.
           </p>
-          <Btn/>
+          <Btn color="white" size="md" title={ourTheam.btn || ""}/>
         </div>
       </div>
     </div>

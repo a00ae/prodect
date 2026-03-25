@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 100%; /* Default (full) */
   height: 65px;
   padding: 5px 5px;
   background-color: var(--btn-color);
@@ -14,6 +14,67 @@
   border-radius: var(--border-radius-lg);
   border: 1px dashed transparent;
   transition: var(--main-transition);
+
+  &.full {
+    width: 100%;
+  }
+  &.md {
+    width: 350px;
+    padding-left: 15px;
+    // padding: 10px 20px;
+    .start {
+      width: max-content;
+    }
+    .end {
+      width: 60px;
+      height: 55px;
+      svg {
+        width: 25px;
+      }
+    }
+  }
+  &.sm {
+    width: max-content;
+    min-width: 220px;
+    padding-left: 10px;
+    .start {
+      width: max-content;
+    }
+    .end {
+      width: 40px;
+      height: 35px;
+      svg {
+        width: 20px;
+      }
+    }
+  }
+
+  &.defulet {
+    background-color: var(--btn-color);
+  }
+  &.white {
+    background-color: var(--white-color);
+    color: var(--main-text-color);
+    .start {
+      p {
+        text-shadow: 0 2px white;
+        &::before {
+          color: var(--white-color);
+          text-shadow: 0 0 white;
+        }
+      }
+    }
+    .end {
+      background-color: var(--main-text-color);
+      svg {
+        color: var(--white-color);
+      }
+    }
+    &:hover {
+      background-color: var(--main-text-color);
+      border-color: var(--white-color);
+    }
+  }
 
   .start {
     display: flex;
@@ -27,7 +88,7 @@
       position: relative;
       transition: var(--main-transition);
       &::before {
-        content: "Start a Project";
+        content: attr(data-text);
         position: absolute;
         color: var(--main-text-color);
         text-shadow: 0 0 black;

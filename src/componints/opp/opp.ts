@@ -26,4 +26,5 @@ export interface BoxType {
   more?: string;
   title: Shopping;
   highlightWords?: string[];
+  btn?: string
 }

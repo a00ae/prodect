@@ -105,4 +105,8 @@
       width: 100%;
     }
   }
+  .clients .box-card {
+    grid-template-columns: auto;
+  }
+
 }
