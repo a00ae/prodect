@@ -10,6 +10,7 @@ interface BoxContextType {
   clients: BoxType;
   testimonials: BoxType;
   ourTheam: BoxType;
+  caseStudy: BoxType;
 }
 
 const boxData: BoxContextType = {
@@ -116,6 +117,15 @@ const boxData: BoxContextType = {
       "to",
     ],
     btn: "About us",
+  },
+  caseStudy: {
+    text: "Real Impact, Proven Results.",
+    more: "Full case study",
+    title: {
+      data: "09",
+      title: "Case study",
+      projects: "2024",
+    },
   },
 };
 

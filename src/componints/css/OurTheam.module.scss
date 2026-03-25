@@ -51,6 +51,7 @@
         font-weight: var(--font-weight-semibold);
         @media (max-width: v.$width-sm) {
             width: 100%;
+            font-size: var(--font-size-md-alt);
 
         }
       }
