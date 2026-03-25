@@ -12,6 +12,8 @@ const CaseStudy = (props: Props) => {
           title={caseStudy.title}
           more={caseStudy.more}  
         />
+
+        <div className={styles["card-item"]}></div>
       </div>
     </div>
   );

@@ -27,6 +27,12 @@
             min-width: 210px;
         }
     }
+
+    .card-item {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        gap: var(--main--gap);
+    }
   }
 
 
