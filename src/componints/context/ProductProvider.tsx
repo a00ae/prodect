@@ -99,6 +99,13 @@ const box: BoxCard[] = [
   },
 ];
 
+const cardCaseStudy: { title: string; img?: string; desc?: string }[] = [
+  {
+    title: "Overview",
+    desc: "Crafted a refined digital identity and eCommerce experience for a luxury skincare brand, resulting in a 180% increase in online conversions",
+    img: "/"
+  },
+];
 
 type ProductContextType = {
   products: Product[];

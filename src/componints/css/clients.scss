@@ -105,8 +105,10 @@
       width: 100%;
     }
   }
+}
+
+@media (max-width: v.$width-sm) {
   .clients .box-card {
     grid-template-columns: auto;
   }
-
 }

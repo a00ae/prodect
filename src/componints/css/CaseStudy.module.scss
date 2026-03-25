@@ -1,39 +1,58 @@
 @use "../../styles/variables" as v;
 
 .case-study {
-    width: 100%;
-    padding-top: var(--main-padding-top);
-    padding-bottom: var(--main-padding-bottom);
-    padding-left: var(--main-padding-left);
-    padding-right: var(--main-padding-right);
-    width: 100%;
-    position: relative;
+  width: 100%;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
+  width: 100%;
+  position: relative;
   .container {
     display: flex;
     flex-direction: column;
     gap: var(--main--gap);
     :global(.box) {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        h2 {
-            font-size: var(--font-size-xxl-alt);
-        }
-        :global(.title) {
-            flex-direction: column;
-            align-items: start;
-        }
-        :global(.btn) div {
-            min-width: 210px;
-        }
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      h2 {
+        font-size: var(--font-size-xxl-alt);
+      }
+      :global(.title) {
+        flex-direction: column;
+        align-items: start;
+      }
+      :global(.btn) div {
+        min-width: 210px;
+      }
     }
 
     .card-item {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(250px, 1fr));
-        gap: var(--main--gap);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
+      gap: var(--main--gap);
+      .box-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-card);
+        padding: 16px;
+        background-color: var(--white-color);
+        border-radius: 20px;
+        @media (max-width: v.$width-sm) {
+          gap: var(--gap-xl);
+        }
+        .top > p {
+          font-size: var(--main-font-size-m);
+          font-weight: var(--main-font-whight);
+          color: var(--text-color-grey, #757575) ;
+        }
+        .bottom > p {
+            font-size: var(--main-font-size-m);
+            font-weight: var(--font-weight-medium);
+            color: var(--main-text-color);
+        }
+      }
     }
   }
-
-
 }
