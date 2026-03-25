@@ -119,12 +119,13 @@ const boxData: BoxContextType = {
     btn: "About us",
   },
   caseStudy: {
-    text: "Real Impact, Proven Results.",
+    // text: "Real Impact, Proven Results.",
     more: "Full case study",
     title: {
       data: "09",
       title: "Case study",
       projects: "2024",
+      heading: "Real Impact, Proven Results"
     },
   },
 };

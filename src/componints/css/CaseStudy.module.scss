@@ -6,10 +6,28 @@
     padding-bottom: var(--main-padding-bottom);
     padding-left: var(--main-padding-left);
     padding-right: var(--main-padding-right);
+    width: 100%;
     position: relative;
   .container {
     display: flex;
     flex-direction: column;
     gap: var(--main--gap);
+    :global(.box) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        h2 {
+            font-size: var(--font-size-xxl-alt);
+        }
+        :global(.title) {
+            flex-direction: column;
+            align-items: start;
+        }
+        :global(.btn) div {
+            min-width: 210px;
+        }
+    }
   }
+
+
 }

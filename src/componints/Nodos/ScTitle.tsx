@@ -1,4 +1,4 @@
-import "../css/studio.scss";
+// import "../css/studio.scss";
 import type { Shopping } from "../opp/opp";
 function ScTitle({ data, title, projects }: Shopping) {
   return (
