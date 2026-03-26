@@ -28,63 +28,155 @@
       }
     }
 
-    .card-item {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(250px, 1fr));
-      gap: var(--main--gap);
-      .box-container {
-        display: flex;
-        flex-direction: column;
-        gap: var(--gap-card);
-        padding: 16px;
-        background-color: var(--white-color);
-        border-radius: 20px;
-        justify-content: space-between;
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-sm);
+      .card-item {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        gap: var(--gap-sm);
+        @media (max-width: v.$width-xl) {
+          grid-template-columns: repeat(2, minmax(250px, 1fr));
+          .box-container:last-child {
+            display: none;
+          }
+        }
         @media (max-width: v.$width-sm) {
-          gap: var(--gap-xl);
-        }
-        .top > p {
-          font-size: var(--main-font-size-m);
-          font-weight: var(--main-font-whight);
-          color: var(--text-color-grey, #757575);
-        }
-        .bottom {
-          display: flex;
-          gap: var(--gap-xxs);
-          align-items: center;
-
-          > p {
-            font-size: var(--main-font-size-m);
-            font-weight: var(--font-weight-medium);
-            color: var(--main-text-color);
-          }
-          .image {
-            width: 60px;
-            height: 50px;
-            overflow: hidden;
-            border-radius: 5px;
-            border: 1px solid var(--main-bg-color-before);
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-          }
-          .text-desc {
+          grid-template-columns: auto;
+          .box-container:last-child {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            p:first-child {
-              font-size: var(--main-font-size-L, 24px);
+          }
+        }
+        .box-container {
+          display: flex;
+          flex-direction: column;
+          gap: var(--gap-card);
+          padding: 16px;
+          background-color: var(--white-color);
+          border-radius: 20px;
+          justify-content: space-between;
+          @media (max-width: v.$width-sm) {
+            gap: var(--gap-xl);
+            .top > p {
+              font-size: var(--font-size-sm) !important;
+            }
+            .bottom > p {
+              font-size: var(--main-font-size) !important;
+            }
+            .text-desc p:first-child {
+              font-size: var(--font-size-sm) !important;
+            }
+            .text-desc p:last-child {
+              font-size: var(--font-size-sm) !important;
+            }
+          }
+          .top > p {
+            font-size: var(--main-font-size-m);
+            font-weight: var(--main-font-whight);
+            color: var(--text-color-grey, #757575);
+          }
+          .bottom {
+            display: flex;
+            gap: var(--gap-sm);
+            align-items: center;
+
+            > p {
+              font-size: var(--main-font-size-m);
+              font-weight: var(--font-weight-medium);
               color: var(--main-text-color);
-              font-weight: var(--main-font-whight);
             }
-            p:last-child {
-              font-size: var(--font-size-md-alt);
-              color: var(--text-color-grey);
-              font-weight: var(--font-weight-semibold);
-              letter-spacing: -1px;
+            .image {
+              width: 60px;
+              height: 60px;
+              overflow: hidden;
+              border-radius: 5px;
+              border: 1px solid var(--main-bg-color-before);
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
             }
+            .text-desc {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              gap: var(--gap-sm);
+              p:first-child {
+                font-size: var(--main-font-size-L, 24px);
+                color: var(--main-text-color);
+                font-weight: var(--main-font-whight);
+                margin: 0;
+              }
+              p:last-child {
+                font-size: var(--font-size-md-alt);
+                color: var(--text-color-grey);
+                font-weight: var(--font-weight-semibold);
+                letter-spacing: -1px;
+                margin: 0;
+              }
+            }
+          }
+        }
+        .box-container:last-child {
+          background-color: transparent;
+          border: 2px dashed var(--border-card-grey-dashad);
+        }
+
+        // التصحيح: استهداف الكلاس img1 الذي يتم تمريره ديناميكياً
+        .box-container.img1 {
+          background-image: url("/CaseStudy/case-study-01.avif");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          border: none;
+
+          .top > p {
+            color: var(--white-color);
+            text-align: center;
+            font-size: var(--main-font-size-L);
+          }
+          .bottom > p {
+            color: var(--white-color);
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+      .global-card {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: var(--gap-sm);
+        .card-sm {
+          display: flex;
+          flex-direction: column;
+          gap: var(--gap-xl);
+          background-color: var(--white-color);
+          padding: 16px;
+          border-radius: var(--border-radius-md);
+          .top {
+            display: inherit;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+            gap: 2px;
+
+            & > p {
+              font-size: var(--font-size-xxl-alt);
+              font-weight: var(--font-weight-bold);
+              color: var(--main-text-color);
+            }
+            & > span {
+              font-size: var(--font-size-xxl-alt);
+              color: var(--btn-color);
+              font-weight: var(--font-weight-bold);
+            }
+          }
+          .bottom > p {
+            font-size: var(--font-size-md-alt);
+            color: var(--main-title-color);
+            font-weight: var(--font-weight-bold, 700);
           }
         }
       }
