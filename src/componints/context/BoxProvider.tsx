@@ -11,6 +11,7 @@ interface BoxContextType {
   testimonials: BoxType;
   ourTheam: BoxType;
   caseStudy: BoxType;
+  pricing: BoxType;
 }
 
 const boxData: BoxContextType = {
@@ -128,6 +129,16 @@ const boxData: BoxContextType = {
       heading: "Real Impact, Proven Results"
     },
   },
+
+  pricing: {
+    text: "We offer flexible plans designed to fit your brand’s goals",
+    title: {
+      data: "010",
+      title: "Pricing",
+      heading: "Pricing Plans",
+      projects: "Averra®",
+    }
+  }
 };
 
 const BoxContext = createContext<BoxContextType | null>(null);

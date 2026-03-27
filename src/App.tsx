@@ -4,6 +4,7 @@ import AboutUs from "./componints/AboutUs";
 import CaseStudy from "./componints/CaseStudy";
 import Clients from "./componints/Clients";
 import OurTheam from "./componints/OurTheam";
+import Pricing from "./componints/Pricing";
 import Process from "./componints/Process";
 import Services from "./componints/Services";
 import Shoppingcart from "./componints/Shoppingcart";
@@ -40,11 +41,12 @@ function App() {
           <Shoppingcart />
           <Services />
           <Process />
-          <WhyUs/>
-          <Clients/>
-          <Testimonials/>
-          <OurTheam/>
-          <CaseStudy/>
+          <WhyUs />
+          <Clients />
+          <Testimonials />
+          <OurTheam />
+          <CaseStudy />
+          <Pricing />
         </BoxProvider>
       </div>
     </ProductProvider>

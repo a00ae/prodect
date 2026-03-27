@@ -146,8 +146,15 @@
       }
       .global-card {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: var(--gap-sm);
+        @media (max-width: v.$width-xl) {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+        }
+        @media (max-width: v.$width-sm) {
+            grid-template-columns: auto;
+        }
+
         .card-sm {
           display: flex;
           flex-direction: column;

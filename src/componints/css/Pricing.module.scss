@@ -1,0 +1,36 @@
+@use "/src/styles/variables" as v;
+
+.pricing {
+  width: 100%;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
+  position: relative;
+  background-color: var(--white-color);
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--main--gap);
+    :global(.box) {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      :global(.title) {
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+      }
+      > h2 {
+        font-size: var(--font-size-xxl-heading);
+      }
+
+      :global(.text-desc) > p {
+        margin: 0;
+        margin-top: 40px;
+        width: 400px;
+        font-size: var(--main-font-size-m);
+      }
+    }
+  }
+}
