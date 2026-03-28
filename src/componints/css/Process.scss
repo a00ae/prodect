@@ -22,6 +22,9 @@
   position: sticky;
   top: 100px;
 }
+.process .box .box-text-heading-container {
+  flex-direction: column;
+}
 
 @media (max-width: v.$width-xl) {
   .process .container {

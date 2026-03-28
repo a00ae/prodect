@@ -29,6 +29,10 @@
   margin-bottom: var(--main-padding-bottom);
 }
 
+.services .box .box-text-heading-container {
+  flex-direction: row;
+}
+
 @media (max-width: v.$width-md) {
   .services .container .box {
     flex-direction: column;

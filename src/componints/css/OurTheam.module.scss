@@ -19,6 +19,9 @@
       :global(.title) div p:nth-child(3) {
         color: var(--white-color);
       }
+      :global(.box-text-heading-container) {
+        width: 100%;
+      }
       :global(.text-desc) > p {
         margin: 0;
         font-size: var(--font-size-xxl-heading);

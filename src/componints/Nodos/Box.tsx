@@ -50,29 +50,48 @@ function Box({
           projects={title.projects}
         />
       )}
-      {!title.heading ? null : (
-        <h2>
-          {isAnimated
-            ? title.heading
-                .toString()
-                .split(" ")
-                .map((ele, index) => <span key={index}>{ele}</span>)
-            : title.heading}
-        </h2>
-      )}
-      {!text ? null : (
-        <div className="description">
-          <div className="text-desc">
-            <p>
-              {isAnimated
-                ? text.split(" ").map((ele, index) => {
-                    if (ele === " ") return <span></span>;
+      <div className="box-text-heading-container">
+        {!title.heading ? null : (
+          <h2>
+            {isAnimated
+              ? title.heading
+                  .toString()
+                  .split(" ")
+                  .map((ele, index) => <span key={index}>{ele}</span>)
+              : title.heading}
+          </h2>
+        )}
+        {!text ? null : (
+          <div className="description">
+            <div className="text-desc">
+              <p>
+                {isAnimated
+                  ? text.split(" ").map((ele, index) => {
+                      if (ele === " ") return <span></span>;
 
-                    if (highlightWords.includes(ele)) {
+                      if (highlightWords.includes(ele)) {
+                        return (
+                          <span key={index} className="highlight-text">
+                            {ele.split("").map((char, i) => {
+                              // حساب التأخير الزمني بناءً على ترتيب الكلمة والحرف
+                              const delay = index * 0.1 + i * 0.03;
+                              return (
+                                <span
+                                  key={i}
+                                  className="char-text"
+                                  style={{ animationDelay: `${delay}s` }}>
+                                  {char}
+                                </span>
+                              );
+                            })}
+                          </span>
+                        );
+                      }
+
                       return (
-                        <span key={index} className="highlight-text">
+                        <span key={index}>
                           {ele.split("").map((char, i) => {
-                            // حساب التأخير الزمني بناءً على ترتيب الكلمة والحرف
+                            // نفس التأخير للكلمات العادية
                             const delay = index * 0.1 + i * 0.03;
                             return (
                               <span
@@ -85,40 +104,23 @@ function Box({
                           })}
                         </span>
                       );
-                    }
-
-                    return (
-                      <span key={index}>
-                        {ele.split("").map((char, i) => {
-                          // نفس التأخير للكلمات العادية
-                          const delay = index * 0.1 + i * 0.03;
-                          return (
-                            <span
-                              key={i}
-                              className="char-text"
-                              style={{ animationDelay: `${delay}s` }}>
-                              {char}
-                            </span>
-                          );
-                        })}
-                      </span>
-                    );
-                  })
-                : text}
-            </p>
+                    })
+                  : text}
+              </p>
+            </div>
           </div>
-        </div>
-      )}
-      {!more ? null : (
-        <div className="btn">
-          <div>
-            <a href="#">
-              <p>{more}</p> <RiArrowRightUpLine />
-            </a>
-            <div className="btn-border"></div>
+        )}
+        {!more ? null : (
+          <div className="btn">
+            <div>
+              <a href="#">
+                <p>{more}</p> <RiArrowRightUpLine />
+              </a>
+              <div className="btn-border"></div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

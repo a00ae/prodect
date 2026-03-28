@@ -17,10 +17,16 @@
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
+      @media (max-width: v.$width-xl) {
+        .box-text-heading-container {
+          flex-direction: row;
+        }
+      }
 
       .title {
         flex-direction: column;
         align-items: start;
+        justify-content: center;
       }
 
       .btn div {

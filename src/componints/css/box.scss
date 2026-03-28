@@ -7,6 +7,16 @@
   gap: var(--main--gap);
 }
 
+.box .box-text-heading-container {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  @media (max-width: v.$width-xl) {
+    flex-direction: column;
+    gap: var(--main--gap);
+  }
+}
+
 .box h2 {
   font-size: var(--font-size-xxl-alt);
   margin: 0;
@@ -107,6 +117,15 @@
   .box {
     flex-direction: column !important;
     width: 100% !important;
+  }
+  .box .title {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+
+  }
+
+  .title > p {
+    transform: none !important;
   }
 
   .box h2 {
