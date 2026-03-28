@@ -1,3 +1,4 @@
+import { RiCheckboxCircleLine } from "@remixicon/react";
 import { useBoxData } from "./context/BoxProvider";
 import styles from "./css/Pricing.module.scss";
 import Box from "./Nodos/Box";
@@ -32,6 +33,14 @@ function Pricing({}: Props) {
                     Perfect for startups and growing brands looking for
                     consistent design and marketing support.
                   </p>
+                </div>
+                <div className="dashad"></div>
+              </div>
+              <div className="middle">
+                <p>What's included:</p>
+                <div className={styles.box}>
+                  <RiCheckboxCircleLine />
+                  <p>Up to 20 design & marketing requests</p>
                 </div>
               </div>
             </div>

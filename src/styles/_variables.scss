@@ -23,22 +23,20 @@ $width-xl: 1440px;
   position: relative;
 }
 
+// font
 
-
-
-
-// font 
+//title
 
 @mixin font-size-xl {
-    font-size: var(--font-size-xl);
-    font-weight: var(--main-font-whight);
-    color: var(--main-text-color);
+  font-size: var(--font-size-xl);
+  font-weight: var(--main-font-whight);
+  color: var(--main-text-color);
 }
 
+// desc
 
-
-// desc 
-
-
-
-
+@mixin font-size-desc {
+  font-size: var(--font-size-md-alt);
+  font-weight: var(--font-weight-semibold);
+  color: var(--main-title-color);
+}

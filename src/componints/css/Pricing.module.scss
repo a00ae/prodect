@@ -1,6 +1,5 @@
 @use "/src/styles/variables" as v;
 
-
 $display-flex: flex;
 
 .pricing {
@@ -59,92 +58,122 @@ $display-flex: flex;
         // top
         :global(.top) {
           @include v.flex-center-mian;
-        }
-        .title-top {
-          display: $display-flex;
-          align-items: center;
-          & > p {
-            flex: 1;
-            font-size: var(--font-size-lg-alt);
-            font-weight: var(--font-weight-semibold);
-            color: var(--text-color-dark);
-          }
-          & div {
-            display: flex;
-            align-items: center;
-            gap: var(--gap-xs);
-            .switch {
-              position: relative;
-              width: 50px;
-              height: 25px;
-              display: inline-block;
 
-              & input {
-                opacity: 0;
-                width: 0;
-                height: 0;
-              }
-              :global(.slider) {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                top: 0;
-                cursor: pointer;
-                background-color: var(--white-color);
-                -webkit-transition: 0.4s;
-                transition: 0.4s;
-                &::before {
-                  content: "";
+          .title-top {
+            display: $display-flex;
+            align-items: center;
+            & > p {
+              flex: 1;
+              font-size: var(--font-size-lg-alt);
+              font-weight: var(--font-weight-semibold);
+              color: var(--text-color-dark);
+            }
+            & div {
+              display: flex;
+              align-items: center;
+              gap: var(--gap-xs);
+              .switch {
+                position: relative;
+                width: 50px;
+                height: 25px;
+                display: inline-block;
+
+                & input {
+                  opacity: 0;
+                  width: 0;
+                  height: 0;
+                }
+                :global(.slider) {
                   position: absolute;
-                  width: 20px;
-                  height: 20px;
-                  left: 2px;
-                  bottom: 2.5px;
-                  background-color:#ccc;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  top: 0;
+                  cursor: pointer;
+                  background-color: var(--white-color);
                   -webkit-transition: 0.4s;
                   transition: 0.4s;
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    left: 2px;
+                    bottom: 2.5px;
+                    background-color: #ccc;
+                    -webkit-transition: 0.4s;
+                    transition: 0.4s;
+                  }
+                }
+
+                & input:checked + :global(.slider) {
+                  background-color: var(--btn-color);
+                }
+                & input:focus + :global(.slider) {
+                  box-shadow: 0 0 1px #fc404057;
+                }
+
+                & input:checked + :global(.slider)::before {
+                  -webkit-transform: translateX(25px);
+                  -ms-transform: translateX(25px);
+                  transform: translateX(25px);
+                  background-color: var(--white-color, white);
+                }
+
+                // Rounded sliders
+                :global(.slider.round) {
+                  border-radius: 30px;
+                }
+                :global(.slider.round)::before {
+                  border-radius: 50%;
                 }
               }
-
-              & input:checked + :global(.slider) {
-                background-color: var(--btn-color);
-              }
-              & input:focus + :global(.slider) {
-                box-shadow: 0 0 1px #fc404057;
-              }
-
-              & input:checked + :global(.slider)::before {
-                -webkit-transform: translateX(25px);
-                -ms-transform: translateX(25px);
-                transform: translateX(25px);
-                background-color: var(--white-color, white);
-              }
-
-              // Rounded sliders
-              :global(.slider.round) {
-                border-radius: 30px;
-              }
-              :global(.slider.round)::before {
-                border-radius: 50%;
+              & p {
+                font-size: var(--font-size-md-alt);
+                font-weight: var(--font-weight-semibold);
+                color: var(--main-title-color);
               }
             }
-            & p {
-              font-size: var(--font-size-md-alt);
-              font-weight: var(--font-weight-semibold);
-              color: var(--main-title-color);
+          }
+          .price-componints {
+            display: $display-flex;
+            align-items: end;
+            & > p {
+              @include v.font-size-xl;
             }
+          }
+          .price-desc {
+            max-width: 500px;
+            & > p {
+              @include v.font-size-desc;
+            }
+          }
+          :global(.dashad) {
+            height: 3px;
+            border-top: 1px dashed var(--text-color-grey);
+            margin: 20px 0;
           }
         }
-        .price-componints {
-          display: $display-flex;
-          align-items: end;
+
+        :global(.middle) {
+          margin: 20px 0;
+          @include v.flex-center-md;
           & > p {
-            @include v.font-size-xl;
+            font-size: var(--font-size-sm);
+            font-weight: var(--main-font-whight);
+            color: var(--main-title-color);
           }
-          & > span {
-            font-size: var(--main-font-size-m);
+          .box {
+            display: $display-flex;
+            gap: var(--gap-xs);
+            & > svg {
+              color: var(--btn-color);
+            }
+            & > p {
+              flex: 1;
+            }
           }
+
         }
       }
     }
