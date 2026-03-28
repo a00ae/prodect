@@ -1,17 +1,13 @@
 @use "/src/styles/variables" as v;
 
+
+$display-flex: flex;
+
 .pricing {
-  width: 100%;
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
-  padding-left: var(--main-padding-left);
-  padding-right: var(--main-padding-right);
-  position: relative;
+  @include v.container-box;
   background-color: var(--white-color);
   .container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--main--gap);
+    @include v.flex-center-mian;
     :global(.box) {
       flex-direction: row;
       width: 100%;
@@ -46,10 +42,13 @@
     :global(.price) {
       --pading-price: 16px;
       --border-radius-price: 16px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--gap-md);
+      // display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      // gap: var(--gap-md);
+      display: $display-flex;
+
       .price-card {
+        flex: 1;
         display: flex;
         gap: var(--gap-sm);
         flex-direction: column;
@@ -58,9 +57,11 @@
         background-color: var(--main-bg-color);
 
         // top
+        :global(.top) {
+          @include v.flex-center-mian;
+        }
         .title-top {
-          display: flex;
-          // justify-content: space-between;
+          display: $display-flex;
           align-items: center;
           & > p {
             flex: 1;
@@ -74,8 +75,8 @@
             gap: var(--gap-xs);
             .switch {
               position: relative;
-              width: 60px;
-              height: 34px;
+              width: 50px;
+              height: 25px;
               display: inline-block;
 
               & input {
@@ -96,10 +97,10 @@
                 &::before {
                   content: "";
                   position: absolute;
-                  width: 25px;
-                  height: 25px;
-                  left: 4px;
-                  bottom: 4px;
+                  width: 20px;
+                  height: 20px;
+                  left: 2px;
+                  bottom: 2.5px;
                   background-color:#ccc;
                   -webkit-transition: 0.4s;
                   transition: 0.4s;
@@ -122,7 +123,7 @@
 
               // Rounded sliders
               :global(.slider.round) {
-                border-radius: 34px;
+                border-radius: 30px;
               }
               :global(.slider.round)::before {
                 border-radius: 50%;
@@ -133,6 +134,16 @@
               font-weight: var(--font-weight-semibold);
               color: var(--main-title-color);
             }
+          }
+        }
+        .price-componints {
+          display: $display-flex;
+          align-items: end;
+          & > p {
+            @include v.font-size-xl;
+          }
+          & > span {
+            font-size: var(--main-font-size-m);
           }
         }
       }

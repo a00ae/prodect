@@ -10,22 +10,32 @@ function Pricing({}: Props) {
       <div className={styles.container}>
         <Box title={pricing.title} text={pricing.text} />
         <div className="price">
-        <div className={styles["price-card"]}>
-          <div className={styles["main-card"]}>
-            <div className={styles["title-top"]}>
-              <p>Basic</p>
-              <div>
-              <label className={styles.switch}>
-                <input type="checkbox" />
-                <span className="slider round"></span>
-              </label>
-              <p>Yearly</p>
+          <div className={styles["price-card"]}>
+            <div className={styles["main-card"]}>
+              <div className="top">
+                <div className={styles["title-top"]}>
+                  <p>Basic</p>
+                  <div>
+                    <label className={styles.switch}>
+                      <input type="checkbox" />
+                      <span className="slider round"></span>
+                    </label>
+                    <p>Yearly</p>
+                  </div>
+                </div>
+                <div className={styles["price-componints"]}>
+                  <p>$1200</p>
+                  <span>/month</span>
+                </div>
+                <div className={styles["price-desc"]}>
+                  <p>
+                    Perfect for startups and growing brands looking for
+                    consistent design and marketing support.
+                  </p>
+                </div>
               </div>
             </div>
-
           </div>
-        </div>
-
         </div>
       </div>
     </div>

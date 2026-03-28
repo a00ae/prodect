@@ -2,3 +2,43 @@
 $width-sm: 772px;
 $width-md: 991px;
 $width-xl: 1440px;
+
+@mixin flex-center-mian {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main--gap);
+}
+@mixin flex-center-md {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+@mixin container-box {
+  width: 100%;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
+  position: relative;
+}
+
+
+
+
+
+// font 
+
+@mixin font-size-xl {
+    font-size: var(--font-size-xl);
+    font-weight: var(--main-font-whight);
+    color: var(--main-text-color);
+}
+
+
+
+// desc 
+
+
+
+
