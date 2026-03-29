@@ -13,9 +13,15 @@ function Pricing({}: Props) {
     <div className={styles.pricing}>
       <div className={styles.container}>
         <Box title={pricing.title} text={pricing.text} />
+
         <div className="price">
           {pricingCard.map(({ title, month, desc, price, discount }) => (
-            <div key={title} className={styles["price-card"]}>
+            <div key={title} className={styles["box-container-card-price"]}>
+              <div className={`top-transform ${title}`}>
+
+              </div>
+
+            <div  className={styles["price-card"]}>
               <div className="top">
                 <div className={styles["title-top"]}>
                   {discount ? <div className="title-discount-top">
@@ -61,6 +67,7 @@ function Pricing({}: Props) {
               </div>
               <div className="dashad"></div>
               <Btn title="Get startad" />
+            </div>
             </div>
           ))}
         </div>
