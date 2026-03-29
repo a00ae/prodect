@@ -66,7 +66,28 @@ $display-flex: flex;
               font-weight: var(--font-weight-semibold);
               color: var(--text-color-dark);
             }
-            & div {
+            :global(.title-discount-top) {
+              display: $display-flex;
+              align-items: center;
+              gap: var(--gap-xs);
+              flex: 1;
+              & p:first-child {
+                font-size: var(--font-size-lg-alt);
+                font-weight: var(--font-weight-semibold);
+                color: var(--text-color-dark);
+              }
+              & > span {
+                font-size: var(--main-font-size-m);
+                color: var(--btn-color);
+                font-weight: var(--font-weight-semibold);
+              }
+              & p:last-child {
+                font-size: var(--font-size-md-alt);
+                font-weight: var(--font-weight-semibold);
+                color: var(--main-title-color);
+              }
+            }
+            .check-box {
               display: flex;
               align-items: center;
               gap: var(--gap-sm);
@@ -139,6 +160,11 @@ $display-flex: flex;
             & > p {
               @include v.font-size-xl;
             }
+            :global(.discount) {
+              font-size: var(--font-size-xl-alt);
+              font-weight: var(--font-weight-semibold);
+              color: var(--main-title-color);
+            }
           }
           .price-desc {
             max-width: 500px;
@@ -152,7 +178,7 @@ $display-flex: flex;
           border-top: 1px dashed var(--text-color-grey);
           margin: 20px 0;
         }
-        
+
         :global(.middle) {
           margin: 20px 0;
           @include v.flex-center-md;

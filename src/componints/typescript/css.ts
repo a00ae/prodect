@@ -1,11 +1,7 @@
 import type { CSSProperties } from "react";
 
-export type Card = {
-    price: CSSProperties;
-}
+const price: CSSProperties = {
+    display: "flex",
 
-const price: Card = {
-    price: {
-        display: ""
-    }
+    
 }
