@@ -1,26 +1,11 @@
 import { type ReactNode, createContext, useContext, useMemo } from "react";
-import type { Product } from "../opp/opp";
+import type { BoxCard, CaseStudyItem, Product, PricingCard } from "../opp/opp";
 
 // توليد مسارات الصور تلقائياً بناءً على العدد (4 صور) والنمط المتسلسل للاسم
 const clientImages = Array.from(
   { length: 6 },
   (_, i) => `/clients/clents-0${i + 1}.svg`,
 );
-
-export interface BoxCard {
-  imges?: string;
-  price?: string;
-  title?: string;
-  desc?: string;
-}
-
-interface CaseStudyItem {
-  id: number;
-  title: string;
-  desc: string | string[];
-  img?: string;
-  isActive?: "img1" | "img2" ;
-}
 
 const cardItem: Product[] = [
   {
@@ -122,8 +107,9 @@ const cardCaseStudy: CaseStudyItem[] = [
   },
   {
     id: 3,
-    title: "They elevated our entire identity and helped us connect with our audience in a way we never imagined.",
-    desc: ["Sophia Reynolds", "CEO of Nova Skincare" ],
+    title:
+      "They elevated our entire identity and helped us connect with our audience in a way we never imagined.",
+    desc: ["Sophia Reynolds", "CEO of Nova Skincare"],
     img: "/CaseStudy/case-study-02.avif",
     isActive: "img2",
   },
@@ -147,19 +133,119 @@ const cardCaseStudy: CaseStudyItem[] = [
     title: "95",
     desc: "Customer Satisfaction Rate",
   },
+];
 
+const pricingCard: PricingCard[] = [
+  {
+    title: "Basic",
+    desc: "Perfect for startups and growing brands looking for consistent design and marketing support",
+    month: 1200,
+    price: [
+      {
+        "price-title": "Up to 20 design & marketing requests",
+        id: 1,
+      },
+      {
+        "price-title": "Brand, social & web design support",
+        id: 2,
+      },
+      {
+        "price-title": "Monthly strategy call",
+        id: 3,
+      },
+      {
+        "price-title": "Priority email support",
+        id: 4,
+      },
+      {
+        "price-title": "5-day turnaround per request",
+        id: 5,
+      },
+      {
+        "price-title": "Pause or cancel anytime",
+        id: 6,
+      },
+    ],
+  },
+  {
+    title: "Premium",
+    desc: "Ideal for established brands seeking dedicated creative partnership and full-scale marketing",
+    month: 2500,
+    discount: 3000,
+    price: [
+      {
+        "price-title": "Unlimited design & marketing requests",
+        id: 1,
+      },
+      {
+        "price-title": "Dedicated project manager",
+        id: 2,
+      },
+      {
+        "price-title": "Bi-weekly strategy sessions",
+        id: 3,
+      },
+      {
+        "price-title": "Paid ads & campaign managementns",
+        id: 4,
+      },
+      {
+        "price-title": "Priority turnaround & support",
+        id: 5,
+      },
+      {
+        "price-title": "Pause or cancel anytime",
+        id: 6,
+      },
+    ],
+  },
+  {
+    title: "Project-based",
+    desc: "Best for one-time projects like branding, web design, or campaign launches",
+    month: 3000,
+    price: [
+      {
+        "price-title": "Custom proposal & timeline",
+        id: 1,
+      },
+      {
+        "price-title": "End-to-end creative execution",
+        id: 2,
+      },
+      {
+        "price-title": "Strategy consultation",
+        id: 3,
+      },
+      {
+        "price-title": "Post-launch support",
+        id: 4,
+      },
+      {
+        "price-title": "Full ownership of deliverables",
+        id: 5,
+      },
+      {
+        "price-title": "Optional ongoing maintenance",
+        id: 6,
+      },
+    ],
+  },
 ];
 
 type ProductContextType = {
   products: Product[];
   box: BoxCard[];
-  cardCaseStudy:CaseStudyItem[];
+  cardCaseStudy: CaseStudyItem[];
+  pricingCard: PricingCard[];
 };
 
 const ProductContext = createContext<ProductContextType | null>(null);
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
-  const value = useMemo(() => ({ products: cardItem, box, cardCaseStudy }), []);
+  const value = useMemo(
+    () => ({ products: cardItem, box, cardCaseStudy, pricingCard }),
+    [],
+  );
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );

@@ -39,17 +39,15 @@ $display-flex: flex;
       }
     }
     :global(.price) {
-      --pading-price: 16px;
+      --pading-price: 25px;
       --border-radius-price: 16px;
-      // display: grid;
-      // grid-template-columns: repeat(3, 1fr);
-      // gap: var(--gap-md);
       display: $display-flex;
+      gap: var(--gap-sm);
 
       .price-card {
         flex: 1;
         display: flex;
-        gap: var(--gap-sm);
+        gap: var(--gap-md);
         flex-direction: column;
         padding: var(--pading-price);
         border-radius: var(--border-radius-price);
@@ -71,7 +69,7 @@ $display-flex: flex;
             & div {
               display: flex;
               align-items: center;
-              gap: var(--gap-xs);
+              gap: var(--gap-sm);
               .switch {
                 position: relative;
                 width: 50px;
@@ -148,13 +146,13 @@ $display-flex: flex;
               @include v.font-size-desc;
             }
           }
-          :global(.dashad) {
-            height: 3px;
-            border-top: 1px dashed var(--text-color-grey);
-            margin: 20px 0;
-          }
         }
-
+        :global(.dashad) {
+          height: 3px;
+          border-top: 1px dashed var(--text-color-grey);
+          margin: 20px 0;
+        }
+        
         :global(.middle) {
           margin: 20px 0;
           @include v.flex-center-md;
@@ -171,9 +169,11 @@ $display-flex: flex;
             }
             & > p {
               flex: 1;
+              font-size: var(--font-size-sm);
+              font-weight: var(--main-font-whight);
+              color: var(--main-text-color);
             }
           }
-
         }
       }
     }

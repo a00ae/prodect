@@ -2,20 +2,23 @@ import { RiCheckboxCircleLine } from "@remixicon/react";
 import { useBoxData } from "./context/BoxProvider";
 import styles from "./css/Pricing.module.scss";
 import Box from "./Nodos/Box";
+import Btn from "./Nodos/Btn";
+import { useProducts } from "./context/ProductProvider";
 type Props = {};
 
 function Pricing({}: Props) {
   const { pricing } = useBoxData();
+  const { pricingCard } = useProducts();
   return (
     <div className={styles.pricing}>
       <div className={styles.container}>
         <Box title={pricing.title} text={pricing.text} />
         <div className="price">
-          <div className={styles["price-card"]}>
-            <div className={styles["main-card"]}>
+          {pricingCard.map(({title, month, desc, price}) => (
+            <div key={title} className={styles["price-card"]}>
               <div className="top">
                 <div className={styles["title-top"]}>
-                  <p>Basic</p>
+                  <p>{title}</p>
                   <div>
                     <label className={styles.switch}>
                       <input type="checkbox" />
@@ -25,26 +28,32 @@ function Pricing({}: Props) {
                   </div>
                 </div>
                 <div className={styles["price-componints"]}>
-                  <p>$1200</p>
+                  <p>${month}</p>
                   <span>/month</span>
                 </div>
                 <div className={styles["price-desc"]}>
                   <p>
-                    Perfect for startups and growing brands looking for
-                    consistent design and marketing support.
+                    {desc}.
                   </p>
                 </div>
-                <div className="dashad"></div>
               </div>
+              <div className="dashad"></div>
               <div className="middle">
                 <p>What's included:</p>
-                <div className={styles.box}>
+                {
+                  price.map(({id, "price-title": priceTitle}) => (
+                <div key={id} className={styles.box}>
                   <RiCheckboxCircleLine />
-                  <p>Up to 20 design & marketing requests</p>
+                  <p>{priceTitle}</p>
                 </div>
+
+                  ))
+                }
               </div>
+              <div className="dashad"></div>
+              <Btn title="Get startad" />
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
