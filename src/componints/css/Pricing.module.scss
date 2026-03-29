@@ -44,14 +44,31 @@ $display-flex: flex;
       display: $display-flex;
       gap: var(--gap-sm);
       .box-container-card-price {
-        $plans: ("Basic": 60px, "Premium": 30px, "Project-based": 60px);
+        $plans: (
+          "Basic": 60px,
+          "Premium": 30px,
+          "Project-based": 60px,
+        );
 
         @each $name, $height in $plans {
           :global(.top-transform.#{$name}) {
             width: 100%;
             height: $height;
+            height: 150px; // الارتفاع الابتدائي قبل التقلص
             background-color: rebeccapurple;
             border-radius: var(--border-radius-price);
+            // تحكم في نعومة التقلص (Cubic-bezier لحركة أكثر احترافية)
+            transition: height 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+            will-change: height;
+          }
+        }
+
+        // عند تفعيل كلاس الظهور عبر السكرول
+        &:global(.visible) {
+          @each $name, $height in $plans {
+            :global(.top-transform.#{$name}) {
+              height: $height; // الارتفاع النهائي المستهدف
+            }
           }
         }
 
@@ -63,11 +80,11 @@ $display-flex: flex;
           padding: var(--pading-price);
           border-radius: var(--border-radius-price);
           background-color: var(--main-bg-color);
-  
+
           // top
           :global(.top) {
             @include v.flex-center-mian;
-  
+
             .title-top {
               display: $display-flex;
               align-items: center;
@@ -107,7 +124,7 @@ $display-flex: flex;
                   width: 50px;
                   height: 25px;
                   display: inline-block;
-  
+
                   & input {
                     opacity: 0;
                     width: 0;
@@ -135,21 +152,21 @@ $display-flex: flex;
                       transition: 0.4s;
                     }
                   }
-  
+
                   & input:checked + :global(.slider) {
                     background-color: var(--btn-color);
                   }
                   & input:focus + :global(.slider) {
                     box-shadow: 0 0 1px #fc404057;
                   }
-  
+
                   & input:checked + :global(.slider)::before {
                     -webkit-transform: translateX(25px);
                     -ms-transform: translateX(25px);
                     transform: translateX(25px);
                     background-color: var(--white-color, white);
                   }
-  
+
                   // Rounded sliders
                   :global(.slider.round) {
                     border-radius: 30px;
@@ -189,7 +206,7 @@ $display-flex: flex;
             border-top: 1px dashed var(--text-color-grey);
             margin: 20px 0;
           }
-  
+
           :global(.middle) {
             margin: 20px 0;
             @include v.flex-center-md;
@@ -214,7 +231,6 @@ $display-flex: flex;
           }
         }
       }
-
     }
   }
 }
