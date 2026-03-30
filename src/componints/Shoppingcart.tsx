@@ -1,5 +1,5 @@
 import { useRef, memo } from "react";
-import "./css/Shoppingcart.scss";
+import styles from "./css/Shoppingcart.module.scss";
 import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
 import { useBoxData } from "./context/BoxProvider";
@@ -19,7 +19,7 @@ function Shoppingcart() {
   useScrollVisibility(containerRef, ".image-card");
 
   return (
-    <div className="shopping-cart">
+    <div className={styles["shopping-cart"]}>
       <div className="container">
         <Box
           className="shopping-cart__box"

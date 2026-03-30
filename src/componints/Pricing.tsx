@@ -31,10 +31,8 @@ function Pricing() {
       const rect = priceRef.current.getBoundingClientRect();
       // تقدم العنصر
       const windowHeight = window.innerHeight;
-
+      
       // حساب نسبة الظهور (تبدأ من 0 عند دخول العنصر وتنتهي بـ 1 بعد سكرول 400 بكسل)
-      // const distanceIntoView = windowHeight - rect.top;
-      // const progress = Math.max(0, Math.min(1, distanceIntoView / 100000));
       // حساب المسافة الكلية التي يقطعها العنصر داخل مجال الرؤية
       const totalDistance = windowHeight + rect.height;
       const currentDistance = windowHeight - rect.top;
@@ -98,9 +96,11 @@ function Pricing() {
                       </div>
                       <div
                         className={`${styles["price-componints"]}
-                         ${isYearly && title !== "Project-based" ?
-                          styles["is-yearly"] : ""}`
-                          }>
+                         ${
+                           isYearly && title !== "Project-based"
+                             ? styles["is-yearly"]
+                             : ""
+                         }`}>
                         {discount ? (
                           <>
                             <p className="discount">${discount}</p>

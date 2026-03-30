@@ -18,12 +18,16 @@
 }
 
 .box h2 {
-  font-size: var(--font-size-xxl-alt);
+  font-size: var(--font-size-xxl-heading);
   margin: 0;
   color: var(--main-text-color);
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  @media (max-width: v.$width-xl) {
+    font-size: var(--font-size-xxl-alt);
+    
+  }
 }
 
 .box .text-desc > p {

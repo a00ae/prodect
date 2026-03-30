@@ -26,6 +26,10 @@
   flex-direction: column;
 }
 
+.about-us .box h2 {
+  font-size: var(--font-size-xxl-alt); 
+}
+
 
 
 @media (max-width: v.$width-xl) {
