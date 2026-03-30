@@ -192,11 +192,15 @@ $display-flex: flex;
               align-items: end;
               & > p {
                 @include v.font-size-xl;
+                position: relative;
+                overflow: hidden;
               }
+              
               :global(.discount) {
                 font-size: var(--font-size-xl-alt);
                 font-weight: var(--font-weight-semibold);
                 color: var(--main-title-color);
+                text-decoration: line-through;
               }
             }
             .price-desc {
@@ -238,6 +242,15 @@ $display-flex: flex;
         .price-card:global(.Premium) {
           background-color: transparent;
           border-color: var(--border-card-grey-dashad);
+          .price-componints {
+            & > p::before {
+              content: "$3000";
+              transform: translateY(60px);
+              position: absolute;
+              bottom: 0;
+            }
+            
+          }
         }
       }
     }

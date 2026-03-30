@@ -5,12 +5,12 @@ import Box from "./Nodos/Box";
 import Btn from "./Nodos/Btn";
 import { useProducts } from "./context/ProductProvider";
 import { useEffect, useRef, useState } from "react";
-import { useScrollVisibility } from "./Hooks/useViewHooks";
 type Props = {};
 
 function Pricing({}: Props) {
   const { pricing } = useBoxData();
   const { pricingCard } = useProducts();
+  const [check, setCheck] = useState<boolean>()
 
   const priceRef = useRef<HTMLDivElement>(null);
   const [, setScrollInside] = useState<number>(0);
@@ -75,7 +75,7 @@ function Pricing({}: Props) {
                     {title == "Project-based" ? null : (
                       <div className={styles["check-box"]}>
                         <label className={styles.switch}>
-                          <input type="checkbox" />
+                          <input  type="checkbox" />
                           <span className="slider round"></span>
                         </label>
                         <p>Yearly</p>
