@@ -6,7 +6,6 @@ import Btn from "./Nodos/Btn";
 import { useProducts } from "./context/ProductProvider";
 import { useEffect, useRef, useState } from "react";
 
-
 function Pricing() {
   const { pricing } = useBoxData();
   const { pricingCard } = useProducts();
@@ -98,7 +97,10 @@ function Pricing() {
                         )}
                       </div>
                       <div
-                        className={`${styles["price-componints"]} ${isYearly && title !== "Project-based" ? styles["is-yearly"] : ""}`}>
+                        className={`${styles["price-componints"]}
+                         ${isYearly && title !== "Project-based" ?
+                          styles["is-yearly"] : ""}`
+                          }>
                         {discount ? (
                           <>
                             <p className="discount">${discount}</p>
