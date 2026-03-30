@@ -5,9 +5,9 @@ import Box from "./Nodos/Box";
 import Btn from "./Nodos/Btn";
 import { useProducts } from "./context/ProductProvider";
 import { useEffect, useRef, useState } from "react";
-type Props = {};
 
-function Pricing({}: Props) {
+
+function Pricing() {
   const { pricing } = useBoxData();
   const { pricingCard } = useProducts();
 
