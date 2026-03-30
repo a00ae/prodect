@@ -23,14 +23,20 @@
       justify-content: space-between;
       flex-direction: row;
       margin-bottom: var(--main-padding-bottom);
+      
+      & h2 {
+        font-size: var(--font-size-xl);
+      }
 
       @media (max-width: v.$width-xl) {
         flex-direction: column;
       }
 
-      .title {
+      :global(.title) {
         flex-direction: column;
         align-items: start;
+        justify-content: start;
+        
 
         & > div {
           display: flex;
@@ -54,7 +60,7 @@
         }
       }
 
-      .btn .btn-border {
+      :global(.btn .btn-border)  {
         width: 155px;
       }
     }
@@ -99,6 +105,7 @@
           position: relative;
           border: 1px dashed transparent;
           transition: var(--main-transition);
+          color: var(--text-color-dark);
 
           &:hover {
             .card {border: 1px dashed var(--btn-color); }
@@ -157,6 +164,7 @@
             }
             p { 
               margin-top: 20px; 
+              @include v.font-size-desc;
               @media (max-width: v.$width-xl) { 
                 margin: 0;
                  font-size: var(--font-size-lg-alt);

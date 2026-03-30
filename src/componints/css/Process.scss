@@ -21,6 +21,9 @@
   margin-bottom: var(--main-padding-bottom);
   position: sticky;
   top: 100px;
+  & h2 {
+    font-size: var(--font-size-xl);
+  }
 }
 .process .box .box-text-heading-container {
   flex-direction: column;
