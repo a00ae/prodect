@@ -3,10 +3,7 @@ import styles from "./css/Shoppingcart.module.scss";
 import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
 import { useBoxData } from "./context/BoxProvider";
-import {
-  useResponsiveToggle,
-  useScrollVisibility,
-} from "./Hooks/useViewHooks";
+import { useResponsiveToggle, useScrollVisibility } from "./Hooks/useViewHooks";
 
 function Shoppingcart() {
   console.log("Shoppingcart");
@@ -16,40 +13,40 @@ function Shoppingcart() {
 
   // استخدام الهوكات المخصصة
   const isOpen = useResponsiveToggle(1440);
-  useScrollVisibility(containerRef, ".image-card");
+  useScrollVisibility(containerRef, `.${styles["image-card"]}`);
 
   return (
     <div className={styles["shopping-cart"]}>
-      <div className="container">
+      <div className={styles.container}>
         <Box
-          className="shopping-cart__box"
+          className={styles["shopping-cart__box"]}
           title={shoppingCart.title}
           more={shoppingCart.more}
           isAnimated={true}
         />
-        <div className="shopping-cart__cards" ref={containerRef}>
+        <div className={styles["shopping-cart__cards"]} ref={containerRef}>
           {products.map(({ image, name, text, description }, index) => (
-            <div key={name} className="image-card">
+            <div key={name} className={styles["image-card"]}>
               <a
-                className="card-item visible-row"
+                className={`${styles["card-item"] || ""} ${styles["visible-row"] || ""}`}
                 href=""
                 style={{
                   flexDirection: index % 2 === 0 ? "row" : "row-reverse",
                 }}>
-                <div className="card">
-                  <div className="title">
+                <div className={styles.card}>
+                  <div className={styles.title}>
                     <h3>{name}.</h3>
                     {isOpen ? <p>{text}.</p> : <p>{description.Year}</p>}
                   </div>
 
-                  <div className="description">
+                  <div className={styles.description}>
                     {Object.entries(description).map(([key, value]) => (
                       <div key={key}>
                         <div>
                           <p>{key}</p>
                         </div>
 
-                        <div className="dadashed"></div>
+                        <div className={styles.dadashed}></div>
                         <div>
                           <span>{value}</span>
                         </div>
@@ -57,7 +54,7 @@ function Shoppingcart() {
                     ))}
                   </div>
                 </div>
-                <div className="image">
+                <div className={styles.image}>
                   <img src={image} alt={name} />
                 </div>
               </a>
