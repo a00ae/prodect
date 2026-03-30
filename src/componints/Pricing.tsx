@@ -4,7 +4,7 @@ import styles from "./css/Pricing.module.scss";
 import Box from "./Nodos/Box";
 import Btn from "./Nodos/Btn";
 import { useProducts } from "./context/ProductProvider";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
 type Props = {};
 
@@ -13,7 +13,38 @@ function Pricing({}: Props) {
   const { pricingCard } = useProducts();
 
   const priceRef = useRef<HTMLDivElement>(null);
-  useScrollVisibility(priceRef, `.${styles["box-container-card-price"]}`);
+  const [, setScrollInside] = useState<number>(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // شرط التحقق من العنصر
+      if (!priceRef.current) return;
+      // مراقبة العنصر
+      const rect = priceRef.current.getBoundingClientRect();
+      // تقدم العنصر
+      const windowHeight = window.innerHeight;
+
+      // حساب نسبة الظهور (تبدأ من 0 عند دخول العنصر وتنتهي بـ 1 بعد سكرول 400 بكسل)
+      // const distanceIntoView = windowHeight - rect.top;
+      // const progress = Math.max(0, Math.min(1, distanceIntoView / 100000));
+      // حساب المسافة الكلية التي يقطعها العنصر داخل مجال الرؤية
+      const totalDistance = windowHeight + rect.height;
+      const currentDistance = windowHeight - rect.top;
+      
+      // حساب النسبة المئوية للظهور من 0 إلى 1 (منذ لحظة دخوله من الأسفل وحتى خروجه من الأعلى)
+      const progress = Math.max(0, Math.min(1, currentDistance / totalDistance));
+
+      // تحديث متغير CSS مباشرة على العنصر الأب لضمان أداء عالي
+      priceRef.current.style.setProperty(
+        "--scroll-progress",
+        progress.toString(),
+      );
+      setScrollInside(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []); // مصفوفة فارغة لضمان تعريف الحدث مرة واحدة فقط
 
   return (
     <div className={styles.pricing}>

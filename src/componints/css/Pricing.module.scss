@@ -44,31 +44,34 @@ $display-flex: flex;
       display: $display-flex;
       gap: var(--gap-sm);
       .box-container-card-price {
-        $plans: (
-          "Basic": 60px,
-          "Premium": 30px,
-          "Project-based": 60px,
+        @include v.flex-center-md;
+
+        // تحديد مقدار الانكماش لكل خطة بشكل منفصل
+        $shrink-amounts: (
+          "Basic": 140px,
+          "Premium": 80px,
+          "Project-based": 140px,
         );
 
-        @each $name, $height in $plans {
+        // تحديد الطول الابتدائي لكل خطة بشكل منفصل
+        $initial-height: (
+          "Basic": 120px,
+          "Premium": 60px,
+          "Project-based": 120px,
+        );
+
+        @each $name, $shrink in $shrink-amounts {
           :global(.top-transform.#{$name}) {
             width: 100%;
-            height: $height;
-            height: 150px; // الارتفاع الابتدائي قبل التقلص
-            background-color: rebeccapurple;
+            // جلب الطول الابتدائي الخاص بهذا العنصر تحديداً من الخريطة
+            $current-height: map-get($initial-height, $name);
+            height: calc(#{$current-height} - (var(--scroll-progress, 0) * #{$shrink}));
+            
+            background-color: var(--main-bg-color);
             border-radius: var(--border-radius-price);
-            // تحكم في نعومة التقلص (Cubic-bezier لحركة أكثر احترافية)
-            transition: height 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+            // زيادة وقت الـ transition واستخدام منحنى أبطأ لجعل الحركة "مريحة" جداً
+            transition: height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
             will-change: height;
-          }
-        }
-
-        // عند تفعيل كلاس الظهور عبر السكرول
-        &:global(.visible) {
-          @each $name, $height in $plans {
-            :global(.top-transform.#{$name}) {
-              height: $height; // الارتفاع النهائي المستهدف
-            }
           }
         }
 
