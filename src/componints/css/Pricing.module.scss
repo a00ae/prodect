@@ -74,9 +74,7 @@ $display-flex: flex;
             will-change: height;
           }
         }
-        // :global(.top-transform.Premium) {
-        //   background-color: transparent;
-        // }
+
 
         .price-card {
           flex: 1;
@@ -86,6 +84,7 @@ $display-flex: flex;
           padding: var(--pading-price);
           border-radius: var(--border-radius-price);
           background-color: var(--main-bg-color);
+          border: 1px dashed transparent;
 
           // top
           :global(.top) {
@@ -235,6 +234,10 @@ $display-flex: flex;
               }
             }
           }
+        }
+        .price-card:global(.Premium) {
+          background-color: transparent;
+          border-color: var(--border-card-grey-dashad);
         }
       }
     }

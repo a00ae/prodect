@@ -30,9 +30,12 @@ function Pricing({}: Props) {
       // حساب المسافة الكلية التي يقطعها العنصر داخل مجال الرؤية
       const totalDistance = windowHeight + rect.height;
       const currentDistance = windowHeight - rect.top;
-      
+
       // حساب النسبة المئوية للظهور من 0 إلى 1 (منذ لحظة دخوله من الأسفل وحتى خروجه من الأعلى)
-      const progress = Math.max(0, Math.min(1, currentDistance / totalDistance));
+      const progress = Math.max(
+        0,
+        Math.min(1, currentDistance / totalDistance),
+      );
 
       // تحديث متغير CSS مباشرة على العنصر الأب لضمان أداء عالي
       priceRef.current.style.setProperty(
@@ -56,7 +59,7 @@ function Pricing({}: Props) {
             <div key={title} className={styles["box-container-card-price"]}>
               <div className={`top-transform ${title}`}></div>
 
-              <div className={styles["price-card"]}>
+              <div className={`${styles["price-card"]} ${title}`}>
                 <div className="top">
                   <div className={styles["title-top"]}>
                     {discount ? (
@@ -69,13 +72,15 @@ function Pricing({}: Props) {
                       <p>{title}</p>
                     )}
 
-                    <div className={styles["check-box"]}>
-                      <label className={styles.switch}>
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                      </label>
-                      <p>Yearly</p>
-                    </div>
+                    {title == "Project-based" ? null : (
+                      <div className={styles["check-box"]}>
+                        <label className={styles.switch}>
+                          <input type="checkbox" />
+                          <span className="slider round"></span>
+                        </label>
+                        <p>Yearly</p>
+                      </div>
+                    )}
                   </div>
                   <div className={styles["price-componints"]}>
                     {discount ? (
@@ -84,10 +89,11 @@ function Pricing({}: Props) {
                         <p>${month}</p>
                       </>
                     ) : (
+                      
                       <p>${month}</p>
                     )}
 
-                    <span>/month</span>
+                    <span>/{title == "Project-based" ? "project" : "month"}</span>
                   </div>
                   <div className={styles["price-desc"]}>
                     <p>{desc}.</p>
@@ -104,7 +110,10 @@ function Pricing({}: Props) {
                   ))}
                 </div>
                 <div className="dashad"></div>
-                <Btn title="Get startad" />
+                <Btn
+                  color={discount ? "defult" : "black"}
+                  title="Get startad"
+                />
               </div>
             </div>
           ))}

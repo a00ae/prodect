@@ -77,6 +77,24 @@
       border-color: var(--white-color);
     }
   }
+  &.black {
+    background-color: var(--main-text-color);
+    color: var(--white-color);
+    .start {
+      color: var(--white-color);
+    }
+    .end {
+      background-color: var(--white-color);
+      svg {
+        color: var(--main-text-color);
+      }
+    }
+    &:hover {
+      background-color: var(--white-color);
+      border-color: var(--main-text-color);
+    }
+
+  }
 
   .start {
     display: flex;
