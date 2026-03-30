@@ -10,10 +10,19 @@ type Props = {};
 function Pricing({}: Props) {
   const { pricing } = useBoxData();
   const { pricingCard } = useProducts();
-  const [check, setCheck] = useState<boolean>()
+
+  // تحويل الحالة إلى كائن لتخزين حالة كل بطاقة بشكل مستقل
+  const [checkedPlans, setCheckedPlans] = useState<Record<string, boolean>>({});
 
   const priceRef = useRef<HTMLDivElement>(null);
-  const [, setScrollInside] = useState<number>(0);
+
+  // دالة لتبديل الحالة لبطاقة معينة
+  const togglePlan = (planTitle: string) => {
+    setCheckedPlans((prev) => ({
+      ...prev,
+      [planTitle]: !prev[planTitle],
+    }));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +51,6 @@ function Pricing({}: Props) {
         "--scroll-progress",
         progress.toString(),
       );
-      setScrollInside(progress);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -55,68 +63,83 @@ function Pricing({}: Props) {
         <Box title={pricing.title} text={pricing.text} />
 
         <div ref={priceRef} className="price">
-          {pricingCard.map(({ title, month, desc, price, discount }) => (
-            <div key={title} className={styles["box-container-card-price"]}>
-              <div className={`top-transform ${title}`}></div>
+          {pricingCard.map(
+            ({ title, month, desc, price, discount, sallrey }) => {
+              const isYearly = !!checkedPlans[title];
+              return (
+                <div key={title} className={styles["box-container-card-price"]}>
+                  <div className={`top-transform ${title}`}></div>
 
-              <div className={`${styles["price-card"]} ${title}`}>
-                <div className="top">
-                  <div className={styles["title-top"]}>
-                    {discount ? (
-                      <div className="title-discount-top">
-                        <p>{title}</p>
-                        <span>|</span>
-                        <p>Popular</p>
+                  <div className={`${styles["price-card"]} ${title}`}>
+                    <div className="top">
+                      <div className={styles["title-top"]}>
+                        {discount ? (
+                          <div className="title-discount-top">
+                            <p>{title}</p>
+                            <span>|</span>
+                            <p>Popular</p>
+                          </div>
+                        ) : (
+                          <p>{title}</p>
+                        )}
+
+                        {title == "Project-based" ? null : (
+                          <div className={styles["check-box"]}>
+                            <label className={styles.switch}>
+                              <input
+                                checked={isYearly}
+                                onChange={() => togglePlan(title)}
+                                type="checkbox"
+                              />
+                              <span className="slider round"></span>
+                            </label>
+                            <p>Yearly</p>
+                          </div>
+                        )}
                       </div>
-                    ) : (
-                      <p>{title}</p>
-                    )}
+                      <div
+                        className={`${styles["price-componints"]} ${isYearly && title !== "Project-based" ? styles["is-yearly"] : ""}`}>
+                        {discount ? (
+                          <>
+                            <p className="discount">${discount}</p>
+                            <p data-price={`$${sallrey}`}>
+                              <span>${month}</span>
+                            </p>
+                          </>
+                        ) : (
+                          <p data-price={sallrey ? `$${sallrey}` : undefined}>
+                            <span>${month}</span>
+                          </p>
+                        )}
 
-                    {title == "Project-based" ? null : (
-                      <div className={styles["check-box"]}>
-                        <label className={styles.switch}>
-                          <input  type="checkbox" />
-                          <span className="slider round"></span>
-                        </label>
-                        <p>Yearly</p>
+                        <span>
+                          /{title == "Project-based" ? "project" : "month"}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                  <div className={styles["price-componints"]}>
-                    {discount ? (
-                      <>
-                        <p className="discount">${discount}</p>
-                        <p>${month}</p>
-                      </>
-                    ) : (
-                      
-                      <p>${month}</p>
-                    )}
-
-                    <span>/{title == "Project-based" ? "project" : "month"}</span>
-                  </div>
-                  <div className={styles["price-desc"]}>
-                    <p>{desc}.</p>
-                  </div>
-                </div>
-                <div className="dashad"></div>
-                <div className="middle">
-                  <p>What's included:</p>
-                  {price.map(({ id, "price-title": priceTitle }) => (
-                    <div key={id} className={styles.box}>
-                      <RiCheckboxCircleLine />
-                      <p>{priceTitle}</p>
+                      <div className={styles["price-desc"]}>
+                        <p>{desc}.</p>
+                      </div>
                     </div>
-                  ))}
+                    <div className="dashad"></div>
+                    <div className="middle">
+                      <p>What's included:</p>
+                      {price.map(({ id, "price-title": priceTitle }) => (
+                        <div key={id} className={styles.box}>
+                          <RiCheckboxCircleLine />
+                          <p>{priceTitle}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="dashad"></div>
+                    <Btn
+                      color={discount ? "defult" : "black"}
+                      title="Get startad"
+                    />
+                  </div>
                 </div>
-                <div className="dashad"></div>
-                <Btn
-                  color={discount ? "defult" : "black"}
-                  title="Get startad"
-                />
-              </div>
-            </div>
-          ))}
+              );
+            },
+          )}
         </div>
       </div>
     </div>

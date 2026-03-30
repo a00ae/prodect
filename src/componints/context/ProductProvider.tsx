@@ -166,6 +166,7 @@ const pricingCard: PricingCard[] = [
         id: 6,
       },
     ],
+    sallrey: 1000,
   },
   {
     title: "Premium",
@@ -198,6 +199,7 @@ const pricingCard: PricingCard[] = [
         id: 6,
       },
     ],
+    sallrey: 2900
   },
   {
     title: "Project-based",

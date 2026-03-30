@@ -7,12 +7,25 @@ $display-flex: flex;
   background-color: var(--white-color);
   .container {
     @include v.flex-center-mian;
+    @media (max-width: v.$width-xl) {
+      width: 70%;
+    }
+    @media (max-width: v.$width-sm) {
+      width: 100%;
+    }
+
     :global(.box) {
       flex-direction: row;
       width: 100%;
       justify-content: space-between;
+      @media (max-width: v.$width-xl) {
+        flex-direction: column;
+      }
       :global(.box-text-heading-container) {
         flex-direction: row;
+        @media (max-width: v.$width-xl) {
+          flex-direction: column;
+        }
         @media (max-width: v.$width-sm) {
           flex-direction: column;
           width: 100%;
@@ -43,6 +56,10 @@ $display-flex: flex;
       --border-radius-price: 16px;
       display: $display-flex;
       gap: var(--gap-sm);
+      @media (max-width: v.$width-xl) {
+        flex-direction: column;
+        gap: var(--gap-md);
+      }
       .box-container-card-price {
         @include v.flex-center-md;
 
@@ -65,8 +82,10 @@ $display-flex: flex;
             width: 100%;
             // جلب الطول الابتدائي الخاص بهذا العنصر تحديداً من الخريطة
             $current-height: map-get($initial-height, $name);
-            height: calc(#{$current-height} - (var(--scroll-progress, 0) * #{$shrink}));
-            
+            height: calc(
+              #{$current-height} - (var(--scroll-progress, 0) * #{$shrink})
+            );
+
             background-color: var(--main-bg-color);
             border-radius: var(--border-radius-price);
             // زيادة وقت الـ transition واستخدام منحنى أبطأ لجعل الحركة "مريحة" جداً
@@ -74,7 +93,9 @@ $display-flex: flex;
             will-change: height;
           }
         }
-
+        :global(.top-transform) {
+          display: none;
+        }
 
         .price-card {
           flex: 1;
@@ -85,6 +106,9 @@ $display-flex: flex;
           border-radius: var(--border-radius-price);
           background-color: var(--main-bg-color);
           border: 1px dashed transparent;
+          @media (max-width: v.$width-xl) {
+            // width: 80%;
+          }
 
           // top
           :global(.top) {
@@ -194,8 +218,30 @@ $display-flex: flex;
                 @include v.font-size-xl;
                 position: relative;
                 overflow: hidden;
+                span {
+                  display: block;
+                  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+
+                &::before {
+                  content: attr(data-price);
+                  position: absolute;
+                  left: 0;
+                  top: 100%; // يبدأ من الأسفل خارج الرؤية
+                  width: 100%;
+                  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                }
               }
-              
+
+              &.is-yearly > p {
+                span {
+                  transform: translateY(-100%); // خروج الشهر للأعلى
+                }
+                &::before {
+                  transform: translateY(-100%); // دخول السنة من الأسفل للأعلى
+                }
+              }
+
               :global(.discount) {
                 font-size: var(--font-size-xl-alt);
                 font-weight: var(--font-weight-semibold);
@@ -242,15 +288,6 @@ $display-flex: flex;
         .price-card:global(.Premium) {
           background-color: transparent;
           border-color: var(--border-card-grey-dashad);
-          .price-componints {
-            & > p::before {
-              content: "$3000";
-              transform: translateY(60px);
-              position: absolute;
-              bottom: 0;
-            }
-            
-          }
         }
       }
     }

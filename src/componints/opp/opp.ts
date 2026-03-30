@@ -51,4 +51,5 @@ export type PricingCard = {
   discount?: string | number;
   price: {id: string | number; "price-title": string}[];
   month: string | number;
+  sallrey?: number | string
 }
