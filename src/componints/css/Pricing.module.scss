@@ -74,6 +74,9 @@ $display-flex: flex;
             will-change: height;
           }
         }
+        // :global(.top-transform.Premium) {
+        //   background-color: transparent;
+        // }
 
         .price-card {
           flex: 1;
