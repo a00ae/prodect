@@ -3,8 +3,9 @@ import styles from "./css/OurTheam.module.scss";
 import Box from "./Nodos/Box";
 import Btn from "./Nodos/Btn";
 import Cards from "./Nodos/Cards";
+import { BoxSection } from "./opp/opp";
 function OurTheam() {
-  const { ourTheam } = useBoxData();
+  const  ourTheam  = useBoxData(BoxSection.OurTeam);
   return (
     <div className={styles["our-theam"]}>
       <div className={styles.container}>
@@ -22,7 +23,7 @@ function OurTheam() {
             We're a team of innovators who blend creativity with strategy to
             make brands unforgettable.
           </p>
-          <Btn color="white" size="md" title={ourTheam.btn || ""}/>
+          <Btn color="white" size="md" title={ourTheam.buttonText || ""}/>
         </div>
       </div>
     </div>

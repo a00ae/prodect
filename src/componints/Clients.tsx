@@ -4,8 +4,9 @@ import Box from "./Nodos/Box";
 import "./css/clients.scss";
 import { useProducts } from "./context/ProductProvider";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
+import { BoxSection } from "./opp/opp";
 function Clients() {
-  const { clients } = useBoxData();
+  const clients  = useBoxData(BoxSection.Clients);
   const { box } = useProducts();
   const refCurrant = useRef<HTMLDivElement>(null);
   useScrollVisibility(refCurrant, ".box-card");

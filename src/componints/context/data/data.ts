@@ -103,7 +103,7 @@ export const boxData: BoxContextType = {
       "strategy",
       "to",
     ],
-    btn: "About us",
+    buttonText: "About us",
   },
   [BoxSection.CaseStudy]: {
     // text: "Real Impact, Proven Results.",
@@ -124,5 +124,17 @@ export const boxData: BoxContextType = {
       heading: "Pricing Plans",
       subText: "Averra®",
     }
+  },
+  [BoxSection.FAQs]: {
+    text: "Every brand has a story, our process is designed to uncover it, shape it, and share it with the world.",
+    title: {
+      id: "11",
+      heading: "FAQs",
+      label: "FAQs",
+
+    },
+    moreLink: "Ask a question",
+    
   }
+  
 } as BoxContextType;

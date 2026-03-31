@@ -1,0 +1,137 @@
+@use "/src/styles/variables" as v;
+%flex-center {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--main-gap);
+}
+
+%flex-accodion {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin icon-desgin {
+  padding: 3px 5px;
+  border-radius: var(--border-radius-xs);
+  background-color: var(--main-bg-color);
+}
+.faqs {
+  @include v.container-box;
+  .container {
+    @extend %flex-center;
+    @media (max-width: v.$width-xl) {
+      @include v.flex-center-mian;
+    }
+    :global(.box) {
+
+      & h2 {
+        font-size: var(--font-size-xxl-heading);
+      }
+      :global(.box-text-heading-container) {
+        flex-direction: column;
+        width: 100%;
+        :global(.btn) {
+          & div {
+            min-width: 200px;
+          }
+        }
+
+        :global(.description .text-desc) p {
+          margin: 0;
+          font-size: var(--main-font-size-m);
+          color: var(--text-color-grey-800);
+        }
+      }
+    }
+    .accordion {
+      width: 80%;
+      @include v.flex-center-sm;
+      @media (max-width: v.$width-xl) {
+        width: 100%;
+      }
+
+      .accordion-faqs {
+        border-radius: var(--border-radius-sm);
+        padding: 20px;
+        background-color: var(--white-color, #fff);
+        position: relative;
+        width: 100%;
+        transition: background-color var(--main-transition);
+        cursor: pointer;
+        overflow: hidden;
+        border: 1px solid transparent;
+
+        .top {
+          @extend %flex-accodion;
+          .firset-cheld-title {
+            @extend %flex-accodion;
+            font-size: var(--main-font-size-m);
+            font-weight: var(--main-font-whight);
+            gap: var(--gap-sm);
+            p:first-child {
+              color: var(--main-title-color);
+              font-weight: 500;
+            }
+            p:nth-last-child(2) {
+              color: var(--btn-color);
+            }
+            p:last-child {
+              color: var(--main-text-color);
+            }
+          }
+          .icon {
+            @include v.flex-box-center;
+            @include icon-desgin();
+            svg {
+              font-weight: 100;
+              color: var(--text-color-grey-800);
+              transition: transform 0.4s ease, color var(--main-transition);
+            }
+          }
+        }
+
+        .wrapper {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+          // transform: translateY(15px);
+          
+          .inner {
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.5s;
+            transform: translateY(40px);
+            p {
+              padding-top: 20px;
+              line-height: 1.6;
+              color: var(--text-color-grey-800);
+              font-size: var(--main-font-size-m);
+            }
+          }
+        }
+
+        &.is-active {
+          background-color: var(--grey-color-100);
+          border-color: var(--grey-color-300);
+
+          .icon svg {
+            transform: rotate(135deg);
+            color: var(--btn-color);
+          }
+
+          .wrapper {
+            grid-template-rows: 1fr;
+            .inner {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+
+        &:hover svg {
+          color: var(--btn-color);
+        }
+      }
+    }
+  }
+}

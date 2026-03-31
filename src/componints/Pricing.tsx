@@ -5,9 +5,10 @@ import Box from "./Nodos/Box";
 import Btn from "./Nodos/Btn";
 import { useProducts } from "./context/ProductProvider";
 import { useEffect, useRef, useState } from "react";
+import { BoxSection } from "./opp/opp";
 
 function Pricing() {
-  const { pricing } = useBoxData();
+  const pricing = useBoxData(BoxSection.Pricing);
   const { pricingCard } = useProducts();
 
   // تحويل الحالة إلى كائن لتخزين حالة كل بطاقة بشكل مستقل

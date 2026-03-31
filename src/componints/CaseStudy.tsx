@@ -2,15 +2,15 @@ import { useBoxData } from "./context/BoxProvider";
 import { useProducts } from "./context/ProductProvider";
 import styles from "./css/CaseStudy.module.scss";
 import Box from "./Nodos/Box";
-type Props = {};
+import { BoxSection } from "./opp/opp";
 
-const CaseStudy = (props: Props) => {
-  const { caseStudy } = useBoxData();
+const CaseStudy = () => {
+  const  caseStudy = useBoxData(BoxSection.CaseStudy);
   const { cardCaseStudy } = useProducts();
   return (
     <div className={styles["case-study"]}>
       <div className={styles.container}>
-        <Box title={caseStudy.title} more={caseStudy.more} />
+        <Box title={caseStudy.title} moreLink={caseStudy.moreLink} />
 
 
         <div className={styles.card}>

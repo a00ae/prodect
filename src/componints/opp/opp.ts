@@ -78,6 +78,7 @@ export enum BoxSection {
   OurTeam = "ourTeam", // تم تصحيح الإملاء هنا
   CaseStudy = "caseStudy",
   Pricing = "pricing",
+  FAQs = "faqs",
 }
 
 export type BoxContextType = Record<BoxSection, BoxType>;

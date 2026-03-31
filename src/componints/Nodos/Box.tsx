@@ -50,7 +50,7 @@ function Box({
         />
       )}
       <div className="box-text-heading-container">
-        {!title.heading ? null : (
+        {title?.heading && (
           <h2>
             {isAnimated
               ? title.heading
