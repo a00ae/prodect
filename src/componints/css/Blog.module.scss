@@ -29,6 +29,7 @@
         .text-card {
           width: 40%;
           @extend %flex-gap-card-main;
+          justify-content: space-between;
           .top {
             @include v.flex-center-md;
             & span {
