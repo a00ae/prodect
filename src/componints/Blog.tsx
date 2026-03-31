@@ -25,7 +25,9 @@ const Blog = () => {
                 </p>
               </div>
             </div>
-            <div className={styles.image}>{/* <img src="/" alt="" /> */}</div>
+            <div className={styles.image}>
+              <img src="public\avtar-p.avif" alt="" />
+              </div>
           </a>
         </div>
       </div>
