@@ -31,25 +31,21 @@ function Pricing() {
       const rect = priceRef.current.getBoundingClientRect();
       // تقدم العنصر
       const windowHeight = window.innerHeight;
-      
       // حساب نسبة الظهور (تبدأ من 0 عند دخول العنصر وتنتهي بـ 1 بعد سكرول 400 بكسل)
       // حساب المسافة الكلية التي يقطعها العنصر داخل مجال الرؤية
       const totalDistance = windowHeight + rect.height;
       const currentDistance = windowHeight - rect.top;
-
       // حساب النسبة المئوية للظهور من 0 إلى 1 (منذ لحظة دخوله من الأسفل وحتى خروجه من الأعلى)
       const progress = Math.max(
         0,
         Math.min(1, currentDistance / totalDistance),
       );
-
       // تحديث متغير CSS مباشرة على العنصر الأب لضمان أداء عالي
       priceRef.current.style.setProperty(
         "--scroll-progress",
         progress.toString(),
       );
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []); // مصفوفة فارغة لضمان تعريف الحدث مرة واحدة فقط

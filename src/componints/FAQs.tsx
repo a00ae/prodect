@@ -1,11 +1,12 @@
 import { memo } from "react";
+import { faqs } from "./TypescriptScss/css";
 
 
 
 
 const FAQs = () => {
   return (
-    <div >
+    <div style={faqs}>
 
     </div>
   )

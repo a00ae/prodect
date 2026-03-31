@@ -1,7 +1,10 @@
 import type { CSSProperties } from "react";
 
-const price: CSSProperties = {
-    display: "flex",
-
-    
-}
+export const faqs: CSSProperties = {
+  paddingTop: "var(--main-padding-top)",
+  paddingBottom: "var(--main-padding-bottom)",
+  paddingLeft: "var(--main-padding-left)",
+  paddingRight: "var(--main-padding-right)",
+  width: "100%",
+  position: "relative",
+};

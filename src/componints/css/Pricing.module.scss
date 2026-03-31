@@ -76,7 +76,6 @@ $display-flex: flex;
           "Premium": 60px,
           "Project-based": 120px,
         );
-
         @each $name, $shrink in $shrink-amounts {
           :global(.top-transform.#{$name}) {
             width: 100%;
@@ -98,7 +97,6 @@ $display-flex: flex;
             display: none;
           }
         }
-
         .price-card {
           flex: 1;
           display: flex;
@@ -112,7 +110,6 @@ $display-flex: flex;
           // top
           :global(.top) {
             @include v.flex-center-mian;
-
             .title-top {
               display: $display-flex;
               align-items: center;
