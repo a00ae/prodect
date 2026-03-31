@@ -44,6 +44,11 @@ $width-xl: 1440px;
   font-weight: var(--main-font-whight);
   color: var(--main-text-color);
 }
+@mixin font-size-md {
+  font-size: var(--font-size-lg-alt);
+  font-weight: var(--main-font-whight);
+  color: var(--main-text-color);
+}
 
 // desc
 
@@ -52,11 +57,18 @@ $width-xl: 1440px;
   font-weight: var(--font-weight-semibold);
   color: var(--main-title-color);
 }
+@mixin font-size-desc-sm {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--main-title-color);
+}
+
 
 %flex-gap-card-main {
   display: flex;
   flex-direction: column;
   gap: var(--gap-card);
   background-color: var(--white-color);
-  
+  padding: 20px;
+  border-radius: 20px;
 }

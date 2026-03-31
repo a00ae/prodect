@@ -27,10 +27,26 @@
              color: var(--main-text-color);
              @extend %flex-card-container;
              .text-card {
-                background-color: var(--white-color, #fff);
                 width: 40%;
-                
                 @extend %flex-gap-card-main;
+                .top {
+                    @include v.flex-center-md;
+                    & span {
+                        @include v.font-size-desc;
+                    }
+                    & h3 {
+                        @include v.font-size-md;
+                    }
+                }
+                .bottom {
+                    p {
+                        @include v.font-size-desc-sm;
+                    }
+                }
+             }
+
+             .image {
+                
              }
          }
         }
