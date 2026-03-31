@@ -5,11 +5,7 @@ import { BoxSection } from "./opp/opp";
 import styles from "./css/FAQs.module.scss";
 import { RiAddLine } from "@remixicon/react";
 
-const FAQs = () => {
-  const faqsData = useBoxData(BoxSection.FAQs);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const faqItems = [
+const faqItems = [
     {
       id: "01",
       question: "What industries do you specialize in?",
@@ -30,23 +26,29 @@ const FAQs = () => {
     },
     {
       id: "04",
-      question: "Do you offer ongoing support after launch?",
+      question: "How do you manage communication and revisions?",
       answer:
-        "Yes, we provide post-launch support and maintenance packages to ensure your digital products stay updated and continue to perform at their best.",
+        "All communication is centralized through your dedicated project manager or workspace. We offer unlimited revisions within the project scope to ensure complete satisfaction.",
     },
     {
       id: "05",
-      question: "Do you offer ongoing support after launch?",
+      question: "How quickly will I receive completed work?",
       answer:
-        "Yes, we provide post-launch support and maintenance packages to ensure your digital products stay updated and continue to perform at their best.",
+        "Turnaround times vary depending on the request, but most tasks are completed within 2–5 business days. Larger projects may take longer and will include a custom timeline.",
     },
     {
       id: "06",
-      question: "Do you offer ongoing support after launch?",
+      question: "Can I switch or cancel my plan anytime?",
       answer:
-        "Yes, we provide post-launch support and maintenance packages to ensure your digital products stay updated and continue to perform at their best.",
+        "Yes. You can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of your next billing cycle.",
     },
   ];
+
+const FAQs = () => {
+  const faqsData = useBoxData(BoxSection.FAQs);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  
 
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));

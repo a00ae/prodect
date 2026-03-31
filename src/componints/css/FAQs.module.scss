@@ -94,7 +94,7 @@
           display: grid;
           grid-template-rows: 0fr;
           transition: grid-template-rows 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-          // transform: translateY(15px);
+
           
           .inner {
             overflow: hidden;
@@ -102,10 +102,11 @@
             transition: opacity 0.3s ease, transform 0.5s;
             transform: translateY(40px);
             p {
-              padding-top: 20px;
+              padding-top: 25px;
               line-height: 1.6;
               color: var(--text-color-grey-800);
               font-size: var(--main-font-size-m);
+              max-width: 90%;
             }
           }
         }
