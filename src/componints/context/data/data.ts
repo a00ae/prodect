@@ -135,6 +135,15 @@ export const boxData: BoxContextType = {
     },
     moreLink: "Ask a question",
     
+  },
+  [BoxSection.Blog]: {
+    title: {
+      id: "12",
+      label: "Blog",
+      heading: "Our Blog",
+      subText: "Weekly updates"
+    },
+    moreLink: "All articles"
   }
   
 } as BoxContextType;

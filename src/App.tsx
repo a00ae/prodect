@@ -1,6 +1,7 @@
 // import { useReducer } from "react";
 import "./App.scss";
 import AboutUs from "./componints/AboutUs";
+import Blog from "./componints/Blog";
 import CaseStudy from "./componints/CaseStudy";
 import Clients from "./componints/Clients";
 import FAQs from "./componints/FAQs";
@@ -49,6 +50,7 @@ function App() {
           <CaseStudy />
           <Pricing />
           <FAQs/>
+          <Blog/>
         </BoxProvider>
       </div>
     </ProductProvider>

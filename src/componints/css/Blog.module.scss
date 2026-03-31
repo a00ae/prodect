@@ -1,0 +1,10 @@
+@use "/src/styles/variables" as v;
+
+.blog {
+    @include v.container-box;
+    .container {
+        :global(.box) {
+            
+        }
+    }
+}
