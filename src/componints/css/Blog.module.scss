@@ -1,10 +1,35 @@
 @use "/src/styles/variables" as v;
+%flex-card-container {
+    display: flex;
+    gap: var(--main-gap);
 
+}
 .blog {
     @include v.container-box;
     .container {
         :global(.box) {
-            
+           flex-direction: row;
+           justify-content: space-between;
+           width: 100%;
+           & h2 {
+            font-size: var(--font-size-xxl-heading);
+           }
+           :global(.title) {
+            flex-direction: column;
+            justify-content: start;
+           }
+           :global(.box-text-heading-container) {
+            flex-direction: row;
+           }
+        }
+        .card-container {
+         & a {
+             color: var(--main-text-color);
+             @extend %flex-card-container;
+             .text-card {
+                background-color: var(--white-color, #fff);
+             }
+         }
         }
     }
 }
