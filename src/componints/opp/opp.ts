@@ -14,21 +14,6 @@ export interface Product {
   image: string;
 }
 
-export type Shopping = {
-  data: string;
-  title: string;
-  projects?: string;
-  heading?: string | ReactNode;
-};
-
-export interface BoxType {
-  text?: string;
-  more?: string;
-  title: Shopping;
-  highlightWords?: string[];
-  btn?: string
-}
-
 export interface BoxCard {
   imges?: string;
   price?: string;
@@ -36,20 +21,63 @@ export interface BoxCard {
   desc?: string;
 }
 
- export interface CaseStudyItem {
+export interface CaseStudyItem {
   id: number;
   title: string;
   desc: string | string[];
   img?: string;
-  isActive?: "img1" | "img2" ;
+  isActive?: "img1" | "img2";
 }
-
 
 export type PricingCard = {
   title: string;
   desc: string;
   discount?: string | number;
-  price: {id: string | number; "price-title": string}[];
+  price: { id: string | number; "price-title": string }[];
   month: string | number;
-  sallrey?: number | string
+  sallrey?: number | string;
+};
+
+type MoreLinkProps = {
+  moreLink?: string;
+};
+
+type TextDesc = {
+  text?: string;
+};
+
+type ButtonText = {
+  buttonText?: string;
+};
+
+type HighlightWords = {
+  highlightWords?: string[];
+};
+
+export interface BoxTitle {
+  id: string;
+  label: string;
+  heading?: string;
+  subText?: string;
 }
+export type BoxType = {
+  title: BoxTitle;
+} & MoreLinkProps &
+  TextDesc &
+  ButtonText &
+  HighlightWords;
+
+export enum BoxSection {
+  AboutUs = "aboutUs",
+  ShoppingCart = "shoppingCart",
+  Services = "services",
+  Process = "process",
+  WhyUs = "whyUs",
+  Clients = "clients",
+  Testimonials = "testimonials",
+  OurTeam = "ourTeam", // تم تصحيح الإملاء هنا
+  CaseStudy = "caseStudy",
+  Pricing = "pricing",
+}
+
+export type BoxContextType = Record<BoxSection, BoxType>;

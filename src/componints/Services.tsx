@@ -4,10 +4,11 @@ import { useBoxData } from "./context/BoxProvider";
 import "./css/Services.scss";
 import { RiArrowDownSLine } from "@remixicon/react";
 import "../../public/image-shopping/branding-01.avif";
+import { BoxSection } from "./opp/opp";
 
 function Services() {
   console.log("Services");
-  const { services } = useBoxData();
+  const  services  = useBoxData(BoxSection.Services);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const items = [
@@ -66,7 +67,7 @@ function Services() {
       <div className="container">
         <Box
           title={services.title}
-          more={services.more}
+          moreLink={services.moreLink}
           text={services.text}
           isAnimated={true}
           highlightWords={services.highlightWords}

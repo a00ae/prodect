@@ -3,9 +3,10 @@ import Box from "./Nodos/Box";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Why-us.scss";
 import Cards from "./Nodos/Cards";
+import { BoxSection } from "./opp/opp";
 
 function WhyUs() {
-  const { whyUs } = useBoxData();
+  const whyUs  = useBoxData(BoxSection.WhyUs);
   return (
     <div className="why-us" id="why-us">
       <div className="contaner">

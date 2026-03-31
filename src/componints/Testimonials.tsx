@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import { useScrollAnimation } from "./Hooks/useScrollAnimation";
 import { useStaticData } from "./Hooks/useStaticData";
 import Box from "./Nodos/Box";
@@ -6,6 +6,7 @@ import ProcessCard from "./Nodos/ProcessCard";
 import Rate from "./Nodos/Rate";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Testimonials.scss";
+import { BoxSection } from "./opp/opp";
 
 const cardImges = Array.from(
   { length: 4 },
@@ -13,7 +14,7 @@ const cardImges = Array.from(
 );
 
 function Testimonials() {
-  const { testimonials } = useBoxData();
+  const  testimonials = useBoxData(BoxSection.Testimonials);
   const { testimonialsData } = useStaticData();
   const ref = useRef<HTMLDivElement>(null);
   useScrollAnimation(ref, { selector: ".process-card" });
@@ -35,7 +36,7 @@ function Testimonials() {
   return (
     <div className="testimonials" id="testimonials">
       <div className="container" ref={ref}>
-        <Box title={testimonials.title} more={testimonials.more} />
+        <Box title={testimonials.title} moreLink={testimonials.moreLink} />
 
         <div className="testimonials_card">
           <div className="testimonials_card_item_1">
@@ -75,4 +76,4 @@ function Testimonials() {
   );
 }
 
-export default Testimonials;
+export default memo(Testimonials);

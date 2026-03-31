@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 function Box({
   text,
-  more,
+  moreLink,
   title,
   className,
   isAnimated = false,
@@ -14,7 +14,6 @@ function Box({
 }: BoxType & {
   className?: string;
   isAnimated?: boolean;
-  highlightWords?: string[];
 }) {
   const boxRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -45,9 +44,9 @@ function Box({
         .join(" ")}>
       {title && (
         <ScTitle
-          data={title.data}
-          title={title.title}
-          projects={title.projects}
+          id={title.id}
+          label={title.label}
+          subText={title.subText}
         />
       )}
       <div className="box-text-heading-container">
@@ -110,11 +109,11 @@ function Box({
             </div>
           </div>
         )}
-        {!more ? null : (
+        {!moreLink ? null : (
           <div className="btn">
             <div>
               <a href="#">
-                <p>{more}</p> <RiArrowRightUpLine />
+                <p>{moreLink}</p> <RiArrowRightUpLine />
               </a>
               <div className="btn-border"></div>
             </div>

@@ -3,14 +3,19 @@ import Box from "./Nodos/Box";
 import "./css/Process.scss";
 import { memo } from "react";
 import ProcessList from "./Nodos/ProcessList";
+import { BoxSection } from "./opp/opp";
 
 function Process() {
-  const { process } = useBoxData();
+  const process = useBoxData(BoxSection.Process);
 
   return (
     <div className="process" id="process">
       <div className="container">
-        <Box more={process.more} title={process.title} text={process.text} />
+        <Box
+          moreLink={process.moreLink}
+          title={process.title}
+          text={process.text}
+        />
 
         <ProcessList />
       </div>

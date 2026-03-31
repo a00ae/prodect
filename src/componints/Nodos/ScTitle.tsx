@@ -1,15 +1,13 @@
-// import "../css/studio.scss";
-import type { Shopping } from "../opp/opp";
-function ScTitle({ data, title, projects }: Shopping) {
+import type { BoxTitle } from "../opp/opp";
+function ScTitle({ id, label, subText }: BoxTitle) {
   return (
     <div className="title">
       <div>
-        <p>{data}</p>
+        <p>{id}</p>
         <p>|</p>
-        <p>{title}</p>
+        <p>{label}</p>
       </div>
-
-      {projects && <p>{projects}</p>}
+      {subText && <p>{subText}</p>}
     </div>
   );
 }

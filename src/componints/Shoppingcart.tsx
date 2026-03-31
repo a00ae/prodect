@@ -4,11 +4,12 @@ import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
 import { useBoxData } from "./context/BoxProvider";
 import { useResponsiveToggle, useScrollVisibility } from "./Hooks/useViewHooks";
+import { BoxSection } from "./opp/opp";
 
 function Shoppingcart() {
   console.log("Shoppingcart");
   const { products } = useProducts();
-  const { shoppingCart } = useBoxData();
+  const shoppingCart = useBoxData(BoxSection.ShoppingCart);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // استخدام الهوكات المخصصة
@@ -21,7 +22,7 @@ function Shoppingcart() {
         <Box
           className={styles["shopping-cart__box"]}
           title={shoppingCart.title}
-          more={shoppingCart.more}
+          moreLink={shoppingCart.moreLink}
           isAnimated={true}
         />
         <div className={styles["shopping-cart__cards"]} ref={containerRef}>
