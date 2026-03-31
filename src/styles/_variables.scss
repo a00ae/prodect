@@ -52,3 +52,11 @@ $width-xl: 1440px;
   font-weight: var(--font-weight-semibold);
   color: var(--main-title-color);
 }
+
+%flex-gap-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-card);
+  background-color: var(--white-color);
+  
+}

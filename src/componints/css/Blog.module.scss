@@ -2,8 +2,8 @@
 %flex-card-container {
     display: flex;
     gap: var(--main-gap);
-
 }
+
 .blog {
     @include v.container-box;
     .container {
@@ -28,6 +28,9 @@
              @extend %flex-card-container;
              .text-card {
                 background-color: var(--white-color, #fff);
+                width: 40%;
+                
+                @extend %flex-gap-card-main;
              }
          }
         }
