@@ -7,33 +7,34 @@ import { useProducts } from "./context/ProductProvider";
 
 const Blog = () => {
   const blog = useBoxData(BoxSection.Blog);
-  const {blogArticles} = useProducts();
+  const { blogArticles } = useProducts();
   return (
     <div className={styles.blog}>
       <div className={styles.container}>
         <Box {...blog} />
 
-
-
-        <div className={styles["card-container"]}>
-          <a href="#">
-            <div className={styles["text-card"]}>
-              <div className={styles.top}>
-                <span>Oct 09, 2025</span>
-                <h3>How Visual Identity Shapes Brand Perception.</h3>
-              </div>
-              <div className={styles.bottom}>
-                <p>
-                  A deep dive into how thoughtful visual systems influence
-                  customer trust, from color psychology to logo simplicity.
-                </p>
-              </div>
+        {blogArticles.map(({date, id, title, img, desc, section}) => {
+          return (
+            <div key={id} className={styles["card-container"]}>
+              <a href="#">
+                <div className={styles["text-card"]}>
+                  <div className={styles.top}>
+                    <span>{date}</span>
+                    <h3>{title}.</h3>
+                  </div>
+                  <div className={styles.bottom}>
+                    <p>
+                      {desc}.
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.image} data-section={section}>
+                  <img src={img} alt={title} />
+                </div>
+              </a>
             </div>
-            <div className={styles.image}>
-              <img src="public\avtar-p.avif" alt="" />
-              </div>
-          </a>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -71,7 +71,7 @@
             transition: var(--transition-xl);
           }
           &::before {
-            content: "bilding";
+            content: attr(data-section);
             position: absolute;
             top: 10px;
             right: 15px;

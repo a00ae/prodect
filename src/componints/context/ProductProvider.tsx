@@ -248,19 +248,19 @@ const blogArticle: Blog[] = [
   },
   {
     id: 2,
-    date: "Oct 9, 2025",
+    date: "Sep 29, 2025",
     title: "How Visual Identity Shapes Brand Perception",
     desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
-    section: "Branding",
+    section: "Strategy",
     img: blogImgs[1],
   },
   {
     id: 3,
-    date: "Oct 9, 2025",
+    date: "Sep 26, 2025",
     title: "How Visual Identity Shapes Brand Perception",
     desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
-    section: "Branding",
-    img: blogImgs[3],
+    section: "Marketing",
+    img: blogImgs[2],
   },
 ]
 
@@ -276,7 +276,7 @@ const ProductContext = createContext<ProductContextType | null>(null);
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const value = useMemo(
-    () => ({ products: cardItem, box, cardCaseStudy, pricingCard, blogArticle }),
+    () => ({ products: cardItem, box, cardCaseStudy, pricingCard, blogArticles: blogArticle }),
     [],
   );
   return (
