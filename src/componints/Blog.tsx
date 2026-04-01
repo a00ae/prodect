@@ -3,15 +3,17 @@ import styles from "./css/Blog.module.scss";
 import Box from "./Nodos/Box";
 import { useBoxData } from "./context/BoxProvider";
 import { BoxSection } from "./opp/opp";
+import { useProducts } from "./context/ProductProvider";
 
 const Blog = () => {
   const blog = useBoxData(BoxSection.Blog);
+  const {blogArticles} = useProducts();
   return (
     <div className={styles.blog}>
       <div className={styles.container}>
         <Box {...blog} />
 
-        
+
 
         <div className={styles["card-container"]}>
           <a href="#">

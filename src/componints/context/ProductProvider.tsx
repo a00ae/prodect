@@ -269,7 +269,7 @@ type ProductContextType = {
   box: BoxCard[];
   cardCaseStudy: CaseStudyItem[];
   pricingCard: PricingCard[];
-  blog: Blog[];
+  blogArticles: Blog[];
 };
 
 const ProductContext = createContext<ProductContextType | null>(null);
