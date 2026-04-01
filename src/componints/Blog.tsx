@@ -11,12 +11,14 @@ const Blog = () => {
       <div className={styles.container}>
         <Box {...blog} />
 
+        
+
         <div className={styles["card-container"]}>
           <a href="#">
             <div className={styles["text-card"]}>
               <div className={styles.top}>
                 <span>Oct 09, 2025</span>
-                <h3>How Visual Identity S</h3>
+                <h3>How Visual Identity Shapes Brand Perception.</h3>
               </div>
               <div className={styles.bottom}>
                 <p>

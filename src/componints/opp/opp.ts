@@ -1,5 +1,18 @@
 import type { ReactNode } from "react";
 
+type Id = {
+  id: string | number;
+};
+type Title = {
+  title: string;
+};
+
+type DescriptionGlobal = {
+  desc: string;
+};
+type Image = {
+  img?: string;
+}
 export interface Description {
   Year: string;
   Client: string;
@@ -21,22 +34,19 @@ export interface BoxCard {
   desc?: string;
 }
 
-export interface CaseStudyItem {
-  id: number;
-  title: string;
+export type CaseStudyItem = {
   desc: string | string[];
-  img?: string;
   isActive?: "img1" | "img2";
-}
+} & Title &
+  Id & Image;
 
 export type PricingCard = {
-  title: string;
-  desc: string;
   discount?: string | number;
   price: { id: string | number; "price-title": string }[];
   month: string | number;
   sallrey?: number | string;
-};
+} & Title &
+  DescriptionGlobal;
 
 type MoreLinkProps = {
   moreLink?: string;
@@ -54,12 +64,11 @@ type HighlightWords = {
   highlightWords?: string[];
 };
 
-export interface BoxTitle {
-  id: string;
+export type BoxTitle = {
   label: string;
   heading?: string;
   subText?: string;
-}
+} & Id;
 export type BoxType = {
   title: BoxTitle;
 } & MoreLinkProps &
@@ -83,3 +92,9 @@ export enum BoxSection {
 }
 
 export type BoxContextType = Record<BoxSection, BoxType>;
+
+export type Blog = {
+  date: string;
+  section: string;
+
+} & Id & Title & DescriptionGlobal & Image;

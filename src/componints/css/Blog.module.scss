@@ -7,29 +7,39 @@
 .blog {
   @include v.container-box;
   .container {
+    @include v.flex-center-lg;
     :global(.box) {
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
+      gap: var(--gap-xl);
       & h2 {
         font-size: var(--font-size-xxl-heading);
       }
       :global(.title) {
         flex-direction: column;
         justify-content: start;
+        align-items: start;
       }
       :global(.box-text-heading-container) {
         flex-direction: row;
       }
     }
+
     .card-container {
       & a {
+        border-radius: var(--border-radius-md);
+        border: 1px dashed transparent;
+        padding: 10px;
         color: var(--main-text-color);
+        transition: border-color var(--transition-xl);
         @extend %flex-card-container;
         .text-card {
           width: 40%;
           @extend %flex-gap-card-main;
+          border: 1px dashed transparent;
           justify-content: space-between;
+          transition: border-color var(--transition-xl);
           .top {
             @include v.flex-center-md;
             & span {
@@ -48,14 +58,63 @@
 
         .image {
           width: 60%;
-          max-height: 500px;
+          max-height: 100%;
           overflow: hidden;
           border-radius: 20px;
+          position: relative;
+          transition: var(--transition-xl);
           img {
             max-width: 100%;
+            height: 100%;
             transform: scale(1.1);
-            object-fit: contain;
-            transition: 0.3s;
+            object-fit: cover;
+            transition: var(--transition-xl);
+          }
+          &::before {
+            content: "bilding";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            width: max-content;
+            background-color: var(--white-color);
+            padding: 5px 10px;
+            z-index: 1;
+            border-radius: var(--border-radius-sm);
+          }
+        }
+
+        &:hover {
+          .text-card {
+            border-color: var(--btn-color);
+          }
+          .image img {
+            transform: scale(1);
+          }
+        }
+
+        @media (max-width: v.$width-xl) {
+          background-color: var(--white-color);
+
+          flex-direction: column-reverse;
+          .text-card {
+            width: 100%;
+            gap: var(--gap-sm);
+          }
+          .image {
+            width: 100%;
+            img {
+              display: block;
+              transform: scale(1.1);
+              object-fit: cover;
+              transform-origin: bottom;
+              transition: var(--main-transition);
+            }
+          }
+          &:hover {
+            border-color: var(--btn-color);
+            .text-card {
+              border-color: transparent;
+            }
           }
         }
       }

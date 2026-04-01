@@ -3,6 +3,12 @@ $width-sm: 772px;
 $width-md: 991px;
 $width-xl: 1440px;
 
+@mixin flex-center-lg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+}
+
 @mixin flex-center-mian {
   display: flex;
   flex-direction: column;

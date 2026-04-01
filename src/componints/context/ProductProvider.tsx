@@ -1,11 +1,14 @@
 import { type ReactNode, createContext, useContext, useMemo } from "react";
-import type { BoxCard, CaseStudyItem, Product, PricingCard } from "../opp/opp";
+import type { BoxCard, CaseStudyItem, Product, PricingCard, Blog } from "../opp/opp";
 
 // توليد مسارات الصور تلقائياً بناءً على العدد (4 صور) والنمط المتسلسل للاسم
 const clientImages = Array.from(
   { length: 6 },
   (_, i) => `/clients/clents-0${i + 1}.svg`,
 );
+
+
+const blogImgs = Array.from ({length: 3}, (_, i) => `/Blog/blog-0${i + 1}.avif`);
 
 const cardItem: Product[] = [
   {
@@ -234,18 +237,46 @@ const pricingCard: PricingCard[] = [
   },
 ];
 
+const blogArticle: Blog[] = [
+  {
+    id: 1,
+    date: "Oct 9, 2025",
+    title: "How Visual Identity Shapes Brand Perception",
+    desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
+    section: "Branding",
+    img: blogImgs[0],
+  },
+  {
+    id: 2,
+    date: "Oct 9, 2025",
+    title: "How Visual Identity Shapes Brand Perception",
+    desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
+    section: "Branding",
+    img: blogImgs[1],
+  },
+  {
+    id: 3,
+    date: "Oct 9, 2025",
+    title: "How Visual Identity Shapes Brand Perception",
+    desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
+    section: "Branding",
+    img: blogImgs[3],
+  },
+]
+
 type ProductContextType = {
   products: Product[];
   box: BoxCard[];
   cardCaseStudy: CaseStudyItem[];
   pricingCard: PricingCard[];
+  blog: Blog[];
 };
 
 const ProductContext = createContext<ProductContextType | null>(null);
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const value = useMemo(
-    () => ({ products: cardItem, box, cardCaseStudy, pricingCard }),
+    () => ({ products: cardItem, box, cardCaseStudy, pricingCard, blogArticle }),
     [],
   );
   return (
