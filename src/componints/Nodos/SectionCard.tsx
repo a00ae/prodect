@@ -1,14 +1,16 @@
 import type { Blog } from "../opp/opp";
-import styles from "../css/Blog.module.scss"
+import styles from "../css/Blog.module.scss";
 
 interface Props {
-    data: Blog;
+  data: Blog;
+  isActive: boolean;
 }
 
-
-function SectionCard({data}: Props) {
+function SectionCard({ data, isActive = false }: Props) {
   return (
-    <div key={data.id} className={styles["card-container"]}>
+    <div
+      key={data.id}
+      className={`${styles["card-container"]} ${isActive ? styles["is-active"] : ""}`}>
       <a href="#">
         <div className={styles["text-card"]}>
           <div className={styles.top}>

@@ -14,9 +14,9 @@ const Blog = () => {
       <div className={styles.container}>
         <Box {...blog} />
 
-        {blogArticles.map(({date, id, title, img, desc, section}) => {
+        {blogArticles.map(({date, id, title, img, desc, section, isActive}) => {
           return (
-            <SectionCard data={{date, id, title, img, desc, section}}/>
+            <SectionCard isActive={!!isActive} data={{date, id, title, img, desc, section,}}/>
             // <div key={id} className={styles["card-container"]}>
             //   <a href="#">
             //     <div className={styles["text-card"]}>

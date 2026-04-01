@@ -96,5 +96,6 @@ export type BoxContextType = Record<BoxSection, BoxType>;
 export type Blog = {
   date: string;
   section: string;
+  isActive?: boolean;
 
 } & Id & Title & DescriptionGlobal & Image;

@@ -245,6 +245,7 @@ const blogArticle: Blog[] = [
     desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
     section: "Branding",
     img: blogImgs[0],
+    
   },
   {
     id: 2,
@@ -253,6 +254,7 @@ const blogArticle: Blog[] = [
     desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
     section: "Strategy",
     img: blogImgs[1],
+    isActive: true,
   },
   {
     id: 3,
@@ -261,8 +263,9 @@ const blogArticle: Blog[] = [
     desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
     section: "Marketing",
     img: blogImgs[2],
+    isActive: true,
   },
-]
+];
 
 type ProductContextType = {
   products: Product[];
