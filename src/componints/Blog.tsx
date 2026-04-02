@@ -12,29 +12,11 @@ const Blog = () => {
   return (
     <div className={styles.blog}>
       <div className={styles.container}>
-        <Box {...blog} />
+        <Box {...blog}  isAnimated={true}/>
 
         {blogArticles.map(({date, id, title, img, desc, section, isActive}) => {
           return (
             <SectionCard isActive={!!isActive} data={{date, id, title, img, desc, section,}}/>
-            // <div key={id} className={styles["card-container"]}>
-            //   <a href="#">
-            //     <div className={styles["text-card"]}>
-            //       <div className={styles.top}>
-            //         <span>{date}</span>
-            //         <h3>{title}.</h3>
-            //       </div>
-            //       <div className={styles.bottom}>
-            //         <p>
-            //           {desc}.
-            //         </p>
-            //       </div>
-            //     </div>
-            //     <div className={styles.image} data-section={section}>
-            //       <img src={img} alt={title} />
-            //     </div>
-            //   </a>
-            // </div>
           );
         })}
       </div>

@@ -143,7 +143,8 @@ export const boxData: BoxContextType = {
       heading: "Our Blog",
       subText: "Weekly updates"
     },
-    moreLink: "All articles"
-  }
+    moreLink: "All articles",
+    highlightWords: ["Our", "Blog"]
+  },
   
 } as BoxContextType;
