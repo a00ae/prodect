@@ -112,7 +112,7 @@ export const boxData: BoxContextType = {
       id: "09",
       label: "Case study",
       subText: "2024",
-      heading: "Real Impact, Proven Results"
+      heading: "Real Impact, Proven Results",
     },
   },
 
@@ -123,7 +123,7 @@ export const boxData: BoxContextType = {
       label: "Pricing",
       heading: "Pricing Plans",
       subText: "Averra®",
-    }
+    },
   },
   [BoxSection.FAQs]: {
     text: "Every brand has a story, our process is designed to uncover it, shape it, and share it with the world.",
@@ -131,20 +131,26 @@ export const boxData: BoxContextType = {
       id: "11",
       heading: "FAQs",
       label: "FAQs",
-
     },
     moreLink: "Ask a question",
-    
   },
   [BoxSection.Blog]: {
     title: {
       id: "12",
       label: "Blog",
       heading: "Our Blog",
-      subText: "Weekly updates"
+      subText: "Weekly updates",
     },
     moreLink: "All articles",
-    highlightWords: ["Our", "Blog"]
   },
-  
+  [BoxSection.Newsletter]: {
+    text: "Join our Newsletter for insights, design inspiration, and marketing strategies that help modern brands grow",
+    title: {
+      id: "13",
+      label: "Newsletter",
+      heading: "Stay in the Loop",
+      subText: "Monthly updates",
+    },
+    highlightWords: ["Newsletter", "help", "modern", "brands", "grow"],
+  },
 } as BoxContextType;

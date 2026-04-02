@@ -5,6 +5,7 @@ import Blog from "./componints/Blog";
 import CaseStudy from "./componints/CaseStudy";
 import Clients from "./componints/Clients";
 import FAQs from "./componints/FAQs";
+import Newsletter from "./componints/Newsletter";
 import OurTheam from "./componints/OurTheam";
 import Pricing from "./componints/Pricing";
 import Process from "./componints/Process";
@@ -51,6 +52,7 @@ function App() {
           <Pricing />
           <FAQs/>
           <Blog/>
+          <Newsletter/>
         </BoxProvider>
       </div>
     </ProductProvider>

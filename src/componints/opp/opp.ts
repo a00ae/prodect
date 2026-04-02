@@ -89,6 +89,7 @@ export enum BoxSection {
   Pricing = "pricing",
   FAQs = "faqs",
   Blog = "blog",
+  Newsletter = "newsletter"
 }
 
 export type BoxContextType = Record<BoxSection, BoxType>;

@@ -1,0 +1,33 @@
+@use "/src/styles/variables" as v;
+
+.newsletter {
+    @include v.container-box;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--main--gap);
+        :global(.box) {
+            flex-direction: row;
+            justify-content: space-between;
+            flex: 1;
+            h2 {
+                font-size: var(--font-size-xxl-heading);
+                max-width: fit-content;
+            }
+            :global(.title) {
+                flex-direction: column;
+                justify-content: start;
+            }
+            :global(.box-text-heading-container) {
+                flex-direction: column;
+                :global(.text-desc) > p {
+                        color: var(--main-title-color);
+                        :global(.highlight-text) {
+                            color: var(--main-text-color);
+                        }
+                }
+            }
+        }
+        
+    }
+}
