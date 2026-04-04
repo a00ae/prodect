@@ -5,6 +5,7 @@ import Blog from "./componints/Blog";
 import CaseStudy from "./componints/CaseStudy";
 import Clients from "./componints/Clients";
 import FAQs from "./componints/FAQs";
+import Footer from "./componints/Footer";
 import Newsletter from "./componints/Newsletter";
 import OurTheam from "./componints/OurTheam";
 import Pricing from "./componints/Pricing";
@@ -54,7 +55,9 @@ function App() {
           <Blog/>
           <Newsletter/>
         </BoxProvider>
+        <Footer/>
       </div>
+
     </ProductProvider>
   );
 }

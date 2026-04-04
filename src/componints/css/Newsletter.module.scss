@@ -1,33 +1,109 @@
 @use "/src/styles/variables" as v;
 
 .newsletter {
-    @include v.container-box;
-    .container {
-        display: flex;
-        justify-content: space-between;
-        gap: var(--main--gap);
-        :global(.box) {
-            flex-direction: row;
-            justify-content: space-between;
-            flex: 1;
-            h2 {
-                font-size: var(--font-size-xxl-heading);
-                max-width: fit-content;
-            }
-            :global(.title) {
-                flex-direction: column;
-                justify-content: start;
-            }
-            :global(.box-text-heading-container) {
-                flex-direction: column;
-                :global(.text-desc) > p {
-                        color: var(--main-title-color);
-                        :global(.highlight-text) {
-                            color: var(--main-text-color);
-                        }
-                }
-            }
+  @include v.container-box;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--main--gap);
+    :global(.box) {
+      flex-direction: row;
+      justify-content: space-between;
+      flex: 1;
+      h2 {
+        font-size: var(--font-size-xxl-heading);
+        max-width: 70%;
+        line-height: 1.1;
+        font-weight: var(--font-weight-medium);
+      }
+      :global(.title) {
+        flex-direction: column;
+        justify-content: start;
+      }
+      :global(.box-text-heading-container) {
+        flex-direction: column;
+        gap: var(--gap-sm);
+        :global(.text-desc) > p {
+          color: var(--main-title-color);
+          font-weight: var(--font-weight-normal);
+          width: 100%;
+          margin: 0;
+          letter-spacing: -1px;
+          line-height: 1.1;
+          :global(.highlight-text) {
+            color: var(--main-text-color);
+          }
         }
-        
+      }
     }
+    .email {
+      --padding-email: 15px 10px;
+      --line-height-email: 1.1;
+      --font-size-email: 22px;
+      --font-weight-email: 600;
+
+      display: flex;
+      align-items: end;
+      gap: var(--gap-xs);
+      // & input {
+      //   flex: none;
+      //   padding: var(--padding-email);
+      //   border-radius: var(--border-radius-md);
+      //   font-size: var(--font-size-email);
+      //   font-weight: var(--font-weight-semibold);
+      //   border: 1px dashed var(--main-title-color);
+      //   outline: none;
+      //   width: 65%;
+      //   background-color: var(--main-bg-color-before);
+        
+      //   &:focus {
+      //     border-color: var(--main-title-color);
+      //   }
+
+      //   ::placeholder {
+      //     color: var(--main-title-color);
+      //     font-weight: var(--font-weight-normal) !important;
+      //   }
+      // }
+      // .btn-container {
+      //   flex: 1;
+      //   border: none;
+      //   padding: 15px 30px;
+      //   background-color: var(--main-text-color);
+      //   border-radius: var(--border-radius-md);
+      //   color: var(--white-color, #fff);
+      //   cursor: pointer;
+      //   display: flex;
+      //   justify-content: center;
+      //   align-items: center;
+      //   .btn-av {
+      //     position: relative;
+      //     overflow: hidden;
+      //     padding: 0;
+      //     border-radius: 0;
+
+      //     & > p {
+      //       font-size: var(--font-size-email);
+      //       font-weight: var(--font-weight-semibold);
+      //       transition: 0.3s;
+      //       &::after {
+      //         content: attr(data-button);
+      //         position: absolute;
+      //         left: 0;
+      //         transform: translateY(40px);
+      //         transition: 0.3s;
+      //         width: 100%;
+      //       }
+      //     }
+      //   }
+      //   &:hover {
+      //     .btn-av {
+      //       p {
+      //         transform: translateY(-40px);
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
 }
