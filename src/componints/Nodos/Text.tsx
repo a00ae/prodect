@@ -1,9 +1,11 @@
 import React, { memo } from "react";
+import "./Scss/Text.scss"
 
 // 1. تعريف الخصائص بشكل منفصل
 type TextProps<E extends React.ElementType> = {
   as?: E;
   size: "sm" | "md" | "lg";
+  className: "h1" | "h2" | "h3" | "input" | "p" | "box" | "button"
   children?: React.ReactNode;
 } & Omit<React.ComponentPropsWithoutRef<E>, "as" | "size" | "children">;
 
@@ -12,11 +14,12 @@ function Text<E extends React.ElementType = "div">({
   as,
   size,
   children,
+  className,
   ...rest
 }: TextProps<E>) {
   const Component = as || "div";
   return (
-    <Component className={`text-${size}`} {...rest}>
+    <Component className={`${className} ${size}`} {...rest}>
       {children}
     </Component>
   );

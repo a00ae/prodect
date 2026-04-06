@@ -3,8 +3,12 @@
 .footer {
     @include v.container-box;
     background-color: var(--selction-background-color);
-    .conatiner{
-        
+    .container{
+        @include v.flex-center-md;
+        .top {
+            display: flex;
+
+        }
 
     }
 }

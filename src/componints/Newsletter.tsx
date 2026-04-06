@@ -14,7 +14,7 @@ function Newsletter() {
         <Box {...newsletter} isAnimated={true} />
         <div className={styles.email}>
           <Text as="input" type="text" size="md"  placeholder="Email"/>
-          <Text size="md" className="btn-container">
+          <Text size="md" className="button">
             <div className="btn-av">
             <p data-button="Sign up">Sign up</p>
             </div>

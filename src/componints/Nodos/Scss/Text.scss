@@ -1,0 +1,67 @@
+@use "/src/styles/variables" as v;
+
+input {
+  flex: none;
+  padding: var(--padding-email);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-email);
+  font-weight: var(--font-weight-semibold);
+  border: 1px dashed var(--main-title-color);
+  outline: none;
+  width: 65%;
+  background-color: var(--main-bg-color-before);
+  transition: border-color var(--main-transition);
+
+  &:focus {
+    border-color: var(--main-text-color);
+  }
+
+  ::placeholder {
+    color: var(--main-title-color);
+    font-weight: var(--font-weight-normal) !important;
+  }
+}
+
+
+
+.button {
+  flex: 1;
+  border: none;
+  padding: 15px 30px;
+  background-color: var(--main-text-color);
+  border-radius: var(--border-radius-md);
+  color: var(--white-color, #fff);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn-av {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 0;
+
+    & > p {
+      font-size: var(--font-size-email);
+      font-weight: var(--font-weight-semibold);
+      transition: transform var(--main-transition);
+      &::after {
+        content: attr(data-button);
+        position: absolute;
+        left: 0;
+        transform: translateY(40px);
+        transition: transform var(--main-transition);
+        width: 100%;
+      }
+    }
+  }
+  &:hover {
+    .btn-av {
+      p {
+        transform: translateY(-40px);
+      }
+    }
+  }
+}
+
+
