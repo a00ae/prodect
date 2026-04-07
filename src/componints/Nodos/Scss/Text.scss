@@ -64,4 +64,31 @@ input {
   }
 }
 
+.h2 {
+    color: var(--white-color, #fff);
+    line-height: 1.1;
+    font-weight: 600;
+    &.lg {
+        font-size:var(--font-size-xxl-heading);
+        
+        
+    }
+    &.md {
+        font-size:var(--font-size-xxl-heading);
+        
+        
+
+    }
+    &.sm {
+        font-size:var(--font-size-xxl-heading);
+
+    }
+}
+
+.p {
+    color: var(--main-title-color);
+    font-size: var(--main-font-size-L);
+    font-weight: 600;
+}
+
 
