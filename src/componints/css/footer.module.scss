@@ -21,14 +21,37 @@
         border-radius: var(--border-radius-contect);
         padding: var(--padding-contect);
         .top-card {
-            @include v.flex-center-md;
-            p{
+            @include v.flex-center-mian;
+            &>p{
                 font-size: var(--font-size-xxl-alt-md);
                 color: var(--main-title-color);
-                width: 80%;
+                width: 90%;
                 span {
                     color: var(--white-color);
                 }
+            }
+            .card-image {
+              display: flex;
+              gap: 10px;
+              .image {
+                width: 60px;
+                height: 50px;
+                overflow: hidden;
+                border-radius: 10px;
+                
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              .box-desc {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                font-size: var(--main-font-size-m);
+                  color: var(--white-color);
+              }
             }
         }
         .bottom-card {

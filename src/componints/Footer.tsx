@@ -1,6 +1,7 @@
 import { memo } from "react";
 import styles from "./css/footer.module.scss";
 import Text from "./Nodos/Text";
+import  img from "../../public/footer/footer-01.avif"
 
 const Footer = () => {
   return (
@@ -19,6 +20,13 @@ const Footer = () => {
                 <div className={styles["top-card"]}>
                 <p><span>Your next chapter starts here.</span> Work with Averra to craft design and strategy that move your brand forward.</p>
                 <div className={styles["card-image"]}>
+                  <div className={styles["image"]}>
+                    <img src={img}  alt=""/>
+                  </div>
+                  <div className={styles["box-desc"]}>
+                    <p>Lorian Hans</p>
+                    <p>Founder & Creative Director</p>
+                  </div>
 
                 </div>
 
