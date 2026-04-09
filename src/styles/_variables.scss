@@ -3,10 +3,23 @@ $width-sm: 772px;
 $width-md: 991px;
 $width-xl: 1440px;
 
+@mixin flex-card-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 300px;
+
+}
+
 @mixin flex-center-lg {
   display: flex;
   flex-direction: column;
   gap: var(--gap-xl);
+}
+
+@mixin flex-box-normal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @mixin flex-center-mian {

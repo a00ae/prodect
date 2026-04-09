@@ -16,7 +16,18 @@ const Footer = () => {
         </div>
         <div className={styles.content}>
             <div className={styles["about-my"]}>
+                <div className={styles["top-card"]}>
+                <p><span>Your next chapter starts here.</span> Work with Averra to craft design and strategy that move your brand forward.</p>
+                <div className={styles["card-image"]}>
 
+                </div>
+
+                </div>
+                <div className={styles["bottom-card"]}>
+
+                <p>0 (212) 730 4650</p>
+                <p>hello@avera.com</p>
+                </div>
             </div>
             <div className={styles.form}>
 

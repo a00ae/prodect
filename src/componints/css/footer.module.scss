@@ -1,16 +1,52 @@
 @use "/src/styles/variables" as v;
 
 .footer {
-    @include v.container-box;
-    background-color: var(--selction-background-color);
-    .container{
-        @include v.flex-center-md;
-        .top {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-
+  @include v.container-box;
+  background-color: var(--selction-background-color);
+  .container {
+    @include v.flex-center-lg;
+    .top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+    }
+    .content {
+      @include v.flex-box-normal;
+      --padding-contect: 30px;
+      --border-radius-contect: 24px;
+      .about-my {
+        width: 50%;
+        @include v.flex-card-gap;
+        border: 1px dashed var(--border-dashad-color);
+        border-radius: var(--border-radius-contect);
+        padding: var(--padding-contect);
+        .top-card {
+            @include v.flex-center-md;
+            p{
+                font-size: var(--font-size-xxl-alt-md);
+                color: var(--main-title-color);
+                width: 80%;
+                span {
+                    color: var(--white-color);
+                }
+            }
+        }
+        .bottom-card {
+          @include v.flex-center-md;
+          p:first-child {
+            color: var(--white-color);
+            font-size: var(--main-font-size-m);
+          }
+          p:last-child{
+            color: var(--white-color);
+            font-size: var(--font-size-xxl-alt-md);
+            font-weight: var(--main-font-whight);
+          }
         }
 
+
+      }
     }
+  }
 }
+
