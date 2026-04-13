@@ -14,6 +14,7 @@
       @include v.flex-box-normal;
       --padding-contect: 30px;
       --border-radius-contect: 24px;
+      gap: 10px;
       .about-my {
         width: 50%;
         @include v.flex-card-gap;
@@ -68,6 +69,53 @@
         }
 
 
+      }
+
+      .form {
+        background-color: #000;
+        border-radius: var(--border-radius-contect);
+        padding: var(--padding-contect);
+        @include v.flex-center-md;
+        gap: 25px;
+        width: 50%;
+
+        .input-box {
+          width: 100%;
+          border-bottom: 1px dashed var(--main-title-color);
+          padding: 10px 0;
+
+
+          :global(#form-labal) {
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+            color: var(--white-color);
+            line-height: 2;
+            border-radius: 0;
+            
+
+            ::after::placeholder {
+              content: '';
+              color: aliceblue;
+            }
+          }
+
+          :global(#text-area) {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            width: 100%;
+            min-height: calc(300px - 100px);
+            color: var(--white-color);
+            scrollbar-width: thin;
+            scrollbar-color: transparent transparent;
+            resize: vertical;
+            font-size: 20px;
+            font-weight: var(--font-weight-semibold);
+          }
+
+        }
       }
     }
   }

@@ -1,7 +1,8 @@
 import { memo } from "react";
 import styles from "./css/footer.module.scss";
 import Text from "./Nodos/Text";
-import  img from "../../public/footer/footer-01.avif"
+import img from "../../public/footer/footer-01.avif";
+import Btn from "./Nodos/Btn";
 
 const Footer = () => {
   return (
@@ -16,31 +17,58 @@ const Footer = () => {
           </Text>
         </div>
         <div className={styles.content}>
-            <div className={styles["about-my"]}>
-                <div className={styles["top-card"]}>
-                <p><span>Your next chapter starts here.</span> Work with Averra to craft design and strategy that move your brand forward.</p>
-                <div className={styles["card-image"]}>
-                  <div className={styles["image"]}>
-                    <img src={img}  alt=""/>
-                  </div>
-                  <div className={styles["box-desc"]}>
-                    <p>Lorian Hans</p>
-                    <p>Founder & Creative Director</p>
-                  </div>
-
+          <div className={styles["about-my"]}>
+            <div className={styles["top-card"]}>
+              <p>
+                <span>Your next chapter starts here.</span> Work with Averra to
+                craft design and strategy that move your brand forward.
+              </p>
+              <div className={styles["card-image"]}>
+                <div className={styles["image"]}>
+                  <img src={img} alt="" />
                 </div>
-
+                <div className={styles["box-desc"]}>
+                  <p>Lorian Hans</p>
+                  <p>Founder & Creative Director</p>
                 </div>
-                <div className={styles["bottom-card"]}>
-
-                <p>0 (212) 730 4650</p>
-                <p>hello@avera.com</p>
-                </div>
+              </div>
             </div>
-            <div className={styles.form}>
+            <div className={styles["bottom-card"]}>
+              <p>0 (212) 730 4650</p>
+              <p>hello@avera.com</p>
+            </div>
+          </div>
+          <form className={styles.form} action="">
+            <label htmlFor="">
+        
+            <div className={styles["input-box"]}>
+            <input type="text" name="" id="form-labal"  placeholder="Name*"/>
 
             </div>
-            .
+            </label>
+            <label htmlFor="" >
+
+            <div className={styles["input-box"]}>
+            <input type="text" name="" id="form-labal" placeholder="Email*"/>
+
+            </div>
+            </label>
+            <label htmlFor="">
+            <div className={styles["input-box"]}>
+            <input  type="text" name="" id="form-labal" placeholder="Budget (optional)"/>
+
+            </div>
+            </label>
+            <label htmlFor="">
+              <div className={styles["input-box"]}>
+                <textarea name="" id="text-area" placeholder="Message*" rows={4} ></textarea>
+              </div>
+            </label>
+
+            <Btn  title="Send Message" color="white"/>
+
+          </form>
+          .
         </div>
       </div>
     </div>

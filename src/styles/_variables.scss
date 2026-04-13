@@ -19,7 +19,7 @@ $width-xl: 1440px;
 @mixin flex-box-normal {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
 }
 
 @mixin flex-center-mian {
