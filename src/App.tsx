@@ -1,6 +1,7 @@
 // import { useReducer } from "react";
 import "./App.scss";
 import AboutUs from "./componints/AboutUs";
+import AltFooter from "./componints/AltFooter";
 import Blog from "./componints/Blog";
 import CaseStudy from "./componints/CaseStudy";
 import Clients from "./componints/Clients";
@@ -56,6 +57,7 @@ function App() {
           <Newsletter/>
         </BoxProvider>
         <Footer/>
+        <AltFooter/>
       </div>
 
     </ProductProvider>

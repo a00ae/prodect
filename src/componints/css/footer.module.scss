@@ -67,7 +67,7 @@
               font-size: var(--font-size-xxl-alt-md);
               font-weight: var(--main-font-whight);
               &::before {
-                content: 'hello@avera.com';
+                content: "hello@avera.com";
               }
             }
           }
@@ -117,12 +117,24 @@
           }
         }
       }
+    }
+  }
+}
 
-      .alt-footer {
-        background-color: #212121;
-        width: 100%;
-        
+.alt-footer {
+  padding: 40px  30px;
+  background-color: #212121;
+  width: 100%;
+  .descrption-footer {
+    @include v.flex-center-md;
+    .top-footer {
+      @include v.flex-center-md;
+      h3 {
+        color: var(--white-color);
       }
+    }
+
+    .media-bottom {
     }
   }
 }
