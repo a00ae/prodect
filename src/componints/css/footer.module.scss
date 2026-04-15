@@ -22,53 +22,56 @@
         border-radius: var(--border-radius-contect);
         padding: var(--padding-contect);
         .top-card {
-            @include v.flex-center-mian;
-            &>p{
-                font-size: var(--font-size-xxl-alt-md);
-                color: var(--main-title-color);
-                width: 90%;
-                span {
-                    color: var(--white-color);
-                }
+          @include v.flex-center-mian;
+          & > p {
+            font-size: var(--font-size-xxl-alt-md);
+            color: var(--main-title-color);
+            width: 90%;
+            span {
+              color: var(--white-color);
             }
-            .card-image {
+          }
+          .card-image {
+            display: flex;
+            gap: 10px;
+            .image {
+              width: 60px;
+              height: 50px;
+              overflow: hidden;
+              border-radius: 10px;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+            .box-desc {
               display: flex;
-              gap: 10px;
-              .image {
-                width: 60px;
-                height: 50px;
-                overflow: hidden;
-                border-radius: 10px;
-                
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-              .box-desc {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                font-size: var(--main-font-size-m);
-                  color: var(--white-color);
-              }
+              flex-direction: column;
+              justify-content: space-between;
+              font-size: var(--main-font-size-m);
+              color: var(--white-color);
             }
+          }
         }
         .bottom-card {
           @include v.flex-center-md;
-          p:first-child {
-            color: var(--white-color);
-            font-size: var(--main-font-size-m);
+          .phone-top {
+            @include v.hover-transform;
           }
-          p:last-child{
-            color: var(--white-color);
-            font-size: var(--font-size-xxl-alt-md);
-            font-weight: var(--main-font-whight);
+          .email-bottom {
+            @include v.hover-transform;
+            p {
+              color: var(--white-color);
+              font-size: var(--font-size-xxl-alt-md);
+              font-weight: var(--main-font-whight);
+              &::before {
+                content: 'hello@avera.com';
+              }
+            }
           }
         }
-
-
       }
 
       .form {
@@ -84,7 +87,6 @@
           border-bottom: 1px dashed var(--main-title-color);
           padding: 10px 0;
 
-
           :global(#form-labal) {
             width: 100%;
             border: none;
@@ -93,10 +95,9 @@
             color: var(--white-color);
             line-height: 2;
             border-radius: 0;
-            
 
             ::after::placeholder {
-              content: '';
+              content: "";
               color: aliceblue;
             }
           }
@@ -114,10 +115,14 @@
             font-size: 20px;
             font-weight: var(--font-weight-semibold);
           }
-
         }
+      }
+
+      .alt-footer {
+        background-color: #212121;
+        width: 100%;
+        
       }
     }
   }
 }
-

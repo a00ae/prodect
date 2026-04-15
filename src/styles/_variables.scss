@@ -7,7 +7,6 @@ $width-xl: 1440px;
   display: flex;
   flex-direction: column;
   gap: 300px;
-
 }
 
 @mixin flex-center-lg {
@@ -39,11 +38,10 @@ $width-xl: 1440px;
 }
 
 @mixin flex-box-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 @mixin container-box {
   width: 100%;
@@ -82,7 +80,6 @@ $width-xl: 1440px;
   color: var(--main-title-color);
 }
 
-
 %flex-gap-card-main {
   display: flex;
   flex-direction: column;
@@ -90,4 +87,28 @@ $width-xl: 1440px;
   background-color: var(--white-color);
   padding: 20px;
   border-radius: 20px;
+}
+
+// hover
+
+@mixin hover-transform {
+  overflow: hidden;
+  p {
+    color: var(--white-color);
+    font-size: var(--main-font-size-m);
+    position: relative;
+    transition: transform var(--main-transition);
+    &::before {
+      content: "0 (212) 730 4650";
+      position: absolute;
+      transform: translateY(40px);
+      transition: transform var(--main-transition);
+    }
+  }
+  &:hover {
+    p {
+      transform: translateY(-40px);
+      color: var(--btn-color);
+    }
+  }
 }

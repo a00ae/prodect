@@ -34,42 +34,62 @@ const Footer = () => {
               </div>
             </div>
             <div className={styles["bottom-card"]}>
-              <p>0 (212) 730 4650</p>
-              <p>hello@avera.com</p>
+              <div className={styles["phone-top"]}>
+                <p>0 (212) 730 4650</p>
+              </div>
+              <div className={styles["email-bottom"]}>
+                <p>hello@avera.com</p>
+              </div>
             </div>
           </div>
           <form className={styles.form} action="">
             <label htmlFor="">
-        
-            <div className={styles["input-box"]}>
-            <input type="text" name="" id="form-labal"  placeholder="Name*"/>
-
-            </div>
-            </label>
-            <label htmlFor="" >
-
-            <div className={styles["input-box"]}>
-            <input type="text" name="" id="form-labal" placeholder="Email*"/>
-
-            </div>
-            </label>
-            <label htmlFor="">
-            <div className={styles["input-box"]}>
-            <input  type="text" name="" id="form-labal" placeholder="Budget (optional)"/>
-
-            </div>
+              <div className={styles["input-box"]}>
+                <input
+                  type="text"
+                  name=""
+                  id="form-labal"
+                  placeholder="Name*"
+                />
+              </div>
             </label>
             <label htmlFor="">
               <div className={styles["input-box"]}>
-                <textarea name="" id="text-area" placeholder="Message*" rows={4} ></textarea>
+                <input
+                  type="text"
+                  name=""
+                  id="form-labal"
+                  placeholder="Email*"
+                />
+              </div>
+            </label>
+            <label htmlFor="">
+              <div className={styles["input-box"]}>
+                <input
+                  type="text"
+                  name=""
+                  id="form-labal"
+                  placeholder="Budget (optional)"
+                />
+              </div>
+            </label>
+            <label htmlFor="">
+              <div className={styles["input-box"]}>
+                <textarea
+                  name=""
+                  id="text-area"
+                  placeholder="Message*"
+                  rows={4}></textarea>
               </div>
             </label>
 
-            <Btn  title="Send Message" color="white"/>
-
+            <Btn title="Send Message" color="white" />
           </form>
           .
         </div>
+          <div className={styles["alt-footer"]}>
+            .
+          </div>
       </div>
     </div>
   );
