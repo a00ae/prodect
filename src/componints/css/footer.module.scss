@@ -127,11 +127,12 @@
   width: 100%;
   display: flex;
   gap: 200px;
+  --width-sction-1: 500px;
   
   .descrption-footer {
     @include v.flex-center-md;
     gap: 40px;
-    width: 500px;
+    width: var(--width-sction-1);
     .top-footer {
       @include v.flex-center-md;
       h3 {
@@ -156,10 +157,12 @@
   }
 
   .wedght-footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    display: flex;
+    justify-content: space-between;
     gap: var(--main--gap);
+    width: calc(100% - var(--width-sction-1));
     ul {
+      flex: 1;
       @include v.flex-center-md;
       li {
         font-size: var(--font-size-md-alt);
