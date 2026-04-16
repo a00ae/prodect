@@ -125,16 +125,54 @@
   padding: 40px  30px;
   background-color: #212121;
   width: 100%;
+  display: flex;
+  gap: 200px;
+  
   .descrption-footer {
     @include v.flex-center-md;
+    gap: 40px;
+    width: 500px;
     .top-footer {
       @include v.flex-center-md;
       h3 {
         color: var(--white-color);
+        font-size: var(--font-size-xxl-alt);
+      }
+      p {
+        color: var(--main-title-color);
+        line-height: 1.3;
+        font-size: var(--font-size-md-alt);
       }
     }
 
     .media-bottom {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      svg {
+        color: var(--white-color);
+      }
+    }
+  }
+
+  .wedght-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--main--gap);
+    ul {
+      @include v.flex-center-md;
+      li {
+        font-size: var(--font-size-md-alt);
+        font-weight: var(--font-weight-semibold);
+        a {
+          color: var(--white-color);
+        }
+      }
+      .tilte-footer {
+        color: var(--main-title-color);
+        font-size: var(--font-size-md-alt);
+        text-transform: capitalize;
+      }
     }
   }
 }
