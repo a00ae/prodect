@@ -36,7 +36,7 @@ const AltFooter = () => {
         {/* <div > */}
         <ul className={styles["media-bottom"]}>
           {media.map((ele, index) => (
-            <li key={index}>{ele}</li>
+            <li key={index}><a href="#">{ele}</a></li>
           ))}
         </ul>
         {/* </div> */}
@@ -46,7 +46,7 @@ const AltFooter = () => {
           <li className={styles["tilte-footer"]}>pages</li>
           {wedght.slice(0, 5).map((item, i) => (
             <li key={i}>
-              <a href="#">{item}</a>
+              <a href="#" data-title={item}>{item}</a>
             </li>
           ))}
         </ul>
@@ -55,7 +55,7 @@ const AltFooter = () => {
           <li className={styles["tilte-footer"]}>legal</li>
           {wedght.slice(5).map((ele, index) => (
             <li key={index}>
-              <a href="#">{ele}</a>
+              <a href="#" data-title={ele} >{ele}</a>
             </li>
           ))}
         </ul>

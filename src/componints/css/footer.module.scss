@@ -62,6 +62,7 @@
           }
           .email-bottom {
             @include v.hover-transform;
+
             p {
               color: var(--white-color);
               font-size: var(--font-size-xxl-alt-md);
@@ -86,6 +87,7 @@
           width: 100%;
           border-bottom: 1px dashed var(--main-title-color);
           padding: 10px 0;
+          transition: border-color var(--main-transition);
 
           :global(#form-labal) {
             width: 100%;
@@ -115,6 +117,9 @@
             font-size: 20px;
             font-weight: var(--font-weight-semibold);
           }
+          &:focus-within {
+            border-color: var(--white-color);
+          }
         }
       }
     }
@@ -122,13 +127,13 @@
 }
 
 .alt-footer {
-  padding: 40px  30px;
+  padding: 40px 30px;
   background-color: #212121;
   width: 100%;
   display: flex;
   gap: 200px;
   --width-sction-1: 500px;
-  
+
   .descrption-footer {
     @include v.flex-center-md;
     gap: 40px;
@@ -150,8 +155,17 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      svg {
-        color: var(--white-color);
+      a {
+        svg {
+          color: var(--white-color);
+          transition: color var(--main-transition);
+        }
+        &:hover {
+          svg {
+            color: var(--btn-color);
+
+          }
+        }
       }
     }
   }
@@ -167,14 +181,49 @@
       li {
         font-size: var(--font-size-md-alt);
         font-weight: var(--font-weight-semibold);
+        overflow: hidden;
+        cursor: pointer;
         a {
           color: var(--white-color);
+          position: relative;
+          transition: transform var(--main-transition);
+          display: inline-block;
+          &::before {
+            content: attr(data-title);
+            position: absolute;
+            transform: translateY(40px);
+            transition: transform var(--main-transition) ;
+          }
+        }
+        &:hover {
+          a {
+            transform: translateY(-40px);
+            color: var(--btn-color);
+          }
         }
       }
       .tilte-footer {
         color: var(--main-title-color);
         font-size: var(--font-size-md-alt);
         text-transform: capitalize;
+      }
+    }
+    .sction-title {
+      @include v.flex-center-md;
+      justify-content: flex-end;
+      p {
+        color: var(--white-color);
+        font-size: var(--font-size-md-alt);
+      }
+      .child-sction-title {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        p {
+          color: var(--main-title-color);
+          font-weight: var(--font-weight-semibold);
+          font-size: var(--font-size-md-alt);
+        }
       }
     }
   }

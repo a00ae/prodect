@@ -93,6 +93,8 @@ $width-xl: 1440px;
 
 @mixin hover-transform {
   overflow: hidden;
+  width: max-content;
+  cursor: pointer;
   p {
     color: var(--white-color);
     font-size: var(--main-font-size-m);
