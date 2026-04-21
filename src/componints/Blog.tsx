@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { memo } from "react";
 import styles from "./css/Blog.module.scss";
 import Box from "./Nodos/Box";
 import { useBoxData } from "./context/BoxProvider";
@@ -9,17 +9,22 @@ import SectionCard from "./Nodos/SectionCard";
 const Blog = () => {
   const blog = useBoxData(BoxSection.Blog);
   const { blogArticles } = useProducts();
-  const ref = useRef<HTMLDivElement>(null);
+
   return (
     <div className={styles.blog}>
       <div className={styles.container}>
-        <Box {...blog}  isAnimated={true}/>
+        <Box {...blog} isAnimated={true} />
 
-        {blogArticles.map(({date, id, title, img, desc, section, isActive}) => {
-          return (
-            <SectionCard isActive={!!isActive} data={{date, id, title, img, desc, section,}}/>
-          );
-        })}
+        {blogArticles.map(
+          ({ date, id, title, img, desc, section, isActive }) => {
+            return (
+              <SectionCard
+                isActive={!!isActive}
+                data={{ date, id, title, img, desc, section }}
+              />
+            );
+          },
+        )}
       </div>
     </div>
   );
