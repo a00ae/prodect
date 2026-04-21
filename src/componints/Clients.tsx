@@ -1,7 +1,7 @@
 import { memo, useRef } from "react";
 import { useBoxData } from "./context/BoxProvider";
 import Box from "./Nodos/Box";
-import "./css/clients.scss";
+import styles from "./css/Clients.module.scss";
 import { useProducts } from "./context/ProductProvider";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
 import { BoxSection } from "./opp/opp";
@@ -9,20 +9,20 @@ function Clients() {
   const clients  = useBoxData(BoxSection.Clients);
   const { box } = useProducts();
   const refCurrant = useRef<HTMLDivElement>(null);
-  useScrollVisibility(refCurrant, ".box-card");
+  useScrollVisibility(refCurrant, `.${styles["box-card"]}`);
 
   return (
-    <div className="clients" id="clients">
-      <div className="container" ref={refCurrant}>
+    <div className={styles["clients"]} id="clients">
+      <div className={styles.container} ref={refCurrant}>
         <Box title={clients.title} />
 
-          <div className="box-card">
+          <div className={styles["box-card"]}>
           {box.map(({ imges, title, price, desc }, index) => (
-            <div key={index} className={`card-item ${!imges ? "active" : ""}`}>
+            <div key={index} className={`${styles["card-item"]} ${!imges ? styles.active : ""}`}>
               {!imges ? (
-                <div className="text">
-                  <div className="text-price">
-                    <div className="title-cards">
+                <div className={styles.text}>
+                  <div className={styles["text-price"]}>
+                    <div className={styles["title-cards"]}>
                       <span>{price}</span>
                       <p>{index == 4 ? "+" : "%"}</p>
                     </div>
@@ -32,7 +32,7 @@ function Clients() {
                   <p>{desc}</p>
                 </div>
               ) : (
-                <div className="imges">
+                <div className={styles.imges}>
                   <img src={imges} alt={title || "imges.com"} />
                 </div>
               )}

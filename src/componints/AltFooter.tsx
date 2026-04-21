@@ -5,6 +5,8 @@ import {
   RiLinkedinFill,
   RiTwitterXLine,
 } from "@remixicon/react";
+import { useScrollVisibility } from "./Hooks/useViewHooks";
+import { useRef } from "react";
 
 const media = [
   <RiTwitterXLine />,
@@ -22,9 +24,15 @@ const wedght = [
   "Privacy Policy",
   "Terms & Connditions",
 ];
+
 const AltFooter = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  useScrollVisibility(
+    ref,
+    `.${styles["descrption-footer"]}, .${styles["wedght-footer"]}`,
+  );
   return (
-    <div className={styles["alt-footer"]}>
+    <div ref={ref} className={styles["alt-footer"]}>
       <div className={styles["descrption-footer"]}>
         <div className={styles["top-footer"]}>
           <h3>Averra Studio®</h3>
@@ -36,7 +44,9 @@ const AltFooter = () => {
         {/* <div > */}
         <ul className={styles["media-bottom"]}>
           {media.map((ele, index) => (
-            <li key={index}><a href="#">{ele}</a></li>
+            <li key={index}>
+              <a href="#">{ele}</a>
+            </li>
           ))}
         </ul>
         {/* </div> */}
@@ -46,7 +56,9 @@ const AltFooter = () => {
           <li className={styles["tilte-footer"]}>pages</li>
           {wedght.slice(0, 5).map((item, i) => (
             <li key={i}>
-              <a href="#" data-title={item}>{item}</a>
+              <a href="#" data-title={item}>
+                {item}
+              </a>
             </li>
           ))}
         </ul>
@@ -55,7 +67,9 @@ const AltFooter = () => {
           <li className={styles["tilte-footer"]}>legal</li>
           {wedght.slice(5).map((ele, index) => (
             <li key={index}>
-              <a href="#" data-title={ele} >{ele}</a>
+              <a href="#" data-title={ele}>
+                {ele}
+              </a>
             </li>
           ))}
         </ul>

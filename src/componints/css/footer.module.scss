@@ -9,18 +9,34 @@
       display: flex;
       align-items: end;
       justify-content: space-between;
+
+      @media (max-width: v.$width-md) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--gap-md);
+      }
     }
     .content {
       @include v.flex-box-normal;
       --padding-contect: 30px;
       --border-radius-contect: 24px;
       gap: 10px;
+      @media (max-width: v.$width-md) {
+        flex-direction: column;
+      }
       .about-my {
         width: 50%;
         @include v.flex-card-gap;
         border: 1px dashed var(--border-dashad-color);
         border-radius: var(--border-radius-contect);
         padding: var(--padding-contect);
+
+        @include v.reveal-on-scroll;
+
+        @media (max-width: v.$width-md) {
+          width: 100%;
+          gap: var(--gap-xl); // تقليل الفجوة الكبيرة في الجوال
+        }
         .top-card {
           @include v.flex-center-mian;
           & > p {
@@ -76,12 +92,18 @@
       }
 
       .form {
-        background-color: #000;
+        background-color: var(--main-text-color);
         border-radius: var(--border-radius-contect);
         padding: var(--padding-contect);
         @include v.flex-center-md;
         gap: 25px;
         width: 50%;
+
+        @include v.reveal-on-scroll($delay: 0.2s);
+
+        @media (max-width: v.$width-md) {
+          width: 100%;
+        }
 
         .input-box {
           width: 100%;
@@ -134,10 +156,24 @@
   gap: 200px;
   --width-sction-1: 500px;
 
+  @media (max-width: v.$width-xl) {
+    gap: 100px;
+  }
+
+  @media (max-width: v.$width-md) {
+    flex-direction: column;
+    gap: 50px;
+    --width-sction-1: 100%;
+    padding: 40px 20px;
+  }
+
   .descrption-footer {
     @include v.flex-center-md;
     gap: 40px;
     width: var(--width-sction-1);
+
+    @include v.reveal-on-scroll($y: 0, $x: -30px);
+
     .top-footer {
       @include v.flex-center-md;
       h3 {
@@ -175,6 +211,14 @@
     justify-content: space-between;
     gap: var(--main--gap);
     width: calc(100% - var(--width-sction-1));
+
+    @include v.reveal-on-scroll($y: 20px, $delay: 0.3s);
+
+    @media (max-width: v.$width-sm) {
+      flex-direction: column;
+      width: 100%;
+    }
+
     ul {
       flex: 1;
       @include v.flex-center-md;

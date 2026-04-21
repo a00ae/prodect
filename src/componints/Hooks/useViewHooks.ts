@@ -19,7 +19,7 @@ export const useResponsiveToggle = (breakpoint: number) => {
 // هوك لإضافة كلاس عند ظهور العنصر في الشاشة
 export const useScrollVisibility = (
   ref: RefObject<HTMLElement>,
-  selector: string
+  selector: string,
 ) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,14 +27,30 @@ export const useScrollVisibility = (
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
+            // تحسين الأداء: التوقف عن مراقبة العنصر بعد أن يصبح مرئياً
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      {
+        // تقليل العتبة لضمان التفعيل بمجرد ظهور جزء بسيط جداً من العنصر
+        threshold: 0.01,
+        // تقليل الهامش السالب أو إزالته لضمان التفعيل في نهاية الصفحة
+        rootMargin: "0px 0px -10px 0px",
+      },
     );
 
-    const elements = ref.current?.querySelectorAll(selector);
-    elements?.forEach((el) => observer.observe(el));
+    if (ref.current) {
+      // محاولة البحث عن الأبناء
+      const elements = selector ? ref.current.querySelectorAll(selector) : [];
+
+      if (elements.length > 0) {
+        elements.forEach((el) => observer.observe(el));
+      } else {
+        // إذا لم يوجد selector أو لم يتم العثور على أبناء، نراقب الـ container نفسه
+        observer.observe(ref.current);
+      }
+    }
 
     return () => observer.disconnect();
   }, [ref, selector]);

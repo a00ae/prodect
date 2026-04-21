@@ -1,19 +1,25 @@
+import { useRef } from "react";
 import { useBoxData } from "./context/BoxProvider";
 import { useProducts } from "./context/ProductProvider";
 import styles from "./css/CaseStudy.module.scss";
 import Box from "./Nodos/Box";
 import { BoxSection } from "./opp/opp";
+import { useScrollVisibility } from "./Hooks/useViewHooks";
 
 const CaseStudy = () => {
+  const ref  = useRef<HTMLDivElement>(null);
   const  caseStudy = useBoxData(BoxSection.CaseStudy);
   const { cardCaseStudy } = useProducts();
+  useScrollVisibility(ref, `.${styles.card}`)
+
+
   return (
     <div className={styles["case-study"]}>
-      <div className={styles.container}>
+      <div ref={ref} className={styles.container}>
         <Box title={caseStudy.title} moreLink={caseStudy.moreLink} />
 
 
-        <div className={styles.card}>
+        <div  className={styles.card}>
 
         <div className={styles["card-item"]}>
           {cardCaseStudy

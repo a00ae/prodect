@@ -1,13 +1,17 @@
-import { memo } from "react";
+import { memo, useRef } from "react";
 import styles from "./css/footer.module.scss";
 import Text from "./Nodos/Text";
 import img from "../../public/footer/footer-01.avif";
 import Btn from "./Nodos/Btn";
+import { useScrollAnimation } from "./Hooks/useScrollAnimation";
+import { useScrollVisibility } from "./Hooks/useViewHooks";
 
 const Footer = () => {
+  const refCurrent = useRef<HTMLDivElement>(null);
+  useScrollVisibility(refCurrent, `.${styles["about-my"]}, .${styles["form"]}`);
   return (
     <div className={styles.footer}>
-      <div className={styles.container}>
+      <div ref={refCurrent} className={styles.container}>
         <div className={styles.top}>
           <Text className="h2" size="lg" as="h2">
             Ready to start a new project?

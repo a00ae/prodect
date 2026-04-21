@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useRef } from "react";
 import styles from "./css/Blog.module.scss";
 import Box from "./Nodos/Box";
 import { useBoxData } from "./context/BoxProvider";
@@ -9,6 +9,7 @@ import SectionCard from "./Nodos/SectionCard";
 const Blog = () => {
   const blog = useBoxData(BoxSection.Blog);
   const { blogArticles } = useProducts();
+  const ref = useRef<HTMLDivElement>(null);
   return (
     <div className={styles.blog}>
       <div className={styles.container}>

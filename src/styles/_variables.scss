@@ -114,3 +114,15 @@ $width-xl: 1440px;
     }
   }
 }
+
+// Mixin للظهور عند التمرير
+@mixin reveal-on-scroll($y: 30px, $x: 0, $delay: 0s) {
+  opacity: 0;
+  transform: translate($x, $y);
+  transition: opacity 0.8s ease-out $delay, transform 0.8s ease-out $delay;
+
+  &:global(.is-visible) {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
