@@ -33,6 +33,8 @@
     width: 100%;
     font-size: var(--font-size-xxl-card);
     letter-spacing: -1px;
+    display: flex;
+    flex-wrap: wrap;
     @media (max-width: v.$width-xl) {
         font-size: var(--font-size-xxl-alt);
     }

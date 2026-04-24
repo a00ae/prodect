@@ -3,6 +3,7 @@ import "./App.scss";
 import AboutUs from "./componints/AboutUs";
 import AltFooter from "./componints/AltFooter";
 import Blog from "./componints/Blog";
+import Button from "./componints/Button";
 import CaseStudy from "./componints/CaseStudy";
 import Clients from "./componints/Clients";
 import FAQs from "./componints/FAQs";
@@ -58,6 +59,7 @@ function App() {
         </BoxProvider>
         <Footer/>
         <AltFooter/>
+        <Button/>
       </div>
 
     </ProductProvider>

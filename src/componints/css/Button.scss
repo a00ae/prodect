@@ -1,0 +1,23 @@
+@use "/src/styles/variables" as v;
+.button-app {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    z-index: 999;
+    @include v.flex-center-md;
+    .btn-shop {
+        background-color: var(--white-color);
+        padding: 10px 20px;
+        border-radius: var(--border-radius-sm);
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+        a {
+            color: var(--text-color-dark);
+            font-weight: var(--font-weight-semibold);
+           p {
+            text-align: center;
+           }
+        }
+        
+    }
+
+}

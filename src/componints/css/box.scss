@@ -14,7 +14,6 @@
   gap: var(--main--gap);
   @media (max-width: v.$width-xl) {
     flex-direction: column;
-    
   }
 }
 
@@ -27,7 +26,6 @@
   gap: 5px;
   @media (max-width: v.$width-xl) {
     font-size: var(--font-size-xxl-alt);
-    
   }
 }
 
@@ -81,7 +79,7 @@
   overflow: hidden;
 }
 .box .btn div {
-  width: min-content;
+  width: max-content;
   min-width: 150px;
 }
 .box .btn .btn-border {
@@ -126,7 +124,6 @@
   .box .title {
     flex-direction: row !important;
     justify-content: space-between !important;
-
   }
 
   .title > p {
@@ -140,11 +137,11 @@
   .box .btn a p {
     font-size: var(--font-size-md-alt);
   }
-.box .text-desc > p  {
-  width: 80%;
-  font-size: var(--font-size-sm);
-        margin-bottom: var(--main-margin-sm);
-}
+  .box .text-desc > p {
+    width: 80%;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--main-margin-sm);
+  }
 }
 .box .btn a svg {
   width: 25px;
@@ -164,7 +161,7 @@
 }
 
 @media (max-width: v.$width-xl) {
-   .box {
+  .box {
     width: 100%;
   }
 }

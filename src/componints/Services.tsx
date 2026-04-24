@@ -3,7 +3,6 @@ import { memo, useState } from "react";
 import { useBoxData } from "./context/BoxProvider";
 import "./css/Services.scss";
 import { RiArrowDownSLine } from "@remixicon/react";
-import "../../public/image-shopping/branding-01.avif";
 import { BoxSection } from "./opp/opp";
 
 function Services() {
@@ -74,11 +73,11 @@ function Services() {
         />
         <div className="box-card-accordion">
           <div className="text-branding">
-            <h2>(01)</h2>
+            <h2>(0{( activeIndex ?? 0 ) + 1})</h2>
 
             <div className="image">
               <p>Branding</p>
-              <img src="../../public/image-shopping/branding-01.avif" alt="" />
+              <img src={`../../public/service/service-0${( activeIndex ?? 0 ) + 1}.avif`} alt="" />
             </div>
           </div>
 

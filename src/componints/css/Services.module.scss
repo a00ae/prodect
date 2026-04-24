@@ -1,0 +1,79 @@
+@use "../../styles/variables" as v;
+
+.services {
+  @include v.container-box;
+  
+  .container {
+    @include v.flex-center-lg;
+  }
+}
+
+.box-card-accordion {
+  @include v.flex-box-normal;
+  gap: var(--main--gap);
+
+  @media (max-width: v.$width-md) {
+    flex-direction: column;
+  }
+}
+
+.text-branding {
+  width: 40%;
+  @include v.flex-center-mian;
+  
+  h2 {
+    @include v.font-size-xl;
+    color: var(--main-title-color);
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.accordion {
+  width: 60%;
+  @include v.flex-center-md;
+
+  @media (max-width: v.$width-md) {
+    width: 100%;
+  }
+
+  .accordion__container {
+    width: 100%;
+    padding: 20px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-dashad-color);
+    @include v.reveal-on-scroll($y: 20px);
+
+    .title h3 {
+      @include v.font-size-md;
+      transition: color 0.3s ease;
+    }
+
+    .details-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    &.is-active {
+      .title h3 {
+        color: var(--btn-color);
+      }
+      .details-wrapper {
+        max-height: 500px;
+      }
+    }
+  }
+}

@@ -1,16 +1,19 @@
-import { memo } from "react";
+import { memo, useRef } from "react";
 import styles from "./css/Newsletter.module.scss";
 import Box from "./Nodos/Box";
 import { useBoxData } from "./context/BoxProvider";
 import { BoxSection } from "./opp/opp";
 import Text from "./Nodos/Text";
+import { useScrollVisibility } from "./Hooks/useViewHooks";
 
 
 function Newsletter() {
   const newsletter = useBoxData(BoxSection.Newsletter);
+  const refCurrent = useRef<HTMLDivElement>(null); 
+  useScrollVisibility(refCurrent, `.${styles.container}`)
   return (
     <div className={styles["newsletter"]}>
-      <div className={styles.container}>
+      <div ref={refCurrent} className={styles.container}>
         <Box {...newsletter} isAnimated={true} />
         <div className={styles.email}>
           <Text as="input" type="text" size="md"  placeholder="Email"/>

@@ -19,6 +19,7 @@
   @include v.container-box;
   .container {
     @extend %flex-center;
+    @include v.reveal-on-scroll;
     @media (max-width: v.$width-xl) {
       @include v.flex-center-mian;
     }
@@ -46,6 +47,7 @@
     .accordion {
       width: 80%;
       @include v.flex-center-sm;
+      
       @media (max-width: v.$width-xl) {
         width: 100%;
       }
@@ -60,6 +62,7 @@
         cursor: pointer;
         overflow: hidden;
         border: 1px solid transparent;
+         
 
         .top {
           @extend %flex-accodion;
