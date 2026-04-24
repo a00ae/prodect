@@ -4,7 +4,7 @@ function Button() {
   return (
     <div className="button-app">
       {btn.map((el) => (
-        <div className={`btn-shop ${el.split(' ').join("-")}`}>
+        <div className={`btn-shop ${el.split(' ').join("-").toLocaleLowerCase()}`}>
           <a href="">
             <p>{el}</p>
           </a>
