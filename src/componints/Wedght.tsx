@@ -13,8 +13,8 @@ function Wedght() {
         </div>
         <div className="nav">
           <ul className="nav-element">
-            {arr.map((name) => (
-              <li key={name}>
+            {arr.map((name, index) => (
+              <li key={index}>
                 <a className="top-text">{name}</a>
                 <a className="bottom-text">{name}</a>
               </li>
