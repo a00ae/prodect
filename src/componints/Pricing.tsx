@@ -1,15 +1,14 @@
 import { RiCheckboxCircleLine } from "@remixicon/react";
-import { useBoxData } from "./context/BoxProvider";
 import styles from "./css/Pricing.module.scss";
 import Box from "./Nodos/Box";
 import Btn from "./Nodos/Btn";
 import { useProducts } from "./context/ProductProvider";
 import { useEffect, useRef, useState } from "react";
-import { BoxSection } from "./opp/opp";
+import { boxData } from "./context/data/data";
 
 function Pricing() {
-  const pricing = useBoxData(BoxSection.Pricing);
   const { pricingCard } = useProducts();
+  const { pricing } = boxData;
 
   // تحويل الحالة إلى كائن لتخزين حالة كل بطاقة بشكل مستقل
   const [checkedPlans, setCheckedPlans] = useState<Record<string, boolean>>({});

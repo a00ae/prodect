@@ -1,11 +1,10 @@
 import "./css/studio.scss";
 import "../../public/avtar-video.mp4";
-import {
-  RiPlayCircleFill,
-} from "@remixicon/react";
+import { RiPlayCircleFill } from "@remixicon/react";
 import { memo } from "react";
 import Rate from "./Nodos/Rate";
 import Btn from "./Nodos/Btn";
+
 function Studio() {
   console.log("Studio");
   return (
@@ -71,7 +70,7 @@ function Studio() {
               </div>
             </div>
             <div className="template-4">
-              <Btn title="Satrt a Project"/>
+              <Btn title="Satrt a Project" />
             </div>
           </div>
         </div>

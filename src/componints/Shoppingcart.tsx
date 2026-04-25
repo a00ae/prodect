@@ -2,14 +2,13 @@ import { useRef, memo } from "react";
 import styles from "./css/Shoppingcart.module.scss";
 import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
-import { useBoxData } from "./context/BoxProvider";
 import { useResponsiveToggle, useScrollVisibility } from "./Hooks/useViewHooks";
-import { BoxSection } from "./opp/opp";
+import { boxData } from "./context/data/data";
 
 function Shoppingcart() {
   console.log("Shoppingcart");
   const { products } = useProducts();
-  const shoppingCart = useBoxData(BoxSection.ShoppingCart);
+  const { shoppingCart } = boxData;
   const containerRef = useRef<HTMLDivElement>(null);
 
   // استخدام الهوكات المخصصة

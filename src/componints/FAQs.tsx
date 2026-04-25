@@ -1,10 +1,9 @@
 import { memo, useRef, useState } from "react";
-import { useBoxData } from "./context/BoxProvider";
 import Box from "./Nodos/Box";
-import { BoxSection } from "./opp/opp";
 import styles from "./css/FAQs.module.scss";
 import { RiAddLine } from "@remixicon/react";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
+import { boxData } from "./context/data/data";
 
 const faqItems = [
   {
@@ -47,11 +46,11 @@ const faqItems = [
 
 const FAQs = () => {
   console.log("FAQs");
-  const faqsData = useBoxData(BoxSection.FAQs);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { faqs } = boxData;
+  const [activeIndex, setActiveIndex] = useState<number | null>(0); // تم تغيير القيمة الافتراضية إلى 0
   const refcurrent = useRef<HTMLDivElement>(null);
 
-  useScrollVisibility(refcurrent, `.${styles.container}`)
+  useScrollVisibility(refcurrent, `.${styles.container}`);
 
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));
@@ -60,11 +59,10 @@ const FAQs = () => {
   return (
     <div className={styles.faqs}>
       <div ref={refcurrent} className={styles.container}>
-        <Box {...faqsData} />
+        <Box {...faqs} />
         <div className={styles["accordion"]}>
           {faqItems.map((item, index) => (
             <div
-            
               key={index}
               onClick={() => handleToggle(index)}
               className={`${styles["accordion-faqs"]} ${activeIndex === index ? styles["is-active"] : ""}`}>

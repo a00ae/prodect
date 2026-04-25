@@ -1,12 +1,11 @@
 import { memo, useRef } from "react";
-import { useBoxData } from "./context/BoxProvider";
 import Box from "./Nodos/Box";
 import styles from "./css/Clients.module.scss";
 import { useProducts } from "./context/ProductProvider";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
-import { BoxSection } from "./opp/opp";
+import { boxData } from "./context/data/data";
 function Clients() {
-  const clients  = useBoxData(BoxSection.Clients);
+  const {clients} = boxData;
   const { box } = useProducts();
   const refCurrant = useRef<HTMLDivElement>(null);
   useScrollVisibility(refCurrant, `.${styles["box-card"]}`);

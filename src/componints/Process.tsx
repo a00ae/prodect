@@ -1,12 +1,11 @@
-import { useBoxData } from "./context/BoxProvider";
 import Box from "./Nodos/Box";
 import "./css/Process.scss";
 import { memo } from "react";
 import ProcessList from "./Nodos/ProcessList";
-import { BoxSection } from "./opp/opp";
+import { boxData } from "./context/data/data";
 
 function Process() {
-  const process = useBoxData(BoxSection.Process);
+  const { process } = boxData;
 
   return (
     <div className="process" id="process">

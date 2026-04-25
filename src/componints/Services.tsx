@@ -1,61 +1,59 @@
 import Box from "./Nodos/Box";
 import { memo, useState } from "react";
-import { useBoxData } from "./context/BoxProvider";
 import "./css/Services.scss";
 import { RiArrowDownSLine } from "@remixicon/react";
-import { BoxSection } from "./opp/opp";
+import { boxData } from "./context/data/data";
+const items = [
+  {
+    title: "Branding",
+    details:
+      "We build distinctive brands that resonate with your audience and stand the test of time.",
+    ui: [
+      "Brand Identity Design",
+      "Logo & Visual Systems",
+      "Brand Guidelines & Collateral",
+      "Digital Asset Creation",
+    ],
+  },
+  {
+    title: "Product Design",
+    details:
+      "User-centric design solutions that solve real problems and delight your customers.",
+    ui: [
+      "Brand Identity Design",
+      "Logo & Visual Systems",
+      "Brand Guidelines & Collateral",
+      "Digital Asset Creation",
+    ],
+  },
+  {
+    title: "Development",
+    details:
+      "Robust, scalable, and high-performance development to power your digital growth.",
+    ui: [
+      "Brand Identity Design",
+      "Logo & Visual Systems",
+      "Brand Guidelines & Collateral",
+      "Digital Asset Creation",
+    ],
+  },
+  {
+    title: "Content Strategy",
+    details:
+      "Strategic content creation that drives engagement and tells your brand's unique story.",
+    ui: [
+      "Brand Identity Design",
+      "Logo & Visual Systems",
+      "Brand Guidelines & Collateral",
+      "Digital Asset Creation",
+    ],
+  },
+];
 
 function Services() {
   console.log("Services");
-  const  services  = useBoxData(BoxSection.Services);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const items = [
-    {
-      title: "Branding",
-      details:
-        "We build distinctive brands that resonate with your audience and stand the test of time.",
-      ui: [
-        "Brand Identity Design",
-        "Logo & Visual Systems",
-        "Brand Guidelines & Collateral",
-        "Digital Asset Creation",
-      ],
-    },
-    {
-      title: "Product Design",
-      details:
-        "User-centric design solutions that solve real problems and delight your customers.",
-      ui: [
-        "Brand Identity Design",
-        "Logo & Visual Systems",
-        "Brand Guidelines & Collateral",
-        "Digital Asset Creation",
-      ],
-    },
-    {
-      title: "Development",
-      details:
-        "Robust, scalable, and high-performance development to power your digital growth.",
-      ui: [
-        "Brand Identity Design",
-        "Logo & Visual Systems",
-        "Brand Guidelines & Collateral",
-        "Digital Asset Creation",
-      ],
-    },
-    {
-      title: "Content Strategy",
-      details:
-        "Strategic content creation that drives engagement and tells your brand's unique story.",
-      ui: [
-        "Brand Identity Design",
-        "Logo & Visual Systems",
-        "Brand Guidelines & Collateral",
-        "Digital Asset Creation",
-      ],
-    },
-  ];
+  const { services } = boxData;
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));
@@ -73,11 +71,14 @@ function Services() {
         />
         <div className="box-card-accordion">
           <div className="text-branding">
-            <h2>(0{( activeIndex ?? 0 ) + 1})</h2>
+            <h2>(0{(activeIndex ?? 0) + 1})</h2>
 
             <div className="image">
-              <p>Branding</p>
-              <img src={`../../public/service/service-0${( activeIndex ?? 0 ) + 1}.avif`} alt="" />
+              <p>{items[activeIndex ?? 0].title}</p>
+              <img
+                src={`../../public/service/service-0${(activeIndex ?? 0) + 1}.avif`}
+                alt=""
+              />
             </div>
           </div>
 

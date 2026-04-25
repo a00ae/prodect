@@ -4,9 +4,8 @@ import { useStaticData } from "./Hooks/useStaticData";
 import Box from "./Nodos/Box";
 import ProcessCard from "./Nodos/ProcessCard";
 import Rate from "./Nodos/Rate";
-import { useBoxData } from "./context/BoxProvider";
 import "./css/Testimonials.scss";
-import { BoxSection } from "./opp/opp";
+import { boxData } from "./context/data/data";
 
 const cardImges = Array.from(
   { length: 4 },
@@ -14,7 +13,7 @@ const cardImges = Array.from(
 );
 
 function Testimonials() {
-  const  testimonials = useBoxData(BoxSection.Testimonials);
+  const { testimonials } = boxData;
   const { testimonialsData } = useStaticData();
   const ref = useRef<HTMLDivElement>(null);
   useScrollAnimation(ref, { selector: ".process-card" });

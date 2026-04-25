@@ -51,8 +51,6 @@
   transform: translateX(35px);
 }
 
-
-
 .services .container .title div p:nth-child(3) {
   color: var(--white-color);
 }
@@ -178,12 +176,13 @@
 
 .services .text-branding .image p {
   color: var(--main-title-color);
-  font-size: var(--font-size-md-alt);
+  font-size: var(--font-size-lg-alt);
   font-weight: var(--font-weight-bold);
+  padding-left: 5px;
 }
 .services .text-branding .image img {
   width: 100%;
-  border-radius: inherit;
+  border-radius: var(--border-radius-sm);
 }
 
 // accordion

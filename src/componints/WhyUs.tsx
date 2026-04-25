@@ -1,12 +1,10 @@
 import { memo } from "react";
 import Box from "./Nodos/Box";
-import { useBoxData } from "./context/BoxProvider";
-import "./css/Why-us.scss";
 import Cards from "./Nodos/Cards";
-import { BoxSection } from "./opp/opp";
+import { boxData } from "./context/data/data";
 
 function WhyUs() {
-  const whyUs  = useBoxData(BoxSection.WhyUs);
+  const { whyUs } = boxData;
   return (
     <div className="why-us" id="why-us">
       <div className="contaner">
@@ -16,9 +14,8 @@ function WhyUs() {
           isAnimated={true}
           highlightWords={whyUs.highlightWords}
         />
-        <Cards/>
+        <Cards />
       </div>
-      
     </div>
   );
 }
