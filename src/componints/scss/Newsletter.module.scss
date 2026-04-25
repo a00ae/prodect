@@ -20,11 +20,6 @@
       :global(.title) {
         flex-direction: column;
         justify-content: start;
-        & div {
-          p:nth-child(3) {
-            color: var(--white-color, #fff) !important;
-          }
-        }
       }
       :global(.box-text-heading-container) {
         flex-direction: column;

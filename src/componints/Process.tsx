@@ -1,5 +1,4 @@
 import Box from "./Nodos/Box";
-import "./css/Process.scss";
 import { memo } from "react";
 import ProcessList from "./Nodos/ProcessList";
 import { boxData } from "./context/data/data";

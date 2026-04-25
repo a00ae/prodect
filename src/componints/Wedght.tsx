@@ -1,4 +1,4 @@
-import "./css/wedght.scss";
+import "./scss/wedght.scss";
 import "../../public/Avater.svg";
 import {memo} from "react"
 

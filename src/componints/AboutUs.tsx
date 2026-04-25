@@ -1,4 +1,3 @@
-import "./css/About-us.scss";
 import Box from "./Nodos/Box";
 import { memo } from "react";
 import Cards from "./Nodos/Cards";

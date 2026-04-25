@@ -1,5 +1,5 @@
 import { useRef, memo } from "react";
-import styles from "./css/Shoppingcart.module.scss";
+import styles from "./scss/Shoppingcart.module.scss";
 import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
 import { useResponsiveToggle, useScrollVisibility } from "./Hooks/useViewHooks";

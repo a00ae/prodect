@@ -1,9 +1,8 @@
 import { memo, useRef } from "react";
-import styles from "./css/footer.module.scss";
+import styles from "./scss/footer.module.scss";
 import Text from "./Nodos/Text";
 import img from "../../public/footer/footer-01.avif";
 import Btn from "./Nodos/Btn";
-import { useScrollAnimation } from "./Hooks/useScrollAnimation";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
 
 const Footer = () => {

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import styles from "./css/OurTheam.module.scss";
+import styles from "./scss/OurTheam.module.scss";
 import Box from "./Nodos/Box";
 import Btn from "./Nodos/Btn";
 import Cards from "./Nodos/Cards";

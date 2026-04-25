@@ -1,6 +1,6 @@
 import { memo, useRef } from "react";
 import Box from "./Nodos/Box";
-import styles from "./css/Clients.module.scss";
+import styles from "./scss/Clients.module.scss";
 import { useProducts } from "./context/ProductProvider";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
 import { boxData } from "./context/data/data";

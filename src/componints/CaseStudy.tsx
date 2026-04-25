@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useProducts } from "./context/ProductProvider";
-import styles from "./css/CaseStudy.module.scss";
+import styles from "./scss/CaseStudy.module.scss";
 import Box from "./Nodos/Box";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
 import { boxData } from "./context/data/data";

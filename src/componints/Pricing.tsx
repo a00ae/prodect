@@ -1,5 +1,5 @@
 import { RiCheckboxCircleLine } from "@remixicon/react";
-import styles from "./css/Pricing.module.scss";
+import styles from "./scss/Pricing.module.scss";
 import Box from "./Nodos/Box";
 import Btn from "./Nodos/Btn";
 import { useProducts } from "./context/ProductProvider";

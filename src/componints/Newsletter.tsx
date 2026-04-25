@@ -1,5 +1,5 @@
 import { memo, useRef } from "react";
-import styles from "./css/Newsletter.module.scss";
+import styles from "./scss/Newsletter.module.scss";
 import Box from "./Nodos/Box";
 import Text from "./Nodos/Text";
 import { useScrollVisibility } from "./Hooks/useViewHooks";

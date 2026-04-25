@@ -1,5 +1,4 @@
 import { memo, useRef } from "react";
-import "../css/ProcessList.scss";
 import { useScrollAnimation } from "../Hooks/useScrollAnimation";
 import ProcessCard from "./ProcessCard";
 import { useStaticData } from "../Hooks/useStaticData";

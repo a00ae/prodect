@@ -1,4 +1,4 @@
-import styles from "./css/footer.module.scss";
+import styles from "./scss/footer.module.scss";
 import {
   RiDribbbleLine,
   RiInstagramLine,
@@ -6,7 +6,7 @@ import {
   RiTwitterXLine,
 } from "@remixicon/react";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 
 const media = [
   <RiTwitterXLine />,
@@ -87,4 +87,4 @@ const AltFooter = () => {
   );
 };
 
-export default AltFooter;
+export default memo(AltFooter);

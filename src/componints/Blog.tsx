@@ -1,5 +1,5 @@
 import { memo } from "react";
-import styles from "./css/Blog.module.scss";
+import styles from "./scss/Blog.module.scss";
 import Box from "./Nodos/Box";
 import { useProducts } from "./context/ProductProvider";
 import SectionCard from "./Nodos/SectionCard";

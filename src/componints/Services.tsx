@@ -1,6 +1,5 @@
 import Box from "./Nodos/Box";
 import { memo, useState } from "react";
-import "./css/Services.scss";
 import { RiArrowDownSLine } from "@remixicon/react";
 import { boxData } from "./context/data/data";
 const items = [

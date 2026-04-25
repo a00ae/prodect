@@ -4,7 +4,7 @@ import {
   RiDoubleQuotesR,
 } from "@remixicon/react";
 import { memo } from "react";
-import styles from "../css/ProcessCard.module.scss";
+import styles from "../scss/ProcessCard.module.scss";
 
 interface ProcessCardProps {
   id?: number;

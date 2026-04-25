@@ -1,6 +1,6 @@
 import { memo, useRef, useState } from "react";
 import Box from "./Nodos/Box";
-import styles from "./css/FAQs.module.scss";
+import styles from "./scss/FAQs.module.scss";
 import { RiAddLine } from "@remixicon/react";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
 import { boxData } from "./context/data/data";

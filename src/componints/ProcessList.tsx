@@ -1,5 +1,4 @@
 import { memo } from "react";
-import "./css/ProcessList.scss";
 
 const item = [
   {

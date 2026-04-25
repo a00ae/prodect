@@ -1,6 +1,5 @@
 import { RiArrowRightUpLine } from "@remixicon/react";
 import ScTitle from "./ScTitle";
-import "../css/box.scss";
 import type { BoxType } from "../opp/opp";
 import { useEffect, useRef, useState } from "react";
 

@@ -1,9 +1,17 @@
 @use "./styles/variables" as v;
-@use "./componints/css/Button.scss";
-@use "./componints/css/Why-us.scss";
+@use "./componints/scss/Button.scss";
+@use "./componints/scss/Why-us.scss";
+@use "./componints/scss/About-us.scss";
+@use "./componints/scss/Process.scss";
+@use "./componints/scss/ProcessList.scss";
+@use "./componints/scss/Services.scss";
+@use "./componints/scss/studio.scss";
+@use "./componints/scss/Testimonials.scss";
+@use "./componints/scss/wedght.scss";
+@use "./componints/scss/box.scss";
 
 .app {
-   width: 100%; 
+  width: 100%;
   height: 100%;
   background-color: #efefef;
   min-height: 100vh;
@@ -22,10 +30,6 @@
 }
 
 /* ======================== */
-
-
-
-
 
 @media (max-width: v.$width-sm) {
   .app {

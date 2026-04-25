@@ -1,5 +1,5 @@
 import type { Blog } from "../opp/opp";
-import styles from "../css/Blog.module.scss";
+import styles from "../scss/Blog.module.scss";
 import { useRef } from "react";
 import { useScrollVisibility } from "../Hooks/useViewHooks";
 

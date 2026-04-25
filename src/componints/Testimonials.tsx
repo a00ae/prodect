@@ -4,7 +4,6 @@ import { useStaticData } from "./Hooks/useStaticData";
 import Box from "./Nodos/Box";
 import ProcessCard from "./Nodos/ProcessCard";
 import Rate from "./Nodos/Rate";
-import "./css/Testimonials.scss";
 import { boxData } from "./context/data/data";
 
 const cardImges = Array.from(
