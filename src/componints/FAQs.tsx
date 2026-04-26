@@ -47,7 +47,7 @@ const faqItems = [
 const FAQs = () => {
   console.log("FAQs");
   const { faqs } = boxData;
-  const [activeIndex, setActiveIndex] = useState<number | null>(0); // تم تغيير القيمة الافتراضية إلى 0
+  const [activeIndex, setActiveIndex] = useState<number | null>(null); // تم تغيير القيمة الافتراضية إلى 0
   const refcurrent = useRef<HTMLDivElement>(null);
 
   useScrollVisibility(refcurrent, `.${styles.container}`);

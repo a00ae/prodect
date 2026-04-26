@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./App.scss";
 import AboutUs from "./componints/AboutUs";
 import AltFooter from "./componints/AltFooter";
@@ -18,11 +19,27 @@ import Testimonials from "./componints/Testimonials";
 import Wedght from "./componints/Wedght";
 import WhyUs from "./componints/WhyUs";
 import { ProductProvider } from "./componints/context/ProductProvider";
+import Load from "./componints/load";
 
 function App() {
+  const [loading, setLoding] = useState<boolean>(true);
+  useEffect(() => {
+    const appDataLoding = async () => {
+      try {
+        setLoding(true);
+        await new Promise((res) => setTimeout(res, Math.random() * 6000 + 500));
+        setLoding(false);
+      } catch (error) {
+        console.log(error, "error in load");
+        setLoding(false);
+      }
+    };
+    appDataLoding();
+  }, []);
   return (
     <ProductProvider>
       <div className="app">
+        <Load load={loading} />
         <Wedght />
         <Studio />
         <AboutUs />
