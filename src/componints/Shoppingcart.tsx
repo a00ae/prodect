@@ -9,7 +9,7 @@ function Shoppingcart() {
   console.log("Shoppingcart");
   const { products } = useProducts();
   const { shoppingCart } = boxData;
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null!);
 
   // استخدام الهوكات المخصصة
   const isOpen = useResponsiveToggle(1440);

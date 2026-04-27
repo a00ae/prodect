@@ -10,7 +10,7 @@ interface Props {
 }
 
 function SectionCard({ data, isActive = false,  }: Props) {
-  const ref = useRef<HTMLDivElement> (null);
+  const ref = useRef<HTMLDivElement> (null!);
   useScrollVisibility(ref, `.${styles["card-container"]}`)
   return (
     <div

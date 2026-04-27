@@ -7,14 +7,14 @@ import { boxData } from "./context/data/data";
 
 function Newsletter() {
   const { newsletter } = boxData;
-  const refCurrent = useRef<HTMLDivElement>(null);
+  const refCurrent = useRef<HTMLDivElement>(null!);
   useScrollVisibility(refCurrent, `.${styles.container}`);
   return (
     <div className={styles["newsletter"]}>
       <div ref={refCurrent} className={styles.container}>
         <Box {...newsletter} isAnimated={true} />
         <div className={styles.email}>
-          <Text as="input" type="text" size="md" placeholder="Email" />
+          <Text<"input"> as="input" type="text" size="md" placeholder="Email" className={"button"} />
           <Text size="md" className="button">
             <div className="btn-av">
               <p data-button="Sign up">Sign up</p>

@@ -1,6 +1,5 @@
 import "./scss/wedght.scss";
-import "../../public/Avater.svg";
-import {memo} from "react"
+import { memo } from "react";
 
 const arr = ["Studio", "Projects", "Blog", "Contact"];
 function Wedght() {
@@ -9,7 +8,7 @@ function Wedght() {
     <div className="wedght">
       <div className="container">
         <div className="image">
-          <img src="../../public/Avater.svg" alt="" />
+          <img src={`${import.meta.env.BASE_URL}Avater.svg`} alt="Avatar" />
         </div>
         <div className="nav">
           <ul className="nav-element">

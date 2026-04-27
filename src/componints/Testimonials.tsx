@@ -8,13 +8,14 @@ import { boxData } from "./context/data/data";
 
 const cardImges = Array.from(
   { length: 4 },
-  (_, i) => `/Testimonials/testimonials-0${i + 1}.avif`,
+  (_, i) =>
+    `${import.meta.env.BASE_URL}Testimonials/testimonials-0${i + 1}.avif`,
 );
 
 function Testimonials() {
   const { testimonials } = boxData;
   const { testimonialsData } = useStaticData();
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null!);
   useScrollAnimation(ref, { selector: ".process-card" });
 
   const [currentIndex, setCurrentIndex] = useState(0);

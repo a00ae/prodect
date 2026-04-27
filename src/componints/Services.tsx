@@ -75,7 +75,7 @@ function Services() {
             <div className="image">
               <p>{items[activeIndex ?? 0].title}</p>
               <img
-                src={`../../public/service/service-0${(activeIndex ?? 0) + 1}.avif`}
+                src={`${import.meta.env.BASE_URL}service/service-0${(activeIndex ?? 0) + 1}.avif`}
                 alt=""
               />
             </div>

@@ -8,7 +8,7 @@ import { useScrollVisibility } from "./Hooks/useViewHooks";
 import { boxData } from "./context/data/data";
 function OurTheam() {
   const { ourTeam } = boxData;
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null!);
 
   useScrollVisibility(ref, `.${styles.container}`);
   return (

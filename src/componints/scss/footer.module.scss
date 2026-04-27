@@ -111,7 +111,7 @@
           padding: 10px 0;
           transition: border-color var(--main-transition);
 
-          :global(#form-labal) {
+          input {
             width: 100%;
             border: none;
             background-color: transparent;
@@ -120,13 +120,12 @@
             line-height: 2;
             border-radius: 0;
 
-            ::after::placeholder {
-              content: "";
+            &::placeholder {
               color: aliceblue;
             }
           }
 
-          :global(#text-area) {
+          textarea {
             border: none;
             outline: none;
             background-color: transparent;
@@ -199,7 +198,6 @@
         &:hover {
           svg {
             color: var(--btn-color);
-
           }
         }
       }
@@ -236,7 +234,7 @@
             content: attr(data-title);
             position: absolute;
             transform: translateY(40px);
-            transition: transform var(--main-transition) ;
+            transition: transform var(--main-transition);
           }
         }
         &:hover {

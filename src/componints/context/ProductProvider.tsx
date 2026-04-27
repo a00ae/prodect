@@ -1,14 +1,22 @@
 import { type ReactNode, createContext, useContext, useMemo } from "react";
-import type { BoxCard, CaseStudyItem, Product, PricingCard, Blog } from "../opp/opp";
+import type {
+  BoxCard,
+  CaseStudyItem,
+  Product,
+  PricingCard,
+  Blog,
+} from "../opp/opp";
 
 // توليد مسارات الصور تلقائياً بناءً على العدد (4 صور) والنمط المتسلسل للاسم
 const clientImages = Array.from(
   { length: 6 },
-  (_, i) => `/clients/clents-0${i + 1}.svg`,
+  (_, i) => `${import.meta.env.BASE_URL}clients/clents-0${i + 1}.svg`,
 );
 
-
-const blogImgs = Array.from ({length: 3}, (_, i) => `/Blog/blog-0${i + 1}.avif`);
+const blogImgs = Array.from(
+  { length: 3 },
+  (_, i) => `${import.meta.env.BASE_URL}Blog/blog-0${i + 1}.avif`,
+);
 
 const cardItem: Product[] = [
   {
@@ -22,7 +30,7 @@ const cardItem: Product[] = [
       Type: "Brand Identity",
       Timeline: "3 Months",
     },
-    image: "../../public/image-shopping/shopping-01.avif",
+    image: `${import.meta.env.BASE_URL}image-shopping/shopping-01.avif`,
   },
   {
     name: "Volt Mobility",
@@ -33,7 +41,7 @@ const cardItem: Product[] = [
       Type: "Marketing Campaign",
       Timeline: "4 Months",
     },
-    image: "../../public/image-shopping/shopping-02.avif",
+    image: `${import.meta.env.BASE_URL}image-shopping/shopping-02.avif`,
   },
   {
     name: "Maison",
@@ -44,7 +52,7 @@ const cardItem: Product[] = [
       Type: "Content Production",
       Timeline: "4 Months",
     },
-    image: "../../public/image-shopping/shopping-03.avif",
+    image: `${import.meta.env.BASE_URL}image-shopping/shopping-03.avif`,
   },
   {
     name: "Axis Tech",
@@ -55,16 +63,16 @@ const cardItem: Product[] = [
       Type: "UX/UI Design",
       Timeline: "2.5 Months",
     },
-    image: "../../public/image-shopping/shopping-04.avif",
+    image: `${import.meta.env.BASE_URL}image-shopping/shopping-04.avif`,
   },
 ];
 
 const box: BoxCard[] = [
   {
-    imges: clientImages[0],
+    image: clientImages[0],
   },
   {
-    imges: clientImages[1],
+    image: clientImages[1],
   },
   {
     price: "200",
@@ -72,7 +80,7 @@ const box: BoxCard[] = [
     desc: "In client engagement and reach",
   },
   {
-    imges: clientImages[2],
+    image: clientImages[2],
   },
   {
     price: "150",
@@ -80,7 +88,7 @@ const box: BoxCard[] = [
     desc: "In client engagement and reach",
   },
   {
-    imges: clientImages[3],
+    image: clientImages[3],
   },
   {
     price: "95",
@@ -88,10 +96,10 @@ const box: BoxCard[] = [
     desc: "Built on trust and results",
   },
   {
-    imges: clientImages[4],
+    image: clientImages[4],
   },
   {
-    imges: clientImages[5],
+    image: clientImages[5],
   },
 ];
 
@@ -105,7 +113,7 @@ const cardCaseStudy: CaseStudyItem[] = [
     id: 2,
     title: "Nova Skincare",
     desc: "2025",
-    img: "/CaseStudy/case-study-01.avif",
+    img: `${import.meta.env.BASE_URL}CaseStudy/case-study-01.avif`,
     isActive: "img1",
   },
   {
@@ -113,7 +121,7 @@ const cardCaseStudy: CaseStudyItem[] = [
     title:
       "They elevated our entire identity and helped us connect with our audience in a way we never imagined.",
     desc: ["Sophia Reynolds", "CEO of Nova Skincare"],
-    img: "/CaseStudy/case-study-02.avif",
+    img: `${import.meta.env.BASE_URL}CaseStudy/case-study-02.avif`,
     isActive: "img2",
   },
   {
@@ -169,7 +177,7 @@ const pricingCard: PricingCard[] = [
         id: 6,
       },
     ],
-    sallrey: 1000,
+    salary: 1000,
   },
   {
     title: "Premium",
@@ -202,7 +210,7 @@ const pricingCard: PricingCard[] = [
         id: 6,
       },
     ],
-    sallrey: 2000
+    salary: 2000,
   },
   {
     title: "Project-based",
@@ -245,7 +253,6 @@ const blogArticle: Blog[] = [
     desc: "A deep dive into how thoughtful visual systems influence customer trust, from color psychology to logo simplicity",
     section: "Branding",
     img: blogImgs[0],
-    
   },
   {
     id: 2,
@@ -279,7 +286,13 @@ const ProductContext = createContext<ProductContextType | null>(null);
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const value = useMemo(
-    () => ({ products: cardItem, box, cardCaseStudy, pricingCard, blogArticles: blogArticle }),
+    () => ({
+      products: cardItem,
+      box,
+      cardCaseStudy,
+      pricingCard,
+      blogArticles: blogArticle,
+    }),
     [],
   );
   return (

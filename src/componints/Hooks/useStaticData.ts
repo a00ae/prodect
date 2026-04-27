@@ -2,9 +2,8 @@ import { useMemo } from "react";
 
 const testimonialsImges = Array.from(
   { length: 4 },
-  (_, i) => `/Testimonials/card/name-0${i + 1}.avif`,
+  (_, i) => `${import.meta.env.BASE_URL}Testimonials/card/name-0${i + 1}.avif`,
 );
-
 
 export const useStaticData = () => {
   // يمكنك إضافة مصفوفات بيانات أخرى هنا مستقبلاً

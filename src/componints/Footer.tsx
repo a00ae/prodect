@@ -1,12 +1,12 @@
 import { memo, useRef } from "react";
 import styles from "./scss/footer.module.scss";
 import Text from "./Nodos/Text";
-import img from "../../public/footer/footer-01.avif";
 import Btn from "./Nodos/Btn";
 import { useScrollVisibility } from "./Hooks/useViewHooks";
 
 const Footer = () => {
-  const refCurrent = useRef<HTMLDivElement>(null);
+  const footerImg = `${import.meta.env.BASE_URL}footer/footer-01.avif`;
+  const refCurrent = useRef<HTMLDivElement>(null!);
   useScrollVisibility(refCurrent, `.${styles["about-my"]}, .${styles["form"]}`);
   return (
     <div className={styles.footer}>
@@ -28,7 +28,7 @@ const Footer = () => {
               </p>
               <div className={styles["card-image"]}>
                 <div className={styles["image"]}>
-                  <img src={img} alt="" />
+                  <img src={footerImg} alt="Lorian Hans" />
                 </div>
                 <div className={styles["box-desc"]}>
                   <p>Lorian Hans</p>
@@ -48,12 +48,7 @@ const Footer = () => {
           <form className={styles.form} action="">
             <label htmlFor="">
               <div className={styles["input-box"]}>
-                <input
-                  type="text"
-                  name=""
-                  id="form-labal"
-                  placeholder="Name*"
-                />
+                <input type="text" name="" id="form-name" placeholder="Name*" />
               </div>
             </label>
             <label htmlFor="">
@@ -61,7 +56,7 @@ const Footer = () => {
                 <input
                   type="text"
                   name=""
-                  id="form-labal"
+                  id="form-email"
                   placeholder="Email*"
                 />
               </div>
@@ -71,7 +66,7 @@ const Footer = () => {
                 <input
                   type="text"
                   name=""
-                  id="form-labal"
+                  id="form-budget"
                   placeholder="Budget (optional)"
                 />
               </div>
@@ -79,7 +74,7 @@ const Footer = () => {
             <label htmlFor="">
               <div className={styles["input-box"]}>
                 <textarea
-                  name=""
+                  name="message"
                   id="text-area"
                   placeholder="Message*"
                   rows={4}></textarea>

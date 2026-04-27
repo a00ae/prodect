@@ -1,5 +1,3 @@
-
-import "../../public/avtar-video.mp4";
 import { RiPlayCircleFill } from "@remixicon/react";
 import { memo } from "react";
 import Rate from "./Nodos/Rate";
@@ -22,7 +20,7 @@ function Studio() {
 
         <div className="image">
           <div className="video">
-            <video src="../../public/avtar-video.mp4"></video>
+            <video src={`${import.meta.env.BASE_URL}avtar-video.mp4`}></video>
             <RiPlayCircleFill />
           </div>
           <div className="box">
@@ -70,7 +68,7 @@ function Studio() {
               </div>
             </div>
             <div className="template-4">
-              <Btn title="Satrt a Project" />
+              <Btn title="Start a Project" />
             </div>
           </div>
         </div>

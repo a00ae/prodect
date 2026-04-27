@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from "react";
+import { useEffect, type RefObject } from "react";
 
 interface ScrollAnimationOptions {
   selector?: string;
@@ -8,7 +8,7 @@ interface ScrollAnimationOptions {
 }
 
 export function useScrollAnimation(
-  ref: RefObject<HTMLElement | null>,
+  ref: RefObject<HTMLElement>,
   {
     selector = ".card-item",
     className = "visible",

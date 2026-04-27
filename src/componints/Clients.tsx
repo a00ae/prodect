@@ -7,18 +7,18 @@ import { boxData } from "./context/data/data";
 function Clients() {
   const {clients} = boxData;
   const { box } = useProducts();
-  const refCurrant = useRef<HTMLDivElement>(null);
-  useScrollVisibility(refCurrant, `.${styles["box-card"]}`);
+  const refCurrent = useRef<HTMLDivElement>(null!);
+  useScrollVisibility(refCurrent, `.${styles["box-card"]}`);
 
   return (
     <div className={styles["clients"]} id="clients">
-      <div className={styles.container} ref={refCurrant}>
+      <div className={styles.container} ref={refCurrent}>
         <Box title={clients.title} />
 
           <div className={styles["box-card"]}>
-          {box.map(({ imges, title, price, desc }, index) => (
-            <div key={index} className={`${styles["card-item"]} ${!imges ? styles.active : ""}`}>
-              {!imges ? (
+          {box.map(({ title, price, desc, image }, index) => (
+            <div key={index} className={`${styles["card-item"]} ${!image ? styles.active : ""}`}>
+              {!image ? (
                 <div className={styles.text}>
                   <div className={styles["text-price"]}>
                     <div className={styles["title-cards"]}>
@@ -31,8 +31,8 @@ function Clients() {
                   <p>{desc}</p>
                 </div>
               ) : (
-                <div className={styles.imges}>
-                  <img src={imges} alt={title || "imges.com"} />
+                <div className={styles.images}>
+                  <img src={image} alt={title || "client logo"} />
                 </div>
               )}
             </div>

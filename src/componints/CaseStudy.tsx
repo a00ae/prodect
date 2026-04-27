@@ -6,8 +6,7 @@ import { useScrollVisibility } from "./Hooks/useViewHooks";
 import { boxData } from "./context/data/data";
 
 const CaseStudy = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  // const  caseStudy = useBoxData(BoxSection.CaseStudy);
+  const ref = useRef<HTMLDivElement>(null!);
   const { cardCaseStudy } = useProducts();
   const { caseStudy } = boxData;
   useScrollVisibility(ref, `.${styles.card}`);

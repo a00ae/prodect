@@ -24,26 +24,26 @@ import Load from "./componints/Load";
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
 
-  // useEffect(() => {
-  //   const handlePageLoad = async () => {
-  //     try {
-  //       await new Promise((res) =>
-  //         setTimeout(res, Math.random() * 2000 + 1000),
-  //       );
-  //       setLoading(false);
-  //     } catch (error) {
-  //       console.error("Error during initial load:", error);
-  //       setLoading(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handlePageLoad = async () => {
+      try {
+        await new Promise((res) =>
+          setTimeout(res, Math.random() * 2000 + 1000),
+        );
+        setLoading(false);
+      } catch (error) {
+        console.error("Error during initial load:", error);
+        setLoading(false);
+      }
+    };
 
-  //   if (document.readyState === "complete") {
-  //     handlePageLoad();
-  //   } else {
-  //     window.addEventListener("load", handlePageLoad);
-  //     return () => window.removeEventListener("load", handlePageLoad);
-  //   }
-  // }, []);
+    if (document.readyState === "complete") {
+      handlePageLoad();
+    } else {
+      window.addEventListener("load", handlePageLoad);
+      return () => window.removeEventListener("load", handlePageLoad);
+    }
+  }, []);
 
   return (
     <ProductProvider>

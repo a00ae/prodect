@@ -1,7 +1,7 @@
-import { BoxSection, type BoxContextType } from "../../opp/opp";
+import type { BoxContextType } from "../../opp/opp";
 
 export const boxData: BoxContextType = {
-  [BoxSection.AboutUs]: {
+  aboutUs: {
     text: "We blend bold creativity with strategic insight to help brands lead in the digital age.",
     moreLink: "more about us",
     title: {
@@ -12,7 +12,7 @@ export const boxData: BoxContextType = {
       subText: "© 2025",
     },
   },
-  [BoxSection.ShoppingCart]: {
+  shoppingCart: {
     moreLink: "All projects",
     title: {
       id: "02",
@@ -21,7 +21,7 @@ export const boxData: BoxContextType = {
       heading: "Shaping timeless visual identities.",
     },
   },
-  [BoxSection.Services]: {
+  services: {
     moreLink: "See pricing",
     text: "We combine creativity and strategy to deliver digital experiences that elevate brands.",
     title: {
@@ -39,7 +39,7 @@ export const boxData: BoxContextType = {
       "deliver",
     ],
   },
-  [BoxSection.Process]: {
+  process: {
     moreLink: "Lats' talk",
     text: "Every brand has a story, our process is designed to uncover it, shape it, and share it with the world",
     title: {
@@ -49,7 +49,7 @@ export const boxData: BoxContextType = {
         "Every step is collaborative and tailored to your brand’s goals.",
     },
   },
-  [BoxSection.WhyUs]: {
+  whyUs: {
     text: "At Averra, we approach every project project a blend of bold creativity, sharp strategy, and uncompromising attention to detail",
     title: {
       id: "05",
@@ -68,14 +68,14 @@ export const boxData: BoxContextType = {
       "of",
     ],
   },
-  [BoxSection.Clients]: {
+  clients: {
     title: {
       id: "06",
       label: "Clients",
       subText: "© 2017 - 25",
     },
   },
-  [BoxSection.Testimonials]: {
+  testimonials: {
     moreLink: "Leave a review",
     title: {
       id: "07",
@@ -84,7 +84,7 @@ export const boxData: BoxContextType = {
       subText: "© 2025",
     },
   },
-  [BoxSection.OurTeam]: {
+  ourTeam: {
     text: "We're a team of innovators who blend creativity with strategy to make brands unforgettable",
     title: {
       id: "08",
@@ -105,7 +105,7 @@ export const boxData: BoxContextType = {
     ],
     buttonText: "About us",
   },
-  [BoxSection.CaseStudy]: {
+  caseStudy: {
     // text: "Real Impact, Proven Results.",
     moreLink: "Full case study",
     title: {
@@ -116,7 +116,7 @@ export const boxData: BoxContextType = {
     },
   },
 
-  [BoxSection.Pricing]: {
+  pricing: {
     text: "We offer flexible plans designed to fit your brand’s goals",
     title: {
       id: "010",
@@ -125,7 +125,7 @@ export const boxData: BoxContextType = {
       subText: "Averra®",
     },
   },
-  [BoxSection.FAQs]: {
+  faqs: {
     text: "Every brand has a story, our process is designed to uncover it, shape it, and share it with the world.",
     title: {
       id: "11",
@@ -134,7 +134,7 @@ export const boxData: BoxContextType = {
     },
     moreLink: "Ask a question",
   },
-  [BoxSection.Blog]: {
+  blog: {
     title: {
       id: "12",
       label: "Blog",
@@ -143,7 +143,7 @@ export const boxData: BoxContextType = {
     },
     moreLink: "All articles",
   },
-  [BoxSection.Newsletter]: {
+  newsletter: {
     text: "Join our Newsletter for insights, design inspiration, and marketing strategies that help modern brands grow",
     title: {
       id: "13",

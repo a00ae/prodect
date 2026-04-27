@@ -12,7 +12,7 @@ type DescriptionGlobal = {
 };
 type Image = {
   img?: string;
-}
+};
 export interface Description {
   Year: string;
   Client: string;
@@ -28,7 +28,7 @@ export interface Product {
 }
 
 export interface BoxCard {
-  imges?: string;
+  image?: string;
   price?: string;
   title?: string;
   desc?: string;
@@ -38,13 +38,14 @@ export type CaseStudyItem = {
   desc: string | string[];
   isActive?: "img1" | "img2";
 } & Title &
-  Id & Image;
+  Id &
+  Image;
 
 export type PricingCard = {
   discount?: string | number;
   price: { id: string | number; "price-title": string }[];
   month: string | number;
-  sallrey?: number | string;
+  salary?: number;
 } & Title &
   DescriptionGlobal;
 
@@ -76,21 +77,20 @@ export type BoxType = {
   ButtonText &
   HighlightWords;
 
-export enum BoxSection {
-  AboutUs = "aboutUs",
-  ShoppingCart = "shoppingCart",
-  Services = "services",
-  Process = "process",
-  WhyUs = "whyUs",
-  Clients = "clients",
-  Testimonials = "testimonials",
-  OurTeam = "ourTeam", // تم تصحيح الإملاء هنا
-  CaseStudy = "caseStudy",
-  Pricing = "pricing",
-  FAQs = "faqs",
-  Blog = "blog",
-  Newsletter = "newsletter"
-}
+export type BoxSection =
+  | "aboutUs"
+  | "shoppingCart"
+  | "services"
+  | "process"
+  | "whyUs"
+  | "clients"
+  | "testimonials"
+  | "ourTeam"
+  | "caseStudy"
+  | "pricing"
+  | "faqs"
+  | "blog"
+  | "newsletter";
 
 export type BoxContextType = Record<BoxSection, BoxType>;
 
@@ -98,5 +98,7 @@ export type Blog = {
   date: string;
   section: string;
   isActive?: boolean;
-
-} & Id & Title & DescriptionGlobal & Image;
+} & Id &
+  Title &
+  DescriptionGlobal &
+  Image;

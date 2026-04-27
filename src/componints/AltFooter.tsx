@@ -22,11 +22,11 @@ const wedght = [
   "Blog",
   "Content",
   "Privacy Policy",
-  "Terms & Connditions",
+  "Terms & Conditions",
 ];
 
 const AltFooter = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null!);
   useScrollVisibility(
     ref,
     `.${styles["descrption-footer"]}, .${styles["wedght-footer"]}`,

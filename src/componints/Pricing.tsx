@@ -57,7 +57,7 @@ function Pricing() {
 
         <div ref={priceRef} className="price">
           {pricingCard.map(
-            ({ title, month, desc, price, discount, sallrey }) => {
+            ({ title, month, desc, price, discount, salary }) => {
               const isYearly = !!checkedPlans[title];
               return (
                 <div key={title} className={styles["box-container-card-price"]}>
@@ -100,12 +100,12 @@ function Pricing() {
                         {discount ? (
                           <>
                             <p className="discount">${discount}</p>
-                            <p data-price={`$${sallrey}`}>
+                            <p data-price={`$${salary}`}>
                               <span>${month}</span>
                             </p>
                           </>
                         ) : (
-                          <p data-price={sallrey ? `$${sallrey}` : undefined}>
+                          <p data-price={salary ? `$${salary}` : undefined}>
                             <span>${month}</span>
                           </p>
                         )}
@@ -131,7 +131,7 @@ function Pricing() {
                     <div className="dashad"></div>
                     <Btn
                       color={discount ? "defult" : "black"}
-                      title="Get startad"
+                      title="Get started"
                     />
                   </div>
                 </div>
