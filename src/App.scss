@@ -34,47 +34,47 @@
 
 .load {
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   background-color: var(--main-bg-color);
-  height: 100vh;
+  height: 0vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  transform: translateY(-100%);
+  gap: 2px;
   transition:
-    transform 1s cubic-bezier(0.85, 0, 0.15, 1),
-    opacity 0.5s ease;
-  opacity: 0;
-  z-index: 9999;
+    opacity 0.2s,
+    height 0.3s;
+  opacity: 1;
   overflow: hidden;
+  inset: 0;
+  z-index: 10;
 
   .load-text-wrapper {
     overflow: hidden; // لخلق تأثير القناع (Mask)
 
-    span {
+    .load-span {
       display: block;
       color: var(--main-text-color);
       font-size: var(--font-size-xxl-heading);
       font-weight: 600;
-      transform: translateY(110%); // يبدأ من الأسفل مختفياً
-      transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+      transform: translateY(100px);
+      transition: transform 0.3s;
     }
+
   }
 
   &.is-active {
-    transform: translateY(0);
     height: 100vh;
     opacity: 1;
 
-    .load-text-wrapper span {
+    .load-text-wrapper .load-span {
       transform: translateY(0); // يرتفع للنص الطبيعي
       transition-delay: 0.2s;
 
-      &:nth-child(2) {
-        transition-delay: 0.3s;
+      .load-span:nth-child(2) {
+        transition-delay: 0.5s;
       }
     }
   }

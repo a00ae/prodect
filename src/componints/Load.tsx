@@ -9,7 +9,9 @@ const Load = ({ load }: Props) => {
     <div className={`load ${load ? "is-active" : ""}`}>
       {loading.map((el, index) => (
         <div className="load-text-wrapper" key={index}>
-          <span>{el}</span>
+          <span className="load-span">{el.split("").map((ele, i) => (
+            <span key={i}>{ele}</span>
+          ))}</span>
         </div>
       ))}
     </div>
