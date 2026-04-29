@@ -23,6 +23,8 @@
   width: 100%;
   position: relative;
   @include section-padding;
+  @include v.container-box;
+
 
   // استخدام Nesting بدلاً من تكرار اسم الكلاس
   .container {

@@ -50,11 +50,31 @@ $width-xl: 1440px;
   padding-left: var(--main-padding-left);
   padding-right: var(--main-padding-right);
   position: relative;
+  @media (max-width: $width-md) {
+    padding-top: var(--padding-top-sm);
+    padding-left: var(--pading-right-sm);
+    padding-right: var(--pading-left-sm);
+    padding-bottom: var(--padding-bottom-sm);
+  }
+}
+@mixin container-box-sm {
+  padding-top: var(--padding-top-sm);
+  padding-left: var(--pading-right-sm);
+  padding-right: var(--pading-left-sm);
+  padding-bottom: var(--padding-bottom-sm);
 }
 
 // font
 
 //title
+
+@mixin font-size-xxl {
+  font-size: var(--font-size-xxl-heading);
+  font-weight: var(--main-font-whight);
+  @media (max-width: $width-md) {
+    font-size: var(--font-size-xxl-alt);
+  }
+}
 
 @mixin font-size-xl {
   font-size: var(--font-size-xl);
@@ -119,10 +139,17 @@ $width-xl: 1440px;
 @mixin reveal-on-scroll($y: 30px, $x: 0, $delay: 0s) {
   opacity: 0;
   transform: translate($x, $y);
-  transition: opacity 0.8s ease-out $delay, transform 0.8s ease-out $delay;
+  transition:
+    opacity 0.8s ease-out $delay,
+    transform 0.8s ease-out $delay;
 
   &:global(.is-visible) {
     opacity: 1;
     transform: translate(0, 0);
   }
+}
+
+@mixin container-width {
+  flex-direction: column;
+  gap: var(--gap-sm);
 }

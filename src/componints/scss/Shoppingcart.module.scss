@@ -1,15 +1,8 @@
 @use "../../styles/variables" as v;
 
 .shopping-cart {
-  width: 100%;
-  padding: var(--main-padding-top) var(--main-padding-right) var(--main-padding-bottom) var(--main-padding-left);
+  @include v.container-box;
 
-  @media (max-width: v.$width-sm) {
-    padding-top: var(--padding-top-sm);
-    padding-left: var(--pading-right-sm);
-    padding-right: var(--pading-left-sm);
-    padding-bottom: var(--padding-bottom-sm);
-  }
 
   .container {
     display: flex;
@@ -24,13 +17,14 @@
       flex-direction: row;
       margin-bottom: var(--main-padding-bottom);
       
-      & h2 {
-        font-size: var(--font-size-xl);
-      }
 
       @media (max-width: v.$width-xl) {
         flex-direction: column;
       }
+      @media (max-width: v.$width-md) {
+        margin-bottom: var(--main-margin-sm);
+      }
+      
 
       :global(.title) {
         flex-direction: column;

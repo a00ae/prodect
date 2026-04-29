@@ -50,7 +50,7 @@
           justify-content: space-between;
           transition: border-color var(--transition-xl);
           .top {
-            @include v.flex-center-md;
+            // @include v.flex-center-md;
             & span {
               @include v.font-size-desc;
             }
@@ -135,7 +135,7 @@
             
        }
 
-       & a{
+       & .card-box-container{
          background-color: var(--white-color);
         width: 100%;
           flex-direction: column-reverse;

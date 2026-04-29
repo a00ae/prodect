@@ -49,23 +49,27 @@ function App() {
     <ProductProvider>
       <div className="app">
         <Load load={loading} />
-        <Wedght />
-        <Studio />
-        <AboutUs />
-        <Shoppingcart />
-        <Services />
-        <Process />
-        <WhyUs />
-        <Clients />
-        <Testimonials />
-        <OurTheam />
-        <CaseStudy />
-        <Pricing />
-        <FAQs />
-        <Blog />
-        <Newsletter />
-        <Footer />
-        <AltFooter />
+        {!loading && (
+          <>
+            <Wedght />
+            <Studio />
+            <AboutUs />
+            <Shoppingcart />
+            <Services />
+            <Process />
+            <WhyUs />
+            <Clients />
+            <Testimonials />
+            <OurTheam />
+            <CaseStudy />
+            <Pricing />
+            <FAQs />
+            <Blog />
+            <Newsletter />
+            <Footer />
+            <AltFooter />
+          </>
+        )}
         <Button />
       </div>
     </ProductProvider>

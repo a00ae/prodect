@@ -17,7 +17,7 @@ function SectionCard({ data, isActive = false,  }: Props) {
     ref={ref}
       key={data.id}
       className={`${styles["card-container"]} ${isActive ? styles["is-active"] : ""}`}>
-      <a href="#">
+      <a className={styles["card-box-container"]} href="#">
         <div className={styles["text-card"]}>
           <div className={styles.top}>
             <span>{data.date}</span>

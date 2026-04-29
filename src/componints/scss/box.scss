@@ -14,11 +14,18 @@
   gap: var(--main--gap);
   @media (max-width: v.$width-xl) {
     flex-direction: column;
+    width: 100%;
   }
+   @media (max-width: v.$width-md) {
+    flex-direction: column;
+    width: 100%;
+   }
 }
 
+
+
 .box h2 {
-  font-size: var(--font-size-xxl-heading);
+  font-size: var(--font-size-xl);
   margin: 0;
   color: var(--main-text-color);
   display: flex;
@@ -78,10 +85,6 @@
   justify-content: center;
   overflow: hidden;
 }
-.box .btn div {
-  width: max-content;
-  min-width: 150px;
-}
 .box .btn .btn-border {
   margin: 0 5px;
   height: 1px;
@@ -139,7 +142,8 @@
   }
   .box .text-desc > p {
     width: 80%;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md-alt);
+    font-weight: var(--font-weight-medium);
     margin-bottom: var(--main-margin-sm);
   }
 }

@@ -1,12 +1,7 @@
 @use "../../styles/variables" as v;
 
 .process {
-  width: 100%;
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
-  padding-left: var(--main-padding-left);
-  padding-right: var(--main-padding-right);
-  position: relative;
+  @include v.container-box;
 }
 
 .process .container {
@@ -21,9 +16,6 @@
   margin-bottom: var(--main-padding-bottom);
   position: sticky;
   top: 100px;
-  & h2 {
-    font-size: var(--font-size-xl);
-  }
 }
 .process .box .box-text-heading-container {
   flex-direction: column;
@@ -42,10 +34,8 @@
 
 @media (max-width: v.$width-sm) {
   .process {
-    padding-top: var(--padding-top-sm);
-    padding-left: var(--pading-right-sm);
-    padding-right: var(--pading-left-sm);
-    padding-bottom: var(--padding-bottom-sm);
+    @include v.container-box-sm;
+    
   }
   .process .container {
     gap: var(--gap-md);
