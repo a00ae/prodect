@@ -1,11 +1,12 @@
 {
   "name": "test_react",
-  "homepage": "https://github.com/a00ae/prodect.git",
+  "homepage": "https://a00ae.github.io/prodect/", 
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "start": "vite",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
