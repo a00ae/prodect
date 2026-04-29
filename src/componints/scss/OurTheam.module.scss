@@ -1,12 +1,7 @@
 @use "../../styles/variables" as v;
 
 .our-theam {
-  width: 100%;
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
-  padding-left: var(--main-padding-left);
-  padding-right: var(--main-padding-right);
-  position: relative;
+  @include v.container-box;
   background-color: var(--selction-background-color);
 
   .container {

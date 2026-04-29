@@ -20,7 +20,10 @@
       margin-bottom: 60px;
       gap: var(--gap-xl);
       & h2 {
-        font-size: var(--font-size-xxl-heading);
+        font-size: var( --font-size-xxl-heading);
+        @media (max-width: v.$width-md) {
+          font-size: var(--font-size-xxl-alt);
+        }
       }
       :global(.title) {
         flex-direction: column;
@@ -29,6 +32,9 @@
       }
       :global(.box-text-heading-container) {
         flex-direction: row;
+        @media (max-width: v.$width-md) {
+          flex-direction: column;
+        }
       }
     }
 

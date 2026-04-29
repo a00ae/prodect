@@ -11,7 +11,7 @@
 }
 
 @mixin icon-desgin {
-  padding: 3px 5px;
+  padding: 5px 5px;
   border-radius: var(--border-radius-xs);
   background-color: var(--main-bg-color);
 }
@@ -24,9 +24,11 @@
       @include v.flex-center-mian;
     }
     :global(.box) {
-
       & h2 {
         font-size: var(--font-size-xxl-heading);
+        @media (max-width: v.$width-md) {
+          font-size: var(--font-size-xxl-alt);
+        }
       }
       :global(.box-text-heading-container) {
         flex-direction: column;
@@ -47,7 +49,7 @@
     .accordion {
       width: 80%;
       @include v.flex-center-sm;
-      
+
       @media (max-width: v.$width-xl) {
         width: 100%;
       }
@@ -62,15 +64,18 @@
         cursor: pointer;
         overflow: hidden;
         border: 1px solid transparent;
-         
 
         .top {
           @extend %flex-accodion;
+          align-items: center;
           .firset-cheld-title {
             @extend %flex-accodion;
             font-size: var(--main-font-size-m);
             font-weight: var(--main-font-whight);
             gap: var(--gap-sm);
+            @media (max-width: v.$width-md) {
+              gap: var(--gap-xs);
+            }
             p:first-child {
               color: var(--main-title-color);
               font-weight: 500;
@@ -88,7 +93,9 @@
             svg {
               font-weight: 100;
               color: var(--text-color-grey-800);
-              transition: transform 0.4s ease, color var(--main-transition);
+              transition:
+                transform 0.4s ease,
+                color var(--main-transition);
             }
           }
         }
@@ -98,11 +105,12 @@
           grid-template-rows: 0fr;
           transition: grid-template-rows 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 
-          
           .inner {
             overflow: hidden;
             opacity: 0;
-            transition: opacity 0.3s ease, transform 0.5s;
+            transition:
+              opacity 0.3s ease,
+              transform 0.5s;
             transform: translateY(40px);
             p {
               padding-top: 25px;

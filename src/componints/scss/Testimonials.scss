@@ -1,13 +1,7 @@
 @use "../../styles/variables" as v;
 
 .testimonials {
-  width: 100%;
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
-  padding-left: var(--main-padding-left);
-  padding-right: var(--main-padding-right);
-  position: relative;
-
+  @include v.container-box;
   .container {
     display: flex;
     flex-direction: column;
@@ -20,6 +14,9 @@
       @media (max-width: v.$width-xl) {
         .box-text-heading-container {
           flex-direction: row;
+          @media (max-width: v.$width-md) {
+            flex-direction: column;
+          }
         }
       }
 
@@ -161,7 +158,6 @@
           & .images-descrption {
             display: flex;
             gap: var(--gap-xs);
-            align-items: center;
             .img {
               border: 1px solid var(--white-color);
               width: 65px;
@@ -175,13 +171,17 @@
               }
             }
             .txt {
-              display: inherit;
+              display: flex;
               justify-content: space-between;
               flex-direction: column;
+              align-items: self-start;
               padding: 10px;
               & p:first-child {
                 font-size: var(--main-font-size-L);
                 color: var(--main-text-color);
+                @media (max-width: v.$width-md) {
+                  font-size: var(--font-size-md-heading);
+                }
               }
               & p:last-child {
                 font-size: var(--font-size-sm);

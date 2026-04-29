@@ -224,10 +224,16 @@
         overflow: hidden;
         cursor: pointer;
         a {
+
           color: var(--white-color);
           position: relative;
           transition: transform var(--main-transition);
           display: inline-block;
+          @media (max-width: v.$width-md) {
+            a {
+              height: 30px;
+            }
+          }
           &::before {
             content: attr(data-title);
             position: absolute;
@@ -257,7 +263,6 @@
       }
       .child-sction-title {
         display: flex;
-        align-items: center;
         gap: 5px;
         p {
           color: var(--main-title-color);

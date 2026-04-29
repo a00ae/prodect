@@ -120,7 +120,7 @@
         font-size: var(--font-size-xxl-alt);
         font-weight: var(--main-font-whight);
         @media (max-width: v.$width-xl) {
-          font-family: var(--main-font-size-L);
+          font-size: var(--font-size-md-heading);
         }
       }
     }

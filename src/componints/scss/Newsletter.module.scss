@@ -17,11 +17,11 @@
       @media (max-width: v.$width-md) {
         flex-direction: column;
       }
-      h2 {
-        font-size: var(--font-size-xxl-heading);
+      & h2 {
         max-width: 70%;
         line-height: 1.1;
         font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-xxl-heading);
       }
       :global(.title) {
         flex-direction: column;
@@ -31,6 +31,11 @@
       :global(.box-text-heading-container) {
         flex-direction: column;
         gap: var(--gap-sm);
+        & h2 {
+          @media (max-width: v.$width-md) {
+            font-size: var(--font-size-xxl-alt) !important;
+          }
+        }
 
         :global(.text-desc) > p {
           color: var(--main-title-color);
