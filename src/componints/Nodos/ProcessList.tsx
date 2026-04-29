@@ -6,7 +6,7 @@ import { useStaticData } from "../Hooks/useStaticData";
 function ProcessList() {
   const ref = useRef<HTMLDivElement>(null!);
   useScrollAnimation(ref, { selector: ".process-card" });
-  const { processData } = useStaticData(); // استدعاء البيانات المطلوبة فقط
+  const { processData } = useStaticData();
 
   return (
     <div className="process-cards" ref={ref}>

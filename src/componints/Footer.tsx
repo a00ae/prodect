@@ -48,7 +48,12 @@ const Footer = () => {
           <form className={styles.form} action="">
             <label htmlFor="">
               <div className={styles["input-box"]}>
-                <input type="text" name="" id="form-name" placeholder="Name*" />
+                <input
+                  type="text"
+                  name=""
+                  id="form-labal"
+                  placeholder="Name*"
+                />
               </div>
             </label>
             <label htmlFor="">
@@ -56,7 +61,7 @@ const Footer = () => {
                 <input
                   type="text"
                   name=""
-                  id="form-email"
+                  id="form-labal"
                   placeholder="Email*"
                 />
               </div>
@@ -66,7 +71,7 @@ const Footer = () => {
                 <input
                   type="text"
                   name=""
-                  id="form-budget"
+                  id="form-labal"
                   placeholder="Budget (optional)"
                 />
               </div>
@@ -74,7 +79,7 @@ const Footer = () => {
             <label htmlFor="">
               <div className={styles["input-box"]}>
                 <textarea
-                  name="message"
+                  name=""
                   id="text-area"
                   placeholder="Message*"
                   rows={4}></textarea>
