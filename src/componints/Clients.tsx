@@ -17,7 +17,7 @@ function Clients() {
 
           <div className={styles["box-card"]}>
           {box.map(({ title, price, desc, image }, index) => (
-            <div key={index} className={`${styles["card-item"]} ${!image ? styles.active : ""}`}>
+            <div key={index} className={`${styles["card-item"]} ${!image ? styles.active : styles.img}`}>
               {!image ? (
                 <div className={styles.text}>
                   <div className={styles["text-price"]}>

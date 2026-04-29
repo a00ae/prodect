@@ -35,7 +35,10 @@
     .card-container {
       width: 100%;
        @include v.reveal-on-scroll;
-      & a {
+      & .card-box-container {
+        @media (max-width: v.$width-sm) {
+          height: max-content;
+        }
          width: 100%;
         border-radius: var(--border-radius-md);
         border: 1px dashed transparent;

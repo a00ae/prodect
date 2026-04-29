@@ -1,11 +1,12 @@
 @use "../../styles/variables" as v;
 
 // 1. استخدام Mixin لتقليل تكرار Padding
-@mixin section-padding {
-  padding: var(--main-padding-top) var(--main-padding-right)
-    var(--main-padding-bottom) var(--main-padding-left);
-}
 
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @mixin flex-box(
   $justify: flex-start,
   $align: stretch,
@@ -20,12 +21,7 @@
 }
 
 .clients {
-  width: 100%;
-  position: relative;
-  @include section-padding;
   @include v.container-box;
-
-
   // استخدام Nesting بدلاً من تكرار اسم الكلاس
   .container {
     @include flex-box(space-between, stretch, row, var(--main--gap));
@@ -48,72 +44,80 @@
 
   .box-card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:  repeat(3, minmax(250px, 1fr));
     gap: 5px;
-    width: 70%;
+    width: 60%;
     @include v.reveal-on-scroll;
 
     @media (max-width: v.$width-xl) {
+      grid-template-columns:  repeat(3, minmax(250px, 1fr));
       width: 100%;
+
+    }
+    @media (max-width: v.$width-md) {
+      grid-template-columns:  1fr;
+
     }
 
-    @media (max-width: v.$width-sm) {
-      grid-template-columns: 1fr; // استخدام 1fr أوضح من auto
-    }
-  }
 
-  // تنسيق العناصر الداخلية (Card Item)
-  .card-item {
-    width: 100%;
-    height: 100%;
-    min-height: 250px;
-    min-width: 250px;
-    padding: 20px;
-    background-color: var(--white-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
-    border: 1px dashed transparent;
-    transition: border-color 0.3s ease; // إضافة نعومة عند التغيير
-
-    &.active {
-      border-color: var(--grey-color-600);
-    }
-
-    .imges {
-      @include flex-box(center, center);
-      width: inherit;
-      height: inherit;
-    }
-
-    .text {
-      @include flex-box(space-between, stretch, column);
-      width: inherit;
-      height: inherit;
-
-      & > p {
-        font-size: var(--main-font-size);
-        font-weight: var(--font-weight-semibold);
-        color: var(--text-color-grey);
+    .card-item {
+  
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      min-width: 250px;
+      padding: 20px;
+      background-color: var(--white-color);
+      border-radius: var(--border-radius-md);
+      box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+      border: 1px dashed transparent;
+      transition: border-color 0.3s ease; // إضافة نعومة عند التغيير
+  
+      &.active {
+        border-color: var(--grey-color-600);
       }
-
-      .text-price {
+      &.img {
+        @include flex-center;
+      }
+  
+      .imges {
+        @include flex-box(center, center);
+        width: inherit;
+        height: inherit;
+      }
+  
+      .text {
+        @include flex-box(space-between, stretch, column);
+        width: inherit;
+        height: inherit;
+  
         & > p {
-          font-size: var(--font-size-sm);
+          font-size: var(--main-font-size);
           font-weight: var(--font-weight-semibold);
-          color: var(--text-color-grey-800);
+          color: var(--text-color-grey);
         }
-
-        .title-cards {
-          @include flex-box(start);
-          font-size: var(--font-size-xl-alt);
-          font-weight: var(--font-weight-semibold);
-          color: var(--main-text-color);
-
-          p {
-            color: var(--btn-color);
+  
+        .text-price {
+          & > p {
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-color-grey-800);
+          }
+  
+          .title-cards {
+            @include flex-box(start);
+            font-size: var(--font-size-xl-alt);
+            font-weight: var(--font-weight-semibold);
+            color: var(--main-text-color);
+  
+            p {
+              color: var(--btn-color);
+            }
           }
         }
       }
     }
   }
+
+  // تنسيق العناصر الداخلية (Card Item)
 }
