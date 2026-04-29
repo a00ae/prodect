@@ -120,10 +120,6 @@
             line-height: 2;
             border-radius: 0;
 
-            ::after::placeholder {
-              content: "";
-              color: aliceblue;
-            }
           }
 
           :global(#text-area) {
