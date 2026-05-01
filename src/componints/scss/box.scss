@@ -7,7 +7,6 @@
   gap: var(--main--gap);
   @media (max-width: v.$width-md) {
     flex-direction: column;
-    
   }
 }
 
@@ -20,13 +19,11 @@
     flex-direction: column;
     width: 100%;
   }
-   @media (max-width: v.$width-md) {
+  @media (max-width: v.$width-md) {
     flex-direction: column;
     width: 100%;
-   }
+  }
 }
-
-
 
 .box h2 {
   font-size: var(--font-size-xl);

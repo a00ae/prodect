@@ -1,5 +1,7 @@
 @use "../../styles/variables" as v;
 
+// حركة مفتاحية لارتفاع قائمة التنقل وظهورها تدريجياً
+
 /* Start Wedght */
 .wedght {
   background-color: white;
@@ -11,6 +13,21 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   margin-left: 40px;
   margin-right: 40px;
+  position: relative;
+  z-index: 10;
+  transition: height 0.3s ease-in-out; // إضافة انتقال سلس للعنصر wedght نفسه
+
+  &.is-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    background-color: var(--main-bg-color); // استخدام لون خلفية للطبقة العلوية
+    z-index: 100;
+  }
 }
 
 .wedght .container {
@@ -18,6 +35,7 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
+  transition: all 0.3s ease-in-out;
 }
 .wedght .container .image img {
   max-width: 100%;
@@ -27,6 +45,7 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  transition: all 0.3s ease-in-out;
 }
 .wedght .container .nav .nav-element {
   display: flex;
@@ -39,31 +58,36 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
+  &:hover {
+   a {
+    .top-text {
+      transform: translateY(-110px);
+    }
+   }
+  }
 }
 .wedght .container .nav .nav-element li a {
   font-size: 20px;
   font-weight: 600;
-  display: block;
-  transition: color 0.3s ease;
+  color: var(--main-text-color);
+  
 }
 .wedght .container .nav .nav-element li .top-text {
-  transform: translateY(0px);
-  transition: 0.3s;
-  color: var(--main-text-color);
+  transition:  0.3s;
+  position: relative;
 }
-
-.wedght .container .nav .nav-element li .bottom-text {
+.wedght .container .nav .nav-element li .top-text::before {
+  content: attr(data-wedght);
   position: absolute;
-  top: 0;
-  opacity: 0;
-  color: #fc4040;
-  transform: translateY(20px);
+  left: 0;
+  bottom: 0;
+  transform: translateY(110px);
   transition: 0.3s;
+  color: var(--btn-color);
 }
 
 .wedght .container .nav .menu-nav {
   width: 40px;
-  height: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -73,31 +97,74 @@
 }
 .wedght .container .nav .menu-nav > div {
   width: 100%;
-  height: 4px;
+  height: 3px;
   background-color: var(--main-text-color, #000);
-  border-radius: 5px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
 }
 
+// الحالة الافتراضية لأشرطة الهامبرغر
 .wedght .container .nav .menu-nav .first {
   transform: translateY(-3px);
-  transition: var(--main-transition);
 }
 .wedght .container .nav .menu-nav .last {
   transform: translateY(3px);
-  transition: var(--main-transition);
+}
+
+// عند فتح القائمة، تحويل الهامبرغر إلى 'X'
+.wedght.is-open .container .nav .menu-nav .first {
+  transform: translateY(3px) rotate(45deg);
+}
+.wedght.is-open .container .nav .menu-nav .last {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+// عند فتح القائمة، ضبط عناصر التنقل للعرض بملء الشاشة
+.wedght.is-open .container .nav .nav-element {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // تطبيق الحركة المفتاحية عند الفتح
+  animation: menu-nav-rise 0.5s ease-out forwards;
+  // التأكد من التمركز الأفقي والعمودي
+  transform: translate(-50%, -50%);
+
+  li {
+    @for $i from 1 through 5 {
+      // يمكن تعديل 5 حسب العدد الأقصى لعناصر القائمة
+      &:nth-child(#{$i}) {
+        // يبدأ التأخير بعد انتهاء حركة الـ ul (0.5s) + تأخير متتابع لكل عنصر
+        animation-delay: calc(0.5s + #{$i * 0.1}s);
+      }
+    }
+  }
+
+  // تأخير متتابع لكل عنصر li
+  li a {
+    font-size: 5rem;
+  }
+}
+
+// استخدام حلقة @each لتوليد الأنماط للحرفين الأول والأخير
+$menu-nav-transforms: (
+  first: -3px,
+  last: 3px,
+);
+
+@each $class-name, $y-transform in $menu-nav-transforms {
+  .#{$class-name} {
+    transform: translateY($y-transform);
+    transition: var(--main-transition);
+  }
 }
 
 /* Hover */
-.wedght .container .nav .nav-element li:hover .top-text {
-  transform: translateY(-20px);
-  opacity: 0;
-}
-
-.wedght .container .nav .nav-element li:hover .bottom-text {
-  z-index: 1;
-  transform: translateY(0px);
-  opacity: 1;
-}
+// .wedght .container .nav .nav-element li:hover .top-text {
+//   transform: translateY(-20px);
+// }
 
 .wedght .container .nav .menu-nav:hover .first {
   transform: translateY(-5px);
@@ -120,6 +187,42 @@
   .wedght .container .nav .nav-element {
     display: none;
   }
+  .wedght .container .nav .menu-nav {
+    display: flex; // التأكد من أن الهامبرغر مرئي على الشاشات الصغيرة
+  }
+
+  // عند فتح القائمة على الشاشات الصغيرة
+  .wedght.is-open {
+    .container {
+      flex-direction: column;
+      .image {
+        display: none; // إخفاء الشعار عند فتح القائمة
+      }
+    }
+  }
 }
 
+// انيمشن
+@keyframes menu-nav-rise {
+  from {
+    opacity: 0;
+    // تبدأ من 20 بكسل أسفل الموضع المركزي النهائي
+    transform: translate(-50%, calc(-50% + 30px));
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%); // الموضع المركزي النهائي
+  }
+}
+
+@keyframes nav-item-appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px); // تبدأ من 15 بكسل أسفل الموضع النهائي
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); // تنتهي في الموضع الأصلي
+  }
+}
 /* End Wedght */
