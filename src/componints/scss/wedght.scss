@@ -59,21 +59,20 @@
   z-index: 1;
   overflow: hidden;
   &:hover {
-   a {
-    .top-text {
-      transform: translateY(-110px);
+    a {
+      .top-text {
+        transform: translateY(-110px);
+      }
     }
-   }
   }
 }
 .wedght .container .nav .nav-element li a {
   font-size: 20px;
   font-weight: 600;
   color: var(--main-text-color);
-  
 }
 .wedght .container .nav .nav-element li .top-text {
-  transition:  0.3s;
+  transition: 0.3s;
   position: relative;
 }
 .wedght .container .nav .nav-element li .top-text::before {
@@ -111,6 +110,14 @@
   transform: translateY(3px);
 }
 
+.wedght.is-open .container .nav .menu-nav {
+  @media (max-width: v.$width-sm) {
+    position: absolute;
+    top: 20%;
+    left: 45%;
+  }
+}
+
 // عند فتح القائمة، تحويل الهامبرغر إلى 'X'
 .wedght.is-open .container .nav .menu-nav .first {
   transform: translateY(3px) rotate(45deg);
@@ -145,6 +152,9 @@
   // تأخير متتابع لكل عنصر li
   li a {
     font-size: 5rem;
+    @media (max-width: v.$width-md) {
+      font-size: 2rem;
+    }
   }
 }
 

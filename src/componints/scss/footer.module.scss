@@ -229,21 +229,16 @@
           position: relative;
           transition: transform var(--main-transition);
           display: inline-block;
-          @media (max-width: v.$width-md) {
-            a {
-              height: 30px;
-            }
-          }
           &::before {
             content: attr(data-title);
             position: absolute;
-            transform: translateY(40px);
+            transform: translateY(50px);
             transition: transform var(--main-transition) ;
           }
         }
         &:hover {
           a {
-            transform: translateY(-40px);
+            transform: translateY(-50px);
             color: var(--btn-color);
           }
         }

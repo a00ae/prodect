@@ -3,9 +3,9 @@ import { memo, useState } from "react"; // استيراد useState
 
 function Wedght() {
   console.log("Wedght");
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // حالة للتحكم في فتح/إغلاق القائمة
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false); // حالة للتحكم في فتح/إغلاق القائمة
 
-  const handleClickDropdown = () => {
+  const handleClickDropdown = ():void => {
     setIsMenuOpen(!isMenuOpen); // تبديل حالة القائمة
   };
   return (
