@@ -8,6 +8,7 @@
 %flex-accodion {
   display: flex;
   justify-content: space-between;
+  gap: var(--gap-sm);
 }
 
 @mixin icon-desgin {
