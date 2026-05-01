@@ -1,5 +1,4 @@
 import { memo } from "react";
-const loading = ["Averra", "Studio®"];
 interface Props {
   load: boolean;
 }
@@ -7,11 +6,16 @@ interface Props {
 const Load = ({ load }: Props) => {
   return (
     <div className={`load ${load ? "is-active" : ""}`}>
-      {loading.map((el, index) => (
+      {("Averra Studio®").split("").map((el, index) => (
         <div className="load-text-wrapper" key={index}>
-          <span className="load-span">{el.split("").map((ele, i) => (
-            <span key={i}>{ele}</span>
-          ))}</span>
+          <span className="load-span">
+            {el.split("").map((ele, i) => {
+              const delay = index * 0.1 + i * 0.3;
+              return <span key={i} style={{
+                animationDelay: `${delay}s`
+              }}>{ele}</span>;
+            })}
+          </span>
         </div>
       ))}
     </div>

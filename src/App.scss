@@ -30,6 +30,7 @@
 }
 
 /* ======================== */
+// loading page
 
 .load {
   width: 100%;
@@ -43,8 +44,8 @@
   align-items: center;
   gap: 2px;
   transition:
-    opacity 0.2s,
-    height 0.3s;
+    opacity 1.4s,
+    height 0.8s;
   opacity: 1;
   overflow: hidden;
   inset: 0;
@@ -58,10 +59,35 @@
       color: var(--main-text-color);
       font-size: var(--font-size-xxl-heading);
       font-weight: 600;
-      transform: translateY(100px);
-      transition: transform 0.3s;
+      transition:
+        opacity 0.1s,
+        transform 0.5s;
+      animation: opc 0.5s ease-out forwards;
+      opacity: 0;
+
+      span {
+        display: inline-block;
+        color: var(--main-title-color);
+        will-change: color;
+        opacity: 0;
+      }
     }
 
+    @keyframes opc {
+      0%, 80% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes char-color-change {
+      0% { color: var(--main-title-color); }
+      100% { color: var(--main-text-color); }
+    }
   }
 
   &.is-active {
@@ -69,11 +95,30 @@
     opacity: 1;
 
     .load-text-wrapper .load-span {
-      transform: translateY(0); // يرتفع للنص الطبيعي
-      transition-delay: 0.2s;
+      opacity: 1;
+      span {
+        animation: char-color-change 0.5s forwards;
+        opacity: 1;
+      }
+    }
 
-      .load-span:nth-child(2) {
-        transition-delay: 0.5s;
+    // الكلمة الأولى: تبدأ التلوين بعد ظهور الحاوية (0.5 ثانية)
+    .load-text-wrapper:first-child .load-span span {
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          animation-delay: calc(0.5s + #{$i * 0.07}s);
+        }
+      }
+    }
+
+    // الكلمة الثانية: تبدأ بعد انتهاء الأولى (تقريباً عند ثانية 1.3)
+    .load-text-wrapper:last-child .load-span span {
+
+      @for $i from 1 through 40 {
+        &:nth-child(#{$i}) {
+          // 0.5 (بداية) + 0.8 (وقت تقريبي للكلمة الأولى) = 1.3s
+          animation-delay: calc(4.3s + #{$i * 0.07}s);
+        }
       }
     }
   }
@@ -84,3 +129,35 @@
     padding: 0px;
   }
 }
+
+// .load-text-wrapper {
+//   animation: char-color-change 0.5s forwards;
+//   &:nth-child(1) .load-span > span {
+//     @for $i from 1 through 20 {
+//       &:nth-child(#{$i}) {
+//         animation-delay: #{$i * 0.07}s;
+//       }
+//     }
+//   }
+//   &:nth-child(2) .load-span > span {
+//     @for $i from 1 through 20 {
+//       &:nth-child(#{$i}) {
+//         animation-delay: #{0.8 + ($i * 0.07)}s;
+//       }
+//     }
+//   }
+
+//   .load-span {
+//     transform: translateY(0); // يرتفع للنص الطبيعي
+//     transition:
+//       opacity 0.5s,
+//       transform 0.5s;
+//     opacity: 1;
+
+//     // تفعيل الأنيميشن فقط عند ظهور الكلاس is-active
+
+//     // الكلمة الأولى: تبدأ فوراً حرفاً بحرف
+
+//     // الكلمة الثانية: تبدأ بعد انتهاء الكلمة الأولى (تقريباً بعد 0.6 ثانية)
+//   }
+// }

@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--main--gap);
+  @media (max-width: v.$width-md) {
+    flex-direction: column;
+    
+  }
 }
 
 .box .box-text-heading-container {
