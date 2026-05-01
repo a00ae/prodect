@@ -64,6 +64,9 @@
         transform 0.5s;
       animation: opc 0.5s ease-out forwards;
       opacity: 0;
+      @media (max-width: v.$width-md) {
+        font-size: var(--font-size-xxl-alt-lg);
+      }
 
       span {
         display: inline-block;
@@ -74,7 +77,8 @@
     }
 
     @keyframes opc {
-      0%, 80% {
+      0%,
+      80% {
         opacity: 0;
         transform: translateY(100px);
       }
@@ -85,8 +89,12 @@
     }
 
     @keyframes char-color-change {
-      0% { color: var(--main-title-color); }
-      100% { color: var(--main-text-color); }
+      0% {
+        color: var(--main-title-color);
+      }
+      100% {
+        color: var(--main-text-color);
+      }
     }
   }
 
@@ -113,7 +121,6 @@
 
     // الكلمة الثانية: تبدأ بعد انتهاء الأولى (تقريباً عند ثانية 1.3)
     .load-text-wrapper:last-child .load-span span {
-
       @for $i from 1 through 40 {
         &:nth-child(#{$i}) {
           // 0.5 (بداية) + 0.8 (وقت تقريبي للكلمة الأولى) = 1.3s
