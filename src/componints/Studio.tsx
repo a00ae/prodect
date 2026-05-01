@@ -1,12 +1,15 @@
 import { RiPlayCircleFill } from "@remixicon/react";
-import { memo } from "react";
+import { memo, useRef } from "react";
 import Rate from "./Nodos/Rate";
 import Btn from "./Nodos/Btn";
+import { useScrollAnimation } from "./Hooks/useScrollAnimation";
 
 function Studio() {
   console.log("Studio");
+  const ref = useRef<HTMLDivElement>(null!);
+  useScrollAnimation(ref, {selector: ".studio"});
   return (
-    <div id="studio" className="studio">
+    <div ref={ref} id="studio" className="studio">
       <div className="container">
         <div className="text-box">
           <h1>Averra — Studio®</h1>

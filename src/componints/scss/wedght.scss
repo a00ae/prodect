@@ -4,6 +4,7 @@
 
 /* Start Wedght */
 .wedght {
+  width: 95%;
   background-color: white;
   margin: auto;
   padding: 10px 20px;
@@ -13,7 +14,7 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   margin-left: 40px;
   margin-right: 40px;
-  position: relative;
+  position: fixed;
   z-index: 10;
   transition: height 0.3s ease-in-out; // إضافة انتقال سلس للعنصر wedght نفسه
 
@@ -187,6 +188,7 @@ $menu-nav-transforms: (
 
 @media (max-width: v.$width-sm) {
   .wedght {
+    width: 100%;
     margin: 0;
     padding: 5px;
     border-radius: 0;
