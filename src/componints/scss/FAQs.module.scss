@@ -14,6 +14,13 @@
   padding: 5px 5px;
   border-radius: var(--border-radius-xs);
   background-color: var(--main-bg-color);
+  @media (max-width: v.$width-md) {
+    padding: 3px;
+    svg {
+      font-size: 20px;
+    }
+  }
+
 }
 .faqs {
   @include v.container-box;
@@ -56,7 +63,7 @@
 
       .accordion-faqs {
         border-radius: var(--border-radius-sm);
-        padding: 20px;
+        padding: 30px;
         background-color: var(--white-color, #fff);
         position: relative;
         width: 100%;
@@ -64,16 +71,20 @@
         cursor: pointer;
         overflow: hidden;
         border: 1px solid transparent;
+        @media (max-width: v.$width-md) {
+          padding: 15px;
+        }
 
         .top {
           @extend %flex-accodion;
           align-items: center;
           .firset-cheld-title {
             @extend %flex-accodion;
-            font-size: var(--main-font-size-m);
+            font-size: var(--main-font-size-L);
             font-weight: var(--main-font-whight);
             gap: var(--gap-sm);
             @media (max-width: v.$width-md) {
+              font-size: var(--font-size-md-heading);
               gap: var(--gap-xs);
             }
             p:first-child {
@@ -140,7 +151,7 @@
           }
         }
 
-        &:hover svg {
+        &:hover .icon svg {
           color: var(--btn-color);
         }
       }
