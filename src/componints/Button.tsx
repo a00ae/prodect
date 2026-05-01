@@ -1,9 +1,9 @@
-const btn = ["buy template", "More Templates", "Made in Framer"];
+
 
 function Button() {
   return (
     <div className="button-app">
-      {btn.map((el) => (
+      {["buy template", "More Templates", "Made in Framer"].map((el) => (
         <div className={`btn-shop ${el.split(' ').join("-").toLocaleLowerCase()}`}>
           <a href="">
             <p>{el}</p>

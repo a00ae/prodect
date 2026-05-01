@@ -18,6 +18,7 @@
             font-size: var(--font-size-md-alt);
            p {
             text-align: center;
+            text-transform: capitalize;
            }
         }
         &.buy-template {
@@ -38,6 +39,13 @@
             }
         }
         
+    }
+
+    @media (max-width: v.$width-md) {
+        right: 10px;
+        .btn-shop {
+            padding: 8px 15px;
+        }
     }
 
 }
