@@ -68,5 +68,55 @@ export const useStaticData = () => {
     [],
   );
 
-  return { processData, testimonialsData };
+  const items = useMemo(
+    () => [
+      {
+        title: "Branding",
+        details:
+          "We build distinctive brands that resonate with your audience and stand the test of time.",
+        ui: [
+          "Brand Identity Design",
+          "Logo & Visual Systems",
+          "Brand Guidelines & Collateral",
+          "Digital Asset Creation",
+        ],
+      },
+      {
+        title: "Product Design",
+        details:
+          "User-centric design solutions that solve real problems and delight your customers.",
+        ui: [
+          "Brand Identity Design",
+          "Logo & Visual Systems",
+          "Brand Guidelines & Collateral",
+          "Digital Asset Creation",
+        ],
+      },
+      {
+        title: "Development",
+        details:
+          "Robust, scalable, and high-performance development to power your digital growth.",
+        ui: [
+          "Brand Identity Design",
+          "Logo & Visual Systems",
+          "Brand Guidelines & Collateral",
+          "Digital Asset Creation",
+        ],
+      },
+      {
+        title: "Content Strategy",
+        details:
+          "Strategic content creation that drives engagement and tells your brand's unique story.",
+        ui: [
+          "Brand Identity Design",
+          "Logo & Visual Systems",
+          "Brand Guidelines & Collateral",
+          "Digital Asset Creation",
+        ],
+      },
+    ],
+    [],
+  );
+
+  return { processData, testimonialsData, items };
 };

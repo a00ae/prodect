@@ -15,7 +15,7 @@
   margin-left: 40px;
   margin-right: 40px;
   position: fixed;
-  z-index: 10;
+  z-index: 9;
   transition: height 0.3s ease-in-out; // إضافة انتقال سلس للعنصر wedght نفسه
 
   &.is-open {
@@ -27,7 +27,7 @@
     margin: 0;
     border-radius: 0;
     background-color: var(--main-bg-color); // استخدام لون خلفية للطبقة العلوية
-    z-index: 100;
+    z-index: 9;
   }
 }
 

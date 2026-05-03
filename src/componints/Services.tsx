@@ -2,57 +2,13 @@ import Box from "./Nodos/Box";
 import { memo, useState } from "react";
 import { RiArrowDownSLine } from "@remixicon/react";
 import { boxData } from "./context/data/data";
-const items = [
-  {
-    title: "Branding",
-    details:
-      "We build distinctive brands that resonate with your audience and stand the test of time.",
-    ui: [
-      "Brand Identity Design",
-      "Logo & Visual Systems",
-      "Brand Guidelines & Collateral",
-      "Digital Asset Creation",
-    ],
-  },
-  {
-    title: "Product Design",
-    details:
-      "User-centric design solutions that solve real problems and delight your customers.",
-    ui: [
-      "Brand Identity Design",
-      "Logo & Visual Systems",
-      "Brand Guidelines & Collateral",
-      "Digital Asset Creation",
-    ],
-  },
-  {
-    title: "Development",
-    details:
-      "Robust, scalable, and high-performance development to power your digital growth.",
-    ui: [
-      "Brand Identity Design",
-      "Logo & Visual Systems",
-      "Brand Guidelines & Collateral",
-      "Digital Asset Creation",
-    ],
-  },
-  {
-    title: "Content Strategy",
-    details:
-      "Strategic content creation that drives engagement and tells your brand's unique story.",
-    ui: [
-      "Brand Identity Design",
-      "Logo & Visual Systems",
-      "Brand Guidelines & Collateral",
-      "Digital Asset Creation",
-    ],
-  },
-];
+import { useStaticData } from "./Hooks/useStaticData";
 
 function Services() {
   console.log("Services");
   const { services } = boxData;
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const { items } = useStaticData();
 
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));
