@@ -138,13 +138,18 @@
         .text-box {
           /* إزالة المسافة الثابتة للسماح بالمحاذاة الصحيحة للأسفل */
           @media (max-width: v.$width-xl) {
-            gap: 100px;
-            height: 550px;
+            gap: 250px;
+
+            
+          }
+          @media (max-width: v.$width-md) {
+            gap: 200px;
+
             
           }
           @media (max-width: v.$width-sm) {
-            gap: 50px;
-            height: 400px;
+            gap: 80px;
+
             
           }
           :global(.heading) {
